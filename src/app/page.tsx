@@ -28,87 +28,71 @@ const PrologueSection = () => {
     setIsClient(true);
   }, []);
 
-  // Ensure video plays and loops properly with better error handling
+  // Handle user interaction for video play
   useEffect(() => {
-    if (!isClient) return;
+    if (!isClient || !needsUserInteraction) return;
     
-    const video = document.querySelector('video');
-    if (video) {
-      video.muted = true;
-      video.loop = true;
-      
-      // Try to play video with proper error handling
-      const playVideo = async () => {
+    const handleClick = async () => {
+      const video = document.querySelector('video');
+      if (video) {
         try {
           await video.play();
+          console.log('Video started after user interaction');
+          setNeedsUserInteraction(false);
         } catch (error) {
-          console.log('Video autoplay prevented, will play on user interaction');
-          setNeedsUserInteraction(true);
-          
-          // Add click handler to start video on user interaction
-          const handleUserInteraction = async () => {
-            try {
-              await video.play();
-              setNeedsUserInteraction(false);
-              document.removeEventListener('click', handleUserInteraction);
-              document.removeEventListener('touchstart', handleUserInteraction);
-            } catch (err) {
-              console.log('Video play failed:', err);
-            }
-          };
-          
-          document.addEventListener('click', handleUserInteraction);
-          document.addEventListener('touchstart', handleUserInteraction);
+          console.error('Failed to play video after click:', error);
         }
-      };
-      
-      playVideo();
-      
-      // Handle video end with error handling
-      const handleVideoEnd = async () => {
-        try {
-          video.currentTime = 0;
-          await video.play();
-        } catch (error) {
-          console.log('Video replay failed:', error);
-        }
-      };
-      
-      video.addEventListener('ended', handleVideoEnd);
-      
-      return () => {
-        video.removeEventListener('ended', handleVideoEnd);
-      };
-    }
-  }, [isClient]);
+      }
+    };
+
+    document.addEventListener('click', handleClick, { once: true });
+    
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, [isClient, needsUserInteraction]);
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video Background - Main Background */}
       <div className="absolute inset-0 z-0 bg-slate-900">
         {isClient ? (
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            preload="metadata"
-            controls={false}
-            disablePictureInPicture
-            className="w-full h-full object-cover"
-            style={{
-              filter: 'brightness(0.9) contrast(1.1) saturate(1.1)',
-              minWidth: '100%',
-              minHeight: '100%',
-              objectPosition: 'center',
-            }}
-            onCanPlay={() => setVideoLoaded(true)}
-            onError={() => setVideoError(true)}
-            suppressHydrationWarning
-          >
-            <source src="/media/hero-background.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <>
+            {!videoError ? (
+              <video
+                key="hero-video"
+                autoPlay
+                muted 
+                loop 
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover"
+                style={{
+                  filter: 'brightness(0.9) contrast(1.1) saturate(1.1)',
+                  minWidth: '100%',
+                  minHeight: '100%',
+                  objectPosition: 'center',
+                }}
+                onCanPlay={() => {
+                  console.log('Video can play successfully');
+                  setVideoLoaded(true);
+                }}
+                onError={() => {
+                  console.log('Video failed to load, showing fallback');
+                  setVideoError(true);
+                }}
+                onLoadedData={() => {
+                  console.log('Video data loaded - attempting autoplay');
+                }}
+                suppressHydrationWarning
+              >
+                <source src="/media/hero-background-new.mp4" type="video/mp4" />
+                <source src="/media/hero-background.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900" />
+            )}
+          </>
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-slate-900 via-gray-900 to-black" />
         )}
