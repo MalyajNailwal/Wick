@@ -38,29 +38,29 @@ const AboutPage = () => {
 
   const milestones = [
     {
-      year: "2020",
+      year: "2021",
       title: "Company Founded",
       description: "Wick Automation LLP was established with a vision to revolutionize commercial vehicle safety."
     },
     {
-      year: "2021",
+      year: "2022",
       title: "First Prototype",
       description: "Developed our first ATES prototype after extensive research and development."
     },
     {
-      year: "2022",
+      year: "2023",
       title: "Market Launch",
       description: "Successfully launched India's first Automatic Tyre Equalisation System for HCVs."
     },
     {
-      year: "2023",
+      year: "2024",
       title: "Industry Recognition",
       description: "Received multiple awards for innovation in automotive safety technology."
     },
     {
-      year: "2024",
-      title: "Expansion",
-      description: "Expanded operations nationwide and established partnerships with major fleet operators."
+      year: "2025",
+      title: "Global Expansion",
+      description: "Expanding operations internationally and developing next-generation safety solutions."
     }
   ];
 
@@ -99,7 +99,7 @@ const AboutPage = () => {
           {/* Stats */}
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "5+", label: "Years of Innovation" },
+              { number: "4+", label: "Years of Innovation" },
               { number: "10K+", label: "Vehicles Protected" },
               { number: "50+", label: "Fleet Partners" },
               { number: "95%", label: "Customer Satisfaction" }
@@ -133,7 +133,7 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2020, Wick Automation LLP emerged from a simple yet powerful vision: 
+                  Founded in 2021, Wick Automation LLP emerged from a simple yet powerful vision: 
                   to make commercial vehicle transportation safer and more efficient through innovative technology.
                 </p>
                 <p>

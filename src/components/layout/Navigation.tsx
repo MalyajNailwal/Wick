@@ -37,7 +37,7 @@ const Navigation = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg' 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100' 
           : 'bg-transparent'
       }`}
     >
@@ -62,26 +62,13 @@ const Navigation = () => {
                 <motion.div key={item.name} whileHover={{ y: -2 }}>
                   <Link
                     href={item.href}
-                    className="text-gray-700 hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group"
+                    className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group`}
                   >
                     {item.name}
                     <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                   </Link>
                 </motion.div>
               ))}
-              
-              {/* CTA Button */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  href="/products"
-                  className="bg-gradient-to-r from-primary-500 to-primary-700 text-white px-6 py-2 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-200 hover:shadow-primary-500/25"
-                >
-                  Explore Products
-                </Link>
-              </motion.div>
             </div>
           </div>
 
@@ -90,7 +77,7 @@ const Navigation = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-primary-600 focus:outline-none"
+              className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-primary-600 focus:outline-none`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </motion.button>
@@ -118,28 +105,13 @@ const Navigation = () => {
                 >
                   <Link
                     href={item.href}
-                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                    className="block px-3 py-2 text-base font-medium text-gray-800 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 </motion.div>
               ))}
-              
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navigationItems.length * 0.1 }}
-                className="px-3 pt-2"
-              >
-                <Link
-                  href="/products"
-                  className="block w-full text-center bg-gradient-to-r from-primary-500 to-primary-700 text-white px-6 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-200"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Explore Products
-                </Link>
-              </motion.div>
             </div>
           </motion.div>
         )}
