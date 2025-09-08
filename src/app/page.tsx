@@ -1,12 +1,11 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Shield, Zap, TrendingUp, Users, Star, ChevronDown, AlertTriangle, Lightbulb, Target, Award } from 'lucide-react';
+import { ArrowRight, Shield, Zap, TrendingUp, Users, Star, ChevronDown, Lightbulb, AlertTriangle } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRef, useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
-import StoryTimeline from '@/components/ui/StoryTimeline';
 
 const PrologueSection = () => {
   const [ref, inView] = useInView({ threshold: 0.3 });
@@ -199,7 +198,7 @@ const PrologueSection = () => {
             transition={{ duration: 1, delay: 0.9 }}
           >
             <motion.button
-              whileHover={{ scale: 1.05, glow: true }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-primary-500 to-primary-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-2xl shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-500 flex items-center justify-center mx-auto group"
             >
@@ -229,43 +228,6 @@ const PrologueSection = () => {
   );
 };
 
-// Story data
-const timelineEvents = [
-  {
-    year: "2021",
-    title: "The Vision Born",
-    description: "Wick Automation LLP was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATES prototype.",
-    highlight: true,
-    icon: <Lightbulb className="w-6 h-6 text-yellow-400" />
-  },
-  {
-    year: "2022",
-    title: "Innovation Takes Shape",
-    description: "After extensive research and development, we successfully created India's first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry.",
-    highlight: false
-  },
-  {
-    year: "2023",
-    title: "Market Revolution",
-    description: "ATES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 25% longer tire life and 15% better fuel efficiency.",
-    highlight: true,
-    icon: <Target className="w-6 h-6 text-green-500" />
-  },
-  {
-    year: "2024",
-    title: "Industry Recognition",
-    description: "Wick received multiple awards for innovation in automotive safety. Our technology became the gold standard for commercial vehicle tire management across India.",
-    highlight: false,
-    icon: <Award className="w-6 h-6 text-amber-500" />
-  },
-  {
-    year: "2025",
-    title: "Expanding Horizons",
-    description: "With proven success across India, Wick is now expanding internationally and developing next-generation automotive safety solutions for the global market.",
-    highlight: true,
-    icon: <Award className="w-6 h-6 text-blue-500" />
-  }
-];
 
 // Product Image Component with Tire Rotation Effect
 const ProductImageWithRotation = () => {
@@ -353,8 +315,9 @@ const ProductImageWithRotation = () => {
                 repeatType: "loop"
               }}
               onError={(e) => {
-                console.log('Image failed to load:', e.target.src);
-                e.target.style.display = 'none';
+                const target = e.target as HTMLImageElement;
+                console.log('Image failed to load:', target.src);
+                target.style.display = 'none';
               }}
               onLoad={() => console.log('Product image loaded successfully')}
             />
@@ -547,14 +510,7 @@ const StoryJourney = () => {
         }
       />
 
-      {/* Chapter 3: The Journey */}
-      <StoryTimeline
-        title="The Journey Unfolds"
-        subtitle="From concept to reality - here's how we built the future"
-        events={timelineEvents}
-      />
-
-      {/* Chapter 4: The Solution */}
+      {/* Chapter 3: The Solution */}
       <StoryChapter
         chapterNumber="03"
         title="ATES: The Hero Emerges"
@@ -680,14 +636,14 @@ const CTASection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
             >
               Get Started Today
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
             >
               Contact Sales
             </motion.button>

@@ -318,12 +318,12 @@ const BlogPage = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/20"
+                  className="flex-1 px-6 py-4 rounded-full text-gray-900 placeholder-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-white/20"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-black text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
+                  className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
                 >
                   Subscribe
                 </motion.button>

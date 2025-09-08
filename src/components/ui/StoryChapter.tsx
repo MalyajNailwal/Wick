@@ -89,7 +89,7 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
               <span className="text-8xl md:text-9xl font-display font-bold text-primary-100 leading-none select-none">
                 {chapterNumber}
               </span>
-              <div className="absolute inset-0 flex items-center justify-start">
+              <div className={`absolute inset-0 flex items-center ${layout === 'center' ? 'justify-center' : 'justify-start'}`}>
                 <span className="text-lg font-semibold text-gray-800 tracking-wider uppercase">
                   Chapter {chapterNumber}
                 </span>

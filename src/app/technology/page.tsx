@@ -15,15 +15,64 @@ import {
   Activity,
   Database,
   Clock,
-  CheckCircle
+  CheckCircle,
+  Lightbulb,
+  Target,
+  Award
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import Navigation from '@/components/layout/Navigation';
 import CarModel from '@/components/3d/CarModel';
 import StoryChapter from '@/components/ui/StoryChapter';
+import StoryTimeline from '@/components/ui/StoryTimeline';
 
 const TechnologyPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
+
+  // Timeline events for technology development
+  const timelineEvents = [
+    {
+      year: "2021",
+      title: "The Vision Born",
+      description: "Wick Automation LLP was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATES prototype.",
+      highlight: true,
+      icon: <Lightbulb className="w-6 h-6 text-yellow-400" />
+    },
+    {
+      year: "2022",
+      title: "Innovation Takes Shape",
+      description: "After extensive research and development, we successfully created India's first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry.",
+      highlight: false
+    },
+    {
+      year: "2023",
+      title: "Market Revolution",
+      description: "ATES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 25% longer tire life and 15% better fuel efficiency.",
+      highlight: true,
+      icon: <Target className="w-6 h-6 text-green-500" />
+    },
+    {
+      year: "2024",
+      title: "Industry Recognition",
+      description: "Wick received multiple awards for innovation in automotive safety. Our technology became the gold standard for commercial vehicle tire management across India.",
+      highlight: false,
+      icon: <Award className="w-6 h-6 text-amber-500" />
+    },
+    {
+      year: "2025",
+      title: "Expanding Horizons",
+      description: "With proven success across India, Wick is now expanding internationally and developing next-generation automotive safety solutions for the global market.",
+      highlight: true,
+      icon: <TrendingUp className="w-6 h-6 text-blue-500" />
+    },
+    {
+      year: "The Future",
+      title: "Continuing Innovation",
+      description: "Our research continues into next-generation automotive safety technologies, including enhanced sensor integration and expanded vehicle compatibility, leading the automotive safety revolution.",
+      highlight: true,
+      icon: <Zap className="w-6 h-6 text-purple-500" />
+    }
+  ];
 
   const technologies = [
     {
@@ -233,6 +282,13 @@ const TechnologyPage = () => {
         }
       />
 
+      {/* Technology Development Timeline */}
+      <StoryTimeline
+        title="The Innovation Journey"
+        subtitle="From concept to cutting-edge technology - the evolution of ATES"
+        events={timelineEvents}
+      />
+
       {/* Technical Specifications */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -326,14 +382,14 @@ const TechnologyPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
               >
                 Schedule Demo
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
               >
                 Technical Docs
               </motion.button>

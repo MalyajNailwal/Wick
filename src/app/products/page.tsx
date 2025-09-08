@@ -36,32 +36,35 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
           <h3 className="text-2xl font-bold text-gray-900">{product.name}</h3>
           <div className="flex items-center">
             {[1, 2, 3, 4, 5].map((star) => (
-              <Star key={star} className="w-4 h-4 text-yellow-400 fill-current" />
+              <Star key={star} className="w-5 h-5 text-yellow-400 fill-current" />
             ))}
           </div>
         </div>
 
-        <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
+        <p className="text-gray-800 font-medium mb-6 leading-relaxed">{product.description}</p>
 
         <div className="space-y-3 mb-8">
           {product.features.map((feature: string, idx: number) => (
             <div key={idx} className="flex items-center">
-              <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span className="text-gray-700">{feature}</span>
+              <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
+              <span className="text-gray-800 font-medium">{feature}</span>
             </div>
           ))}
         </div>
 
-        <div className="flex items-center justify-between">
-          <div className="text-3xl font-bold text-gray-900">{product.price}</div>
-          <div className="space-x-3">
+        <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-6 rounded-xl border-2 border-primary-200 h-32 flex flex-col justify-between">
+          <div className="text-center">
+            <div className="text-2xl font-bold text-gray-900 mb-2">{product.price}</div>
+            <p className="text-sm font-semibold text-gray-700">Tailored for your fleet size & needs</p>
+          </div>
+          <div className="flex justify-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-200 flex items-center"
+              className="bg-black text-white px-8 py-3 rounded-full font-bold hover:shadow-xl transition-all duration-200 flex items-center shadow-lg"
             >
-              Buy Now
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <span className="text-white font-bold">Get Quote</span>
+              <ArrowRight className="ml-2 w-4 h-4 text-white" />
             </motion.button>
           </div>
         </div>
@@ -77,7 +80,7 @@ const ProductsPage = () => {
     {
       name: "Tyre Rakhshak ATES Pro",
       description: "Advanced Automatic Tyre Equalisation System designed for heavy commercial vehicles with real-time monitoring and intelligent pressure adjustment.",
-      price: "₹2,50,000",
+      price: "Contact for Quote",
       badge: "Bestseller",
       features: [
         "Real-time pressure monitoring",
@@ -101,7 +104,7 @@ const ProductsPage = () => {
     {
       name: "Tyre Rakhshak ATES Standard",
       description: "Essential tyre equalisation system for commercial vehicles with core safety features and manual monitoring capabilities.",
-      price: "₹1,50,000",
+      price: "Get Custom Pricing",
       badge: "Popular",
       features: [
         "Manual pressure monitoring",
@@ -122,7 +125,7 @@ const ProductsPage = () => {
     {
       name: "Tyre Rakhshak ATES Enterprise",
       description: "Complete fleet management solution with advanced analytics, predictive maintenance, and comprehensive monitoring for large commercial operations.",
-      price: "₹4,00,000",
+      price: "Enterprise Solution",
       badge: "Premium",
       features: [
         "Fleet management dashboard",
@@ -211,14 +214,14 @@ const ProductsPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
               >
                 Contact Expert
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
               >
                 Download Brochure
               </motion.button>
