@@ -1,14 +1,33 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, Sparkles, Bot, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Phone, MapPin, Clock, Send, Sparkles, Bot, ArrowRight, X } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import WickAI from '@/components/ui/WickAI';
 
 const ContactPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [formRef, formInView] = useInView({ threshold: 0.2 });
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationDismissed, setNotificationDismissed] = useState(false);
+
+  // Show notification after 3 seconds
+  useEffect(() => {
+    if (notificationDismissed) return;
+
+    const timer = setTimeout(() => {
+      setShowNotification(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [notificationDismissed]);
+
+  const dismissNotification = () => {
+    setShowNotification(false);
+    setNotificationDismissed(true);
+  };
 
   const contactInfo = [
     {
@@ -40,6 +59,73 @@ const ContactPage = () => {
   return (
     <main className="relative">
       <Navigation />
+
+      {/* Wick AI Notification */}
+      <AnimatePresence>
+        {showNotification && (
+          <motion.div
+            initial={{ x: '100%', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+              duration: 0.5
+            }}
+            className="fixed top-20 right-4 z-50 max-w-sm"
+          >
+            <div className="bg-white text-gray-900 rounded-xl shadow-2xl border border-gray-200 overflow-hidden max-w-md">
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white">
+                <div className="flex items-center space-x-2">
+                  <Bot className="w-5 h-5" />
+                  <span className="font-bold text-sm text-red-500">Wick AI</span>
+                </div>
+                <button
+                  onClick={dismissNotification}
+                  className="text-black hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="p-4">
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  Introducing Wick AI - Our New AI Assistant!
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                  Meet Wick AI, our revolutionary AI assistant designed specifically for fleet management and tire technology. Get instant answers to your questions about ATES, tire safety, and fleet optimization.
+                </p>
+
+                {/* Action Button */}
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    dismissNotification();
+                    // Trigger Wick AI chat
+                    const chatButton = document.querySelector('[data-wick-ai-toggle]') as HTMLButtonElement;
+                    if (chatButton) {
+                      chatButton.click();
+                    }
+                  }}
+                  className="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold py-3 px-4 rounded-lg hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
+                >
+                  <div className="flex items-center space-x-2">
+                    <div className="inline-flex items-center px-2 py-1 bg-green-500 text-white rounded text-xs font-semibold">
+                      <div className="w-1.5 h-1.5 bg-white rounded-full mr-1.5 animate-pulse"></div>
+                      Now Available
+                    </div>
+                  </div>
+                  <span className="text-red-600">Try Wick AI</span>
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Hero Section */}
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
@@ -59,78 +145,15 @@ const ContactPage = () => {
               Contact{' '}<span className="text-black font-bold">Us</span>
             </motion.h1>
             
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed space-y-4"
+              className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={heroInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium shadow-lg"
-              >
-                Introducing Wick AI - Our New AI Assistant!
-              </motion.div>
-
-              <p>
-                Meet Wick AI, our revolutionary AI assistant designed specifically for fleet management and tire technology.
-                Get instant answers to your questions about ATES, tire safety, and fleet optimization.
-              </p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="inline-flex items-center justify-center"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => {
-                    // Find the WickAI component and trigger its open state
-                    const chatButton = document.querySelector('[data-wick-ai-toggle]') as HTMLButtonElement;
-                    if (chatButton) {
-                      chatButton.click();
-                    }
-                  }}
-                  className="bg-white border border-gray-200 rounded-lg px-6 py-4 shadow-md hover:shadow-lg hover:border-primary-300 transition-all duration-200 max-w-md cursor-pointer"
-                >
-                  <div className="flex items-center space-x-4">
-                    {/* Professional badge */}
-                    <div className="flex items-center space-x-2">
-                      <div className="inline-flex items-center px-2 py-1 bg-black text-white rounded text-xs font-semibold">
-                        <div className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5 animate-pulse"></div>
-                        Now Available
-                      </div>
-                    </div>
-
-                    {/* Bot icon and text */}
-                    <div className="flex items-center space-x-3">
-                      <Bot className="w-6 h-6 text-primary-600" />
-                      <div className="text-left">
-                        <h3 className="text-sm font-bold text-gray-900">
-                          Wick AI Assistant
-                        </h3>
-                        <p className="text-xs text-gray-600">
-                          Try our new AI chat support
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Arrow indicator */}
-                    <motion.div
-                      animate={{ x: [0, 2, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                      className="text-primary-600"
-                    >
-                      <ArrowRight className="w-4 h-4" />
-                    </motion.div>
-                  </div>
-                </motion.button>
-              </motion.div>
-            </motion.div>
+              Ready to transform your fleet with ATES technology? Get in touch with our experts
+              for personalized consultation and support.
+            </motion.p>
           </motion.div>
 
         </div>
