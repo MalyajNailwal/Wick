@@ -28,9 +28,9 @@ const TechnologyPage = () => {
   const technologies = [
     {
       icon: <Cpu className="w-16 h-16 text-purple-600" />,
-      title: "AI-Powered Analytics",
-      description: "Advanced machine learning algorithms analyze tire pressure patterns and predict potential failures before they occur.",
-      features: ["Predictive maintenance", "Pattern recognition", "Real-time analysis", "Smart alerts"]
+      title: "Advanced Sensor Technology",
+      description: "High-precision pressure sensors and electronic monitoring systems continuously track tire conditions with exceptional accuracy.",
+      features: ["Continuous monitoring", "Precision sensors", "Real-time tracking", "Instant alerts"]
     },
     {
       icon: <Wifi className="w-16 h-16 text-blue-600" />,
@@ -57,25 +57,25 @@ const TechnologyPage = () => {
       step: "01",
       title: "Continuous Monitoring",
       description: "Advanced sensors continuously monitor tire pressure across all wheels of the vehicle.",
-      icon: <Activity className="w-8 h-8 text-white" />
+      icon: <Activity className="w-8 h-8 text-yellow-300" />
     },
     {
       step: "02", 
-      title: "Data Analysis",
-      description: "AI algorithms analyze pressure data in real-time to identify optimal pressure levels.",
-      icon: <Database className="w-8 h-8 text-white" />
+      title: "Data Processing",
+      description: "Electronic systems process pressure data in real-time to determine optimal tire pressure levels.",
+      icon: <Database className="w-8 h-8 text-green-300" />
     },
     {
       step: "03",
       title: "Automatic Adjustment",
       description: "System automatically inflates or deflates tires to maintain optimal pressure levels.",
-      icon: <Settings className="w-8 h-8 text-white" />
+      icon: <Settings className="w-8 h-8 text-orange-300" />
     },
     {
       step: "04",
       title: "Real-time Alerts",
       description: "Drivers and fleet managers receive instant notifications about tire status and maintenance needs.",
-      icon: <AlertTriangle className="w-8 h-8 text-white" />
+      icon: <AlertTriangle className="w-8 h-8 text-red-300" />
     }
   ];
 
@@ -122,8 +122,8 @@ const TechnologyPage = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
-              Discover how cutting-edge AI, IoT sensors, and advanced analytics work together 
-              to create India's most intelligent tire management system.
+              Discover how cutting-edge sensors, IoT connectivity, and precision engineering work together 
+              to create India's most advanced tire management system.
             </motion.p>
           </motion.div>
         </div>
@@ -199,8 +199,8 @@ const TechnologyPage = () => {
                   <div className="relative">
                     <div className="w-32 h-32 mx-auto bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white shadow-2xl mb-6 hover:scale-110 transition-transform duration-300">
                       <div className="text-center">
-                        <div className="mb-2 text-white flex justify-center">{process.icon}</div>
-                        <div className="text-lg font-bold text-white">{process.step}</div>
+                        <div className="mb-2 flex justify-center">{process.icon}</div>
+                        <div className="text-lg font-bold text-black">{process.step}</div>
                       </div>
                     </div>
                     
