@@ -1,4 +1,4 @@
-<svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+<svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="wickGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
@@ -6,14 +6,8 @@
     </linearGradient>
   </defs>
 
-  <!-- Background circle for professional look -->
-  <circle cx="20" cy="20" r="18" fill="url(#wickGradient)" opacity="0.1"/>
-
-  <!-- Main "Wick" text -->
-  <text x="60" y="28" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="url(#wickGradient)">
+  <!-- Simple "Wick" text -->
+  <text x="40" y="22" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="url(#wickGradient)" text-anchor="middle">
     Wick
   </text>
-
-  <!-- Subtle accent line -->
-  <line x1="60" y1="32" x2="100" y2="32" stroke="url(#wickGradient)" stroke-width="1" opacity="0.5"/>
 </svg>
