@@ -364,7 +364,7 @@ const ProductImageWithRotation = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm z-10 border-2 border-white"
       >
-        Tyre Rakhshak ATES
+        TyreRakhshak ATES
       </motion.div>
       
       {/* Innovation Callout - Clean Design */}
