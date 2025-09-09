@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
 import { 
@@ -18,7 +18,11 @@ import {
   CheckCircle,
   Lightbulb,
   Target,
-  Award
+  Award,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import Navigation from '@/components/layout/Navigation';
@@ -28,6 +32,55 @@ import StoryTimeline from '@/components/ui/StoryTimeline';
 
 const TechnologyPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = async () => {
+    if (videoRef.current) {
+      try {
+        if (isPlaying) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+          console.log('Video paused');
+        } else {
+          await videoRef.current.play();
+          setIsPlaying(true);
+          console.log('Video playing');
+        }
+      } catch (error) {
+        console.error('Error toggling video play:', error);
+        // Fallback: try to toggle without async
+        if (videoRef.current) {
+          if (isPlaying) {
+            videoRef.current.pause();
+            setIsPlaying(false);
+          } else {
+            videoRef.current.play().catch(() => {
+              console.log('Video play failed');
+            });
+            setIsPlaying(true);
+          }
+        }
+      }
+    } else {
+      console.log('Video element not found');
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      try {
+        videoRef.current.muted = !videoRef.current.muted;
+        setIsMuted(!isMuted);
+        console.log('Video mute toggled:', videoRef.current.muted);
+      } catch (error) {
+        console.error('Error toggling video mute:', error);
+      }
+    } else {
+      console.log('Video element not found for mute toggle');
+    }
+  };
 
   // Timeline events for technology development
   const timelineEvents = [
@@ -264,19 +317,179 @@ const TechnologyPage = () => {
               ))}
             </div>
             
-            {/* 3D Visualization */}
+            {/* Video Explanation Frame */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
               viewport={{ once: true }}
-              className="h-[500px] bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl overflow-hidden"
+              className="relative mt-20 mb-16"
             >
-              <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
-                <Suspense fallback={null}>
-                  <CarModel />
-                </Suspense>
-              </Canvas>
+              <div className="max-w-6xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-12">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center px-6 py-3 rounded-full bg-black text-white text-sm font-medium backdrop-blur-sm mb-6"
+                  >
+                    <Zap className="w-5 h-5 mr-3 animate-pulse" />
+                    Technology in Action
+                  </motion.div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                    See ATES in Action
+                  </h3>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Watch how our advanced technology seamlessly integrates with commercial vehicles to provide unmatched safety and efficiency.
+                  </p>
+                </div>
+
+                {/* Creative Video Frame */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
+                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  transition={{ duration: 1.2, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  {/* Decorative Background Elements */}
+                  <div className="absolute -inset-8 bg-gradient-to-r from-primary-500/20 via-purple-500/20 to-blue-500/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                  <div className="absolute -inset-4 bg-gradient-to-r from-primary-600/30 via-purple-600/30 to-blue-600/30 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  
+                  {/* Main Video Container */}
+                  <div className="relative bg-white rounded-2xl shadow-2xl p-8 group-hover:shadow-3xl transition-all duration-500">
+
+                    {/* Video Frame with Enhanced Styling */}
+                    <div className="video-frame bg-gray-900 relative">
+                      {/* Gradient Overlay for Style */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20 z-10"></div>
+                      
+                      {/* Video Element */}
+                      <video
+                        ref={videoRef}
+                        className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        controls
+                        autoPlay
+                        loop
+                        preload="auto"
+                        playsInline
+                        webkit-playsinline="true"
+                        x5-playsinline="true"
+                        style={{ objectPosition: 'center' }}
+                        onLoadedData={() => {
+                          if (videoRef.current) {
+                            // Try to play with audio first, fall back to muted if blocked
+                            videoRef.current.muted = false;
+                            videoRef.current.play().catch(() => {
+                              if (videoRef.current) {
+                                videoRef.current.muted = true;
+                                setIsMuted(true);
+                                videoRef.current.play().catch(() => console.log('Video autoplay failed'));
+                              }
+                            });
+                          }
+                        }}
+                        onPlay={() => {
+                          setIsPlaying(true);
+                          console.log('Video started playing');
+                        }}
+                        onPause={() => {
+                          setIsPlaying(false);
+                          console.log('Video paused');
+                        }}
+                        onVolumeChange={() => {
+                          if (videoRef.current) {
+                            setIsMuted(videoRef.current.muted);
+                          }
+                        }}
+                        onError={(e) => {
+                          console.error('Video error:', e);
+                        }}
+                      >
+                        <source src="/media/teq.mp4" type="video/mp4" />
+                        <source src="/media/hero-background-new.mp4" type="video/mp4" />
+                        <p className="text-white p-4 bg-gray-800/50 rounded">Your browser does not support the video tag. Please make sure your browser supports HTML5 video and try refreshing the page.</p>
+                      </video>
+                      
+                      {/* Custom Control Buttons */}
+                      <div className="absolute top-4 left-4 z-40 flex gap-3 pointer-events-auto">
+                        {/* Play/Pause Button */}
+                        <motion.button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            togglePlay();
+                          }}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/30 hover:bg-black/80 transition-all duration-300 cursor-pointer"
+                          title={isPlaying ? 'Pause Video' : 'Play Video'}
+                          type="button"
+                        >
+                          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+                        </motion.button>
+
+                        {/* Mute/Unmute Button */}
+                        <motion.button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            toggleMute();
+                          }}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/30 hover:bg-black/80 transition-all duration-300 cursor-pointer"
+                          title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
+                          type="button"
+                        >
+                          {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                        </motion.button>
+                      </div>
+                      
+                      
+                      {/* Video Quality Badge */}
+                      <div className="absolute top-4 right-4 z-30 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium border border-white/20">
+                        4K HD
+                      </div>
+                    </div>
+
+                    {/* Video Description */}
+                    <div className="mt-6 text-center">
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">
+                        Revolutionary ATES Technology Demo
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                        Experience firsthand how our Automatic Tyre Equalisation System transforms commercial vehicle operations. 
+                        This comprehensive demonstration showcases real-world applications, safety improvements, and the seamless 
+                        integration of cutting-edge technology with traditional vehicle systems.
+                      </p>
+                      
+                      {/* Key Features Tags */}
+                      <div className="flex flex-wrap justify-center gap-3 mt-6">
+                        {[
+                          { label: "Real-time Monitoring", color: "bg-blue-100 text-blue-700" },
+                          { label: "Auto-Adjustment", color: "bg-green-100 text-green-700" },
+                          { label: "Safety First", color: "bg-purple-100 text-purple-700" },
+                          { label: "Fuel Efficiency", color: "bg-orange-100 text-orange-700" }
+                        ].map((tag, index) => (
+                          <motion.span
+                            key={tag.label}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className={`px-4 py-2 rounded-full text-sm font-medium ${tag.color} hover:scale-105 transition-transform duration-200`}
+                          >
+                            {tag.label}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         }
