@@ -25,15 +25,18 @@ import {
   VolumeX
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import CarModel from '@/components/3d/CarModel';
 import StoryChapter from '@/components/ui/StoryChapter';
 import StoryTimeline from '@/components/ui/StoryTimeline';
 
 const TechnologyPage = () => {
+  const router = useRouter();
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [showCTAOverlay, setShowCTAOverlay] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = async () => {
@@ -80,6 +83,50 @@ const TechnologyPage = () => {
     } else {
       console.log('Video element not found for mute toggle');
     }
+  };
+
+  // Ad-style pause at 20 seconds
+  const handleTimeUpdate = () => {
+    if (videoRef.current && videoRef.current.currentTime >= 20 && !showCTAOverlay && isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+      setShowCTAOverlay(true);
+      console.log('Ad-style pause triggered at 20 seconds');
+    }
+  };
+
+  const resumeVideo = () => {
+    if (videoRef.current) {
+      setShowCTAOverlay(false);
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+        console.log('Video resumed successfully');
+      }).catch((error) => {
+        console.error('Error resuming video:', error);
+        setIsPlaying(false);
+      });
+    }
+  };
+
+  const contactSales = () => {
+    // Scroll to bottom section where Schedule Demo & Technical Docs buttons are
+    setShowCTAOverlay(false);
+    resumeVideo();
+    
+    // Scroll to the CTA section at bottom
+    setTimeout(() => {
+      const ctaSection = document.querySelector('.bg-gradient-to-r.from-primary-600.to-primary-800');
+      if (ctaSection) {
+        ctaSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback - scroll to bottom
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }
+    }, 300);
+  };
+
+  const navigateToContact = () => {
+    router.push('/contact');
   };
 
   // Timeline events for technology development
@@ -363,16 +410,14 @@ const TechnologyPage = () => {
 
                     {/* Video Frame with Enhanced Styling */}
                     <div className="video-frame bg-gray-900 relative">
-                      {/* Gradient Overlay for Style */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20 z-10"></div>
-                      
                       {/* Video Element */}
                       <video
                         ref={videoRef}
-                        className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-[1.02] relative z-20"
                         controls
                         autoPlay
                         loop
+                        muted
                         preload="auto"
                         playsInline
                         webkit-playsinline="true"
@@ -380,15 +425,10 @@ const TechnologyPage = () => {
                         style={{ objectPosition: 'center' }}
                         onLoadedData={() => {
                           if (videoRef.current) {
-                            // Try to play with audio first, fall back to muted if blocked
-                            videoRef.current.muted = false;
-                            videoRef.current.play().catch(() => {
-                              if (videoRef.current) {
-                                videoRef.current.muted = true;
-                                setIsMuted(true);
-                                videoRef.current.play().catch(() => console.log('Video autoplay failed'));
-                              }
-                            });
+                            // Start muted initially
+                            videoRef.current.muted = true;
+                            setIsMuted(true);
+                            videoRef.current.play().catch(() => console.log('Video autoplay failed'));
                           }
                         }}
                         onPlay={() => {
@@ -404,6 +444,7 @@ const TechnologyPage = () => {
                             setIsMuted(videoRef.current.muted);
                           }
                         }}
+                        onTimeUpdate={handleTimeUpdate}
                         onError={(e) => {
                           console.error('Video error:', e);
                         }}
@@ -412,9 +453,12 @@ const TechnologyPage = () => {
                         <source src="/media/hero-background-new.mp4" type="video/mp4" />
                         <p className="text-white p-4 bg-gray-800/50 rounded">Your browser does not support the video tag. Please make sure your browser supports HTML5 video and try refreshing the page.</p>
                       </video>
+
+                      {/* Gradient Overlay for Style - Lower z-index so it doesn't block controls */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 z-10 pointer-events-none"></div>
                       
-                      {/* Custom Control Buttons */}
-                      <div className="absolute top-4 left-4 z-40 flex gap-3 pointer-events-auto">
+                      {/* Custom Control Buttons - Positioned to not interfere with native controls */}
+                      <div className="absolute top-2 left-2 z-30 flex gap-2 pointer-events-auto">
                         {/* Play/Pause Button */}
                         <motion.button
                           onClick={(e) => {
@@ -424,11 +468,11 @@ const TechnologyPage = () => {
                           }}
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          className="w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/30 hover:bg-black/80 transition-all duration-300 cursor-pointer"
+                          className="w-10 h-10 bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/40 hover:bg-black/90 transition-all duration-300 cursor-pointer"
                           title={isPlaying ? 'Pause Video' : 'Play Video'}
                           type="button"
                         >
-                          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+                          {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
                         </motion.button>
 
                         {/* Mute/Unmute Button */}
@@ -440,11 +484,11 @@ const TechnologyPage = () => {
                           }}
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
-                          className="w-12 h-12 bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/30 hover:bg-black/80 transition-all duration-300 cursor-pointer"
+                          className="w-10 h-10 bg-black/70 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/40 hover:bg-black/90 transition-all duration-300 cursor-pointer"
                           title={isMuted ? 'Unmute Audio' : 'Mute Audio'}
                           type="button"
                         >
-                          {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                          {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                         </motion.button>
                       </div>
                       
@@ -453,24 +497,91 @@ const TechnologyPage = () => {
                       <div className="absolute top-4 right-4 z-30 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-medium border border-white/20">
                         4K HD
                       </div>
+
+                      {/* Creative CTA Overlay - Shows at 20 seconds */}
+                      {showCTAOverlay && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.8 }}
+                          className="absolute inset-0 z-40 bg-gradient-to-br from-black/80 via-black/70 to-black/80 backdrop-blur-md flex items-center justify-center"
+                        >
+                          <div className="text-center text-white p-4 max-w-md">
+                            {/* Compact border */}
+                            <div className="border-2 border-primary-500 rounded-lg p-6 bg-gradient-to-br from-primary-900/20 to-purple-900/20">
+                              <motion.div
+                                initial={{ y: 10, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.2 }}
+                              >
+                                <h3 className="text-xl font-bold mb-3 text-white">
+                                  Want to Know More?
+                                </h3>
+                                
+                                <p className="text-sm text-gray-200 mb-4 leading-relaxed">
+                                  We believe technology shows its true value in 
+                                  <span className="text-primary-400 font-semibold">real-world applications</span>. 
+                                  Let's connect one-on-one.
+                                </p>
+                                
+                                <div className="flex flex-col gap-2 justify-center">
+                                  <motion.button
+                                    onClick={contactSales}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-lg transition-all duration-300"
+                                  >
+                                    📧 Email Sales
+                                  </motion.button>
+                                  
+                                  <motion.button
+                                    onClick={() => {
+                                      window.open('tel:+91-9876543210', '_self');
+                                      setShowCTAOverlay(false);
+                                      resumeVideo();
+                                    }}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm shadow-lg transition-all duration-300"
+                                  >
+                                    📞 Call Sales
+                                  </motion.button>
+                                  
+                                  <motion.button
+                                    onClick={resumeVideo}
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="bg-transparent hover:bg-white/10 text-white px-4 py-2 rounded-lg font-medium text-xs border border-white/30 hover:border-white/50 transition-all duration-300 mt-1"
+                                  >
+                                    Continue Video
+                                  </motion.button>
+                                </div>
+                                
+                                <p className="text-xs text-gray-400 mt-3 italic">
+                                  "Real results. Real conversations."
+                                </p>
+                              </motion.div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
                     </div>
 
                     {/* Video Description */}
                     <div className="mt-6 text-center">
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        Revolutionary ATES Technology Demo
+                        The Crux Behind Our ATES Technology
                       </h4>
                       <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                        Experience firsthand how our Automatic Tyre Equalisation System transforms commercial vehicle operations. 
-                        This comprehensive demonstration showcases real-world applications, safety improvements, and the seamless 
-                        integration of cutting-edge technology with traditional vehicle systems.
+                        Discover the fundamental principles and innovative engineering that power our Automatic Tyre Equalisation System.
+                        This in-depth exploration reveals the core technology, real-world applications, and the transformative impact
+                        on commercial vehicle safety and operational efficiency.
                       </p>
                       
                       {/* Key Features Tags */}
                       <div className="flex flex-wrap justify-center gap-3 mt-6">
                         {[
                           { label: "Real-time Monitoring", color: "bg-blue-100 text-blue-700" },
-                          { label: "Auto-Adjustment", color: "bg-green-100 text-green-700" },
                           { label: "Safety First", color: "bg-purple-100 text-purple-700" },
                           { label: "Fuel Efficiency", color: "bg-orange-100 text-orange-700" }
                         ].map((tag, index) => (
@@ -593,9 +704,10 @@ const TechnologyPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
+                onClick={navigateToContact}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 Schedule Demo
               </motion.button>
