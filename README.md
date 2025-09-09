@@ -1,8 +1,6 @@
 <div align="center">
   <img src="logo.svg" alt="Wick" width="80" height="32">
 
-  # Wick
-
   <p align="center">
     <em>Internal Project</em>
   </p>
