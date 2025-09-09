@@ -1,12 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight, TrendingUp, Shield, Zap, Users } from 'lucide-react';
+import { Calendar, User, ArrowRight, TrendingUp, Shield, Zap, Users, CheckCircle } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { useState } from 'react';
 import Navigation from '@/components/layout/Navigation';
 
 const BlogPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
+  const [email, setEmail] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email.trim()) {
+      // Here you would typically send the email to your backend
+      console.log('Subscribing email:', email);
+      setShowSuccessMessage(true);
+      setEmail('');
+      setTimeout(() => setShowSuccessMessage(false), 4000); // Hide after 4 seconds
+    }
+  };
 
   const featuredPost = {
     title: "The Future of Commercial Vehicle Safety: How ATES is Revolutionizing Indian Highways",
@@ -314,20 +328,37 @@ const BlogPage = () => {
             </p>
             
             <div className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4">
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
+                  required
                   className="flex-1 px-6 py-4 rounded-full text-gray-900 placeholder-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-white/20"
                 />
                 <motion.button
+                  type="submit"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300"
+                  className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 cursor-pointer"
                 >
                   Subscribe
                 </motion.button>
-              </div>
+              </form>
+
+              {/* Success Message */}
+              {showSuccessMessage && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center"
+                >
+                  <CheckCircle className="w-5 h-5 mr-2" />
+                  <span className="font-medium">You subscribed! Now you can get info and all in your email.</span>
+                </motion.div>
+              )}
             </div>
           </motion.div>
         </div>

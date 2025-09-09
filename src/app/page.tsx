@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Shield, Zap, TrendingUp, Users, Star, ChevronDown, Lightbulb, AlertTriangle } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRef, useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
 
@@ -616,7 +617,12 @@ const EpilogueSection = () => {
 
 const CTASection = () => {
   const [ref, inView] = useInView({ threshold: 0.3 });
-  
+  const router = useRouter();
+
+  const navigateToContact = () => {
+    router.push('/contact');
+  };
+
   return (
     <section ref={ref} className="py-24 bg-gradient-to-r from-primary-600 to-primary-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -636,14 +642,16 @@ const CTASection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+              onClick={navigateToContact}
+              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
               Get Started Today
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+              onClick={navigateToContact}
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 cursor-pointer"
             >
               Contact Sales
             </motion.button>

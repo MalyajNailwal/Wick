@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap, TrendingUp, CheckCircle, Star } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 
 const ProductCard = ({ product, index }: { product: any; index: number }) => {
@@ -75,6 +76,21 @@ const ProductCard = ({ product, index }: { product: any; index: number }) => {
 
 const ProductsPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
+  const router = useRouter();
+
+  const navigateToContact = () => {
+    router.push('/contact');
+  };
+
+  const downloadBrochure = () => {
+    // Create a link to download the brochure
+    const link = document.createElement('a');
+    link.href = '/media/WICK BROUCHURE ATES_compressed.pdf';
+    link.download = 'WICK BROUCHURE ATES_compressed.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const products = [
     {
@@ -214,14 +230,16 @@ const ProductsPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+                onClick={navigateToContact}
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 Contact Expert
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                onClick={downloadBrochure}
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 cursor-pointer"
               >
                 Download Brochure
               </motion.button>

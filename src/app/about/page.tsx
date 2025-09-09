@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Target, Users, Award, Lightbulb, TrendingUp, Shield, Heart, Compass, Rocket } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
 import StoryTimeline from '@/components/ui/StoryTimeline';
@@ -12,6 +13,15 @@ const AboutPage = () => {
   const [storyRef, storyInView] = useInView({ threshold: 0.2 });
   const [valuesRef, valuesInView] = useInView({ threshold: 0.2 });
   const [teamRef, teamInView] = useInView({ threshold: 0.2 });
+  const router = useRouter();
+
+  const navigateToContact = () => {
+    router.push('/contact');
+  };
+
+  const navigateToBlog = () => {
+    router.push('/blog');
+  };
 
   const values = [
     {
@@ -286,14 +296,16 @@ const AboutPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300"
+                onClick={navigateToContact}
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
               >
                 Get In Touch
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                onClick={navigateToBlog}
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 cursor-pointer"
               >
                 Learn More
               </motion.button>

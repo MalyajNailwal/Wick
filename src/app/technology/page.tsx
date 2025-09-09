@@ -37,6 +37,7 @@ const TechnologyPage = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [showCTAOverlay, setShowCTAOverlay] = useState(false);
+  const [showTechDocsPopup, setShowTechDocsPopup] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = async () => {
@@ -127,6 +128,11 @@ const TechnologyPage = () => {
 
   const navigateToContact = () => {
     router.push('/contact');
+  };
+
+  const showTechnicalDocsPopup = () => {
+    setShowTechDocsPopup(true);
+    setTimeout(() => setShowTechDocsPopup(false), 4000); // Auto-hide after 4 seconds
   };
 
   // Timeline events for technology development
@@ -714,7 +720,8 @@ const TechnologyPage = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                onClick={showTechnicalDocsPopup}
+                className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 cursor-pointer"
               >
                 Technical Docs
               </motion.button>
@@ -722,6 +729,51 @@ const TechnologyPage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Technical Docs Popup */}
+      {showTechDocsPopup && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          onClick={() => setShowTechDocsPopup(false)}
+        >
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 50, opacity: 0 }}
+            className="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl border border-gray-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Documentation</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Hey there! We're currently working on our comprehensive technical documentation.
+                But don't worry - I'd love to have a conversation with you about our ATES technology,
+                answer any technical questions you have, and walk you through how it all works.
+                Let's connect and chat about it!
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  setShowTechDocsPopup(false);
+                  navigateToContact();
+                }}
+                className="mt-6 bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-300"
+              >
+                Contact Us
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </main>
   );
 };
