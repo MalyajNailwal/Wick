@@ -26,9 +26,3 @@ npm run dev
 ## 🔒 Private Repository
 
 This is an internal project. Access restricted to authorized personnel only.
-
----
-
-<div align="center">
-  <p><strong>Wick</strong></p>
-</div>
