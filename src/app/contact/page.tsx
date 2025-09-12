@@ -394,7 +394,7 @@ const ContactPage = () => {
                       whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-primary-500 to-primary-700 text-black px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-black text-white border-2 border-black px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                       tabIndex={0}
                       style={{ transform: 'none' }}
                     >

@@ -8,6 +8,36 @@ import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
 
+// Typewriter Text Component
+const TypewriterText = ({ text }: { text: string }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 100); // Adjust speed here (100ms per character)
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text]);
+
+  return (
+    <span>
+      {displayText}
+      <motion.span
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity }}
+        className="text-red-400"
+      >
+        |
+      </motion.span>
+    </span>
+  );
+};
+
 const PrologueSection = () => {
   const [ref, inView] = useInView({ threshold: 0.3 });
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -431,27 +461,77 @@ const StoryJourney = () => {
         }
         visual={
           <div className="relative">
-            <div className="bg-gradient-to-br from-red-100 to-orange-100 p-12 rounded-2xl">
+            {/* Slideshow Container */}
+            <div className="relative h-80 w-full rounded-2xl overflow-hidden bg-gradient-to-br from-red-100 to-orange-100">
+              {/* Image 1 */}
               <motion.div
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 5, -5, 0] 
-                }}
-                transition={{ 
-                  duration: 4,
+                className="absolute inset-0"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: [1, 1, 0, 0, 1] }}
+                transition={{
+                  duration: 8,
                   repeat: Infinity,
-                  ease: "easeInOut" 
+                  ease: "easeInOut",
+                  times: [0, 0.375, 0.5, 0.875, 1]
                 }}
-                className="text-center"
               >
-                <AlertTriangle className="w-32 h-32 text-red-600 mx-auto mb-6 drop-shadow-lg" />
-                <h3 className="text-2xl font-bold text-red-700 mb-4">
-                  The Crisis Was Real
-                </h3>
-                <p className="text-red-600">
-                  Every broken tire was a story of potential tragedy
-                </p>
+                <img
+                  src="/slideshow/wheel-4818622.jpg"
+                  alt="Wheel crisis"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30"></div>
               </motion.div>
+
+              {/* Image 2 */}
+              <motion.div
+                className="absolute inset-0"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 0, 1, 1, 0] }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  times: [0, 0.375, 0.5, 0.875, 1]
+                }}
+              >
+                <img
+                  src="/slideshow/winter-tires-4664205.jpg"
+                  alt="Winter tires crisis"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/30"></div>
+              </motion.div>
+
+              {/* Text Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center z-10 p-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  className="text-center text-white"
+                >
+                  <AlertTriangle className="w-20 h-20 text-red-400 mx-auto mb-4" />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                    The Crisis Was Real
+                  </h3>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    className="text-center"
+                  >
+                    <motion.p
+                      className="text-lg text-gray-100 max-w-sm mx-auto leading-relaxed font-medium"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 1.2 }}
+                    >
+                      <TypewriterText text="Every broken tire was a story of potential tragedy" />
+                    </motion.p>
+                  </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         }

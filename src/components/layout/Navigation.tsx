@@ -49,7 +49,7 @@ const Navigation = () => {
             className="flex-shrink-0"
           >
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl md:text-2xl font-display font-bold text-red-500">
+              <span className="text-xl md:text-2xl font-league-spartan font-bold text-red-500">
                 Wick
               </span>
             </Link>

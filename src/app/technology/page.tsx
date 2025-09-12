@@ -201,9 +201,15 @@ const TechnologyPage = () => {
     },
     {
       icon: <Smartphone className="w-16 h-16 text-orange-600" />,
-      title: "Mobile App Control",
-      description: "Comprehensive mobile application for fleet managers to monitor, control, and manage their entire fleet remotely.",
-      features: ["Dashboard overview", "Individual tire status", "Maintenance scheduling", "Performance analytics"]
+      title: "Wick Inspection App",
+      description: "Our proprietary Wick Inspection App with comprehensive database system - used internally to provide exceptional service quality, real-time fleet monitoring, and advanced analytics for delivering the best customer experience.",
+      features: [
+        "Internal dashboard for service excellence and quality control",
+        "Real-time fleet monitoring for proactive service delivery",
+        "Automated maintenance scheduling and customer notifications",
+        "Advanced analytics for service optimization and improvements",
+        "Comprehensive database for personalized customer service"
+      ]
     }
   ];
 
@@ -658,11 +664,12 @@ const TechnologyPage = () => {
                 ]
               },
               {
-                category: "Mobile Application",
+                category: "Wick Inspection App",
                 specs: [
                   { label: "Platform Support", value: "iOS & Android" },
+                  { label: "Database System", value: "Proprietary SQL" },
                   { label: "Real-time Updates", value: "Yes" },
-                  { label: "Offline Mode", value: "Available" },
+                  { label: "Offline Mode", value: "Full Featured" },
                   { label: "Multi-language", value: "10+ Languages" }
                 ]
               }

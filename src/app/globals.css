@@ -4,12 +4,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Inter', ui-sans-serif, system-ui;
+  --font-sans: var(--font-league-spartan), 'Inter', ui-sans-serif, system-ui;
   --font-display: 'Space Grotesk', ui-sans-serif, system-ui;
   --font-mono: var(--font-geist-mono);
 }
@@ -24,7 +19,22 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-league-spartan), 'Inter', sans-serif;
+}
+
+/* Apply League Spartan to all headings and text elements */
+h1, h2, h3, h4, h5, h6,
+p, span, div, a, button, input, textarea, select, label {
+  font-family: var(--font-league-spartan), 'Inter', sans-serif;
+}
+
+/* Preserve navbar font (Space Grotesk) */
+nav, .navbar, .navigation {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui;
+}
+
+nav *, .navbar *, .navigation * {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui;
 }
 
 * {

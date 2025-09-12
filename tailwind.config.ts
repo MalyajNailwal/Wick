@@ -37,8 +37,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+        'sans': ['var(--font-league-spartan)', 'Inter', 'ui-sans-serif', 'system-ui'],
         'display': ['Space Grotesk', 'ui-sans-serif', 'system-ui'],
+        'league-spartan': ['var(--font-league-spartan)', 'Inter', 'ui-sans-serif', 'system-ui'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
