@@ -38,6 +38,7 @@ const TechnologyPage = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [showCTAOverlay, setShowCTAOverlay] = useState(false);
   const [showTechDocsPopup, setShowTechDocsPopup] = useState(false);
+  const [hasShownOverlay, setHasShownOverlay] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const togglePlay = async () => {
@@ -86,12 +87,13 @@ const TechnologyPage = () => {
     }
   };
 
-  // Ad-style pause at 20 seconds
+  // Ad-style pause at 20 seconds (only once)
   const handleTimeUpdate = () => {
-    if (videoRef.current && videoRef.current.currentTime >= 20 && !showCTAOverlay && isPlaying) {
+    if (videoRef.current && videoRef.current.currentTime >= 20 && !showCTAOverlay && isPlaying && !hasShownOverlay) {
       videoRef.current.pause();
       setIsPlaying(false);
       setShowCTAOverlay(true);
+      setHasShownOverlay(true);
       console.log('Ad-style pause triggered at 20 seconds');
     }
   };
@@ -99,6 +101,7 @@ const TechnologyPage = () => {
   const resumeVideo = () => {
     if (videoRef.current) {
       setShowCTAOverlay(false);
+      
       videoRef.current.play().then(() => {
         setIsPlaying(true);
         console.log('Video resumed successfully');
@@ -428,7 +431,6 @@ const TechnologyPage = () => {
                         className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-[1.02] relative z-20"
                         controls
                         autoPlay
-                        loop
                         muted
                         preload="auto"
                         playsInline
@@ -457,6 +459,11 @@ const TechnologyPage = () => {
                           }
                         }}
                         onTimeUpdate={handleTimeUpdate}
+                        onEnded={() => {
+                          // Video ended, reset the overlay flag for replay
+                          setHasShownOverlay(false);
+                          setShowCTAOverlay(false);
+                        }}
                         onError={(e) => {
                           console.error('Video error:', e);
                         }}

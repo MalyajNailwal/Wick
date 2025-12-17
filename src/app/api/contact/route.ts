@@ -24,10 +24,6 @@ export async function POST(request: NextRequest) {
     }
 
     // Google Sheets API setup
-    console.log('Setting up Google Sheets authentication...');
-    console.log('Service Account Email:', process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
-    console.log('Spreadsheet ID:', process.env.GOOGLE_SHEETS_ID);
-
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
@@ -38,8 +34,6 @@ export async function POST(request: NextRequest) {
 
     const sheets = google.sheets({ version: 'v4', auth });
     const spreadsheetId = process.env.GOOGLE_SHEETS_ID;
-
-    console.log('Google Auth setup complete');
 
     if (!spreadsheetId) {
       throw new Error('Google Sheets ID not configured');
@@ -62,19 +56,15 @@ export async function POST(request: NextRequest) {
 
     // First, check if headers exist, if not, add them
     try {
-      console.log('Checking Google Sheet headers...');
       const headerCheck = await sheets.spreadsheets.values.get({
         spreadsheetId,
         range: 'Sheet1!A1:H1',
       });
 
-      console.log('Header check result:', headerCheck.data);
-
       // If no headers exist, add them
       if (!headerCheck.data.values || headerCheck.data.values.length === 0) {
-        console.log('No headers found, adding headers...');
         const headers = [['First Name', 'Last Name', 'Email', 'Phone', 'Company', 'Subject', 'Message', 'Timestamp']];
-        const headerResponse = await sheets.spreadsheets.values.update({
+        await sheets.spreadsheets.values.update({
           spreadsheetId,
           range: 'Sheet1!A1:H1',
           valueInputOption: 'RAW',
@@ -82,9 +72,6 @@ export async function POST(request: NextRequest) {
             values: headers,
           },
         });
-        console.log('Headers added successfully:', headerResponse.data);
-      } else {
-        console.log('Headers already exist:', headerCheck.data.values[0]);
       }
     } catch (headerError: any) {
       console.error('Error checking/adding headers:', headerError);
@@ -107,9 +94,6 @@ export async function POST(request: NextRequest) {
 
     // Append data to Google Sheets
     try {
-      console.log('Attempting to append data to Google Sheets...');
-      console.log('Data to append:', values);
-
       const response = await sheets.spreadsheets.values.append({
         spreadsheetId,
         range: 'Sheet1!A:H', // Assuming columns A-H for the data
@@ -118,13 +102,6 @@ export async function POST(request: NextRequest) {
         requestBody: {
           values,
         },
-      });
-
-      console.log('Data successfully added to Google Sheets:', response.data);
-      console.log('Response details:', {
-        spreadsheetId: response.data.spreadsheetId,
-        updatedRange: response.data.updates?.updatedRange,
-        updatedRows: response.data.updates?.updatedRows
       });
     } catch (appendError: any) {
       console.error('Error appending data to Google Sheets:', appendError);
@@ -184,8 +161,6 @@ export async function POST(request: NextRequest) {
 // Test endpoint to verify Google Sheets access
 export async function GET() {
   try {
-    console.log('Testing Google Sheets access...');
-
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,

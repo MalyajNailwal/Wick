@@ -19,8 +19,15 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata: Metadata = {
-  title: "Wick - Revolutionizing Commercial Vehicle Safety with ATES",
+  title: "Wick",
   description: "Discover how Wick's Automatic Tyre Equalisation System (ATES) is transforming commercial vehicle safety and efficiency across India's highways.",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+  },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
