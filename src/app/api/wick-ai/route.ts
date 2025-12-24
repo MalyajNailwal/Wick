@@ -56,61 +56,75 @@ RESPONSE GUIDELINES:
 - End with an offer to help further if appropriate
 - Stay focused on fleet, tire, and vehicle safety topics`;
 
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'https://wick.co.in',
-        'X-Title': 'Wick AI Assistant',
-      },
-      body: JSON.stringify({
-        model: 'z-ai/glm-4.5-air:free',
-        messages: [
-          {
-            role: 'system',
-            content: systemPrompt
+    // Try multiple free models in order of preference
+    const freeModels = [
+      'meta-llama/llama-3.2-3b-instruct:free',
+      'google/gemini-2.0-flash-exp:free',
+      'qwen/qwen-2-7b-instruct:free',
+      'microsoft/phi-3-mini-128k-instruct:free'
+    ];
+
+    let lastError = null;
+    
+    for (const model of freeModels) {
+      try {
+        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+            'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'https://wick.co.in',
+            'X-Title': 'Wick AI Assistant',
           },
-          {
-            role: 'user',
-            content: message
+          body: JSON.stringify({
+            model: model,
+            messages: [
+              {
+                role: 'system',
+                content: systemPrompt
+              },
+              {
+                role: 'user',
+                content: message
+              }
+            ],
+            max_tokens: 500,
+            temperature: 0.7,
+            top_p: 0.9,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          
+          if (data.choices && data.choices[0] && data.choices[0].message) {
+            const aiResponse = data.choices[0].message.content;
+            return NextResponse.json({
+              response: aiResponse,
+              success: true,
+              model: model
+            });
           }
-        ],
-        max_tokens: 500,
-        temperature: 0.7,
-        top_p: 0.9,
-      }),
-    });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('OpenRouter API error:', {
-        status: response.status,
-        statusText: response.statusText,
-        error: errorText
-      });
-      return NextResponse.json(
-        { error: `AI service error: ${response.status} ${response.statusText}` },
-        { status: 503 }
-      );
+        }
+        
+        lastError = await response.text();
+      } catch (error) {
+        lastError = error;
+        continue;
+      }
     }
 
-    const data = await response.json();
+    // If all models fail, return fallback response
+    console.error('All OpenRouter models failed:', lastError);
+    return NextResponse.json(
+      { 
+        error: 'AI service temporarily unavailable',
+        fallback: true 
+      },
+      { status: 503 }
+    );
 
-    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
-      console.error('Unexpected API response format:', data);
-      return NextResponse.json(
-        { error: 'AI service returned unexpected response' },
-        { status: 503 }
-      );
-    }
 
-    const aiResponse = data.choices[0].message.content;
-
-    return NextResponse.json({
-      response: aiResponse,
-      success: true
-    });
 
   } catch (error) {
     console.error('Wick AI API error:', error);

@@ -124,7 +124,7 @@ const ContactPage = () => {
       icon: <Clock className="w-8 h-8 text-primary-700" />,
       title: "Business Hours",
       info: "Mon-Sat: 10AM-6PM",
-      description: "We&apos;re available during these hours"
+      description: "We're available during these hours"
     }
   ];
 
