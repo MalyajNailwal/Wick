@@ -7,8 +7,6 @@ import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
-import { CldVideoPlayer } from 'next-cloudinary';
-import 'next-cloudinary/dist/cld-video-player.css';
 
 // Typewriter Text Component
 const TypewriterText = ({ text }: { text: string }) => {

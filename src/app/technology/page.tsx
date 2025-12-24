@@ -1,12 +1,10 @@
 'use client';
 
-import { Suspense, useState, useRef, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Cpu, 
   Wifi, 
-  Shield, 
   TrendingUp, 
   AlertTriangle, 
   Zap, 
@@ -14,7 +12,6 @@ import {
   Smartphone,
   Activity,
   Database,
-  Clock,
   CheckCircle,
   Lightbulb,
   Target,
@@ -33,7 +30,7 @@ import StoryTimeline from '@/components/ui/StoryTimeline';
 const TechnologyPage = () => {
   const router = useRouter();
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
-  const [videoRef, videoInView] = useInView({ threshold: 0.5 });
+  const [videoContainerRef, videoInView] = useInView({ threshold: 0.5 });
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [showCTAOverlay, setShowCTAOverlay] = useState(false);
@@ -98,10 +95,10 @@ const TechnologyPage = () => {
   };
 
   const resumeVideo = () => {
-    if (videoRef.current) {
+    if (videoElementRef.current) {
       setShowCTAOverlay(false);
       
-      videoRef.current.play().then(() => {
+      videoElementRef.current.play().then(() => {
         setIsPlaying(true);
         console.log('Video resumed successfully');
       }).catch((error) => {
@@ -423,7 +420,7 @@ const TechnologyPage = () => {
                   <div className="relative bg-white rounded-2xl shadow-2xl p-8 group-hover:shadow-3xl transition-all duration-500">
 
                     {/* Video Frame with Enhanced Styling */}
-                    <div ref={videoRef} className="video-frame bg-gray-900 relative">
+                    <div ref={videoContainerRef} className="video-frame bg-gray-900 relative">
                       {/* HTML5 Video with Cloudinary */}
                       <video
                         ref={videoElementRef}
