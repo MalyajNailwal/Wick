@@ -467,8 +467,8 @@ const TechnologyPage = () => {
                           console.error('Video error:', e);
                         }}
                       >
-                        <source src="/media/teq.mp4" type="video/mp4" />
-                        <source src="/media/hero-background-new.mp4" type="video/mp4" />
+                        <source src="/media/teq-compressed.mp4" type="video/mp4" />
+                        <source src="/media/hero-background-new-compressed.mp4" type="video/mp4" />
                         <p className="text-white p-4 bg-gray-800/50 rounded">Your browser does not support the video tag. Please make sure your browser supports HTML5 video and try refreshing the page.</p>
                       </video>
 

@@ -116,8 +116,8 @@ const PrologueSection = () => {
                 }}
                 suppressHydrationWarning
               >
-                <source src="/media/hero-background-new.mp4" type="video/mp4" />
-                <source src="/media/hero-background.mp4" type="video/mp4" />
+                <source src="/media/hero-background-new-compressed.mp4" type="video/mp4" />
+                <source src="/media/hero-background-compressed.mp4" type="video/mp4" />
               </video>
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900" />
