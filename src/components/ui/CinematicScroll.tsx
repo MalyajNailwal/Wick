@@ -30,23 +30,18 @@ const CinematicScroll: React.FC<CinematicScrollProps> = ({
     fast: 2
   }[speed];
 
-  const getTransform = () => {
-    const distance = 200 * speedMultiplier;
-    switch (direction) {
-      case 'up':
-        return useTransform(scrollYProgress, [0, 1], [distance, -distance]);
-      case 'down':
-        return useTransform(scrollYProgress, [0, 1], [-distance, distance]);
-      case 'left':
-        return useTransform(scrollYProgress, [0, 1], [distance, -distance]);
-      case 'right':
-        return useTransform(scrollYProgress, [0, 1], [-distance, distance]);
-      default:
-        return useTransform(scrollYProgress, [0, 1], [distance, -distance]);
-    }
-  };
-
-  const transform = getTransform();
+  const distance = 200 * speedMultiplier;
+  
+  // Create transforms based on direction
+  const transformUp = useTransform(scrollYProgress, [0, 1], [distance, -distance]);
+  const transformDown = useTransform(scrollYProgress, [0, 1], [-distance, distance]);
+  const transformLeft = useTransform(scrollYProgress, [0, 1], [distance, -distance]);
+  const transformRight = useTransform(scrollYProgress, [0, 1], [-distance, distance]);
+  
+  const transform = direction === 'up' ? transformUp :
+                    direction === 'down' ? transformDown :
+                    direction === 'left' ? transformLeft :
+                    transformRight;
   const smoothTransform = useSpring(transform, {
     stiffness: 100,
     damping: 30,

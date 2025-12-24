@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Bot, Sparkles, X, MessageCircle } from 'lucide-react';
+import { Send, Bot, X } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -16,14 +16,13 @@ const WickAI = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Hello! Welcome to Wick AI - your friendly fleet management companion! Take a seat and let's talk tires.\n\nI'm here to help with everything from ATES technology questions to tire safety tips, fleet optimization advice, and maintenance guidance. Whether you're a fleet manager, driver, or just curious about smart tire solutions, I'm your go-to expert.\n\nPro tip: If you see any offline messages, don't worry - our full AI service will be back online soon!\n\nSo, what's on your mind today? Ready to revolutionize your fleet operations?",
+      content: "Hello! Welcome to Wick AI - your friendly fleet management companion! Take a seat and let&apos;s talk tires.\n\nI&apos;m here to help with everything from ATES technology questions to tire safety tips, fleet optimization advice, and maintenance guidance. Whether you&apos;re a fleet manager, driver, or just curious about smart tire solutions, I&apos;m your go-to expert.\n\nPro tip: If you see any offline messages, don&apos;t worry - our full AI service will be back online soon!\n\nSo, what&apos;s on your mind today? Ready to revolutionize your fleet operations?",
       isUser: false,
       timestamp: new Date()
     }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [isDarkBackground, setIsDarkBackground] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -40,38 +39,6 @@ const WickAI = () => {
       inputRef.current.focus();
     }
   }, [isOpen]);
-
-  // Detect background color for dynamic logo color
-  useEffect(() => {
-    const checkBackgroundColor = () => {
-      const body = document.body;
-      const computedStyle = window.getComputedStyle(body);
-      const backgroundColor = computedStyle.backgroundColor;
-
-      // Check if background is dark (common dark colors)
-      const isDark = backgroundColor.includes('rgb(0, 0, 0)') ||
-                    backgroundColor.includes('rgb(15, 23, 42)') ||
-                    backgroundColor.includes('rgb(17, 24, 39)') ||
-                    backgroundColor.includes('rgb(31, 41, 55)') ||
-                    backgroundColor.includes('#000000') ||
-                    backgroundColor.includes('#0f172a') ||
-                    backgroundColor.includes('#1f2937') ||
-                    backgroundColor.includes('#1f2937');
-
-      setIsDarkBackground(isDark);
-    };
-
-    checkBackgroundColor();
-
-    // Also check when the component mounts and when window resizes
-    const observer = new MutationObserver(checkBackgroundColor);
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['style', 'class']
-    });
-
-    return () => observer.disconnect();
-  }, []);
 
   const wickAIRules = {
     systemPrompt: `You are Wick AI, an intelligent assistant designed by Wick Automation LLP to help users with fleet management, tire technology, and ATES (Automatic Tyre Equalisation System) related queries.
@@ -203,7 +170,7 @@ RESPONSE GUIDELINES:
       };
 
       setMessages(prev => [...prev, aiMessage]);
-    } catch (error) {
+    } catch {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         content: "Sorry, I'm experiencing some technical difficulties. Please try again in a moment.",

@@ -27,7 +27,6 @@ import {
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
-import CarModel from '@/components/3d/CarModel';
 import StoryChapter from '@/components/ui/StoryChapter';
 import StoryTimeline from '@/components/ui/StoryTimeline';
 
@@ -150,7 +149,7 @@ const TechnologyPage = () => {
     {
       year: "2022",
       title: "Innovation Takes Shape",
-      description: "After extensive research and development, we successfully created India's first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry.",
+      description: "After extensive research and development, we successfully created India&apos;s first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry.",
       highlight: false
     },
     {
@@ -287,7 +286,7 @@ const TechnologyPage = () => {
               className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
               Discover how cutting-edge sensors, IoT connectivity, and precision engineering work together 
-              to create India's most advanced tire management system.
+              to create India&apos;s most advanced tire management system.
             </motion.p>
           </motion.div>
         </div>
@@ -540,7 +539,7 @@ const TechnologyPage = () => {
                                 <p className="text-sm text-gray-200 mb-4 leading-relaxed">
                                   We believe technology shows its true value in 
                                   <span className="text-primary-400 font-semibold">real-world applications</span>. 
-                                  Let's connect one-on-one.
+                                  Let&apos;s connect one-on-one.
                                 </p>
                                 
                                 <div className="flex flex-col gap-2 justify-center">
@@ -577,7 +576,7 @@ const TechnologyPage = () => {
                                 </div>
                                 
                                 <p className="text-xs text-gray-400 mt-3 italic">
-                                  "Real results. Real conversations."
+                                  &ldquo;Real results. Real conversations.&rdquo;
                                 </p>
                               </motion.div>
                             </div>
@@ -768,10 +767,10 @@ const TechnologyPage = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Documentation</h3>
               <p className="text-gray-600 leading-relaxed">
-                Hey there! We're currently working on our comprehensive technical documentation.
-                But don't worry - I'd love to have a conversation with you about our ATES technology,
+                Hey there! We&apos;re currently working on our comprehensive technical documentation.
+                But don&apos;t worry - I&apos;d love to have a conversation with you about our ATES technology,
                 answer any technical questions you have, and walk you through how it all works.
-                Let's connect and chat about it!
+                Let&apos;s connect and chat about it!
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}

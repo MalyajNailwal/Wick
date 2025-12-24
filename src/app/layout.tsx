@@ -20,7 +20,7 @@ const leagueSpartan = League_Spartan({
 
 export const metadata: Metadata = {
   title: "Wick",
-  description: "Discover how Wick's Automatic Tyre Equalisation System (ATES) is transforming commercial vehicle safety and efficiency across India's highways.",
+  description: "Discover how Wick&apos;s Automatic Tyre Equalisation System (ATES) is transforming commercial vehicle safety and efficiency across India&apos;s highways.",
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

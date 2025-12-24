@@ -6,7 +6,16 @@ import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 
-const ProductCard = ({ product, index }: { product: any; index: number }) => {
+interface Product {
+  name: string;
+  image: React.ReactNode;
+  badge: string;
+  description: string;
+  features: string[];
+  price: string;
+}
+
+const ProductCard = ({ product, index }: { product: Product; index: number }) => {
   const [ref, inView] = useInView({ threshold: 0.2 });
 
   return (

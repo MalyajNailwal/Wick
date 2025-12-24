@@ -73,16 +73,17 @@ export async function POST(request: NextRequest) {
           },
         });
       }
-    } catch (headerError: any) {
+    } catch (headerError: unknown) {
+      const error = headerError as { message?: string; code?: number; status?: number };
       console.error('Error checking/adding headers:', headerError);
       console.error('Error details:', {
-        message: headerError.message,
-        code: headerError.code,
-        status: headerError.status
+        message: error.message,
+        code: error.code,
+        status: error.status
       });
 
       // If it's a permission error, return specific message
-      if (headerError.code === 403) {
+      if (error.code === 403) {
         return NextResponse.json(
           { error: 'Google Sheet access denied. Please share the sheet with the service account.' },
           { status: 403 }
@@ -103,23 +104,24 @@ export async function POST(request: NextRequest) {
           values,
         },
       });
-    } catch (appendError: any) {
+    } catch (appendError: unknown) {
+      const error = appendError as { message?: string; code?: number; status?: number };
       console.error('Error appending data to Google Sheets:', appendError);
       console.error('Append error details:', {
-        message: appendError.message,
-        code: appendError.code,
-        status: appendError.status
+        message: error.message,
+        code: error.code,
+        status: error.status
       });
 
       // Handle specific error cases
-      if (appendError.code === 403) {
+      if (error.code === 403) {
         return NextResponse.json(
           { error: 'Access denied to Google Sheet. Please share the sheet with: wickautomation@wickwebsitesubdata.iam.gserviceaccount.com' },
           { status: 403 }
         );
       }
 
-      if (appendError.code === 404) {
+      if (error.code === 404) {
         return NextResponse.json(
           { error: 'Google Sheet not found. Please check the sheet ID and permissions.' },
           { status: 404 }
@@ -135,20 +137,19 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.'
+      message: 'Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.'
     });
 
-  } catch (error) {
+  } catch (error: unknown) {
+    const err = error as { message?: string };
     console.error('Contact form error:', error);
 
     // More specific error handling
-    if (error instanceof Error) {
-      if (error.message.includes('Google Sheets')) {
-        return NextResponse.json(
-          { error: 'Failed to save data. Please try again.' },
-          { status: 500 }
-        );
-      }
+    if (err.message?.includes('Google Sheets')) {
+      return NextResponse.json(
+        { error: 'Failed to save data. Please try again.' },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json(
@@ -184,12 +185,13 @@ export async function GET() {
       sheets: spreadsheet.data.sheets?.map(sheet => sheet.properties?.title)
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const err = error as { message?: string; code?: number };
     console.error('Google Sheets test failed:', error);
     return NextResponse.json({
       success: false,
-      error: error.message,
-      code: error.code,
+      error: err.message,
+      code: err.code,
       details: 'Check sharing permissions and try again'
     }, { status: 500 });
   }

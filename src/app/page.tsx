@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Shield, Zap, TrendingUp, Users, Star, ChevronDown, Lightbulb, AlertTriangle } from 'lucide-react';
+import { ArrowRight, Shield, Zap, TrendingUp, Star, ChevronDown, Lightbulb, AlertTriangle } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -197,7 +197,7 @@ const PrologueSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="inline-flex items-center px-6 py-3 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium backdrop-blur-sm"
           >
-            Once upon a time in India's highways...
+            Once upon a time in India&apos;s highways...
           </motion.div>
           
           <motion.h1
@@ -219,7 +219,7 @@ const PrologueSection = () => {
             className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
             A tale of innovation, safety, and the relentless pursuit to make 
-            India's roads safer for everyone. This is how we transformed an idea 
+            India&apos;s roads safer for everyone. This is how we transformed an idea 
             into a revolution.
           </motion.p>
           
@@ -560,8 +560,8 @@ const StoryJourney = () => {
             <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-primary-500">
               <h4 className="text-xl font-bold text-primary-600 mb-3">Our Mission</h4>
               <p className="text-gray-700 italic">
-                "To make every commercial vehicle journey safer through intelligent 
-                tire management technology."
+                &ldquo;To make every commercial vehicle journey safer through intelligent 
+                tire management technology.&rdquo;
               </p>
             </div>
           </div>
@@ -595,14 +595,14 @@ const StoryJourney = () => {
       <StoryChapter
         chapterNumber="03"
         title="ATES: The Hero Emerges"
-        subtitle="Meet TyreRakhshak - India's guardian angel for highways"
+        subtitle="Meet TyreRakhshak - India&apos;s guardian angel for highways"
         layout="center"
         backgroundColor="bg-gradient-to-br from-green-50 to-emerald-50"
         content={
           <div className="space-y-8 text-gray-700">
             <p className="text-xl leading-relaxed text-center">
               After years of innovation, <strong className="text-red-600">TyreRakhshak</strong> emerged -
-              not just as a product, but as a guardian angel for India's highways.
+              not just as a product, but as a guardian angel for India&apos;s highways.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -656,10 +656,10 @@ const EpilogueSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6">
-            Today's Heroes
+            Today&apos;s Heroes
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Every day, ATES silently protects thousands of drivers across India's highways
+            Every day, ATES silently protects thousands of drivers across India&apos;s highways
           </p>
         </motion.div>
         
@@ -682,9 +682,9 @@ const EpilogueSection = () => {
             ))}
           </div>
           <blockquote className="text-2xl text-gray-700 mb-8 italic font-light leading-relaxed">
-            "Wick didn't just give us a product - they gave us peace of mind. 
+            &ldquo;Wick didn&apos;t just give us a product - they gave us peace of mind. 
             Our drivers return home safely every night, and our operational costs 
-            have never been better. This is the future of fleet management."
+            have never been better. This is the future of fleet management.&rdquo;
           </blockquote>
           <div className="text-primary-600 font-semibold text-lg">
             — Anonymous Fleet Director
@@ -715,7 +715,7 @@ const CTASection = () => {
             Ready to Revolutionize Your Fleet?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-            Join the future of commercial vehicle technology with Wick's ATES system. 
+            Join the future of commercial vehicle technology with Wick&apos;s ATES system. 
             Experience enhanced safety, improved efficiency, and reduced operational costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

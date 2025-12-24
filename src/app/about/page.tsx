@@ -1,18 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Users, Award, Lightbulb, TrendingUp, Shield, Heart, Compass, Rocket } from 'lucide-react';
+import { Target, Users, Award, Lightbulb, TrendingUp, Shield } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
-import StoryChapter from '@/components/ui/StoryChapter';
-import StoryTimeline from '@/components/ui/StoryTimeline';
 
 const AboutPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
   const [storyRef, storyInView] = useInView({ threshold: 0.2 });
   const [valuesRef, valuesInView] = useInView({ threshold: 0.2 });
-  const [teamRef, teamInView] = useInView({ threshold: 0.2 });
   const router = useRouter();
 
   const navigateToContact = () => {
@@ -60,7 +57,7 @@ const AboutPage = () => {
     {
       year: "2023",
       title: "Market Launch",
-      description: "Successfully launched India's first Automatic Tyre Equalisation System for HCVs."
+      description: "Successfully launched India&apos;s first Automatic Tyre Equalisation System for HCVs."
     },
     {
       year: "2024",
@@ -153,7 +150,7 @@ const AboutPage = () => {
                 </p>
                 <p>
                   Determined to address these challenges, we assembled a team of automotive engineers, 
-                  technology experts, and industry veterans. Together, we developed India's first 
+                  technology experts, and industry veterans. Together, we developed India&apos;s first 
                   Automatic Tyre Equalisation System (ATES) - a breakthrough innovation that has 
                   revolutionized commercial vehicle safety.
                 </p>
@@ -289,7 +286,7 @@ const AboutPage = () => {
               Join Our Mission
             </h2>
             <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-              Be part of the revolution in automotive safety. Let's work together to make 
+              Be part of the revolution in automotive safety. Let&apos;s work together to make 
               roads safer and transportation more efficient.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

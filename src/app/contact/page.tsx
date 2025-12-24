@@ -124,7 +124,7 @@ const ContactPage = () => {
       icon: <Clock className="w-8 h-8 text-primary-700" />,
       title: "Business Hours",
       info: "Mon-Sat: 10AM-6PM",
-      description: "We're available during these hours"
+      description: "We&apos;re available during these hours"
     }
   ];
 
@@ -626,7 +626,7 @@ const ContactPage = () => {
             className="mt-12 pt-8 border-t border-gray-700 text-center"
           >
             <p className="text-gray-400 text-sm">
-              © 2024 Wick Automation LLP. All rights reserved. | Making India's highways safer, one tire at a time.
+              © 2024 Wick Automation LLP. All rights reserved. | Making India&apos;s highways safer, one tire at a time.
             </p>
           </motion.div>
         </div>
