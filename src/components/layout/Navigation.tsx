@@ -11,7 +11,7 @@ const Navigation = () => {
 
   const navigationItems = [
     { name: 'Home', href: '/' },
-    { name: 'Products', href: '/products' },
+    { name: 'Products', href: '/products', highlight: true },
     { name: 'About Us', href: '/about' },
     { name: 'Technology', href: '/technology' },
     { name: 'Blog', href: '/blog' },
@@ -62,9 +62,20 @@ const Navigation = () => {
                 <motion.div key={item.name} whileHover={{ y: -2 }}>
                   <Link
                     href={item.href}
-                    className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group`}
+                    className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group ${
+                      item.highlight ? 'flex items-center' : ''
+                    }`}
                   >
                     {item.name}
+                    {item.highlight && (
+                      <>
+                        <span className="ml-1 text-yellow-400">✨</span>
+                        <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                        </span>
+                      </>
+                    )}
                     <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                   </Link>
                 </motion.div>
