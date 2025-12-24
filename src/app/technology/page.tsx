@@ -139,7 +139,7 @@ const TechnologyPage = () => {
     {
       year: "2021",
       title: "The Vision Born",
-      description: "Wick Automation LLP was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATES prototype.",
+      description: "Wick Automation LLP was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATIDES prototype.",
       highlight: true,
       icon: <Lightbulb className="w-6 h-6 text-yellow-400" />
     },
@@ -152,7 +152,7 @@ const TechnologyPage = () => {
     {
       year: "2023",
       title: "Market Revolution",
-      description: "ATES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 25% longer tire life and 15% better fuel efficiency.",
+      description: "ATIDES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 20% longer tire life and over 2% better fuel efficiency.",
       highlight: true,
       icon: <Target className="w-6 h-6 text-green-500" />
     },
@@ -215,27 +215,27 @@ const TechnologyPage = () => {
   const workingProcess = [
     {
       step: "01",
-      title: "Continuous Monitoring",
-      description: "Advanced sensors continuously monitor tire pressure across all wheels of the vehicle.",
-      icon: <Activity className="w-8 h-8 text-yellow-300" />
+      title: "Air Supply Connection",
+      description: "Air is directed from the trailer air supply system to the ATIDES control box, initiating the intelligent pressure management process.",
+      icon: <Zap className="w-8 h-8 text-blue-300" />
     },
     {
       step: "02", 
-      title: "Data Processing",
-      description: "Electronic systems process pressure data in real-time to determine optimal tire pressure levels.",
-      icon: <Database className="w-8 h-8 text-green-300" />
+      title: "Control Box Processing",
+      description: "The control box receives air supply and processes sensor data to determine optimal pressure distribution across all axles.",
+      icon: <Cpu className="w-8 h-8 text-green-300" />
     },
     {
       step: "03",
-      title: "Automatic Adjustment",
-      description: "System automatically inflates or deflates tires to maintain optimal pressure levels.",
+      title: "Axle Distribution",
+      description: "Air flows through each axle which acts as a channel, directing pressurized air via wheel isolators to individual wheels.",
       icon: <Settings className="w-8 h-8 text-orange-300" />
     },
     {
       step: "04",
-      title: "Real-time Alerts",
-      description: "Drivers and fleet managers receive instant notifications about tire status and maintenance needs.",
-      icon: <AlertTriangle className="w-8 h-8 text-red-300" />
+      title: "Rotary Union Assembly",
+      description: "Through the rotary union assembly, air is precisely supplied to individual tyres as needed, maintaining optimal pressure automatically.",
+      icon: <Activity className="w-8 h-8 text-purple-300" />
     }
   ];
 
@@ -261,7 +261,7 @@ const TechnologyPage = () => {
               className="inline-flex items-center px-6 py-3 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium backdrop-blur-sm mb-8"
             >
               <Zap className="w-5 h-5 mr-3 animate-pulse" />
-              Revolutionary ATES Technology
+              Revolutionary ATIDES Technology
             </motion.div>
             
             <motion.h1
@@ -333,8 +333,8 @@ const TechnologyPage = () => {
       {/* How It Works */}
       <StoryChapter
         chapterNumber="02"
-        title="How ATES Works"
-        subtitle="Step-by-step process of intelligent tire management"
+        title="How ATIDES Works"
+        subtitle="Automatic Tyre Inflation Deflation Equalization System - Step-by-step process"
         layout="center"
         backgroundColor="bg-gradient-to-br from-gray-50 to-gray-100"
         content={
@@ -397,7 +397,7 @@ const TechnologyPage = () => {
                     Technology in Action
                   </motion.div>
                   <h3 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                    See ATES in Action
+                    See ATIDES in Action
                   </h3>
                   <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                     Watch how our advanced technology seamlessly integrates with commercial vehicles to provide unmatched safety and efficiency.
@@ -557,7 +557,7 @@ const TechnologyPage = () => {
                     {/* Video Description */}
                     <div className="mt-6 text-center">
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        The Crux Behind Our ATES Technology
+                        The Crux Behind Our ATIDES Technology
                       </h4>
                       <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto">
                         Discover the fundamental principles and innovative engineering that power our Automatic Tyre Equalisation System.
@@ -596,7 +596,7 @@ const TechnologyPage = () => {
       {/* Technology Development Timeline */}
       <StoryTimeline
         title="The Innovation Journey"
-        subtitle="From concept to cutting-edge technology - the evolution of ATES"
+        subtitle="From concept to cutting-edge technology - the evolution of ATIDES"
         events={timelineEvents}
       />
 
@@ -687,7 +687,7 @@ const TechnologyPage = () => {
               Experience the Technology
             </h2>
             <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-              Ready to see how our advanced ATES technology can transform your fleet operations? 
+              Ready to see how our advanced ATIDES technology can transform your fleet operations? 
               Contact our technical team for a detailed demonstration.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -737,7 +737,7 @@ const TechnologyPage = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technical Documentation</h3>
               <p className="text-gray-600 leading-relaxed">
                 Hey there! We&apos;re currently working on our comprehensive technical documentation.
-                But don&apos;t worry - I&apos;d love to have a conversation with you about our ATES technology,
+                But don&apos;t worry - I&apos;d love to have a conversation with you about our ATIDES technology,
                 answer any technical questions you have, and walk you through how it all works.
                 Let&apos;s connect and chat about it!
               </p>

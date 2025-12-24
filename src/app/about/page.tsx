@@ -4,7 +4,35 @@ import { motion } from 'framer-motion';
 import { Target, Users, Award, Lightbulb, TrendingUp, Shield } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
+
+// Counter component with animation
+const AnimatedCounter = ({ end, suffix = '', inView }: { end: number; suffix?: string; inView: boolean }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    
+    let startTime: number;
+    const duration = 2000; // 2 seconds
+    
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    requestAnimationFrame(animate);
+  }, [end, inView]);
+
+  return <span>{count}{suffix}</span>;
+};
 
 const AboutPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -52,7 +80,7 @@ const AboutPage = () => {
     {
       year: "2022",
       title: "First Prototype",
-      description: "Developed our first ATES prototype after extensive research and development."
+      description: "Developed our first ATIDES prototype after extensive research and development."
     },
     {
       year: "2023",
@@ -106,20 +134,22 @@ const AboutPage = () => {
           {/* Stats */}
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
-              { number: "4+", label: "Years of Innovation" },
-              { number: "10K+", label: "Vehicles Protected" },
-              { number: "50+", label: "Fleet Partners" },
-              { number: "95%", label: "Customer Satisfaction" }
+              { number: 3, suffix: "+", label: "Years of Innovation" },
+              { number: 250, suffix: "+", label: "Vehicles Protected" },
+              { number: 50, suffix: "+", label: "Fleet Partners" },
+              { number: 95, suffix: "%", label: "Customer Satisfaction" }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 30 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-lg"
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="text-3xl font-bold text-primary-600 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-4xl font-bold text-red-600 mb-2">
+                  <AnimatedCounter end={stat.number} suffix={stat.suffix} inView={heroInView} />
+                </div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -151,7 +181,7 @@ const AboutPage = () => {
                 <p>
                   Determined to address these challenges, we assembled a team of automotive engineers, 
                   technology experts, and industry veterans. Together, we developed India&apos;s first 
-                  Automatic Tyre Equalisation System (ATES) - a breakthrough innovation that has 
+                  Automatic Tyre Inflation Deflation Equalization System (ATIDES) - a breakthrough innovation that has 
                   revolutionized commercial vehicle safety.
                 </p>
                 <p>

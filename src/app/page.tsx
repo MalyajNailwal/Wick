@@ -326,7 +326,7 @@ const ProductImageWithRotation = () => {
             {/* Main Product Image with smart rotation effects */}
             <motion.img
               src="/media/productimghd-removebg-preview.png"
-              alt="Tyre Rakhshak - ATES Product"
+              alt="Tyre Rakhshak - ATIDES Product"
               className="w-full h-full object-contain drop-shadow-2xl filter brightness-105 contrast-105"
               style={{
                 maxHeight: '450px',
@@ -393,7 +393,7 @@ const ProductImageWithRotation = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm z-10 border-2 border-white"
       >
-        TyreRakhshak ATES
+        TyreRakhshak ATIDES
       </motion.div>
       
       {/* Innovation Callout - Clean Design */}
@@ -593,7 +593,7 @@ const StoryJourney = () => {
       {/* Chapter 3: The Solution */}
       <StoryChapter
         chapterNumber="03"
-        title="ATES: The Hero Emerges"
+        title="ATIDES: The Hero Emerges"
         subtitle="Meet TyreRakhshak - India&apos;s guardian angel for highways"
         layout="center"
         backgroundColor="bg-gradient-to-br from-green-50 to-emerald-50"
@@ -604,32 +604,68 @@ const StoryJourney = () => {
               not just as a product, but as a guardian angel for India&apos;s highways.
             </p>
             
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <Shield className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">25% Safer</h3>
-                <p className="text-gray-600">Dramatic reduction in tire-related accidents</p>
+                <Shield className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">100% Safety</h3>
+                <p className="text-gray-600 text-sm">Improves vehicle safety dramatically</p>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <TrendingUp className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">15% Efficient</h3>
-                <p className="text-gray-600">Better fuel efficiency saves millions</p>
+                <TrendingUp className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">20% Longer Life</h3>
+                <p className="text-gray-600 text-sm">Extends tyre life significantly</p>
               </motion.div>
               
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <Zap className="w-16 h-16 text-green-500 mx-auto mb-6" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">100% Smart</h3>
-                <p className="text-gray-600">Intelligent sensor-based real-time monitoring</p>
+                <Zap className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">&gt;2% Fuel Savings</h3>
+                <p className="text-gray-600 text-sm">More fuel efficient operations</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <TrendingUp className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-2">144 Hours Saved</h3>
+                <p className="text-gray-600 text-sm">Reduces downtime annually</p>
+              </motion.div>
+            </div>
+
+            {/* Additional Benefits */}
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-2">3.5% Efficiency Boost</h4>
+                <p className="text-gray-600 text-sm">Truck efficiency increased</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-2">No Extra Cost</h4>
+                <p className="text-gray-600 text-sm">No en-route inflation/deflation required</p>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Cooler Tyres</h4>
+                <p className="text-gray-600 text-sm">Reduces tyre heating for better efficiency</p>
               </motion.div>
             </div>
           </div>
@@ -658,7 +694,7 @@ const EpilogueSection = () => {
             Today&apos;s Heroes
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Every day, ATES silently protects thousands of drivers across India&apos;s highways
+            Every day, ATIDES silently protects thousands of drivers across India&apos;s highways
           </p>
         </motion.div>
         
@@ -714,7 +750,7 @@ const CTASection = () => {
             Ready to Revolutionize Your Fleet?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-            Join the future of commercial vehicle technology with Wick&apos;s ATES system. 
+            Join the future of commercial vehicle technology with Wick&apos;s ATIDES system. 
             Experience enhanced safety, improved efficiency, and reduced operational costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

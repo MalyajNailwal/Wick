@@ -23,8 +23,8 @@ const BlogPage = () => {
   };
 
   const featuredPost = {
-    title: "The Future of Commercial Vehicle Safety: How ATES is Revolutionizing Indian Highways",
-    excerpt: "Discover how Automatic Tyre Equalisation Systems are transforming the commercial vehicle industry and reducing accidents across Indian highways.",
+    title: "The Future of Commercial Vehicle Safety: How ATIDES is Revolutionizing Indian Highways",
+    excerpt: "Discover how Automatic Tyre Inflation Deflation Equalization Systems are transforming the commercial vehicle industry and reducing accidents across Indian highways.",
     author: "Wick Team",
     date: "December 15, 2024",
     readTime: "8 min read",
@@ -55,8 +55,8 @@ const BlogPage = () => {
       slug: "fleet-management-digital-age"
     },
     {
-      title: "Case Study: 25% Reduction in Tire-Related Incidents with ATES",
-      excerpt: "Real-world results from a major logistics company that implemented our ATES technology across their fleet.",
+      title: "Case Study: 20% Reduction in Tire-Related Incidents with ATIDES",
+      excerpt: "Real-world results from a major logistics company that implemented our ATIDES technology across their fleet.",
       author: "Success Team",
       date: "December 5, 2024",
       readTime: "7 min read",
@@ -66,7 +66,7 @@ const BlogPage = () => {
     },
     {
       title: "The Economics of Tire Management: Cost Savings Through Prevention",
-      excerpt: "Breaking down the financial benefits of proactive tire management and how ATES delivers measurable ROI.",
+      excerpt: "Breaking down the financial benefits of proactive tire management and how ATIDES delivers measurable ROI.",
       author: "Business Team",
       date: "December 1, 2024",
       readTime: "6 min read",
