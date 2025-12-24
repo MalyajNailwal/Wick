@@ -201,13 +201,13 @@ const TechnologyPage = () => {
     {
       icon: <Smartphone className="w-16 h-16 text-orange-600" />,
       title: "Wick Inspection App",
-      description: "Our proprietary Wick Inspection App with comprehensive database system - used internally to provide exceptional service quality, real-time fleet monitoring, and advanced analytics for delivering the best customer experience.",
+      description: "Mobile application used by our operations team for vehicle inspections, enabling real-time data collection, instant reporting, and seamless coordination for superior service delivery.",
       features: [
-        "Internal dashboard for service excellence and quality control",
-        "Real-time fleet monitoring for proactive service delivery",
-        "Automated maintenance scheduling and customer notifications",
-        "Advanced analytics for service optimization and improvements",
-        "Comprehensive database for personalized customer service"
+        "Field-ready app for operations team inspections",
+        "Real-time data capture with photo documentation",
+        "Instant report generation and notifications",
+        "Live fleet monitoring and coordination dashboard",
+        "Vehicle history and maintenance tracking"
       ]
     }
   ];
@@ -642,10 +642,10 @@ const TechnologyPage = () => {
                 category: "Wick Inspection App",
                 specs: [
                   { label: "Platform Support", value: "iOS & Android" },
-                  { label: "Database System", value: "Proprietary SQL" },
-                  { label: "Real-time Updates", value: "Yes" },
-                  { label: "Offline Mode", value: "Full Featured" },
-                  { label: "Multi-language", value: "10+ Languages" }
+                  { label: "User Type", value: "Operations Team" },
+                  { label: "Inspection Features", value: "Photo & Data Capture" },
+                  { label: "Offline Mode", value: "Full Inspection Support" },
+                  { label: "Real-time Sync", value: "Instant Cloud Upload" }
                 ]
               }
             ].map((category, index) => (
