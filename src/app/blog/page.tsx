@@ -81,7 +81,7 @@ const BlogPage = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={heroInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-primary-100 border border-primary-200 text-primary-700 text-sm font-semibold mb-6"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-gray-100 border border-gray-300 text-gray-900 text-sm font-semibold mb-6"
             >
               <Bell className="w-4 h-4 mr-2" />
               Coming Soon
