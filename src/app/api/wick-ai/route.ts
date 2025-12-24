@@ -14,10 +14,10 @@ export async function POST(request: NextRequest) {
     const apiKey = process.env.OPENROUTER_API_KEY;
 
     if (!apiKey) {
-      console.error('OpenRouter API key not found in environment variables');
+      console.error('OpenRouter API key not found');
       return NextResponse.json(
-        { error: 'AI service temporarily unavailable - API key not found' },
-        { status: 503 }
+        { error: 'Configuration error' },
+        { status: 500 }
       );
     }
 
@@ -56,80 +56,59 @@ RESPONSE GUIDELINES:
 - End with an offer to help further if appropriate
 - Stay focused on fleet, tire, and vehicle safety topics`;
 
-    // Try multiple free models in order of preference
-    const freeModels = [
-      'meta-llama/llama-3.2-3b-instruct:free',
-      'google/gemini-2.0-flash-exp:free',
-      'qwen/qwen-2-7b-instruct:free',
-      'microsoft/phi-3-mini-128k-instruct:free'
-    ];
-
-    let lastError = null;
-    
-    for (const model of freeModels) {
-      try {
-        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json',
-            'HTTP-Referer': process.env.NEXT_PUBLIC_SITE_URL || 'https://wick.co.in',
-            'X-Title': 'Wick AI Assistant',
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://wick.co.in',
+        'X-Title': 'Wick AI Assistant',
+      },
+      body: JSON.stringify({
+        model: 'meta-llama/llama-3.2-3b-instruct:free',
+        messages: [
+          {
+            role: 'system',
+            content: systemPrompt
           },
-          body: JSON.stringify({
-            model: model,
-            messages: [
-              {
-                role: 'system',
-                content: systemPrompt
-              },
-              {
-                role: 'user',
-                content: message
-              }
-            ],
-            max_tokens: 500,
-            temperature: 0.7,
-            top_p: 0.9,
-          }),
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          
-          if (data.choices && data.choices[0] && data.choices[0].message) {
-            const aiResponse = data.choices[0].message.content;
-            return NextResponse.json({
-              response: aiResponse,
-              success: true,
-              model: model
-            });
+          {
+            role: 'user',
+            content: message
           }
-        }
-        
-        lastError = await response.text();
-      } catch (error) {
-        lastError = error;
-        continue;
-      }
+        ],
+        temperature: 0.7,
+        max_tokens: 800,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error('OpenRouter API error:', response.status, errorData);
+      return NextResponse.json(
+        { error: 'AI service error', details: errorData },
+        { status: response.status }
+      );
     }
 
-    // If all models fail, return fallback response
-    console.error('All OpenRouter models failed:', lastError);
-    return NextResponse.json(
-      { 
-        error: 'AI service temporarily unavailable',
-        fallback: true 
-      },
-      { status: 503 }
-    );
+    const data = await response.json();
 
+    if (!data.choices?.[0]?.message?.content) {
+      console.error('Invalid response format:', data);
+      return NextResponse.json(
+        { error: 'Invalid response from AI service' },
+        { status: 500 }
+      );
+    }
 
+    return NextResponse.json({
+      response: data.choices[0].message.content,
+      success: true
+    });
 
   } catch (error) {
-    console.error('Wick AI API error:', error);
+    console.error('Wick AI error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Service error' },
       { status: 500 }
     );
   }

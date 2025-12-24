@@ -16,7 +16,7 @@ const WickAI = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Hello! Welcome to Wick AI - your friendly fleet management companion! Take a seat and let&apos;s talk tires.\n\nI&apos;m here to help with everything from ATES technology questions to tire safety tips, fleet optimization advice, and maintenance guidance. Whether you&apos;re a fleet manager, driver, or just curious about smart tire solutions, I&apos;m your go-to expert.\n\nPro tip: If you see any offline messages, don&apos;t worry - our full AI service will be back online soon!\n\nSo, what&apos;s on your mind today? Ready to revolutionize your fleet operations?",
+      content: "Hello! Welcome to Wick AI - your friendly fleet management companion! 🚛\n\nI'm here to help with everything from ATES technology questions to tire safety tips, fleet optimization advice, and maintenance guidance. Whether you're a fleet manager, driver, or just curious about smart tire solutions, I'm your go-to expert.\n\nSo, what's on your mind today? Ready to revolutionize your fleet operations?",
       isUser: false,
       timestamp: new Date()
     }
@@ -108,40 +108,22 @@ RESPONSE GUIDELINES:
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('API Error:', response.status, response.statusText, errorText);
-
-        // Use offline responses for common questions
-        const lowerMessage = userMessage.toLowerCase();
-        for (const [key, response] of Object.entries(wickAIRules.offlineResponses)) {
-          if (key !== 'default' && lowerMessage.includes(key)) {
-            return `${response}\n\n*Note: I'm currently in offline mode. Full AI assistance will return soon.*`;
-          }
-        }
-
-        return `${wickAIRules.offlineResponses.default}\n\n*Error: ${response.status} ${response.statusText}*`;
+        const errorData = await response.json().catch(() => ({}));
+        console.error('API Error:', response.status, errorData);
+        throw new Error(`API error: ${response.status}`);
       }
 
       const data = await response.json();
 
       if (!data.response) {
         console.warn('No response in API data:', data);
-        return wickAIRules.fallbackResponse;
+        throw new Error('No response from AI');
       }
 
       return data.response;
     } catch (error) {
       console.error('Wick AI Error:', error);
-
-      // Use offline responses for common questions even on network errors
-      const lowerMessage = userMessage.toLowerCase();
-      for (const [key, response] of Object.entries(wickAIRules.offlineResponses)) {
-        if (key !== 'default' && lowerMessage.includes(key)) {
-          return `${response}\n\n*Note: Network connection issue. Using offline assistance.*`;
-        }
-      }
-
-      return `${wickAIRules.offlineResponses.default}\n\n*Network Error: Unable to connect to AI service*`;
+      throw error;
     }
   };
 
@@ -173,7 +155,7 @@ RESPONSE GUIDELINES:
     } catch {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: "Sorry, I'm experiencing some technical difficulties. Please try again in a moment.",
+        content: "I apologize, but I'm having trouble connecting right now. Please try again in a moment or contact our team directly at office@wick.co.in",
         isUser: false,
         timestamp: new Date()
       };
