@@ -3,6 +3,8 @@
 import { Suspense, useState, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
+import { CldVideoPlayer } from 'next-cloudinary';
+import 'next-cloudinary/dist/cld-video-player.css';
 import { 
   Cpu, 
   Wifi, 
@@ -424,53 +426,18 @@ const TechnologyPage = () => {
 
                     {/* Video Frame with Enhanced Styling */}
                     <div className="video-frame bg-gray-900 relative">
-                      {/* Video Element */}
-                      <video
-                        ref={videoRef}
-                        className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-500 group-hover:scale-[1.02] relative z-20"
-                        controls
-                        autoPlay
-                        muted
-                        preload="auto"
-                        playsInline
-                        webkit-playsinline="true"
-                        x5-playsinline="true"
-                        style={{ objectPosition: 'center' }}
-                        onLoadedData={() => {
-                          if (videoRef.current) {
-                            // Start muted initially
-                            videoRef.current.muted = true;
-                            setIsMuted(true);
-                            videoRef.current.play().catch(() => console.log('Video autoplay failed'));
-                          }
-                        }}
-                        onPlay={() => {
-                          setIsPlaying(true);
-                          console.log('Video started playing');
-                        }}
-                        onPause={() => {
-                          setIsPlaying(false);
-                          console.log('Video paused');
-                        }}
-                        onVolumeChange={() => {
-                          if (videoRef.current) {
-                            setIsMuted(videoRef.current.muted);
-                          }
-                        }}
-                        onTimeUpdate={handleTimeUpdate}
-                        onEnded={() => {
-                          // Video ended, reset the overlay flag for replay
-                          setHasShownOverlay(false);
-                          setShowCTAOverlay(false);
-                        }}
-                        onError={(e) => {
-                          console.error('Video error:', e);
-                        }}
-                      >
-                        <source src="/media/teq-compressed.mp4" type="video/mp4" />
-                        <source src="/media/hero-background-new-compressed.mp4" type="video/mp4" />
-                        <p className="text-white p-4 bg-gray-800/50 rounded">Your browser does not support the video tag. Please make sure your browser supports HTML5 video and try refreshing the page.</p>
-                      </video>
+                      {/* Cloudinary Video Player */}
+                      <div className="w-full h-[400px] md:h-[500px] relative z-20">
+                        <CldVideoPlayer
+                          width="1920"
+                          height="1080"
+                          src="tecpagevdo_bf4nji"
+                          autoPlay
+                          muted
+                          loop
+                          controls
+                        />
+                      </div>
 
                       {/* Gradient Overlay for Style - Lower z-index so it doesn't block controls */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 z-10 pointer-events-none"></div>

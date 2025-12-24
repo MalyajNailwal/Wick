@@ -7,6 +7,8 @@ import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
+import { CldVideoPlayer } from 'next-cloudinary';
+import 'next-cloudinary/dist/cld-video-player.css';
 
 // Typewriter Text Component
 const TypewriterText = ({ text }: { text: string }) => {
@@ -116,8 +118,7 @@ const PrologueSection = () => {
                 }}
                 suppressHydrationWarning
               >
-                <source src="/media/hero-background-new-compressed.mp4" type="video/mp4" />
-                <source src="/media/hero-background-compressed.mp4" type="video/mp4" />
+                <source src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/firstpagelandingpage_ioedbr.mp4`} type="video/mp4" />
               </video>
             ) : (
               <div className="w-full h-full bg-gradient-to-br from-slate-800 via-gray-800 to-slate-900" />
