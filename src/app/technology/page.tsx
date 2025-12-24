@@ -1,10 +1,8 @@
 'use client';
 
-import { Suspense, useState, useRef } from 'react';
+import { Suspense, useState, useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
-import { CldVideoPlayer } from 'next-cloudinary';
-import 'next-cloudinary/dist/cld-video-player.css';
 import { 
   Cpu, 
   Wifi, 
@@ -35,63 +33,63 @@ import StoryTimeline from '@/components/ui/StoryTimeline';
 const TechnologyPage = () => {
   const router = useRouter();
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [videoRef, videoInView] = useInView({ threshold: 0.5 });
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [showCTAOverlay, setShowCTAOverlay] = useState(false);
   const [showTechDocsPopup, setShowTechDocsPopup] = useState(false);
   const [hasShownOverlay, setHasShownOverlay] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoElementRef = useRef<HTMLVideoElement>(null);
+
+  // Autoplay when video comes into view
+  useEffect(() => {
+    if (videoInView && videoElementRef.current) {
+      videoElementRef.current.play().then(() => {
+        setIsPlaying(true);
+        console.log('Video autoplayed on scroll');
+      }).catch((error) => {
+        console.log('Autoplay failed:', error);
+      });
+    } else if (!videoInView && videoElementRef.current) {
+      videoElementRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, [videoInView]);
 
   const togglePlay = async () => {
-    if (videoRef.current) {
+    if (videoElementRef.current) {
       try {
         if (isPlaying) {
-          videoRef.current.pause();
+          videoElementRef.current.pause();
           setIsPlaying(false);
           console.log('Video paused');
         } else {
-          await videoRef.current.play();
+          await videoElementRef.current.play();
           setIsPlaying(true);
           console.log('Video playing');
         }
       } catch (error) {
         console.error('Error toggling video play:', error);
-        // Fallback: try to toggle without async
-        if (videoRef.current) {
-          if (isPlaying) {
-            videoRef.current.pause();
-            setIsPlaying(false);
-          } else {
-            videoRef.current.play().catch(() => {
-              console.log('Video play failed');
-            });
-            setIsPlaying(true);
-          }
-        }
       }
-    } else {
-      console.log('Video element not found');
     }
   };
 
   const toggleMute = () => {
-    if (videoRef.current) {
+    if (videoElementRef.current) {
       try {
-        videoRef.current.muted = !videoRef.current.muted;
+        videoElementRef.current.muted = !videoElementRef.current.muted;
         setIsMuted(!isMuted);
-        console.log('Video mute toggled:', videoRef.current.muted);
+        console.log('Video mute toggled:', videoElementRef.current.muted);
       } catch (error) {
         console.error('Error toggling video mute:', error);
       }
-    } else {
-      console.log('Video element not found for mute toggle');
     }
   };
 
   // Ad-style pause at 20 seconds (only once)
   const handleTimeUpdate = () => {
-    if (videoRef.current && videoRef.current.currentTime >= 20 && !showCTAOverlay && isPlaying && !hasShownOverlay) {
-      videoRef.current.pause();
+    if (videoElementRef.current && videoElementRef.current.currentTime >= 20 && !showCTAOverlay && isPlaying && !hasShownOverlay) {
+      videoElementRef.current.pause();
       setIsPlaying(false);
       setShowCTAOverlay(true);
       setHasShownOverlay(true);
@@ -425,19 +423,26 @@ const TechnologyPage = () => {
                   <div className="relative bg-white rounded-2xl shadow-2xl p-8 group-hover:shadow-3xl transition-all duration-500">
 
                     {/* Video Frame with Enhanced Styling */}
-                    <div className="video-frame bg-gray-900 relative">
-                      {/* Cloudinary Video Player */}
-                      <div className="w-full h-[400px] md:h-[500px] relative z-20">
-                        <CldVideoPlayer
-                          width="1920"
-                          height="1080"
-                          src="tecpagevdo_bf4nji"
-                          autoPlay
-                          muted
-                          loop
-                          controls
-                        />
-                      </div>
+                    <div ref={videoRef} className="video-frame bg-gray-900 relative">
+                      {/* HTML5 Video with Cloudinary */}
+                      <video
+                        ref={videoElementRef}
+                        className="w-full h-[400px] md:h-[500px] object-cover relative z-20"
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        onPlay={() => setIsPlaying(true)}
+                        onPause={() => setIsPlaying(false)}
+                        onVolumeChange={() => {
+                          if (videoElementRef.current) {
+                            setIsMuted(videoElementRef.current.muted);
+                          }
+                        }}
+                        onTimeUpdate={handleTimeUpdate}
+                      >
+                        <source src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/tecpagevdo_bf4nji.mp4`} type="video/mp4" />
+                      </video>
 
                       {/* Gradient Overlay for Style - Lower z-index so it doesn't block controls */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 z-10 pointer-events-none"></div>
