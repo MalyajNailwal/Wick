@@ -94,8 +94,8 @@ const ProductsPage = () => {
   const downloadBrochure = () => {
     // Create a link to download the brochure
     const link = document.createElement('a');
-    link.href = '/media/WICK BROUCHURE ATES_compressed.pdf';
-    link.download = 'WICK BROUCHURE ATES_compressed.pdf';
+    link.href = '/media/WICK%20BROUCHURE%20ATES_compressed.pdf';
+    link.download = 'WICK_BROUCHURE_ATES.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
