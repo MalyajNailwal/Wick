@@ -80,7 +80,7 @@ const AboutPage = () => {
     {
       year: "2022",
       title: "First Prototype",
-      description: "Developed our first ATIDES prototype after extensive research and development."
+      description: "Developed our first ATES prototype after extensive research and development."
     },
     {
       year: "2023",
@@ -181,7 +181,7 @@ const AboutPage = () => {
                 <p>
                   Determined to address these challenges, we assembled a team of automotive engineers, 
                   technology experts, and industry veterans. Together, we developed India&apos;s first 
-                  Automatic Tyre Inflation Deflation Equalization System (ATIDES) - a breakthrough innovation that has 
+                  Automatic Tyre Equalization System (ATES) - a breakthrough innovation that has 
                   revolutionized commercial vehicle safety.
                 </p>
                 <p>

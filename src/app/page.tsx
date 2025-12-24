@@ -326,7 +326,7 @@ const ProductImageWithRotation = () => {
             {/* Main Product Image with smart rotation effects */}
             <motion.img
               src="/media/productimghd-removebg-preview.png"
-              alt="Tyre Rakhshak - ATIDES Product"
+              alt="Tyre Rakhshak - ATES Product"
               className="w-full h-full object-contain drop-shadow-2xl filter brightness-105 contrast-105"
               style={{
                 maxHeight: '450px',
@@ -393,7 +393,7 @@ const ProductImageWithRotation = () => {
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm z-10 border-2 border-white"
       >
-        TyreRakhshak ATIDES
+        TyreRakhshak ATES
       </motion.div>
       
       {/* Innovation Callout - Clean Design */}
@@ -593,7 +593,7 @@ const StoryJourney = () => {
       {/* Chapter 3: The Solution */}
       <StoryChapter
         chapterNumber="03"
-        title="ATIDES: The Hero Emerges"
+        title="ATES: The Hero Emerges"
         subtitle="Meet TyreRakhshak - India&apos;s guardian angel for highways"
         layout="center"
         backgroundColor="bg-gradient-to-br from-green-50 to-emerald-50"
@@ -694,7 +694,7 @@ const EpilogueSection = () => {
             Today&apos;s Heroes
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Every day, ATIDES silently protects thousands of drivers across India&apos;s highways
+            Every day, ATES silently protects thousands of drivers across India&apos;s highways
           </p>
         </motion.div>
         
@@ -750,7 +750,7 @@ const CTASection = () => {
             Ready to Revolutionize Your Fleet?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
-            Join the future of commercial vehicle technology with Wick&apos;s ATIDES system. 
+            Join the future of commercial vehicle technology with Wick&apos;s ATES system. 
             Experience enhanced safety, improved efficiency, and reduced operational costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
