@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wick Favicon Preview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #b61212;
+            margin-bottom: 30px;
+        }
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .preview-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .preview-item img {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 10px;
+            background: white;
+        }
+        .size-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+        }
+        .description {
+            color: #666;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Wick Enhanced Favicon</h1>
+        <p class="description">
+            <strong>Design Features:</strong><br>
+            ✓ Black tire with realistic tread pattern<br>
+            ✓ Red (#b61212) center hub cap with shine effect<br>
+            ✓ Metallic rim with 5 spokes<br>
+            ✓ 6-bolt pattern for authenticity<br>
+            ✓ "W" logo in center<br>
+            ✓ 3D depth and gradient effects
+        </p>
+        
+        <div class="preview-grid">
+            <div class="preview-item">
+                <img src="/favicon.svg" width="16" height="16" alt="16x16">
+                <span class="size-label">16×16 (Browser Tab)</span>
+            </div>
+            <div class="preview-item">
+                <img src="/favicon.svg" width="32" height="32" alt="32x32">
+                <span class="size-label">32×32 (Bookmark)</span>
+            </div>
+            <div class="preview-item">
+                <img src="/favicon.svg" width="64" height="64" alt="64x64">
+                <span class="size-label">64×64 (Desktop)</span>
+            </div>
+            <div class="preview-item">
+                <img src="/favicon.svg" width="128" height="128" alt="128x128">
+                <span class="size-label">128×128 (High-DPI)</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
