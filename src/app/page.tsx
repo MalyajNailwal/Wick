@@ -594,13 +594,13 @@ const StoryJourney = () => {
       <StoryChapter
         chapterNumber="03"
         title="ATES: The Hero Emerges"
-        subtitle="Meet TyreRakhshak - India&apos;s guardian angel for highways"
+        subtitle="Meet <span class='text-red-600 font-bold'>TyreRakhshak®</span> - India&apos;s guardian angel for highways"
         layout="center"
         backgroundColor="bg-gradient-to-br from-green-50 to-emerald-50"
         content={
           <div className="space-y-8 text-gray-700">
             <p className="text-xl leading-relaxed text-center">
-              After years of innovation, <strong className="text-red-600">TyreRakhshak</strong> emerged -
+              After years of innovation, <strong className="text-red-600">TyreRakhshak®</strong> emerged -
               not just as a product, but as a guardian angel for India&apos;s highways.
             </p>
             

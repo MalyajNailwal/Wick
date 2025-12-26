@@ -113,9 +113,8 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl md:text-2xl text-gray-700 font-medium"
-              >
-                {subtitle}
-              </motion.p>
+                dangerouslySetInnerHTML={{ __html: subtitle }}
+              />
             )}
 
             {/* Content */}

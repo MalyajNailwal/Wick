@@ -558,15 +558,7 @@ const ContactPage = () => {
               },
               {
                 question: "What types of vehicles are compatible with ATES?",
-                answer: "Our ATES is specifically designed for Heavy Commercial Vehicles (HCVs) including trucks, trailers, and buses. We offer different models for various vehicle configurations."
-              },
-              {
-                question: "What is the installation process and downtime?",
-                answer: "Installation typically takes 4-6 hours and can be done at your facility or our service centers. Minimal downtime is required, and we provide comprehensive training to your maintenance team."
-              },
-              {
-                question: "Do you provide ongoing support and maintenance?",
-                answer: "Yes, we offer comprehensive support including 24/7 technical assistance, regular maintenance schedules, and replacement parts. Our support team ensures optimal system performance."
+                answer: "Our ATES is specifically designed for Heavy Commercial Vehicles (HCVs) including trucks and trailers. We offer different models optimized for various vehicle configurations."
               }
             ].map((faq, index) => (
               <motion.div
@@ -643,7 +635,7 @@ const ContactPage = () => {
             className="mt-12 pt-8 border-t border-gray-700 text-center"
           >
             <p className="text-gray-400 text-sm">
-              © 2024 Wick Automation LLP. All rights reserved. | Making India&apos;s highways safer, one tire at a time.
+              Making India&apos;s highways safer, one tire at a time.
             </p>
           </motion.div>
         </div>
