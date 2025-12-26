@@ -152,7 +152,7 @@ const ContactPage = () => {
               <div className="flex items-center justify-between p-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white">
                 <div className="flex items-center space-x-2">
                   <Bot className="w-5 h-5" />
-                  <span className="font-bold text-sm text-red-500">Wick AI</span>
+                  <span className="font-bold text-sm" style={{ color: '#b61212' }}>Wick AI</span>
                 </div>
                 <button
                   onClick={dismissNotification}
@@ -191,7 +191,7 @@ const ContactPage = () => {
                       Now Available
                     </div>
                   </div>
-                  <span className="text-red-600">Try Wick AI</span>
+                  <span style={{ color: '#b61212' }}>Try Wick AI</span>
                 </motion.button>
               </div>
             </div>

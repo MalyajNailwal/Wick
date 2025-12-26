@@ -206,7 +206,7 @@ const PrologueSection = () => {
             className="text-5xl md:text-7xl font-display font-bold text-white leading-tight"
           >
             The Story of{' '}
-            <span className="text-red-500 font-bold">
+            <span style={{ color: '#b61212' }} className="font-bold">
               Wick
             </span>
           </motion.h1>

@@ -118,7 +118,7 @@ const AboutPage = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6"
             >
-              About <span className="text-red-500 font-bold">Wick</span>
+              About <span style={{ color: '#b61212' }} className="font-bold">Wick</span>
             </motion.h1>
             
             <motion.p
