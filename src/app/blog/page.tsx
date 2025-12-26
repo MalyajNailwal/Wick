@@ -93,7 +93,7 @@ const BlogPage = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6"
             >
-              Wick <span className="text-primary-600">Insights</span>
+              <span style={{ color: '#b61212' }}>Wick</span> <span className="text-primary-600">Insights</span>
             </motion.h1>
             
             <motion.p
