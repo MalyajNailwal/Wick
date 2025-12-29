@@ -21,28 +21,46 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_KEYWORDS = [
+  'Wick',
+  'Wick Automation',
+  'Wick ATES',
+  'Wick India',
+  'Wick TyreRakhshak',
+  'Wick Automation LLP',
+  'Wick commercial vehicle',
+  'Wick tyre safety',
   'ATES',
   'Automatic Tyre Equalisation System',
   'TyreRakhshak',
-  'commercial vehicle safety',
-  'tyre pressure monitoring',
-  'fleet management India',
+  'Commercial vehicle safety India',
+  'Tyre pressure monitoring system',
+  'Fleet management India',
   'YORK ATES',
-  'truck tyre safety',
-  'commercial trailer safety',
+  'Truck tyre safety',
+  'Commercial trailer safety',
 ];
 
 export const SECONDARY_KEYWORDS = [
+  'Wick technology',
+  'Wick fleet solutions',
+  'Wick automotive',
+  'Wick safety systems',
+  'Wick Faridabad',
+  'Wick tyre management',
+  'Wick CPMS',
+  'Wick monitoring system',
   'tyre inflation system',
   'heavy commercial vehicle',
   'HCV safety',
   'fuel efficiency',
   'tyre management',
   'SAF-HOLLAND',
-  'Wick Automation',
   'automatic tyre inflation',
   'tire pressure monitoring system',
   'fleet safety solutions',
+  'Heavy commercial vehicle safety',
+  'Fuel efficiency trucks',
+  'Tyre management system India',
 ];
 
 /**
