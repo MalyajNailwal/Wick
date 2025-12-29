@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.json',
   verification: {
-    google: 'your-google-verification-code',
+    google: 'U5wQqy8SHoSJryzJ_QuPhVvdazbzRtTuxGo_mOJGPXw',
   },
   alternates: {
     canonical: 'https://wick.co.in',
