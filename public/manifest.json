@@ -1,11 +1,13 @@
 {
-  "name": "Wick",
-  "short_name": "Wick",
-  "description": "Discover how Wick's Automatic Tyre Equalisation System (ATES) is transforming commercial vehicle safety and efficiency across India's highways.",
+  "name": "Wick - Automatic Tyre Equalisation System",
+  "short_name": "Wick ATES",
+  "description": "India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles. Improve safety by 100%, extend tyre life by 20%, save 2%+ fuel.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "theme_color": "#b61212",
+  "orientation": "portrait-primary",
+  "categories": ["automotive", "business", "productivity"],
   "icons": [
     {
       "src": "/favicon.ico",
@@ -15,7 +17,8 @@
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ]
 }

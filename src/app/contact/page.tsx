@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import WickAI from '@/components/ui/WickAI';
+import FAQSchema from '@/components/seo/FAQSchema';
 
 const ContactPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -128,8 +129,20 @@ const ContactPage = () => {
     }
   ];
 
+  const faqData = [
+    {
+      question: "How does the Automatic Tyre Equalisation System work?",
+      answer: "ATES continuously monitors tire pressure across all wheels and automatically adjusts pressure to maintain optimal levels, ensuring better safety, fuel efficiency, and tire longevity."
+    },
+    {
+      question: "What types of vehicles are compatible with ATES?",
+      answer: "Our ATES is specifically designed for Heavy Commercial Vehicles (HCVs) including trucks and trailers. We offer different models optimized for various vehicle configurations."
+    }
+  ];
+
   return (
     <main className="relative">
+      <FAQSchema faqs={faqData} />
       <Navigation />
 
       {/* Wick AI Notification */}
@@ -551,16 +564,7 @@ const ContactPage = () => {
           </motion.div>
 
           <div className="space-y-6">
-            {[
-              {
-                question: "How does the Automatic Tyre Equalisation System work?",
-                answer: "ATES continuously monitors tire pressure across all wheels and automatically adjusts pressure to maintain optimal levels, ensuring better safety, fuel efficiency, and tire longevity."
-              },
-              {
-                question: "What types of vehicles are compatible with ATES?",
-                answer: "Our ATES is specifically designed for Heavy Commercial Vehicles (HCVs) including trucks and trailers. We offer different models optimized for various vehicle configurations."
-              }
-            ].map((faq, index) => (
+            {faqData.map((faq, index) => (
               <motion.div
                 key={faq.question}
                 initial={{ opacity: 0, y: 20 }}
