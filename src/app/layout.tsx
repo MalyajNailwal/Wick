@@ -99,6 +99,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://wick.co.in',
   },
+  other: {
+    'preconnect': 'https://res.cloudinary.com',
+    'dns-prefetch': 'https://res.cloudinary.com',
+  },
 };
 
 export default function RootLayout({
@@ -108,12 +112,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN" suppressHydrationWarning={true}>
-      <head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${leagueSpartan.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
         <GoogleAnalytics />
-        <link rel="preconnect" href="https://res.cloudinary.com" />
-        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -152,11 +155,6 @@ export default function RootLayout({
             })
           }}
         />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${leagueSpartan.variable} antialiased`}
-        suppressHydrationWarning={true}
-      >
         {children}
       </body>
     </html>
