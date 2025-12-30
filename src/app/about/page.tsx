@@ -71,39 +71,6 @@ const AboutPage = () => {
     }
   ];
 
-  const milestones = [
-    {
-      year: "2021",
-      title: "The Vision Born",
-      description: "Wick was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATES prototype."
-    },
-    {
-      year: "2022",
-      title: "Innovation Takes Shape",
-      description: "After extensive research and development, we successfully created India's first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry."
-    },
-    {
-      year: "2023",
-      title: "Market Revolution",
-      description: "ATES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 20% longer tire life and over 2% better fuel efficiency."
-    },
-    {
-      year: "2024",
-      title: "Industry Recognition",
-      description: "Wick received multiple awards for innovation in automotive safety. Our technology became the gold standard for commercial vehicle tire management across India."
-    },
-    {
-      year: "2025",
-      title: "Expanding Horizons",
-      description: "With proven success across India, Wick is now expanding internationally and developing next-generation automotive safety solutions for the global market."
-    },
-    {
-      year: "The Future",
-      title: "Continuing Innovation",
-      description: "Our research continues into next-generation automotive safety technologies, including enhanced sensor integration and expanded vehicle compatibility, leading the automotive safety revolution."
-    }
-  ];
-
   return (
     <main className="relative">
       <Navigation />
@@ -164,63 +131,36 @@ const AboutPage = () => {
       {/* Story Section */}
       <section ref={storyRef} className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={storyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-8">
-                Our Story
-              </h2>
-              <div className="space-y-6 text-gray-600 leading-relaxed">
-                <p>
-                  Founded in 2021, Wick emerged from a simple yet powerful vision: 
-                  to make commercial vehicle transportation safer and more efficient through innovative technology.
-                </p>
-                <p>
-                  Our journey began when our founders recognized the critical safety issues plaguing the 
-                  heavy commercial vehicle industry in India. Tire-related accidents were causing significant 
-                  losses in lives and property, while inefficient tire management was driving up operational costs.
-                </p>
-                <p>
-                  Determined to address these challenges, we assembled a team of automotive engineers, 
-                  technology experts, and industry veterans. Together, we developed India&apos;s first 
-                  Automatic Tyre Equalization System (ATES) - a breakthrough innovation that has 
-                  revolutionized commercial vehicle safety.
-                </p>
-                <p>
-                  Today, Wick continues to lead the industry with cutting-edge solutions that protect 
-                  thousands of vehicles and drivers across the nation.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={storyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="bg-gradient-to-br from-primary-100 to-primary-200 p-8 rounded-2xl">
-                <div className="grid grid-cols-2 gap-4">
-                  {milestones.slice(0, 4).map((milestone, index) => (
-                    <motion.div
-                      key={milestone.year}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={storyInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                      className="bg-white p-4 rounded-lg text-center"
-                    >
-                      <div className="text-2xl font-bold text-primary-600 mb-1">{milestone.year}</div>
-                      <div className="text-sm font-semibold text-gray-800 mb-2">{milestone.title}</div>
-                      <div className="text-xs text-gray-600">{milestone.description}</div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={storyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-8">
+              Our Story
+            </h2>
+            <div className="space-y-6 text-gray-600 leading-relaxed">
+              <p>
+                Founded in 2021, Wick emerged from a simple yet powerful vision: 
+                to make commercial vehicle transportation safer and more efficient through innovative technology.
+              </p>
+              <p>
+                Our journey began when our founders recognized the critical safety issues plaguing the 
+                heavy commercial vehicle industry in India. Tire-related accidents were causing significant 
+                losses in lives and property, while inefficient tire management was driving up operational costs.
+              </p>
+              <p>
+                Determined to address these challenges, we assembled a team of automotive engineers, 
+                technology experts, and industry veterans. Together, we developed India&apos;s first 
+                Automatic Tyre Equalization System (ATES) - a breakthrough innovation that has 
+                revolutionized commercial vehicle safety.
+              </p>
+              <p>
+                Today, Wick continues to lead the industry with cutting-edge solutions that protect 
+                thousands of vehicles and drivers across the nation.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
