@@ -71,11 +71,11 @@ export const technologyMetadata: Metadata = {
 
 export const aboutMetadata: Metadata = {
   title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
-  description: 'Learn about Wick Automation LLP, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, we\'re revolutionizing commercial vehicle safety with innovative ATES technology.',
-  keywords: 'Wick Automation, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND',
+  description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, we\'re revolutionizing commercial vehicle safety with innovative ATES technology.',
+  keywords: 'Wick, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND',
   openGraph: {
     title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
-    description: 'Founded in 2021, Wick Automation LLP is revolutionizing commercial vehicle safety with India\'s first advanced ATES technology.',
+    description: 'Founded in 2021, Wick is revolutionizing commercial vehicle safety with India\'s first advanced ATES technology.',
     url: 'https://wick.co.in/about',
     type: 'website',
     images: [
@@ -83,7 +83,7 @@ export const aboutMetadata: Metadata = {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'About Wick Automation',
+        alt: 'About Wick',
       },
     ],
   },

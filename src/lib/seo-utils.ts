@@ -4,7 +4,7 @@
 
 export const SITE_CONFIG = {
   name: 'Wick',
-  fullName: 'Wick Automation LLP',
+  fullName: 'Wick',
   url: 'https://wick.co.in',
   description: "India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles",
   locale: 'en_IN',
@@ -22,11 +22,9 @@ export const SITE_CONFIG = {
 
 export const PRIMARY_KEYWORDS = [
   'Wick',
-  'Wick Automation',
   'Wick ATES',
   'Wick India',
   'Wick TyreRakhshak',
-  'Wick Automation LLP',
   'Wick commercial vehicle',
   'Wick tyre safety',
   'ATES',

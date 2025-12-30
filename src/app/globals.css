@@ -22,19 +22,15 @@ body {
   font-family: var(--font-league-spartan), 'Inter', sans-serif;
 }
 
-/* Apply League Spartan to all headings and text elements */
+/* Apply League Spartan to all headings and text elements including navigation */
 h1, h2, h3, h4, h5, h6,
-p, span, div, a, button, input, textarea, select, label {
+p, span, div, a, button, input, textarea, select, label,
+nav, .navbar, .navigation {
   font-family: var(--font-league-spartan), 'Inter', sans-serif;
 }
 
-/* Preserve navbar font (Space Grotesk) */
-nav, .navbar, .navigation {
-  font-family: 'Space Grotesk', ui-sans-serif, system-ui;
-}
-
 nav *, .navbar *, .navigation * {
-  font-family: 'Space Grotesk', ui-sans-serif, system-ui;
+  font-family: var(--font-league-spartan), 'Inter', sans-serif;
 }
 
 * {

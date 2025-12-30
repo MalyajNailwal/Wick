@@ -40,8 +40,18 @@ const WickAI = () => {
     }
   }, [isOpen]);
 
+  // Listen for custom event to open Wick AI
+  useEffect(() => {
+    const handleOpenWickAI = () => {
+      setIsOpen(true);
+    };
+
+    window.addEventListener('openWickAI', handleOpenWickAI);
+    return () => window.removeEventListener('openWickAI', handleOpenWickAI);
+  }, []);
+
   const wickAIRules = {
-    systemPrompt: `You are Wick AI, an intelligent assistant designed by Wick Automation LLP to help users with fleet management, tire technology, and ATES (Automatic Tyre Equalisation System) related queries.
+    systemPrompt: `You are Wick AI, an intelligent assistant designed by Wick to help users with fleet management, tire technology, and ATES (Automatic Tyre Equalisation System) related queries.
 
 COMPANY INFORMATION:
 - Founded by Vinamra Bajaj (Founder), Atirav Gupta (Co-founder), and Shubham (Co-founder)
@@ -61,7 +71,7 @@ YOUR ROLE:
 - Provide accurate information about ATES technology and its benefits
 - Help with fleet management questions, tire safety, maintenance advice
 - Connect users with appropriate team members when needed
-- When asked about your creator/designer, say: "I was designed by Wick Automation LLP to help users with fleet and tire technology solutions"
+- When asked about your creator/designer, say: "I was designed by Wick to help users with fleet and tire technology solutions"
 - Keep responses concise but informative
 - Use emojis sparingly and appropriately
 - Always maintain a positive, solution-oriented tone

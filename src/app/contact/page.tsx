@@ -1,12 +1,12 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, Sparkles, Bot, ArrowRight, X } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Bot, X } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
-import WickAI from '@/components/ui/WickAI';
 import FAQSchema from '@/components/seo/FAQSchema';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
 const ContactPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -107,13 +107,15 @@ const ContactPage = () => {
       icon: <Mail className="w-8 h-8 text-primary-700" />,
       title: "Email",
       info: "office@wick.co.in",
-      description: "Get in touch via email"
+      description: "Get in touch via email",
+      link: "mailto:office@wick.co.in"
     },
     {
       icon: <Phone className="w-8 h-8 text-primary-700" />,
       title: "Phone",
       info: "+91 9721601500",
-      description: "Call us during business hours"
+      description: "Call us during business hours",
+      link: "tel:+919721601500"
     },
     {
       icon: <MapPin className="w-8 h-8 text-primary-700" />,
@@ -605,29 +607,50 @@ const ContactPage = () => {
 
           {/* Contact Info Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((contact, index) => (
-              <motion.div
-                key={contact.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/15 transition-all duration-300 border border-white/10"
-              >
-                <div className="mb-4 flex justify-center text-primary-400">
-                  {contact.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {contact.title}
-                </h3>
-                <p className="text-white font-medium mb-2">
-                  {contact.info}
-                </p>
-                <p className="text-sm text-gray-300">
-                  {contact.description}
-                </p>
-              </motion.div>
-            ))}
+            {contactInfo.map((contact, index) => {
+              const CardContent = (
+                <>
+                  <div className="mb-4 flex justify-center text-primary-400">
+                    {contact.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {contact.title}
+                  </h3>
+                  <p className="text-white font-medium mb-2">
+                    {contact.info}
+                  </p>
+                  <p className="text-sm text-gray-300">
+                    {contact.description}
+                  </p>
+                </>
+              );
+
+              return contact.link ? (
+                <motion.a
+                  key={contact.title}
+                  href={contact.link}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 border border-white/10 cursor-pointer block"
+                >
+                  {CardContent}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={contact.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/15 transition-all duration-300 border border-white/10"
+                >
+                  {CardContent}
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Footer Bottom */}
@@ -644,9 +667,9 @@ const ContactPage = () => {
           </motion.div>
         </div>
       </footer>
-
-      {/* Wick AI Chat Component */}
-      <WickAI />
+      
+      {/* WhatsApp Floating Button */}
+      <WhatsAppButton />
     </main>
   );
 };

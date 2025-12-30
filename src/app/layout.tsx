@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, League_Spartan } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import WickAI from "@/components/ui/WickAI";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,17 +23,15 @@ const leagueSpartan = League_Spartan({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wick.co.in'),
   title: {
-    default: 'Wick - Automatic Tyre Equalisation System (ATES) | Wick Automation India',
+    default: 'Wick - Automatic Tyre Equalisation System (ATES) | Wick India',
     template: '%s | Wick ATES'
   },
-  description: "Wick Automation: India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles. Improve safety by 100%, extend tyre life by 20%, save 2%+ fuel. By YORK & SAF-HOLLAND Group.",
+  description: "Wick: India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles. Improve safety by 100%, extend tyre life by 20%, save 2%+ fuel. By YORK & SAF-HOLLAND Group.",
   keywords: [
     'Wick',
-    'Wick Automation',
     'Wick ATES',
     'Wick India',
     'Wick TyreRakhshak',
-    'Wick Automation LLP',
     'Wick commercial vehicle',
     'Wick tyre safety',
     'Wick technology',
@@ -57,9 +56,9 @@ export const metadata: Metadata = {
     'tyre management',
     'SAF-HOLLAND',
   ],
-  authors: [{ name: 'Wick Automation LLP' }],
-  creator: 'Wick Automation LLP',
-  publisher: 'Wick Automation LLP',
+  authors: [{ name: 'Wick' }],
+  creator: 'Wick',
+  publisher: 'Wick',
   formatDetection: {
     email: false,
     address: false,
@@ -70,8 +69,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://wick.co.in',
     siteName: 'Wick ATES',
-    title: 'Wick - Automatic Tyre Equalisation System | Wick Automation India',
-    description: "Wick Automation: India's first advanced ATES for commercial vehicles. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings.",
+    title: 'Wick - Automatic Tyre Equalisation System | Wick India',
+    description: "Wick: India's first advanced ATES for commercial vehicles. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings.",
     images: [
       {
         url: '/media/productimghd-removebg-preview.png',
@@ -83,8 +82,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wick - Automatic Tyre Equalisation System | Wick Automation India',
-    description: "Wick Automation: India's first advanced ATES for commercial vehicles. 100% safety improvement, 20% longer tyre life.",
+    title: 'Wick - Automatic Tyre Equalisation System | Wick India',
+    description: "Wick: India's first advanced ATES for commercial vehicles. 100% safety improvement, 20% longer tyre life.",
     images: ['/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
   },
@@ -136,7 +135,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Wick Automation LLP',
+              name: 'Wick',
               alternateName: 'Wick ATES',
               url: 'https://wick.co.in',
               logo: 'https://wick.co.in/logo.svg',
@@ -163,12 +162,13 @@ export default function RootLayout({
               ],
               founder: {
                 '@type': 'Organization',
-                name: 'Wick Automation LLP'
+                name: 'Wick'
               }
             })
           }}
         />
         {children}
+        <WickAI />
       </body>
     </html>
   );

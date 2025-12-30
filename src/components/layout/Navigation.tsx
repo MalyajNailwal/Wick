@@ -49,7 +49,7 @@ const Navigation = () => {
             className="flex-shrink-0"
           >
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl md:text-2xl font-display font-bold" style={{ color: '#b61212' }}>
+              <span className="text-xl md:text-2xl font-bold" style={{ color: '#b61212' }}>
                 Wick
               </span>
             </Link>
@@ -80,6 +80,22 @@ const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Wick AI Link */}
+              <motion.div whileHover={{ y: -2 }}>
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(new Event('openWickAI'));
+                  }}
+                  className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-primary-600 px-3 py-2 text-sm font-medium transition-colors duration-200 relative group flex items-center`}
+                >
+                  Wick AI
+                  <span className="ml-2 px-2 py-0.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs rounded-full font-bold">
+                    NEW
+                  </span>
+                  <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+                </button>
+              </motion.div>
             </div>
           </div>
 
@@ -123,6 +139,26 @@ const Navigation = () => {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Wick AI Link for Mobile */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navigationItems.length * 0.1 }}
+              >
+                <button
+                  onClick={() => {
+                    setIsOpen(false);
+                    window.dispatchEvent(new Event('openWickAI'));
+                  }}
+                  className="block w-full text-left px-3 py-2 text-base font-medium text-gray-800 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors duration-200 flex items-center justify-between"
+                >
+                  <span>Wick AI</span>
+                  <span className="px-2 py-0.5 bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs rounded-full font-bold">
+                    NEW
+                  </span>
+                </button>
+              </motion.div>
             </div>
           </motion.div>
         )}

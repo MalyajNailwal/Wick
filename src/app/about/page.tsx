@@ -74,28 +74,33 @@ const AboutPage = () => {
   const milestones = [
     {
       year: "2021",
-      title: "Company Founded",
-      description: "Wick Automation LLP was established with a vision to revolutionize commercial vehicle safety."
+      title: "The Vision Born",
+      description: "Wick was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATES prototype."
     },
     {
       year: "2022",
-      title: "First Prototype",
-      description: "Developed our first ATES prototype after extensive research and development."
+      title: "Innovation Takes Shape",
+      description: "After extensive research and development, we successfully created India's first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry."
     },
     {
       year: "2023",
-      title: "Market Launch",
-      description: "Successfully launched India&apos;s first Automatic Tyre Equalisation System for HCVs."
+      title: "Market Revolution",
+      description: "ATES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 20% longer tire life and over 2% better fuel efficiency."
     },
     {
       year: "2024",
       title: "Industry Recognition",
-      description: "Received multiple awards for innovation in automotive safety technology."
+      description: "Wick received multiple awards for innovation in automotive safety. Our technology became the gold standard for commercial vehicle tire management across India."
     },
     {
       year: "2025",
-      title: "Global Expansion",
-      description: "Expanding operations internationally and developing next-generation safety solutions."
+      title: "Expanding Horizons",
+      description: "With proven success across India, Wick is now expanding internationally and developing next-generation automotive safety solutions for the global market."
+    },
+    {
+      year: "The Future",
+      title: "Continuing Innovation",
+      description: "Our research continues into next-generation automotive safety technologies, including enhanced sensor integration and expanded vehicle compatibility, leading the automotive safety revolution."
     }
   ];
 
@@ -135,7 +140,7 @@ const AboutPage = () => {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             {[
               { number: 3, suffix: "+", label: "Years of Innovation" },
-              { number: 250, suffix: "+", label: "Vehicles Protected" },
+              { number: 350, suffix: "+", label: "Vehicles Protected" },
               { number: 50, suffix: "+", label: "Fleet Partners" },
               { number: 95, suffix: "%", label: "Customer Satisfaction" }
             ].map((stat, index) => (
@@ -170,7 +175,7 @@ const AboutPage = () => {
               </h2>
               <div className="space-y-6 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2021, Wick Automation LLP emerged from a simple yet powerful vision: 
+                  Founded in 2021, Wick emerged from a simple yet powerful vision: 
                   to make commercial vehicle transportation safer and more efficient through innovative technology.
                 </p>
                 <p>

@@ -46,7 +46,7 @@ export default function BlogLayout({
             description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety',
             publisher: {
               '@type': 'Organization',
-              name: 'Wick Automation LLP',
+              name: 'Wick',
               logo: {
                 '@type': 'ImageObject',
                 url: 'https://wick.co.in/logo.svg'

@@ -46,11 +46,11 @@ export default function TechnologyLayout({
             description: 'Advanced technology behind automatic tyre equalisation for commercial vehicles',
             author: {
               '@type': 'Organization',
-              name: 'Wick Automation LLP'
+              name: 'Wick'
             },
             publisher: {
               '@type': 'Organization',
-              name: 'Wick Automation LLP',
+              name: 'Wick',
               logo: {
                 '@type': 'ImageObject',
                 url: 'https://wick.co.in/logo.svg'

@@ -50,7 +50,7 @@ export default function ProductsLayout({
             },
             manufacturer: {
               '@type': 'Organization',
-              name: 'Wick Automation LLP',
+              name: 'Wick',
               url: 'https://wick.co.in'
             },
             offers: {

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, CheckCircle, Download, Zap, Star, Crown } from 'lucide-react';
+import { ArrowRight, Shield, CheckCircle, Download, Zap, Crown } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
@@ -80,7 +80,7 @@ const ProductsPage = () => {
               Automatic Tyre Equalization System
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
-              By YORK | In Partnership with WICK | SAF-HOLLAND Group
+              By Wick | In Partnership with YORK | SAF-HOLLAND Group
             </p>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               India&apos;s first advanced tyre pressure equalization system designed specifically for commercial trailers. 

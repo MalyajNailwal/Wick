@@ -5,17 +5,11 @@ import { motion } from 'framer-motion';
 import { 
   Cpu, 
   Wifi, 
-  TrendingUp, 
-  AlertTriangle, 
   Zap, 
   Settings, 
   Smartphone,
   Activity,
-  Database,
   CheckCircle,
-  Lightbulb,
-  Target,
-  Award,
   Play,
   Pause,
   Volume2,
@@ -25,7 +19,6 @@ import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
-import StoryTimeline from '@/components/ui/StoryTimeline';
 
 const TechnologyPage = () => {
   const router = useRouter();
@@ -134,50 +127,7 @@ const TechnologyPage = () => {
     setTimeout(() => setShowTechDocsPopup(false), 4000); // Auto-hide after 4 seconds
   };
 
-  // Timeline events for technology development
-  const timelineEvents = [
-    {
-      year: "2021",
-      title: "The Vision Born",
-      description: "Wick Automation LLP was founded with a clear mission: to revolutionize commercial vehicle safety through innovative technology. Our team of engineers began developing the first ATES prototype.",
-      highlight: true,
-      icon: <Lightbulb className="w-6 h-6 text-yellow-400" />
-    },
-    {
-      year: "2022",
-      title: "Innovation Takes Shape",
-      description: "After extensive research and development, we successfully created India&apos;s first Automatic Tyre Equalisation System. The breakthrough technology was ready to transform the industry.",
-      highlight: false
-    },
-    {
-      year: "2023",
-      title: "Market Revolution",
-      description: "ATES launched commercially, immediately showing dramatic improvements in safety and efficiency. Fleet operators began experiencing 20% longer tire life and over 2% better fuel efficiency.",
-      highlight: true,
-      icon: <Target className="w-6 h-6 text-green-500" />
-    },
-    {
-      year: "2024",
-      title: "Industry Recognition",
-      description: "Wick received multiple awards for innovation in automotive safety. Our technology became the gold standard for commercial vehicle tire management across India.",
-      highlight: false,
-      icon: <Award className="w-6 h-6 text-amber-500" />
-    },
-    {
-      year: "2025",
-      title: "Expanding Horizons",
-      description: "With proven success across India, Wick is now expanding internationally and developing next-generation automotive safety solutions for the global market.",
-      highlight: true,
-      icon: <TrendingUp className="w-6 h-6 text-blue-500" />
-    },
-    {
-      year: "The Future",
-      title: "Continuing Innovation",
-      description: "Our research continues into next-generation automotive safety technologies, including enhanced sensor integration and expanded vehicle compatibility, leading the automotive safety revolution.",
-      highlight: true,
-      icon: <Zap className="w-6 h-6 text-purple-500" />
-    }
-  ];
+
 
   const technologies = [
     {
@@ -593,12 +543,7 @@ const TechnologyPage = () => {
         }
       />
 
-      {/* Technology Development Timeline */}
-      <StoryTimeline
-        title="The Innovation Journey"
-        subtitle="From concept to cutting-edge technology - the evolution of ATES"
-        events={timelineEvents}
-      />
+
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-primary-600 to-primary-800">

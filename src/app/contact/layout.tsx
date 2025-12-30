@@ -44,7 +44,7 @@ export default function ContactLayout({
             '@type': 'ContactPage',
             mainEntity: {
               '@type': 'Organization',
-              name: 'Wick Automation LLP',
+              name: 'Wick',
               url: 'https://wick.co.in',
               telephone: '+91-9721601500',
               email: 'office@wick.co.in',
