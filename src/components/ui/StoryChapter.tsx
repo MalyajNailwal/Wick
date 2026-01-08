@@ -80,21 +80,23 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
             className={`space-y-8 ${contentOrder} ${layout === 'center' ? 'text-center' : ''}`}
           >
             {/* Chapter Number */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <span className="text-8xl md:text-9xl font-display font-bold text-red-100/30 leading-none select-none">
-                {chapterNumber}
-              </span>
-              <div className={`absolute inset-0 flex items-center ${layout === 'center' ? 'justify-center' : 'justify-start'}`}>
-                <span className="text-lg font-semibold text-red-800 tracking-wider uppercase">
-                  Chapter {chapterNumber}
+            {chapterNumber && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative"
+              >
+                <span className="text-8xl md:text-9xl font-display font-bold text-red-100/30 leading-none select-none">
+                  {chapterNumber}
                 </span>
-              </div>
-            </motion.div>
+                <div className={`absolute inset-0 flex items-center ${layout === 'center' ? 'justify-center' : 'justify-start'}`}>
+                  <span className="text-lg font-semibold text-red-800 tracking-wider uppercase">
+                    Chapter {chapterNumber}
+                  </span>
+                </div>
+              </motion.div>
+            )}
 
             {/* Title */}
             <motion.h2
