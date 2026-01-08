@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Shield, Zap, TrendingUp, Star, ChevronDown, Lightbulb, AlertTriangle } from 'lucide-react';
+import { ArrowRight, Shield, Zap, TrendingUp, ChevronDown, Lightbulb, AlertTriangle } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -52,6 +52,14 @@ const PrologueSection = () => {
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Smooth scroll to next section
+  const scrollToNextSection = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
 
   // Initialize client-side state
   useEffect(() => {
@@ -230,7 +238,8 @@ const PrologueSection = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-primary-500 to-primary-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-2xl shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-500 flex items-center justify-center mx-auto group"
+              onClick={scrollToNextSection}
+              className="bg-gradient-to-r from-primary-500 to-primary-700 text-white px-10 py-4 rounded-full font-semibold text-lg shadow-2xl shadow-primary-500/25 hover:shadow-primary-500/40 transition-all duration-500 flex items-center justify-center mx-auto group cursor-pointer"
             >
               Begin Our Story
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -249,6 +258,7 @@ const PrologueSection = () => {
         <motion.div
           animate={{ y: [0, 15, 0] }}
           transition={{ repeat: Infinity, duration: 2.5 }}
+          onClick={scrollToNextSection}
           className="text-primary-400 hover:text-primary-300 transition-colors cursor-pointer"
         >
           <ChevronDown size={36} />
@@ -531,6 +541,38 @@ const StoryJourney = () => {
                   </motion.div>
                 </motion.div>
               </div>
+
+              {/* Slideshow Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+                {/* Indicator 1 */}
+                <motion.div
+                  className="w-2 h-2 rounded-full bg-white"
+                  animate={{ 
+                    opacity: [1, 1, 0.3, 0.3, 1],
+                    scale: [1.2, 1.2, 0.8, 0.8, 1.2]
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    times: [0, 0.375, 0.5, 0.875, 1]
+                  }}
+                />
+                {/* Indicator 2 */}
+                <motion.div
+                  className="w-2 h-2 rounded-full bg-white"
+                  animate={{ 
+                    opacity: [0.3, 0.3, 1, 1, 0.3],
+                    scale: [0.8, 0.8, 1.2, 1.2, 0.8]
+                  }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    times: [0, 0.375, 0.5, 0.875, 1]
+                  }}
+                />
+              </div>
             </div>
           </div>
         }
@@ -678,57 +720,7 @@ const StoryJourney = () => {
   );
 };
 
-const EpilogueSection = () => {
-  const [ref, inView] = useInView({ threshold: 0.2 });
-  
-  return (
-    <section ref={ref} className="py-24 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6">
-            Today&apos;s Heroes
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Every day, ATES silently protects thousands of drivers across India&apos;s highways
-          </p>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-white p-8 rounded-2xl shadow-xl text-center max-w-4xl mx-auto"
-        >
-          <div className="flex justify-center mb-6">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <motion.div
-                key={star}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 + star * 0.1 }}
-              >
-                <Star className="w-8 h-8 text-yellow-400 fill-current mx-1" />
-              </motion.div>
-            ))}
-          </div>
-          <blockquote className="text-2xl text-gray-700 mb-8 italic font-light leading-relaxed">
-            &ldquo;Wick didn&apos;t just give us a product - they gave us peace of mind. 
-            Our drivers return home safely every night, and our operational costs 
-            have never been better. This is the future of fleet management.&rdquo;
-          </blockquote>
-          <div className="text-primary-600 font-semibold text-lg">
-            — Anonymous Fleet Director
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
+
 
 const CTASection = () => {
   const [ref, inView] = useInView({ threshold: 0.3 });
@@ -783,7 +775,6 @@ export default function Home() {
       <Navigation />
       <PrologueSection />
       <StoryJourney />
-      <EpilogueSection />
       <CTASection />
     </main>
   );
