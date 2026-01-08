@@ -241,7 +241,7 @@ const TechnologyPage = () => {
 
       {/* Technology Overview */}
       <StoryChapter
-        chapterNumber="01"
+        chapterNumber=""
         title="Core Technologies"
         subtitle="The building blocks of intelligent tire management"
         layout="full"
@@ -282,7 +282,7 @@ const TechnologyPage = () => {
 
       {/* How It Works */}
       <StoryChapter
-        chapterNumber="02"
+        chapterNumber=""
         title="How ATES Works"
         subtitle="Automatic Tyre Equalization System - Step-by-step process"
         layout="center"
