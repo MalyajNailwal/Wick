@@ -48,6 +48,38 @@ const AboutPage = () => {
     router.push('/blog');
   };
 
+  // Journey milestones data
+  const milestones = [
+    {
+      year: '2021',
+      title: 'Foundation',
+      description: 'Wick was founded with a mission to revolutionize commercial vehicle safety in India through innovative technology.',
+      roadPosition: { top: '80px', left: '50%' },
+      cardPosition: 'left'
+    },
+    {
+      year: '2022',
+      title: 'ATES Development',
+      description: 'Successfully developed and tested India\'s first Automatic Tyre Equalization System with our team of engineers.',
+      roadPosition: { top: '380px', left: '66%' },
+      cardPosition: 'right'
+    },
+    {
+      year: '2023',
+      title: 'Market Launch',
+      description: 'Launched ATES commercially and onboarded our first fleet partners, marking a new era in vehicle safety.',
+      roadPosition: { top: '700px', left: '33%' },
+      cardPosition: 'left'
+    },
+    {
+      year: '2024',
+      title: 'Expansion & Growth',
+      description: 'Expanded to 350+ vehicles protected and 50+ fleet partners across India, continuing our mission.',
+      roadPosition: { top: '1000px', left: '66%' },
+      cardPosition: 'right'
+    }
+  ];
+
   const values = [
     {
       icon: <Shield className="w-12 h-12 text-blue-600" />,
@@ -128,39 +160,181 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section ref={storyRef} className="py-24 bg-white">
+      {/* Journey Timeline with Curvy Road Animation */}
+      <section ref={storyRef} className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={storyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={storyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-8">
-              Our Story
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">
+              Our Journey
             </h2>
-            <div className="space-y-6 text-gray-600 leading-relaxed">
-              <p>
-                Founded in 2021, Wick emerged from a simple yet powerful vision: 
-                to make commercial vehicle transportation safer and more efficient through innovative technology.
-              </p>
-              <p>
-                Our journey began when our founders recognized the critical safety issues plaguing the 
-                heavy commercial vehicle industry in India. Tire-related accidents were causing significant 
-                losses in lives and property, while inefficient tire management was driving up operational costs.
-              </p>
-              <p>
-                Determined to address these challenges, we assembled a team of automotive engineers, 
-                technology experts, and industry veterans. Together, we developed India&apos;s first 
-                Automatic Tyre Equalization System (ATES) - a breakthrough innovation that has 
-                revolutionized commercial vehicle safety.
-              </p>
-              <p>
-                Today, Wick continues to lead the industry with cutting-edge solutions that protect 
-                thousands of vehicles and drivers across the nation.
-              </p>
-            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              The winding road that shaped our path to innovation
+            </p>
           </motion.div>
+
+          {/* Desktop View - Curvy Road */}
+          <div className="relative min-h-[1400px] hidden md:block">
+            {/* Animated Curvy Road Path - SVG */}
+            <svg 
+              className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-full" 
+              viewBox="0 0 600 1400" 
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <defs>
+                <linearGradient id="roadGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#1f2937" />
+                  <stop offset="50%" stopColor="#374151" />
+                  <stop offset="100%" stopColor="#1f2937" />
+                </linearGradient>
+                
+                {/* Tire Track Pattern */}
+                <pattern id="tireTrack" x="0" y="0" width="40" height="60" patternUnits="userSpaceOnUse">
+                  {/* Left tire marks */}
+                  <rect x="8" y="5" width="3" height="12" fill="#000000" opacity="0.3" rx="1" />
+                  <rect x="8" y="22" width="3" height="12" fill="#000000" opacity="0.3" rx="1" />
+                  <rect x="8" y="39" width="3" height="12" fill="#000000" opacity="0.3" rx="1" />
+                  
+                  {/* Right tire marks */}
+                  <rect x="29" y="5" width="3" height="12" fill="#000000" opacity="0.3" rx="1" />
+                  <rect x="29" y="22" width="3" height="12" fill="#000000" opacity="0.3" rx="1" />
+                  <rect x="29" y="39" width="3" height="12" fill="#000000" opacity="0.3" rx="1" />
+                </pattern>
+              </defs>
+              
+              {/* Road Path - Tedhi Medhi */}
+              <motion.path
+                d="M 300 80 
+                   C 300 120, 180 200, 200 280
+                   C 220 360, 420 380, 400 480
+                   C 380 580, 180 600, 200 700
+                   C 220 800, 420 820, 400 920
+                   C 380 1020, 250 1100, 300 1200"
+                stroke="url(#roadGradient)"
+                strokeWidth="50"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={storyInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              />
+              
+              {/* Tire Tracks on Road */}
+              <motion.path
+                d="M 300 80 
+                   C 300 120, 180 200, 200 280
+                   C 220 360, 420 380, 400 480
+                   C 380 580, 180 600, 200 700
+                   C 220 800, 420 820, 400 920
+                   C 380 1020, 250 1100, 300 1200"
+                stroke="url(#tireTrack)"
+                strokeWidth="45"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={storyInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut", delay: 0.2 }}
+              />
+              
+              {/* Road Center Dashed Lines */}
+              <motion.path
+                d="M 300 80 
+                   C 300 120, 180 200, 200 280
+                   C 220 360, 420 380, 400 480
+                   C 380 580, 180 600, 200 700
+                   C 220 800, 420 820, 400 920
+                   C 380 1020, 250 1100, 300 1200"
+                stroke="#fbbf24"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="25 25"
+                strokeLinecap="round"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={storyInView ? { pathLength: 1, opacity: 0.8 } : { pathLength: 0, opacity: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut", delay: 0.5 }}
+              />
+            </svg>
+
+            {/* Timeline Milestones positioned along the road */}
+            <div className="relative">
+              {milestones.map((milestone, index) => (
+                <div
+                  key={milestone.year}
+                  className="absolute"
+                  style={{ 
+                    top: milestone.roadPosition.top, 
+                    left: milestone.roadPosition.left,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  {/* Road Marker Dot */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={storyInView ? { scale: 1 } : { scale: 0 }}
+                    transition={{ duration: 0.5, delay: 1 + index * 0.3 }}
+                    className="absolute top-0 left-1/2 transform -translate-x-1/2 z-20"
+                  >
+                    <div className="w-10 h-10 bg-red-600 rounded-full border-4 border-white shadow-xl flex items-center justify-center">
+                      <div className="w-4 h-4 bg-white rounded-full animate-pulse" />
+                    </div>
+                  </motion.div>
+
+                  {/* Milestone Card */}
+                  <motion.div
+                    initial={{ opacity: 0, x: milestone.cardPosition === 'left' ? 50 : -50 }}
+                    animate={storyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: milestone.cardPosition === 'left' ? 50 : -50 }}
+                    transition={{ duration: 0.6, delay: 1.2 + index * 0.3 }}
+                    className="absolute top-0"
+                    style={{
+                      [milestone.cardPosition]: '60px',
+                      width: '320px'
+                    }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div className="text-red-600 font-bold text-2xl mb-3">{milestone.year}</div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{milestone.title}</h3>
+                      <p className="text-gray-600 leading-relaxed text-sm">{milestone.description}</p>
+                    </motion.div>
+                  </motion.div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile View - Vertical Timeline */}
+          <div className="md:hidden space-y-12">
+            {milestones.map((milestone, index) => (
+              <motion.div
+                key={milestone.year}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="relative pl-12"
+              >
+                <div className="absolute left-0 top-0 w-8 h-8 bg-red-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                  <div className="w-3 h-3 bg-white rounded-full" />
+                </div>
+                {index < 3 && (
+                  <div className="absolute left-4 top-8 w-0.5 h-full bg-red-300" />
+                )}
+                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                  <div className="text-red-600 font-bold text-2xl mb-3">{milestone.year}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{milestone.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
