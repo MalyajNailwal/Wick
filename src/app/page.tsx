@@ -716,6 +716,161 @@ const StoryJourney = () => {
           <ProductImageWithRotation />
         }
       />
+
+      {/* Trusted Customers Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden relative">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-red-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-block"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 rounded-full mb-4">
+                <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
+                <span className="text-red-600 font-semibold text-sm">Industry Leaders Trust Us</span>
+              </div>
+            </motion.div>
+            
+            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Powering India&apos;s{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
+                Leading Fleets
+              </span>
+            </h3>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+              From highways to city streets, our technology protects vehicles across the nation
+            </p>
+          </motion.div>
+
+          {/* Enhanced Infinite Scrolling Logo Carousel */}
+          <div className="relative py-8">
+            {/* Premium Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-20 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-slate-100 via-slate-100/80 to-transparent z-20 pointer-events-none"></div>
+            
+            {/* Scrolling Container with Enhanced Design */}
+            <div className="flex overflow-hidden">
+              <motion.div
+                className="flex gap-8 items-center"
+                animate={{
+                  x: [0, -1680],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 35,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {/* First set of logos */}
+                {[
+                  { id: 'yorksaff_fyrzud', name: 'Yorksaff' },
+                  { id: 'cj_iu8rpo', name: 'CJ' },
+                  { id: 'lauls_zqpp7j', name: 'Lauls' },
+                  { id: 'darcel_co7yx4', name: 'Darcel' },
+                  { id: 'tejas_vv92mf', name: 'Tejas' },
+                  { id: 'kappor_d_espnxo', name: 'Kappor' },
+                  { id: 'adr_uzjgk3', name: 'ADR' },
+                  { id: 'om_red_moters_hfgtv5', name: 'Om Red Motors' },
+                  { id: 'bartiyasena_yiodez', name: 'Bhartiya Sena' },
+                  { id: 'lohar_wbyijz', name: 'Lohar' },
+                  { id: 'sany_zi41fd', name: 'Sany' },
+                  { id: 'sdr_v6ko6y', name: 'SDR' },
+                  { id: 'tatadlt_p0q7uf', name: 'Tata DLT' },
+                  { id: 's_ay2uon', name: 'S' },
+                ].map((logo) => (
+                  <motion.div
+                    key={logo.id}
+                    whileHover={{ scale: 1.08, y: -4 }}
+                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-5 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
+                  >
+                    <img
+                      src={`https://res.cloudinary.com/dctzpvbvq/image/upload/${logo.id}`}
+                      alt={`${logo.name} logo`}
+                      className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+                
+                {/* Duplicate set for seamless loop */}
+                {[
+                  { id: 'yorksaff_fyrzud', name: 'Yorksaff' },
+                  { id: 'cj_iu8rpo', name: 'CJ' },
+                  { id: 'lauls_zqpp7j', name: 'Lauls' },
+                  { id: 'darcel_co7yx4', name: 'Darcel' },
+                  { id: 'tejas_vv92mf', name: 'Tejas' },
+                  { id: 'kappor_d_espnxo', name: 'Kappor' },
+                  { id: 'adr_uzjgk3', name: 'ADR' },
+                  { id: 'om_red_moters_hfgtv5', name: 'Om Red Motors' },
+                  { id: 'bartiyasena_yiodez', name: 'Bhartiya Sena' },
+                  { id: 'lohar_wbyijz', name: 'Lohar' },
+                  { id: 'sany_zi41fd', name: 'Sany' },
+                  { id: 'sdr_v6ko6y', name: 'SDR' },
+                  { id: 'tatadlt_p0q7uf', name: 'Tata DLT' },
+                  { id: 's_ay2uon', name: 'S' },
+                ].map((logo, index) => (
+                  <motion.div
+                    key={`${logo.id}-duplicate-${index}`}
+                    whileHover={{ scale: 1.08, y: -4 }}
+                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-5 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
+                  >
+                    <img
+                      src={`https://res.cloudinary.com/dctzpvbvq/image/upload/${logo.id}`}
+                      alt={`${logo.name} logo`}
+                      className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Trust Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full border border-green-200/50 shadow-sm">
+              <div className="flex -space-x-2">
+                <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+                  ✓
+                </div>
+                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+                  ✓
+                </div>
+                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+                  ✓
+                </div>
+              </div>
+              <span className="text-gray-700 font-medium">
+                Trusted by <span className="font-bold text-red-600">50+ fleet operators</span> nationwide
+              </span>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </>
   );
 };
