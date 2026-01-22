@@ -718,7 +718,7 @@ const StoryJourney = () => {
       />
 
       {/* Trusted Customers Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden relative">
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden relative">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-72 h-72 bg-red-500 rounded-full blur-3xl"></div>
@@ -731,7 +731,7 @@ const StoryJourney = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -740,25 +740,25 @@ const StoryJourney = () => {
               viewport={{ once: true }}
               className="inline-block"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-100 rounded-full mb-6">
                 <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
                 <span className="text-red-600 font-semibold text-sm">Industry Leaders Trust Us</span>
               </div>
             </motion.div>
             
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Powering India&apos;s{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
                 Leading Fleets
               </span>
             </h3>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               From highways to city streets, our technology protects vehicles across the nation
             </p>
           </motion.div>
 
           {/* Enhanced Infinite Scrolling Logo Carousel */}
-          <div className="relative py-8">
+          <div className="relative py-12">
             {/* Premium Gradient Overlays */}
             <div className="absolute left-0 top-0 bottom-0 w-40 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-20 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-40 bg-gradient-to-l from-slate-100 via-slate-100/80 to-transparent z-20 pointer-events-none"></div>
@@ -766,9 +766,9 @@ const StoryJourney = () => {
             {/* Scrolling Container with Enhanced Design */}
             <div className="flex overflow-hidden">
               <motion.div
-                className="flex gap-8 items-center"
+                className="flex gap-10 items-center"
                 animate={{
-                  x: [0, -1680],
+                  x: [0, -1820],
                 }}
                 transition={{
                   x: {
@@ -798,13 +798,13 @@ const StoryJourney = () => {
                 ].map((logo) => (
                   <motion.div
                     key={logo.id}
-                    whileHover={{ scale: 1.08, y: -4 }}
-                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-5 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
+                    whileHover={{ scale: 1.08, y: -6 }}
+                    className="flex-shrink-0 w-44 h-28 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
                   >
                     <img
                       src={`https://res.cloudinary.com/dctzpvbvq/image/upload/${logo.id}`}
                       alt={`${logo.name} logo`}
-                      className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                      className="max-w-full max-h-full object-contain transition-all duration-300"
                       loading="lazy"
                     />
                   </motion.div>
@@ -829,13 +829,13 @@ const StoryJourney = () => {
                 ].map((logo, index) => (
                   <motion.div
                     key={`${logo.id}-duplicate-${index}`}
-                    whileHover={{ scale: 1.08, y: -4 }}
-                    className="flex-shrink-0 w-40 h-24 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-5 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
+                    whileHover={{ scale: 1.08, y: -6 }}
+                    className="flex-shrink-0 w-44 h-28 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
                   >
                     <img
                       src={`https://res.cloudinary.com/dctzpvbvq/image/upload/${logo.id}`}
                       alt={`${logo.name} logo`}
-                      className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                      className="max-w-full max-h-full object-contain transition-all duration-300"
                       loading="lazy"
                     />
                   </motion.div>
@@ -850,21 +850,21 @@ const StoryJourney = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-16 text-center"
           >
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full border border-green-200/50 shadow-sm">
+            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full border border-green-200/50 shadow-md">
               <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+                <div className="w-9 h-9 rounded-full bg-green-500 flex items-center justify-center text-white text-sm font-bold border-2 border-white shadow-sm">
                   ✓
                 </div>
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+                <div className="w-9 h-9 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold border-2 border-white shadow-sm">
                   ✓
                 </div>
-                <div className="w-8 h-8 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold border-2 border-white">
+                <div className="w-9 h-9 rounded-full bg-red-500 flex items-center justify-center text-white text-sm font-bold border-2 border-white shadow-sm">
                   ✓
                 </div>
               </div>
-              <span className="text-gray-700 font-medium">
+              <span className="text-gray-700 font-medium text-lg">
                 Trusted by <span className="font-bold text-red-600">50+ fleet operators</span> nationwide
               </span>
             </div>
@@ -886,7 +886,7 @@ const CTASection = () => {
   };
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-r from-primary-600 to-primary-800">
+    <section ref={ref} className="py-24 bg-gradient-to-r from-gray-900 via-black to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -896,7 +896,7 @@ const CTASection = () => {
           <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
             Ready to Revolutionize Your Fleet?
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Join the future of commercial vehicle technology with Wick&apos;s ATES system. 
             Experience enhanced safety, improved efficiency, and reduced operational costs.
           </p>
@@ -905,7 +905,7 @@ const CTASection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={navigateToContact}
-              className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+              className="bg-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-red-700 hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
               Get Started Today
             </motion.button>
