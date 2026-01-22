@@ -782,9 +782,8 @@ const StoryJourney = () => {
                 {/* First set of logos */}
                 {[
                   { id: 'yorksaff_fyrzud', name: 'Yorksaff' },
-                  { id: 'cj_iu8rpo', name: 'CJ' },
+                  { id: 'cj_darcel_new_tbv68y', name: 'CJ' },
                   { id: 'lauls_zqpp7j', name: 'Lauls' },
-                  { id: 'darcel_co7yx4', name: 'Darcel' },
                   { id: 'tejas_vv92mf', name: 'Tejas' },
                   { id: 'kappor_d_espnxo', name: 'Kappor' },
                   { id: 'adr_uzjgk3', name: 'ADR' },
@@ -799,13 +798,19 @@ const StoryJourney = () => {
                   <motion.div
                     key={logo.id}
                     whileHover={{ scale: 1.08, y: -6 }}
-                    className="flex-shrink-0 w-44 h-28 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
+                    className="flex-shrink-0 w-44 h-28 flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-200/50 backdrop-blur-sm group cursor-pointer overflow-hidden relative"
                   >
+                    {/* Subtle pattern overlay to blend backgrounds */}
+                    <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-transparent via-white to-transparent" />
+                    
                     <img
                       src={`https://res.cloudinary.com/dctzpvbvq/image/upload/${logo.id}`}
                       alt={`${logo.name} logo`}
-                      className="max-w-full max-h-full object-contain transition-all duration-300"
+                      className="max-w-full max-h-full object-contain transition-all duration-300 relative z-10 mix-blend-multiply"
                       loading="lazy"
+                      style={{
+                        filter: 'contrast(1.1) brightness(1.05)'
+                      }}
                     />
                   </motion.div>
                 ))}
@@ -813,9 +818,8 @@ const StoryJourney = () => {
                 {/* Duplicate set for seamless loop */}
                 {[
                   { id: 'yorksaff_fyrzud', name: 'Yorksaff' },
-                  { id: 'cj_iu8rpo', name: 'CJ' },
+                  { id: 'cj_darcel_new_tbv68y', name: 'CJ' },
                   { id: 'lauls_zqpp7j', name: 'Lauls' },
-                  { id: 'darcel_co7yx4', name: 'Darcel' },
                   { id: 'tejas_vv92mf', name: 'Tejas' },
                   { id: 'kappor_d_espnxo', name: 'Kappor' },
                   { id: 'adr_uzjgk3', name: 'ADR' },
@@ -830,13 +834,19 @@ const StoryJourney = () => {
                   <motion.div
                     key={`${logo.id}-duplicate-${index}`}
                     whileHover={{ scale: 1.08, y: -6 }}
-                    className="flex-shrink-0 w-44 h-28 flex items-center justify-center bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-200/50 backdrop-blur-sm group cursor-pointer"
+                    className="flex-shrink-0 w-44 h-28 flex items-center justify-center bg-gradient-to-br from-white via-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-200/50 backdrop-blur-sm group cursor-pointer overflow-hidden relative"
                   >
+                    {/* Subtle pattern overlay to blend backgrounds */}
+                    <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-transparent via-white to-transparent" />
+                    
                     <img
                       src={`https://res.cloudinary.com/dctzpvbvq/image/upload/${logo.id}`}
                       alt={`${logo.name} logo`}
-                      className="max-w-full max-h-full object-contain transition-all duration-300"
+                      className="max-w-full max-h-full object-contain transition-all duration-300 relative z-10 mix-blend-multiply"
                       loading="lazy"
+                      style={{
+                        filter: 'contrast(1.1) brightness(1.05)'
+                      }}
                     />
                   </motion.div>
                 ))}
