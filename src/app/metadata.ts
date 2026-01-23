@@ -4,19 +4,30 @@ export const homeMetadata: Metadata = {
   title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
   description: 'Wick is India\'s leading ATES provider. Discover how Wick\'s Automatic Tyre Equalisation System transforms commercial vehicle safety. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings with Wick ATES.',
   keywords: 'Wick, Wick ATES, Wick India, Wick TyreRakhshak, Wick commercial vehicle, ATES, TyreRakhshak, automatic tyre equalisation, commercial vehicle safety, tyre pressure monitoring, fleet management, YORK ATES, truck safety India',
+  authors: [{ name: 'Wick' }],
+  creator: 'Wick',
+  publisher: 'Wick',
   openGraph: {
     title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
     description: 'Wick is India\'s leading ATES provider. Transform commercial vehicle safety with Wick\'s advanced ATES technology. 100% safety improvement, 20% longer tyre life.',
     url: 'https://wick.co.in',
     type: 'website',
+    siteName: 'Wick',
     images: [
       {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'TyreRakhshak ATES Product',
+        alt: 'Wick TyreRakhshak ATES Product',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wick | India\'s #1 ATES Technology',
+    description: 'Wick is India\'s leading ATES provider. 100% safety improvement, 20% longer tyre life.',
+    images: ['/media/productimghd-removebg-preview.png'],
+    creator: '@WickATES',
   },
   alternates: {
     canonical: 'https://wick.co.in',
