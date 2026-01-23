@@ -1,88 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Outer tire (black) with depth -->
-  <circle cx="50" cy="50" r="46" fill="#0a0a0a" stroke="#000" stroke-width="1"/>
-  <circle cx="50" cy="50" r="45" fill="#1a1a1a" stroke="#000" stroke-width="2"/>
-  
-  <!-- Tire sidewall texture -->
-  <circle cx="50" cy="50" r="42" fill="none" stroke="#2a2a2a" stroke-width="1.5"/>
-  <circle cx="50" cy="50" r="38" fill="none" stroke="#2a2a2a" stroke-width="2"/>
-  
-  <!-- Tread grooves (8 sections) - more prominent -->
-  <g stroke="#000" stroke-width="3" stroke-linecap="round">
-    <line x1="50" y1="5" x2="50" y2="22" />
-    <line x1="85.36" y1="14.64" x2="73.36" y2="26.64" />
-    <line x1="95" y1="50" x2="78" y2="50" />
-    <line x1="85.36" y1="85.36" x2="73.36" y2="73.36" />
-    <line x1="50" y1="95" x2="50" y2="78" />
-    <line x1="14.64" y1="85.36" x2="26.64" y2="73.36" />
-    <line x1="5" y1="50" x2="22" y2="50" />
-    <line x1="14.64" y1="14.64" x2="26.64" y2="26.64" />
-  </g>
-  
-  <!-- Secondary tread pattern -->
-  <g stroke="#0a0a0a" stroke-width="2" stroke-linecap="round" opacity="0.7">
-    <line x1="67.68" y1="10.36" x2="60.68" y2="17.36" />
-    <line x1="89.64" y1="32.32" x2="82.64" y2="39.32" />
-    <line x1="89.64" y1="67.68" x2="82.64" y2="60.68" />
-    <line x1="67.68" y1="89.64" x2="60.68" y2="82.64" />
-    <line x1="32.32" y1="89.64" x2="39.32" y2="82.64" />
-    <line x1="10.36" y1="67.68" x2="17.36" y2="60.68" />
-    <line x1="10.36" y1="32.32" x2="17.36" y2="39.32" />
-    <line x1="32.32" y1="10.36" x2="39.32" y2="17.36" />
-  </g>
-  
-  <!-- Inner rim (dark gray with metallic look) -->
-  <circle cx="50" cy="50" r="33" fill="#2a2a2a" stroke="#1a1a1a" stroke-width="2"/>
-  <circle cx="50" cy="50" r="32" fill="url(#rimGradient)" stroke="#1a1a1a" stroke-width="1"/>
-  
-  <!-- Rim spokes (5 spokes) - more defined -->
-  <g fill="#1a1a1a" stroke="#0a0a0a" stroke-width="0.5">
-    <path d="M 50 18 L 55 36 L 45 36 Z" />
-    <path d="M 74.5 29.5 L 66 45 L 59 36 Z" />
-    <path d="M 82 70 L 66 57 L 69 47 Z" />
-    <path d="M 25.5 70 L 34 57 L 31 47 Z" />
-    <path d="M 18 29.5 L 34 45 L 41 36 Z" />
-  </g>
-  
-  <!-- Center hub cap (red #b61212) with depth -->
-  <circle cx="50" cy="50" r="19" fill="#8a0d0d" opacity="0.5"/>
-  <circle cx="50" cy="50" r="18" fill="#b61212" stroke="#8a0d0d" stroke-width="2"/>
-  
-  <!-- Hub cap shine effect -->
-  <circle cx="50" cy="50" r="18" fill="url(#hubGradient)" opacity="0.7"/>
-  
-  <!-- Center bolt pattern (6 bolts) -->
-  <g fill="#8a0d0d" stroke="#6a0909" stroke-width="0.5">
-    <circle cx="50" cy="36" r="2.8" />
-    <circle cx="62.5" cy="43" r="2.8" />
-    <circle cx="62.5" cy="57" r="2.8" />
-    <circle cx="50" cy="64" r="2.8" />
-    <circle cx="37.5" cy="57" r="2.8" />
-    <circle cx="37.5" cy="43" r="2.8" />
-  </g>
-  
-  <!-- Center logo circle with depth -->
-  <circle cx="50" cy="50" r="9" fill="#6a0909" opacity="0.5"/>
-  <circle cx="50" cy="50" r="8.5" fill="#8a0d0d" stroke="#6a0909" stroke-width="1.5"/>
-  <circle cx="50" cy="50" r="8.5" fill="url(#logoGradient)" opacity="0.4"/>
-  
-  <!-- Letter W in center -->
-  <text x="50" y="57" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle" stroke="#000" stroke-width="0.3">W</text>
-  
-  <!-- Gradients -->
+<svg width="80" height="32" viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="hubGradient" cx="35%" cy="35%">
-      <stop offset="0%" style="stop-color:#ff5555;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#b61212;stop-opacity:0.3" />
-      <stop offset="100%" style="stop-color:#8a0d0d;stop-opacity:0" />
-    </radialGradient>
-    <radialGradient id="rimGradient" cx="30%" cy="30%">
-      <stop offset="0%" style="stop-color:#3a3a3a;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
-    </radialGradient>
-    <radialGradient id="logoGradient" cx="30%" cy="30%">
-      <stop offset="0%" style="stop-color:#ff4444;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8a0d0d;stop-opacity:0" />
-    </radialGradient>
+    <linearGradient id="wickGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
   </defs>
+
+  <!-- Simple "Wick" text -->
+  <text x="40" y="22" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="url(#wickGradient)" text-anchor="middle">
+    Wick
+  </text>
 </svg>
