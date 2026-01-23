@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   name: 'Wick',
   fullName: 'Wick',
   url: 'https://wick.co.in',
-  description: "India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles",
+  description: "Wick is India's leading Automatic Tyre Equalisation System (ATES) provider for commercial vehicles",
   locale: 'en_IN',
   twitter: '@WickATES',
   email: 'office@wick.co.in',
@@ -21,12 +21,22 @@ export const SITE_CONFIG = {
 };
 
 export const PRIMARY_KEYWORDS = [
+  // Wick Brand Keywords (HIGHEST PRIORITY)
   'Wick',
   'Wick ATES',
   'Wick India',
   'Wick TyreRakhshak',
+  'Wick technology',
   'Wick commercial vehicle',
   'Wick tyre safety',
+  'Wick fleet solutions',
+  'Wick automotive',
+  'Wick safety systems',
+  'Wick Faridabad',
+  'Wick tyre management',
+  'Wick CPMS',
+  'Wick monitoring system',
+  // Product Keywords
   'ATES',
   'Automatic Tyre Equalisation System',
   'TyreRakhshak',
@@ -39,14 +49,21 @@ export const PRIMARY_KEYWORDS = [
 ];
 
 export const SECONDARY_KEYWORDS = [
-  'Wick technology',
-  'Wick fleet solutions',
-  'Wick automotive',
-  'Wick safety systems',
-  'Wick Faridabad',
-  'Wick tyre management',
-  'Wick CPMS',
-  'Wick monitoring system',
+  // Wick Brand Variations
+  'Wick company',
+  'Wick products',
+  'Wick solutions',
+  'Wick innovation',
+  'Wick safety',
+  'Wick system',
+  'about Wick',
+  'contact Wick',
+  'Wick team',
+  'Wick story',
+  // Product & Technology Keywords
+  'Wick ATES technology',
+  'Wick fleet management',
+  'Wick tyre monitoring',
   'tyre inflation system',
   'heavy commercial vehicle',
   'HCV safety',
@@ -59,6 +76,9 @@ export const SECONDARY_KEYWORDS = [
   'Heavy commercial vehicle safety',
   'Fuel efficiency trucks',
   'Tyre management system India',
+  'ATES India',
+  'ATES technology India',
+  'commercial vehicle technology India',
 ];
 
 /**
@@ -66,7 +86,7 @@ export const SECONDARY_KEYWORDS = [
  */
 export function generatePageTitle(pageTitle: string, includeSiteName = true): string {
   if (includeSiteName) {
-    return `${pageTitle} | Wick ATES`;
+    return `${pageTitle} | Wick`;
   }
   return pageTitle;
 }

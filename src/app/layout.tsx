@@ -23,10 +23,10 @@ const leagueSpartan = League_Spartan({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wick.co.in'),
   title: {
-    default: 'Wick - Automatic Tyre Equalisation System (ATES) | Wick India',
-    template: '%s | Wick ATES'
+    default: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
+    template: '%s | Wick'
   },
-  description: "Wick: India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles. Improve safety by 100%, extend tyre life by 20%, save 2%+ fuel. By YORK & SAF-HOLLAND Group.",
+  description: "Wick is India's leading ATES provider. Wick's advanced Automatic Tyre Equalisation System transforms commercial vehicle safety. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings. Wick - By YORK & SAF-HOLLAND Group.",
   keywords: [
     'Wick',
     'Wick ATES',
@@ -68,9 +68,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://wick.co.in',
-    siteName: 'Wick ATES',
-    title: 'Wick - Automatic Tyre Equalisation System | Wick India',
-    description: "Wick: India's first advanced ATES for commercial vehicles. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings.",
+    siteName: 'Wick',
+    title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
+    description: "Wick is India's leading ATES provider. Wick's advanced ATES technology transforms commercial vehicle safety. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings.",
     images: [
       {
         url: '/media/productimghd-removebg-preview.png',
@@ -82,10 +82,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wick - Automatic Tyre Equalisation System | Wick India',
-    description: "Wick: India's first advanced ATES for commercial vehicles. 100% safety improvement, 20% longer tyre life.",
+    title: 'Wick | India\'s #1 ATES Technology',
+    description: "Wick is India's leading ATES provider. 100% safety improvement, 20% longer tyre life with Wick ATES.",
     images: ['/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
+    site: '@WickATES',
   },
   robots: {
     index: true,
@@ -129,6 +130,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <GoogleAnalytics />
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -136,10 +138,12 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Wick',
-              alternateName: 'Wick ATES',
+              alternateName: ['Wick ATES', 'Wick India', 'Wick TyreRakhshak'],
               url: 'https://wick.co.in',
               logo: 'https://wick.co.in/logo.svg',
-              description: "India's first advanced Automatic Tyre Equalisation System (ATES) for commercial vehicles",
+              description: "Wick is India's leading Automatic Tyre Equalisation System (ATES) provider for commercial vehicles",
+              slogan: 'Revolutionizing Commercial Vehicle Safety',
+              foundingDate: '2021',
               address: {
                 '@type': 'PostalAddress',
                 streetAddress: 'House Of Wick, 33B, NIT',
@@ -158,11 +162,61 @@ export default function RootLayout({
               },
               sameAs: [
                 'https://www.linkedin.com/company/wick-ates',
-                'https://twitter.com/WickATES'
+                'https://twitter.com/WickATES',
+                'https://www.facebook.com/wickates',
+                'https://www.instagram.com/wickates'
               ],
               founder: {
                 '@type': 'Organization',
                 name: 'Wick'
+              }
+            })
+          }}
+        />
+        {/* Brand Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Brand',
+              name: 'Wick',
+              alternateName: ['Wick ATES', 'Wick India', 'Wick TyreRakhshak'],
+              url: 'https://wick.co.in',
+              logo: 'https://wick.co.in/logo.svg',
+              description: "India's leading Automatic Tyre Equalisation System provider",
+              slogan: 'Revolutionizing Commercial Vehicle Safety',
+              foundingDate: '2021',
+              foundingLocation: {
+                '@type': 'Place',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressLocality: 'Faridabad',
+                  addressRegion: 'Haryana',
+                  addressCountry: 'IN'
+                }
+              }
+            })
+          }}
+        />
+        {/* WebSite Schema with Search Action */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Wick',
+              alternateName: 'Wick ATES',
+              url: 'https://wick.co.in',
+              description: "Wick is India's leading ATES technology provider",
+              publisher: {
+                '@type': 'Organization',
+                name: 'Wick',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://wick.co.in/logo.svg'
+                }
               }
             })
           }}

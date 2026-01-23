@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const homeMetadata: Metadata = {
-  title: 'Wick - Automatic Tyre Equalisation System | India\'s First Advanced ATES',
-  description: 'Discover how Wick\'s Automatic Tyre Equalisation System (ATES) is transforming commercial vehicle safety and efficiency across India\'s highways. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings.',
-  keywords: 'ATES, TyreRakhshak, automatic tyre equalisation, commercial vehicle safety, tyre pressure monitoring, fleet management, YORK ATES, truck safety India',
+  title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
+  description: 'Wick is India\'s leading ATES provider. Discover how Wick\'s Automatic Tyre Equalisation System transforms commercial vehicle safety. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings with Wick ATES.',
+  keywords: 'Wick, Wick ATES, Wick India, Wick TyreRakhshak, Wick commercial vehicle, ATES, TyreRakhshak, automatic tyre equalisation, commercial vehicle safety, tyre pressure monitoring, fleet management, YORK ATES, truck safety India',
   openGraph: {
-    title: 'Wick - Automatic Tyre Equalisation System | India\'s First Advanced ATES',
-    description: 'Transform commercial vehicle safety with India\'s first advanced ATES. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
+    description: 'Wick is India\'s leading ATES provider. Transform commercial vehicle safety with Wick\'s advanced ATES technology. 100% safety improvement, 20% longer tyre life.',
     url: 'https://wick.co.in',
     type: 'website',
     images: [
@@ -24,12 +24,12 @@ export const homeMetadata: Metadata = {
 };
 
 export const productsMetadata: Metadata = {
-  title: 'TyreRakhshak ATES Products | Automatic Tyre Equalisation System',
-  description: 'Explore TyreRakhshak ATES products for commercial vehicles. Choose between base ATES or premium ATES + CPMS with real-time monitoring. 20% longer tyre life, 2%+ fuel efficiency, 144 hours saved annually.',
-  keywords: 'TyreRakhshak, ATES products, CPMS, tyre pressure monitoring, commercial vehicle products, fleet management system, YORK ATES, automatic tyre inflation',
+  title: 'Wick TyreRakhshak | ATES Products for Commercial Vehicles',
+  description: 'Explore Wick TyreRakhshak ATES products for commercial vehicles. Choose between Wick base ATES or premium Wick ATES + CPMS with real-time monitoring. 20% longer tyre life, 2%+ fuel efficiency with Wick.',
+  keywords: 'Wick, Wick TyreRakhshak, Wick ATES, Wick products, TyreRakhshak, ATES products, CPMS, tyre pressure monitoring, commercial vehicle products, fleet management system, YORK ATES, automatic tyre inflation',
   openGraph: {
-    title: 'TyreRakhshak ATES Products | Automatic Tyre Equalisation System',
-    description: 'Choose the right ATES solution for your fleet. Base ATES or Premium ATES + CPMS with real-time monitoring and predictive maintenance.',
+    title: 'Wick TyreRakhshak | ATES Products for Commercial Vehicles',
+    description: 'Choose the right Wick ATES solution for your fleet. Wick base ATES or Premium Wick ATES + CPMS with real-time monitoring and predictive maintenance.',
     url: 'https://wick.co.in/products',
     type: 'website',
     images: [
@@ -47,12 +47,12 @@ export const productsMetadata: Metadata = {
 };
 
 export const technologyMetadata: Metadata = {
-  title: 'ATES Technology | How Automatic Tyre Equalisation Works',
-  description: 'Discover the science behind Wick\'s ATES technology. Advanced sensors, IoT connectivity, and precision engineering for intelligent tyre management. Learn how automatic tyre equalisation improves safety and efficiency.',
-  keywords: 'ATES technology, automatic tyre equalisation, tyre pressure sensors, IoT fleet management, commercial vehicle technology, tyre monitoring system, YORK technology',
+  title: 'Wick ATES Technology | How Our System Works',
+  description: 'Discover the science behind Wick\'s ATES technology. Wick uses advanced sensors, IoT connectivity, and precision engineering for intelligent tyre management. Learn how Wick\'s automatic tyre equalisation improves safety.',
+  keywords: 'Wick, Wick ATES, Wick technology, ATES technology, automatic tyre equalisation, tyre pressure sensors, IoT fleet management, commercial vehicle technology, tyre monitoring system, YORK technology',
   openGraph: {
-    title: 'ATES Technology | How Automatic Tyre Equalisation Works',
-    description: 'Explore the cutting-edge technology behind India\'s first advanced ATES. Advanced sensors, IoT connectivity, and precision engineering.',
+    title: 'Wick ATES Technology | How Our System Works',
+    description: 'Explore the cutting-edge technology behind Wick\'s advanced ATES. Wick uses advanced sensors, IoT connectivity, and precision engineering.',
     url: 'https://wick.co.in/technology',
     type: 'website',
     images: [
@@ -70,12 +70,12 @@ export const technologyMetadata: Metadata = {
 };
 
 export const aboutMetadata: Metadata = {
-  title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
-  description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, we\'re revolutionizing commercial vehicle safety with innovative ATES technology.',
-  keywords: 'Wick, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND',
+  title: 'Wick | Pioneering ATES Technology in India Since 2021',
+  description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, Wick is revolutionizing commercial vehicle safety with innovative Wick ATES technology. Discover the Wick story.',
+  keywords: 'Wick, Wick India, Wick ATES, Wick company, Wick story, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND',
   openGraph: {
-    title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
-    description: 'Founded in 2021, Wick is revolutionizing commercial vehicle safety with India\'s first advanced ATES technology.',
+    title: 'Wick | Pioneering ATES Technology in India Since 2021',
+    description: 'Founded in 2021, Wick is revolutionizing commercial vehicle safety with India\'s first advanced Wick ATES technology. Discover the Wick story.',
     url: 'https://wick.co.in/about',
     type: 'website',
     images: [
@@ -93,12 +93,12 @@ export const aboutMetadata: Metadata = {
 };
 
 export const contactMetadata: Metadata = {
-  title: 'Contact Wick | Get ATES Quote & Technical Support',
-  description: 'Contact Wick for ATES product inquiries, technical support, and fleet safety consultations. Located in Faridabad, India. Call +91 9721601500 or email office@wick.co.in',
-  keywords: 'contact Wick, ATES quote, technical support, fleet consultation, commercial vehicle safety, Faridabad India, ATES inquiry',
+  title: 'Wick Contact | Get ATES Quote & Support',
+  description: 'Contact Wick for ATES product inquiries, technical support, and fleet safety consultations. Wick is located in Faridabad, India. Call Wick at +91 9721601500 or email office@wick.co.in',
+  keywords: 'Wick, Wick contact, contact Wick, Wick India, Wick Faridabad, ATES quote, technical support, fleet consultation, commercial vehicle safety, Faridabad India, ATES inquiry',
   openGraph: {
-    title: 'Contact Wick | Get ATES Quote & Technical Support',
-    description: 'Get in touch for ATES product inquiries, technical support, and fleet safety consultations. Call +91 9721601500',
+    title: 'Wick Contact | Get ATES Quote & Support',
+    description: 'Get in touch with Wick for ATES product inquiries, technical support, and fleet safety consultations. Call Wick at +91 9721601500',
     url: 'https://wick.co.in/contact',
     type: 'website',
     images: [
@@ -116,12 +116,12 @@ export const contactMetadata: Metadata = {
 };
 
 export const blogMetadata: Metadata = {
-  title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
-  description: 'Stay updated with expert insights on fleet management, tyre technology, and commercial vehicle safety. Subscribe to Wick Insights for industry news and ATES technology updates.',
-  keywords: 'fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips',
+  title: 'Wick Blog | Fleet Management & ATES Technology Insights',
+  description: 'Stay updated with Wick\'s expert insights on fleet management, tyre technology, and commercial vehicle safety. Subscribe to Wick Blog for industry news and Wick ATES technology updates.',
+  keywords: 'Wick, Wick blog, Wick insights, Wick news, fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips',
   openGraph: {
-    title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
-    description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety. Coming soon.',
+    title: 'Wick Blog | Fleet Management & ATES Technology Insights',
+    description: 'Wick\'s expert insights on fleet management, tyre technology, and commercial vehicle safety. Stay updated with Wick.',
     url: 'https://wick.co.in/blog',
     type: 'website',
     images: [
