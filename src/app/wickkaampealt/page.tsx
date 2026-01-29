@@ -23,6 +23,7 @@ export default function WickKaampealtPage() {
   const [showCamera, setShowCamera] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [currentTime, setCurrentTime] = useState('');
   
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -35,6 +36,18 @@ export default function WickKaampealtPage() {
         streamRef.current.getTracks().forEach(track => track.stop());
       }
     };
+  }, []);
+
+  // Update current time every second
+  useEffect(() => {
+    const updateTime = () => {
+      setCurrentTime(getISTTime());
+    };
+    
+    updateTime(); // Initial update
+    const interval = setInterval(updateTime, 1000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   // Get Indian Standard Time
@@ -293,7 +306,15 @@ export default function WickKaampealtPage() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Wick Kaampealt
           </h1>
-          <p className="text-gray-600">Employee Attendance System</p>
+          <p className="text-gray-600 mb-3">Employee Attendance System</p>
+          
+          {/* Current Time Display */}
+          <div className="inline-flex items-center bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
+            <Clock className="w-4 h-4 text-blue-600 mr-2" />
+            <span className="text-sm font-medium text-blue-900">
+              {currentTime || 'Loading...'}
+            </span>
+          </div>
         </motion.div>
 
         {/* Notification */}
@@ -329,7 +350,7 @@ export default function WickKaampealtPage() {
           <div className="space-y-4">
             {/* Employee Name */}
             <div>
-              <label className="block text-sm font-medium text-red-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 <User className="w-4 h-4 inline mr-1" />
                 Employee Name *
               </label>
@@ -337,15 +358,15 @@ export default function WickKaampealtPage() {
                 type="text"
                 value={employeeName}
                 onChange={(e) => setEmployeeName(e.target.value)}
-                disabled={isCheckedIn}
+                disabled={isSubmitting}
                 placeholder="Enter your name"
-                className="w-full px-4 py-3 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed text-red-900 placeholder-red-400"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
 
             {/* Location */}
             <div>
-              <label className="block text-sm font-medium text-red-700 mb-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 <MapPin className="w-4 h-4 inline mr-1" />
                 Location *
               </label>
@@ -353,9 +374,9 @@ export default function WickKaampealtPage() {
                 type="text"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                disabled={isCheckedIn}
+                disabled={isSubmitting}
                 placeholder="Enter your location"
-                className="w-full px-4 py-3 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed text-red-900 placeholder-red-400"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
             </div>
 
@@ -398,13 +419,14 @@ export default function WickKaampealtPage() {
           transition={{ delay: 0.2 }}
           className="bg-blue-50 border border-blue-200 rounded-lg p-4"
         >
-          <h3 className="font-semibold text-blue-900 mb-2">Kaise kaam karta hai:</h3>
+          <h3 className="font-semibold text-blue-900 mb-2">📋 Kaise kaam karta hai:</h3>
           <ul className="text-sm text-blue-800 space-y-1">
             <li>• Apna naam aur location enter karein</li>
-            <li>• Check In ya Check Out choose karein</li>
+            <li>• <strong>Check In</strong> ya <strong>Check Out</strong> choose karein</li>
             <li>• Photo lein jab prompt ho</li>
             <li>• Location automatically capture hoti hai</li>
             <li>• Time Indian Standard Time (IST) mein record hota hai</li>
+            <li>• Alag-alag check-in aur check-out kar sakte hain</li>
           </ul>
         </motion.div>
       </div>
