@@ -16,9 +16,20 @@ export async function POST(request: NextRequest) {
     } = body;
 
     // Validate required fields
-    if (!employeeName || !location || !checkInTime || !checkOutTime) {
+    if (!employeeName || !location) {
       return NextResponse.json(
         { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
+    // Check if it's check-in or check-out
+    const isCheckIn = !!checkInTime;
+    const isCheckOut = !!checkOutTime;
+
+    if (!isCheckIn && !isCheckOut) {
+      return NextResponse.json(
+        { error: 'Either check-in or check-out time is required' },
         { status: 400 }
       );
     }
@@ -70,18 +81,16 @@ export async function POST(request: NextRequest) {
         const headers = [[
           'Employee Name',
           'Location',
-          'Check-In Time',
-          'Check-In Coordinates',
-          'Check-In Photo',
-          'Check-Out Time',
-          'Check-Out Coordinates',
-          'Check-Out Photo',
+          'Action Type',
+          'Time (IST)',
+          'Coordinates',
+          'Photo',
           'Date'
         ]];
 
         await sheets.spreadsheets.values.update({
           spreadsheetId,
-          range: 'Attendance!A1:I1',
+          range: 'Attendance!A1:G1',
           valueInputOption: 'RAW',
           requestBody: {
             values: headers,
@@ -92,30 +101,42 @@ export async function POST(request: NextRequest) {
       console.error('Error checking/creating Attendance sheet:', error);
     }
 
-    // Format photos as IMAGE formulas if they exist
-    const checkInPhotoFormula = checkInPhoto 
-      ? `=IMAGE("${checkInPhoto}")` 
-      : '';
-    const checkOutPhotoFormula = checkOutPhoto 
-      ? `=IMAGE("${checkOutPhoto}")` 
+    // Determine action type and data
+    const actionType = isCheckIn ? 'Check In' : 'Check Out';
+    const actionTime = isCheckIn ? checkInTime : checkOutTime;
+    const actionCoordinates = isCheckIn ? checkInCoordinates : checkOutCoordinates;
+    const actionPhoto = isCheckIn ? checkInPhoto : checkOutPhoto;
+
+    // Format photo as IMAGE formula if it exists
+    const photoFormula = actionPhoto 
+      ? `=IMAGE("${actionPhoto}")` 
       : '';
 
-    // Format dates
-    const checkInDate = new Date(checkInTime);
-    const checkOutDate = new Date(checkOutTime);
-    const dateStr = checkInDate.toLocaleDateString('en-IN');
+    // Format date in IST
+    const actionDate = new Date(actionTime);
+    const istTime = actionDate.toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+    const dateStr = actionDate.toLocaleDateString('en-IN', {
+      timeZone: 'Asia/Kolkata'
+    });
 
     // Prepare data for Google Sheets
     const values = [
       [
         employeeName,
         location,
-        checkInDate.toLocaleString('en-IN'),
-        checkInCoordinates || '',
-        checkInPhotoFormula,
-        checkOutDate.toLocaleString('en-IN'),
-        checkOutCoordinates || '',
-        checkOutPhotoFormula,
+        actionType,
+        istTime,
+        actionCoordinates || '',
+        photoFormula,
         dateStr
       ]
     ];
@@ -123,7 +144,7 @@ export async function POST(request: NextRequest) {
     // Append data to Attendance sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Attendance!A:I',
+      range: 'Attendance!A:G',
       valueInputOption: 'USER_ENTERED', // Important: USER_ENTERED to process formulas
       insertDataOption: 'INSERT_ROWS',
       requestBody: {

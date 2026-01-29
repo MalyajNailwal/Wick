@@ -19,10 +19,8 @@ interface AttendanceData {
 export default function WickKaampealtPage() {
   const [employeeName, setEmployeeName] = useState('');
   const [location, setLocation] = useState('');
-  const [isCheckedIn, setIsCheckedIn] = useState(false);
-  const [currentSession, setCurrentSession] = useState<AttendanceData | null>(null);
+  const [selectedAction, setSelectedAction] = useState<'checkin' | 'checkout' | null>(null);
   const [showCamera, setShowCamera] = useState(false);
-  const [captureType, setCaptureType] = useState<'checkin' | 'checkout'>('checkin');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   
@@ -38,6 +36,20 @@ export default function WickKaampealtPage() {
       }
     };
   }, []);
+
+  // Get Indian Standard Time
+  const getISTTime = () => {
+    return new Date().toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+  };
 
   const showNotification = (type: 'success' | 'error', message: string) => {
     setNotification({ type, message });
@@ -158,19 +170,13 @@ export default function WickKaampealtPage() {
     return canvas.toDataURL('image/jpeg', 0.3);
   };
 
-  const handleCheckIn = async () => {
+  const handleActionSelect = async (action: 'checkin' | 'checkout') => {
     if (!employeeName.trim() || !location.trim()) {
       showNotification('error', 'Please enter employee name and location');
       return;
     }
 
-    setCaptureType('checkin');
-    setShowCamera(true);
-    await startCamera();
-  };
-
-  const handleCheckOut = async () => {
-    setCaptureType('checkout');
+    setSelectedAction(action);
     setShowCamera(true);
     await startCamera();
   };
@@ -179,6 +185,7 @@ export default function WickKaampealtPage() {
     setIsSubmitting(true);
     
     try {
+      const istTime = getISTTime();
       const timestamp = new Date().toISOString();
       
       // Capture photo first
@@ -212,71 +219,51 @@ export default function WickKaampealtPage() {
         }
       }
 
-      if (captureType === 'checkin') {
-        const sessionData: AttendanceData = {
-          employeeName,
-          location,
-          checkInTime: timestamp,
-          checkInCoordinates: coordinates,
-          checkInPhoto: photo
-        };
-        
-        setCurrentSession(sessionData);
-        setIsCheckedIn(true);
-        
-        if (locationWarning) {
-          showNotification('success', 'Checked in successfully! (Location could not be captured)');
-        } else {
-          showNotification('success', 'Checked in successfully with location!');
-        }
-        
-        stopCamera();
-        setShowCamera(false);
+      const attendanceData: AttendanceData = {
+        employeeName,
+        location,
+      };
+
+      if (selectedAction === 'checkin') {
+        attendanceData.checkInTime = timestamp;
+        attendanceData.checkInCoordinates = coordinates;
+        attendanceData.checkInPhoto = photo;
       } else {
-        if (!currentSession) {
-          showNotification('error', 'No active check-in session');
-          setIsSubmitting(false);
-          return;
-        }
+        attendanceData.checkOutTime = timestamp;
+        attendanceData.checkOutCoordinates = coordinates;
+        attendanceData.checkOutPhoto = photo;
+      }
 
-        const completeData: AttendanceData = {
-          ...currentSession,
-          checkOutTime: timestamp,
-          checkOutCoordinates: coordinates,
-          checkOutPhoto: photo
-        };
+      // Submit to API
+      try {
+        const response = await fetch('/api/attendance', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(attendanceData)
+        });
 
-        // Submit to API
-        try {
-          const response = await fetch('/api/attendance', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(completeData)
-          });
+        const result = await response.json();
 
-          const result = await response.json();
-
-          if (response.ok) {
-            if (locationWarning) {
-              showNotification('success', 'Attendance recorded! (Check-out location could not be captured)');
-            } else {
-              showNotification('success', 'Attendance recorded successfully with location!');
-            }
-            
-            // Reset form
-            setEmployeeName('');
-            setLocation('');
-            setIsCheckedIn(false);
-            setCurrentSession(null);
-            stopCamera();
-            setShowCamera(false);
+        if (response.ok) {
+          const actionText = selectedAction === 'checkin' ? 'Check-in' : 'Check-out';
+          if (locationWarning) {
+            showNotification('success', `${actionText} recorded successfully! (Location could not be captured)`);
           } else {
-            showNotification('error', result.error || 'Failed to record attendance');
+            showNotification('success', `${actionText} recorded successfully with location!`);
           }
-        } catch (apiError) {
-          console.error('API error:', apiError);
-          showNotification('error', 'Network error. Please check your connection.');
+          
+          // Reset form
+          setEmployeeName('');
+          setLocation('');
+          setSelectedAction(null);
+          stopCamera();
+          setShowCamera(false);
+        } else {
+          showNotification('error', result.error || 'Failed to record attendance');
         }
+      } catch (apiError) {
+        console.error('API error:', apiError);
+        showNotification('error', 'Network error. Please check your connection.');
       }
     } catch (error: unknown) {
       console.error('Unexpected error:', error);
@@ -289,6 +276,7 @@ export default function WickKaampealtPage() {
   const cancelCapture = () => {
     stopCamera();
     setShowCamera(false);
+    setSelectedAction(null);
   };
 
   return (
@@ -371,49 +359,34 @@ export default function WickKaampealtPage() {
               />
             </div>
 
-            {/* Check-in Status */}
-            {isCheckedIn && currentSession && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <div className="flex items-center text-green-800 mb-2">
-                  <CheckCircle className="w-5 h-5 mr-2" />
-                  <span className="font-semibold">Checked In</span>
-                </div>
-                <div className="text-sm text-green-700 space-y-1">
-                  <p><Clock className="w-4 h-4 inline mr-1" />
-                    {new Date(currentSession.checkInTime!).toLocaleString()}
-                  </p>
-                  <p><MapPin className="w-4 h-4 inline mr-1" />
-                    {currentSession.checkInCoordinates}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Action Buttons */}
+            {/* Action Selection */}
             <div className="pt-4">
-              {!isCheckedIn ? (
+              <p className="text-center text-gray-600 mb-4 font-medium">
+                Aapne kya miss kara?
+              </p>
+              <div className="grid grid-cols-2 gap-4">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={handleCheckIn}
+                  onClick={() => handleActionSelect('checkin')}
                   disabled={isSubmitting}
-                  className="w-full bg-green-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-green-600 text-white py-4 rounded-lg font-semibold flex flex-col items-center justify-center hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <LogIn className="w-5 h-5 mr-2" />
-                  Check In
+                  <LogIn className="w-6 h-6 mb-1" />
+                  <span>Check In</span>
                 </motion.button>
-              ) : (
+                
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={handleCheckOut}
+                  onClick={() => handleActionSelect('checkout')}
                   disabled={isSubmitting}
-                  className="w-full bg-red-600 text-white py-4 rounded-lg font-semibold flex items-center justify-center hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-red-600 text-white py-4 rounded-lg font-semibold flex flex-col items-center justify-center hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <LogOut className="w-5 h-5 mr-2" />
-                  Check Out
+                  <LogOut className="w-6 h-6 mb-1" />
+                  <span>Check Out</span>
                 </motion.button>
-              )}
+              </div>
             </div>
           </div>
         </motion.div>
@@ -425,13 +398,13 @@ export default function WickKaampealtPage() {
           transition={{ delay: 0.2 }}
           className="bg-blue-50 border border-blue-200 rounded-lg p-4"
         >
-          <h3 className="font-semibold text-blue-900 mb-2">How it works:</h3>
+          <h3 className="font-semibold text-blue-900 mb-2">Kaise kaam karta hai:</h3>
           <ul className="text-sm text-blue-800 space-y-1">
-            <li>• Enter your name and location</li>
-            <li>• Tap Check In to start your shift</li>
-            <li>• Take a photo when prompted</li>
-            <li>• Location is captured automatically</li>
-            <li>• Tap Check Out when done</li>
+            <li>• Apna naam aur location enter karein</li>
+            <li>• Check In ya Check Out choose karein</li>
+            <li>• Photo lein jab prompt ho</li>
+            <li>• Location automatically capture hoti hai</li>
+            <li>• Time Indian Standard Time (IST) mein record hota hai</li>
           </ul>
         </motion.div>
       </div>
@@ -444,7 +417,7 @@ export default function WickKaampealtPage() {
               <div className="flex items-center">
                 <Camera className="w-5 h-5 mr-2" />
                 <span className="font-semibold">
-                  {captureType === 'checkin' ? 'Check-In' : 'Check-Out'} Photo
+                  {selectedAction === 'checkin' ? 'Check-In' : 'Check-Out'} Photo
                 </span>
               </div>
               <button onClick={cancelCapture} className="text-white hover:text-gray-300">
