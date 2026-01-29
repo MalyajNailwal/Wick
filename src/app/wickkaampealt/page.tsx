@@ -350,7 +350,7 @@ export default function WickKaampealtPage() {
           <div className="space-y-4">
             {/* Employee Name */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-red-600 mb-2">
                 <User className="w-4 h-4 inline mr-1" />
                 Employee Name *
               </label>
@@ -360,13 +360,13 @@ export default function WickKaampealtPage() {
                 onChange={(e) => setEmployeeName(e.target.value)}
                 disabled={isSubmitting}
                 placeholder="Enter your name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed text-red-900 placeholder-red-400"
               />
             </div>
 
             {/* Location */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-red-600 mb-2">
                 <MapPin className="w-4 h-4 inline mr-1" />
                 Location *
               </label>
@@ -376,7 +376,7 @@ export default function WickKaampealtPage() {
                 onChange={(e) => setLocation(e.target.value)}
                 disabled={isSubmitting}
                 placeholder="Enter your location"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed"
+                className="w-full px-4 py-3 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed text-red-900 placeholder-red-400"
               />
             </div>
 
