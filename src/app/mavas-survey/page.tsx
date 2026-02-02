@@ -232,28 +232,6 @@ export default function MavasSurveyPage() {
           </p>
         </motion.div>
 
-        {/* Notification */}
-        {notification && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`mb-6 p-4 rounded-lg flex items-start ${
-              notification.type === 'success' 
-                ? 'bg-green-50 border border-green-200' 
-                : 'bg-red-50 border border-red-200'
-            }`}
-          >
-            {notification.type === 'success' ? (
-              <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
-            ) : (
-              <AlertCircle className="w-5 h-5 text-red-600 mr-2 flex-shrink-0 mt-0.5" />
-            )}
-            <p className={notification.type === 'success' ? 'text-green-800' : 'text-red-800'}>
-              {notification.message}
-            </p>
-          </motion.div>
-        )}
-
         {/* Survey Form */}
         <motion.form
           initial={{ opacity: 0, y: 20 }}
@@ -542,6 +520,28 @@ export default function MavasSurveyPage() {
             💡 <strong>Note:</strong> Aap kisi bhi question ko skip kar sakte ho. Aapki privacy hamari priority hai.
           </p>
         </motion.div>
+
+        {/* Notification - Bottom */}
+        {notification && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`mt-6 p-4 rounded-lg flex items-start ${
+              notification.type === 'success' 
+                ? 'bg-green-50 border border-green-200' 
+                : 'bg-red-50 border border-red-200'
+            }`}
+          >
+            {notification.type === 'success' ? (
+              <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
+            ) : (
+              <AlertCircle className="w-5 h-5 text-red-600 mr-2 flex-shrink-0 mt-0.5" />
+            )}
+            <p className={notification.type === 'success' ? 'text-green-800' : 'text-red-800'}>
+              {notification.message}
+            </p>
+          </motion.div>
+        )}
       </div>
     </main>
   );
