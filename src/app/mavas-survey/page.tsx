@@ -11,21 +11,37 @@ interface SurveyData {
   upiVsCashPercent: string;
   wholesalerApp: string;
   q1: string;
+  q1_comment: string;
   q2: string;
+  q2_comment: string;
   q3: string;
+  q3_comment: string;
   q4: string;
+  q4_comment: string;
   q5: string;
+  q5_comment: string;
   q6: string;
+  q6_comment: string;
   q7: string;
+  q7_comment: string;
   q8: string;
+  q8_comment: string;
   q9: string;
+  q9_comment: string;
   q10: string;
+  q10_comment: string;
   q11: string;
+  q11_comment: string;
   q12: string;
+  q12_comment: string;
   q13: string;
+  q13_comment: string;
   q14: string;
+  q14_comment: string;
   q15: string;
+  q15_comment: string;
   q16: string;
+  q16_comment: string;
   comments: string;
 }
 
@@ -36,21 +52,37 @@ export default function MavasSurveyPage() {
     upiVsCashPercent: '',
     wholesalerApp: '',
     q1: '',
+    q1_comment: '',
     q2: '',
+    q2_comment: '',
     q3: '',
+    q3_comment: '',
     q4: '',
+    q4_comment: '',
     q5: '',
+    q5_comment: '',
     q6: '',
+    q6_comment: '',
     q7: '',
+    q7_comment: '',
     q8: '',
+    q8_comment: '',
     q9: '',
+    q9_comment: '',
     q10: '',
+    q10_comment: '',
     q11: '',
+    q11_comment: '',
     q12: '',
+    q12_comment: '',
     q13: '',
+    q13_comment: '',
     q14: '',
+    q14_comment: '',
     q15: '',
+    q15_comment: '',
     q16: '',
+    q16_comment: '',
     comments: '',
   });
 
@@ -87,8 +119,22 @@ export default function MavasSurveyPage() {
           dailyBillCount: '',
           upiVsCashPercent: '',
           wholesalerApp: '',
-          q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '',
-          q9: '', q10: '', q11: '', q12: '', q13: '', q14: '', q15: '', q16: '',
+          q1: '', q1_comment: '',
+          q2: '', q2_comment: '',
+          q3: '', q3_comment: '',
+          q4: '', q4_comment: '',
+          q5: '', q5_comment: '',
+          q6: '', q6_comment: '',
+          q7: '', q7_comment: '',
+          q8: '', q8_comment: '',
+          q9: '', q9_comment: '',
+          q10: '', q10_comment: '',
+          q11: '', q11_comment: '',
+          q12: '', q12_comment: '',
+          q13: '', q13_comment: '',
+          q14: '', q14_comment: '',
+          q15: '', q15_comment: '',
+          q16: '', q16_comment: '',
           comments: ''
         });
       } else {
@@ -108,43 +154,58 @@ export default function MavasSurveyPage() {
   }: { 
     question: string; 
     field: keyof SurveyData;
-  }) => (
-    <div className="bg-gray-50 p-4 rounded-lg">
-      <p className="text-gray-800 mb-3 font-medium">{question}</p>
-      <div className="flex items-center gap-3">
-        <label className="flex items-center cursor-pointer">
-          <input
-            type="radio"
-            name={field}
-            value="Haan"
-            checked={formData[field] === 'Haan'}
-            onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-            className="w-4 h-4 text-green-600"
+  }) => {
+    const commentField = `${field}_comment` as keyof SurveyData;
+    
+    return (
+      <div className="bg-gray-50 p-4 rounded-lg space-y-3">
+        <p className="text-gray-800 mb-3 font-medium">{question}</p>
+        <div className="flex items-center gap-3">
+          <label className="flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name={field}
+              value="Haan"
+              checked={formData[field] === 'Haan'}
+              onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
+              className="w-4 h-4 text-green-600"
+            />
+            <span className="ml-2 text-gray-700">✓ Haan</span>
+          </label>
+          <label className="flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name={field}
+              value="Nahi"
+              checked={formData[field] === 'Nahi'}
+              onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
+              className="w-4 h-4 text-red-600"
+            />
+            <span className="ml-2 text-gray-700">✗ Nahi</span>
+          </label>
+          <button
+            type="button"
+            onClick={() => handleSkip(field)}
+            className="ml-auto text-sm text-blue-600 hover:text-blue-700 flex items-center"
+          >
+            <SkipForward className="w-4 h-4 mr-1" />
+            Skip
+          </button>
+        </div>
+        
+        {/* Optional Comment */}
+        <div>
+          <textarea
+            value={formData[commentField] || ''}
+            onChange={(e) => setFormData(prev => ({ ...prev, [commentField]: e.target.value }))}
+            placeholder="Kuch aur batana chahte ho? (Optional)"
+            rows={2}
+            className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
           />
-          <span className="ml-2 text-gray-700">✓ Haan</span>
-        </label>
-        <label className="flex items-center cursor-pointer">
-          <input
-            type="radio"
-            name={field}
-            value="Nahi"
-            checked={formData[field] === 'Nahi'}
-            onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-            className="w-4 h-4 text-red-600"
-          />
-          <span className="ml-2 text-gray-700">✗ Nahi</span>
-        </label>
-        <button
-          type="button"
-          onClick={() => handleSkip(field)}
-          className="ml-auto text-sm text-blue-600 hover:text-blue-700 flex items-center"
-        >
-          <SkipForward className="w-4 h-4 mr-1" />
-          Skip
-        </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
