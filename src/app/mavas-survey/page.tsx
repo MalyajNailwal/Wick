@@ -416,7 +416,7 @@ export default function MavasSurveyPage() {
               handleSkip={handleSkip}
             />
             <RadioQuestion 
-              question="10. Agar Azadpur ya Narela Mandi me rate girta hai, toh aapka wholesaler aapko sasta rate deta hai?"
+              question="10. Jab market me kisi cheez ka rate gir jata hai, toh aapka wholesaler aapko sasta rate deta hai?"
               field="q10"
               options={['Haan, turant', 'Kabhi kabhi', 'Nahi', 'Pata nahi']}
               formData={formData}
@@ -424,7 +424,7 @@ export default function MavasSurveyPage() {
               handleSkip={handleSkip}
             />
             <RadioQuestion 
-              question="11. Agar koi AI &apos;agent&apos; aapki taraf se WhatsApp ya ONDC pe 5 wholesalers se lad-jhagad kar sabse sasta rate nikal le, toh aap use kaam pe rakhoge?"
+              question="11. Agar koi automatic system aapki taraf se 5 wholesalers se rate compare karke sabse sasta rate nikal de, toh aap use karoge?"
               field="q11"
               options={['Haan, zaroor', 'Shayad', 'Nahi']}
               formData={formData}
