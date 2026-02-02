@@ -45,16 +45,18 @@ interface SurveyData {
   comments: string;
 }
 
-// RadioQuestion component ko bahar define kiya taaki re-render issue na ho
+// RadioQuestion component with custom options
 const RadioQuestion = ({ 
   question, 
   field,
+  options,
   formData,
   setFormData,
   handleSkip
 }: { 
   question: string; 
   field: keyof SurveyData;
+  options: string[];
   formData: SurveyData;
   setFormData: React.Dispatch<React.SetStateAction<SurveyData>>;
   handleSkip: (field: keyof SurveyData) => void;
@@ -64,29 +66,20 @@ const RadioQuestion = ({
   return (
     <div className="bg-gray-50 p-4 rounded-lg space-y-3">
       <p className="text-gray-800 mb-3 font-medium">{question}</p>
-      <div className="flex items-center gap-3">
-        <label className="flex items-center cursor-pointer">
-          <input
-            type="radio"
-            name={field}
-            value="Haan"
-            checked={formData[field] === 'Haan'}
-            onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-            className="w-4 h-4 text-green-600"
-          />
-          <span className="ml-2 text-gray-700">✓ Haan</span>
-        </label>
-        <label className="flex items-center cursor-pointer">
-          <input
-            type="radio"
-            name={field}
-            value="Nahi"
-            checked={formData[field] === 'Nahi'}
-            onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-            className="w-4 h-4 text-red-600"
-          />
-          <span className="ml-2 text-gray-700">✗ Nahi</span>
-        </label>
+      <div className="flex flex-wrap items-center gap-3">
+        {options.map((option) => (
+          <label key={option} className="flex items-center cursor-pointer">
+            <input
+              type="radio"
+              name={field}
+              value={option}
+              checked={formData[field] === option}
+              onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
+              className="w-4 h-4 text-orange-600"
+            />
+            <span className="ml-2 text-gray-700">{option}</span>
+          </label>
+        ))}
         <button
           type="button"
           onClick={() => handleSkip(field)}
@@ -337,6 +330,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="1. Aap sales ka hisaab kaise rakhte ho? (Register me, calculator pe, ya koi app use karte ho?)"
               field="q1"
+              options={['Register me', 'Calculator pe', 'App use karta hoon', 'Kuch nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -344,6 +338,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="2. Agar app use karte ho, toh pura din entry karne me kitna time nikal jata hai?"
               field="q2"
+              options={['30 min se kam', '30-60 min', '1-2 ghante', '2 ghante se zyada', 'App use nahi karta']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -351,6 +346,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="3. Dukan pe jab bheed (rush) hoti hai, tab phone me entry karna boring ya mushkil lagta hai kya?"
               field="q3"
+              options={['Haan, bahut mushkil', 'Thoda mushkil', 'Nahi, theek hai']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -358,13 +354,15 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="4. Aap din bhar Bluetooth neckband ya earbuds pehente ho?"
               field="q4"
+              options={['Haan, hamesha', 'Kabhi kabhi', 'Nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
             />
             <RadioQuestion 
-              question='5. Agar aap bas bol do &quot;5 kg chawal bik gaya&quot; aur app apne aap stock update kar de, toh kya aapka kaam aasan hoga?'
+              question='5. Agar aap bas bol do "5 kg chawal bik gaya" aur app apne aap stock update kar de, toh kya aapka kaam aasan hoga?'
               field="q5"
+              options={['Haan, bahut aasan hoga', 'Shayad', 'Nahi, mujhe pasand nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -380,6 +378,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="6. Aisa kitni baar hota hai ki maal khatam ho gaya aur aapko tab pata chala jab customer ne maanga?"
               field="q6"
+              options={['Roz hota hai', 'Hafte me 2-3 baar', 'Mahine me 1-2 baar', 'Kabhi nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -387,6 +386,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="7. Aapko kaise pata chalta hai ki naya maal (restock) kitna mangwana hai? (Bas andaze se ya purani sales dekh kar?)"
               field="q7"
+              options={['Bas andaze se', 'Purani sales dekh kar', 'Register check karke', 'Wholesaler suggest karta hai']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -394,6 +394,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="8. Kya dukan me aisa maal bhi hai jo mahino se pada hai aur koi kharid nahi raha?"
               field="q8"
+              options={['Haan, bahut zyada', 'Haan, thoda', 'Nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -409,6 +410,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="9. Naya stock mangwane ke liye kitne wholesalers se rate compare karte ho?"
               field="q9"
+              options={['1 se', '2-3 se', '4-5 se', '5 se zyada']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -416,6 +418,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="10. Agar Azadpur ya Narela Mandi me rate girta hai, toh aapka wholesaler aapko sasta rate deta hai?"
               field="q10"
+              options={['Haan, turant', 'Kabhi kabhi', 'Nahi', 'Pata nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -423,6 +426,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="11. Agar koi AI &apos;agent&apos; aapki taraf se WhatsApp ya ONDC pe 5 wholesalers se lad-jhagad kar sabse sasta rate nikal le, toh aap use kaam pe rakhoge?"
               field="q11"
+              options={['Haan, zaroor', 'Shayad', 'Nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -438,6 +442,7 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="12. Kabhi aisa hua hai ki maal mangwana hai par us din cash kam hai, toh order cancel karna pada?"
               field="q12"
+              options={['Haan, aksar', 'Kabhi kabhi', 'Nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -445,13 +450,15 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="13. Jab budget tight hota hai, toh aap kaise decide karte ho ki pehle kya mangwayein aur kya chhod dein?"
               field="q13"
+              options={['Jo jaldi bikta hai', 'Jo zyada profit deta hai', 'Customer demand dekh kar', 'Bas andaze se']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
             />
             <RadioQuestion 
-              question='14. Kya aap apna &quot;Munafa&quot; (Profit) aur &quot;Stock ka paisa&quot; alag-alag rakhte ho?'
+              question='14. Kya aap apna "Munafa" (Profit) aur "Stock ka paisa" alag-alag rakhte ho?'
               field="q14"
+              options={['Haan, alag rakhta hoon', 'Nahi, sab ek saath', 'Kabhi kabhi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
@@ -467,13 +474,15 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="15. Lohri, Diwali ya colony ki shadiyon ke time aap extra maal pehle se bharte ho?"
               field="q15"
+              options={['Haan, hamesha', 'Kabhi kabhi', 'Nahi']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
             />
             <RadioQuestion 
-              question='16. Agar aapko 24 ghante pehle pata chal jaye ki kal Tel (Oil) ya Chini (Sugar) ke rate badhne wale hain, toh kya aap us &quot;Early bird info&quot; ke liye thoda pay karoge?'
+              question='16. Agar aapko 24 ghante pehle pata chal jaye ki kal Tel (Oil) ya Chini (Sugar) ke rate badhne wale hain, toh kya aap us "Early bird info" ke liye thoda pay karoge?'
               field="q16"
+              options={['Haan, zaroor', 'Shayad', 'Nahi', 'Kitna paisa lagega?']}
               formData={formData}
               setFormData={setFormData}
               handleSkip={handleSkip}
