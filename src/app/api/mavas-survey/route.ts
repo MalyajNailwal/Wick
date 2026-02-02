@@ -10,7 +10,8 @@ export async function POST(request: NextRequest) {
       upiVsCashPercent,
       wholesalerApp,
       q1, q2, q3, q4, q5, q6, q7, q8,
-      q9, q10, q11, q12, q13, q14, q15, q16
+      q9, q10, q11, q12, q13, q14, q15, q16,
+      comments
     } = body;
 
     // Google Sheets API setup
@@ -78,12 +79,13 @@ export async function POST(request: NextRequest) {
           'Q13: Budget priority decision',
           'Q14: Profit separation',
           'Q15: Festival stocking',
-          'Q16: Price alert premium'
+          'Q16: Price alert premium',
+          'Comments'
         ]];
 
         await sheets.spreadsheets.values.update({
           spreadsheetId,
-          range: 'Mavas Survey!A1:U1',
+          range: 'Mavas Survey!A1:V1',
           valueInputOption: 'RAW',
           requestBody: {
             values: headers,
@@ -129,14 +131,15 @@ export async function POST(request: NextRequest) {
         q13 || '',
         q14 || '',
         q15 || '',
-        q16 || ''
+        q16 || '',
+        comments || ''
       ]
     ];
 
     // Append data to Mavas Survey sheet
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: 'Mavas Survey!A:U',
+      range: 'Mavas Survey!A:V',
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS',
       requestBody: {

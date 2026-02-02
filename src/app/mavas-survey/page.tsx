@@ -26,6 +26,7 @@ interface SurveyData {
   q14: string;
   q15: string;
   q16: string;
+  comments: string;
 }
 
 export default function MavasSurveyPage() {
@@ -50,6 +51,7 @@ export default function MavasSurveyPage() {
     q14: '',
     q15: '',
     q16: '',
+    comments: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -86,7 +88,8 @@ export default function MavasSurveyPage() {
           upiVsCashPercent: '',
           wholesalerApp: '',
           q1: '', q2: '', q3: '', q4: '', q5: '', q6: '', q7: '', q8: '',
-          q9: '', q10: '', q11: '', q12: '', q13: '', q14: '', q15: '', q16: ''
+          q9: '', q10: '', q11: '', q12: '', q13: '', q14: '', q15: '', q16: '',
+          comments: ''
         });
       } else {
         showNotification('error', result.error || 'Kuch galat ho gaya. Phir se try karein.');
@@ -357,6 +360,26 @@ export default function MavasSurveyPage() {
               question='16. Agar aapko 24 ghante pehle pata chal jaye ki kal Tel (Oil) ya Chini (Sugar) ke rate badhne wale hain, toh kya aap us &quot;Early bird info&quot; ke liye thoda pay karoge?'
               field="q16"
             />
+          </div>
+
+          {/* Comments Section */}
+          <div className="space-y-4 border-t pt-6">
+            <h3 className="text-lg font-bold text-gray-900">
+              Kuch Aur Kehna Chahte Ho?
+            </h3>
+            
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Aapke Comments / Suggestions (Optional)
+              </label>
+              <textarea
+                value={formData.comments}
+                onChange={(e) => setFormData(prev => ({ ...prev, comments: e.target.value }))}
+                placeholder="Apni baat yahan likhein..."
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+              />
+            </div>
           </div>
 
           {/* Submit Button */}
