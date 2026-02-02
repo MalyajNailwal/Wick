@@ -45,6 +45,72 @@ interface SurveyData {
   comments: string;
 }
 
+// RadioQuestion component ko bahar define kiya taaki re-render issue na ho
+const RadioQuestion = ({ 
+  question, 
+  field,
+  formData,
+  setFormData,
+  handleSkip
+}: { 
+  question: string; 
+  field: keyof SurveyData;
+  formData: SurveyData;
+  setFormData: React.Dispatch<React.SetStateAction<SurveyData>>;
+  handleSkip: (field: keyof SurveyData) => void;
+}) => {
+  const commentField = `${field}_comment` as keyof SurveyData;
+  
+  return (
+    <div className="bg-gray-50 p-4 rounded-lg space-y-3">
+      <p className="text-gray-800 mb-3 font-medium">{question}</p>
+      <div className="flex items-center gap-3">
+        <label className="flex items-center cursor-pointer">
+          <input
+            type="radio"
+            name={field}
+            value="Haan"
+            checked={formData[field] === 'Haan'}
+            onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
+            className="w-4 h-4 text-green-600"
+          />
+          <span className="ml-2 text-gray-700">✓ Haan</span>
+        </label>
+        <label className="flex items-center cursor-pointer">
+          <input
+            type="radio"
+            name={field}
+            value="Nahi"
+            checked={formData[field] === 'Nahi'}
+            onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
+            className="w-4 h-4 text-red-600"
+          />
+          <span className="ml-2 text-gray-700">✗ Nahi</span>
+        </label>
+        <button
+          type="button"
+          onClick={() => handleSkip(field)}
+          className="ml-auto text-sm text-blue-600 hover:text-blue-700 flex items-center"
+        >
+          <SkipForward className="w-4 h-4 mr-1" />
+          Skip
+        </button>
+      </div>
+      
+      {/* Optional Comment */}
+      <div>
+        <textarea
+          value={formData[commentField] || ''}
+          onChange={(e) => setFormData(prev => ({ ...prev, [commentField]: e.target.value }))}
+          placeholder="Kuch aur batana chahte ho? (Optional)"
+          rows={2}
+          className="w-full px-3 py-2 text-sm border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none bg-red-50 text-red-900 placeholder-red-400"
+        />
+      </div>
+    </div>
+  );
+};
+
 export default function MavasSurveyPage() {
   const [formData, setFormData] = useState<SurveyData>({
     ownerAge: '',
@@ -148,64 +214,7 @@ export default function MavasSurveyPage() {
     }
   };
 
-  const RadioQuestion = ({ 
-    question, 
-    field 
-  }: { 
-    question: string; 
-    field: keyof SurveyData;
-  }) => {
-    const commentField = `${field}_comment` as keyof SurveyData;
-    
-    return (
-      <div className="bg-gray-50 p-4 rounded-lg space-y-3">
-        <p className="text-gray-800 mb-3 font-medium">{question}</p>
-        <div className="flex items-center gap-3">
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="radio"
-              name={field}
-              value="Haan"
-              checked={formData[field] === 'Haan'}
-              onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-              className="w-4 h-4 text-green-600"
-            />
-            <span className="ml-2 text-gray-700">✓ Haan</span>
-          </label>
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="radio"
-              name={field}
-              value="Nahi"
-              checked={formData[field] === 'Nahi'}
-              onChange={(e) => setFormData(prev => ({ ...prev, [field]: e.target.value }))}
-              className="w-4 h-4 text-red-600"
-            />
-            <span className="ml-2 text-gray-700">✗ Nahi</span>
-          </label>
-          <button
-            type="button"
-            onClick={() => handleSkip(field)}
-            className="ml-auto text-sm text-blue-600 hover:text-blue-700 flex items-center"
-          >
-            <SkipForward className="w-4 h-4 mr-1" />
-            Skip
-          </button>
-        </div>
-        
-        {/* Optional Comment */}
-        <div>
-          <textarea
-            value={formData[commentField] || ''}
-            onChange={(e) => setFormData(prev => ({ ...prev, [commentField]: e.target.value }))}
-            placeholder="Kuch aur batana chahte ho? (Optional)"
-            rows={2}
-            className="w-full px-3 py-2 text-sm border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none bg-red-50 text-red-900 placeholder-red-400"
-          />
-        </div>
-      </div>
-    );
-  };
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
@@ -328,22 +337,37 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="1. Aap sales ka hisaab kaise rakhte ho? (Register me, calculator pe, ya koi app use karte ho?)"
               field="q1"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="2. Agar app use karte ho, toh pura din entry karne me kitna time nikal jata hai?"
               field="q2"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="3. Dukan pe jab bheed (rush) hoti hai, tab phone me entry karna boring ya mushkil lagta hai kya?"
               field="q3"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="4. Aap din bhar Bluetooth neckband ya earbuds pehente ho?"
               field="q4"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question='5. Agar aap bas bol do &quot;5 kg chawal bik gaya&quot; aur app apne aap stock update kar de, toh kya aapka kaam aasan hoga?'
               field="q5"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
           </div>
 
@@ -356,14 +380,23 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="6. Aisa kitni baar hota hai ki maal khatam ho gaya aur aapko tab pata chala jab customer ne maanga?"
               field="q6"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="7. Aapko kaise pata chalta hai ki naya maal (restock) kitna mangwana hai? (Bas andaze se ya purani sales dekh kar?)"
               field="q7"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="8. Kya dukan me aisa maal bhi hai jo mahino se pada hai aur koi kharid nahi raha?"
               field="q8"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
           </div>
 
@@ -376,14 +409,23 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="9. Naya stock mangwane ke liye kitne wholesalers se rate compare karte ho?"
               field="q9"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="10. Agar Azadpur ya Narela Mandi me rate girta hai, toh aapka wholesaler aapko sasta rate deta hai?"
               field="q10"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="11. Agar koi AI &apos;agent&apos; aapki taraf se WhatsApp ya ONDC pe 5 wholesalers se lad-jhagad kar sabse sasta rate nikal le, toh aap use kaam pe rakhoge?"
               field="q11"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
           </div>
 
@@ -396,14 +438,23 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="12. Kabhi aisa hua hai ki maal mangwana hai par us din cash kam hai, toh order cancel karna pada?"
               field="q12"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question="13. Jab budget tight hota hai, toh aap kaise decide karte ho ki pehle kya mangwayein aur kya chhod dein?"
               field="q13"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question='14. Kya aap apna &quot;Munafa&quot; (Profit) aur &quot;Stock ka paisa&quot; alag-alag rakhte ho?'
               field="q14"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
           </div>
 
@@ -416,10 +467,16 @@ export default function MavasSurveyPage() {
             <RadioQuestion 
               question="15. Lohri, Diwali ya colony ki shadiyon ke time aap extra maal pehle se bharte ho?"
               field="q15"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
             <RadioQuestion 
               question='16. Agar aapko 24 ghante pehle pata chal jaye ki kal Tel (Oil) ya Chini (Sugar) ke rate badhne wale hain, toh kya aap us &quot;Early bird info&quot; ke liye thoda pay karoge?'
               field="q16"
+              formData={formData}
+              setFormData={setFormData}
+              handleSkip={handleSkip}
             />
           </div>
 
