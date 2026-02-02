@@ -162,7 +162,7 @@ export default function MavasSurveyPage() {
           </h1>
           <p className="text-gray-600 mb-1">Kirana Dukaandaar Field Research</p>
           <p className="text-sm text-gray-500">
-            Aapki daily "chik-chik" aur problems ko samajhne ke liye
+            Aapki daily &quot;chik-chik&quot; aur problems ko samajhne ke liye
           </p>
         </motion.div>
 
@@ -258,7 +258,7 @@ export default function MavasSurveyPage() {
           {/* Section 1 */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-gray-900">
-              1. Typing Tax aur App ki Mushkilat (ASR & Voice)
+              1. Typing Tax aur App ki Mushkilat (ASR &amp; Voice)
             </h3>
             
             <RadioQuestion 
@@ -278,7 +278,7 @@ export default function MavasSurveyPage() {
               field="q4"
             />
             <RadioQuestion 
-              question='5. Agar aap bas bol do "5 kg chawal bik gaya" aur app apne aap stock update kar de, toh kya aapka kaam aasan hoga?'
+              question='5. Agar aap bas bol do &quot;5 kg chawal bik gaya&quot; aur app apne aap stock update kar de, toh kya aapka kaam aasan hoga?'
               field="q5"
             />
           </div>
@@ -318,7 +318,7 @@ export default function MavasSurveyPage() {
               field="q10"
             />
             <RadioQuestion 
-              question="11. Agar koi AI 'agent' aapki taraf se WhatsApp ya ONDC pe 5 wholesalers se lad-jhagad kar sabse sasta rate nikal le, toh aap use kaam pe rakhoge?"
+              question="11. Agar koi AI &apos;agent&apos; aapki taraf se WhatsApp ya ONDC pe 5 wholesalers se lad-jhagad kar sabse sasta rate nikal le, toh aap use kaam pe rakhoge?"
               field="q11"
             />
           </div>
@@ -326,7 +326,7 @@ export default function MavasSurveyPage() {
           {/* Section 4 */}
           <div className="space-y-4 border-t pt-6">
             <h3 className="text-lg font-bold text-gray-900">
-              4. Cash-Flow aur "Profit First" Logic
+              4. Cash-Flow aur &quot;Profit First&quot; Logic
             </h3>
             
             <RadioQuestion 
@@ -338,7 +338,7 @@ export default function MavasSurveyPage() {
               field="q13"
             />
             <RadioQuestion 
-              question='14. Kya aap apna "Munafa" (Profit) aur "Stock ka paisa" alag-alag rakhte ho?'
+              question='14. Kya aap apna &quot;Munafa&quot; (Profit) aur &quot;Stock ka paisa&quot; alag-alag rakhte ho?'
               field="q14"
             />
           </div>
@@ -354,7 +354,7 @@ export default function MavasSurveyPage() {
               field="q15"
             />
             <RadioQuestion 
-              question='16. Agar aapko 24 ghante pehle pata chal jaye ki kal Tel (Oil) ya Chini (Sugar) ke rate badhne wale hain, toh kya aap us "Early bird info" ke liye thoda pay karoge?'
+              question='16. Agar aapko 24 ghante pehle pata chal jaye ki kal Tel (Oil) ya Chini (Sugar) ke rate badhne wale hain, toh kya aap us &quot;Early bird info&quot; ke liye thoda pay karoge?'
               field="q16"
             />
           </div>
