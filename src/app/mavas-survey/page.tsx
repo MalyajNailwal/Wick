@@ -200,7 +200,7 @@ export default function MavasSurveyPage() {
             onChange={(e) => setFormData(prev => ({ ...prev, [commentField]: e.target.value }))}
             placeholder="Kuch aur batana chahte ho? (Optional)"
             rows={2}
-            className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+            className="w-full px-3 py-2 text-sm border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none bg-red-50 text-red-900 placeholder-red-400"
           />
         </div>
       </div>
@@ -438,7 +438,7 @@ export default function MavasSurveyPage() {
                 onChange={(e) => setFormData(prev => ({ ...prev, comments: e.target.value }))}
                 placeholder="Apni baat yahan likhein..."
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                className="w-full px-4 py-3 border border-red-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none bg-red-50 text-red-900 placeholder-red-400"
               />
             </div>
           </div>
