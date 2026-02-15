@@ -65,7 +65,7 @@ RESPONSE GUIDELINES:
         'X-Title': 'Wick AI Assistant',
       },
       body: JSON.stringify({
-        model: 'meta-llama/llama-3.2-3b-instruct:free',
+        model: 'arcee-ai/trinity-large-preview:free',
         messages: [
           {
             role: 'system',
