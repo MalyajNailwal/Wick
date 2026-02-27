@@ -241,16 +241,27 @@ RESPONSE GUIDELINES:
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed top-0 right-0 h-full w-[30vw] min-w-[400px] max-w-[600px] bg-white shadow-2xl border-l border-gray-200 z-50 overflow-hidden flex flex-col"
-          >
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 bg-black/20 z-40"
+            />
+            
+            {/* Chat Panel */}
+            <motion.div
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="fixed top-0 right-0 h-full w-[30vw] min-w-[400px] max-w-[600px] bg-white shadow-2xl border-l border-gray-200 z-50 overflow-hidden flex flex-col"
+            >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 relative overflow-hidden flex-shrink-0">
-              <div className="flex items-center justify-between">
+            <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 relative overflow-hidden flex-shrink-0 z-10">
+              <div className="flex items-center justify-between relative z-20">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
                     <Bot className="w-5 h-5 text-white" />
@@ -260,14 +271,13 @@ RESPONSE GUIDELINES:
                     <p className="text-xs text-black font-medium">Fleet & Tire Intelligence</p>
                   </div>
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white hover:bg-white/20 p-2 rounded-full transition-colors"
+                  className="text-white hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer z-30"
+                  aria-label="Close chat"
                 >
-                  <X className="w-5 h-5" />
-                </motion.button>
+                  <X className="w-6 h-6" />
+                </button>
               </div>
             </div>
 
@@ -387,6 +397,7 @@ RESPONSE GUIDELINES:
               </div>
             </div>
           </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
