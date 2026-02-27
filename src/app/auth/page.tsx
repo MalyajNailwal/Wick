@@ -66,11 +66,8 @@ function AuthPageContent() {
         {!currentUser ? (
           <div className="max-w-4xl mx-auto text-center px-4">
             <h2 className="text-5xl font-bold text-gray-900 mb-6">
-              Welcome to Wick Portal
+              Welcome to Wick
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Access exclusive tools and insights for your business
-            </p>
             <button
               onClick={() => setShowAuthModal(true)}
               className="px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition font-semibold text-lg"
