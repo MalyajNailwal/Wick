@@ -35,7 +35,8 @@ yarn-error.log*
 
 # Convex
 .convex/
-convex/_generated/
+# Keep convex/_generated for builds
+# convex/_generated/
 
 # Kiro
 .kiro/
