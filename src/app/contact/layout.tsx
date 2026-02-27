@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
   title: 'Contact Wick | Get ATES Quote & Technical Support',
@@ -74,6 +75,7 @@ export default function ContactLayout({
         }}
       />
       {children}
+      <WickAI />
     </>
   );
 }

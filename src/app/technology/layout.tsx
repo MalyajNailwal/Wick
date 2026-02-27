@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
   title: 'ATES Technology | How Automatic Tyre Equalisation Works',
@@ -60,6 +61,7 @@ export default function TechnologyLayout({
         }}
       />
       {children}
+      <WickAI />
     </>
   );
 }

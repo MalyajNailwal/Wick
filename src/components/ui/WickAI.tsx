@@ -242,14 +242,14 @@ RESPONSE GUIDELINES:
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 z-50 overflow-hidden"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed top-0 right-0 h-full w-[30vw] min-w-[400px] max-w-[600px] bg-white shadow-2xl border-l border-gray-200 z-50 overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white p-4 relative overflow-hidden flex-shrink-0">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center">
@@ -260,11 +260,19 @@ RESPONSE GUIDELINES:
                     <p className="text-xs text-black font-medium">Fleet & Tire Intelligence</p>
                   </div>
                 </div>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:bg-white/20 p-2 rounded-full transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </motion.button>
               </div>
             </div>
 
             {/* Messages */}
-            <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gray-50">
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
               <AnimatePresence>
                 {messages.map((message) => (
                   <motion.div
@@ -355,7 +363,7 @@ RESPONSE GUIDELINES:
             </div>
 
             {/* Input */}
-            <div className="p-4 bg-white border-t border-gray-200">
+            <div className="p-4 bg-white border-t border-gray-200 flex-shrink-0">
               <div className="flex space-x-2">
                 <input
                   ref={inputRef}

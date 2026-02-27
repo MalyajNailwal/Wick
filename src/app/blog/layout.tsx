@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
   title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
@@ -57,6 +58,7 @@ export default function BlogLayout({
         }}
       />
       {children}
+      <WickAI />
     </>
   );
 }

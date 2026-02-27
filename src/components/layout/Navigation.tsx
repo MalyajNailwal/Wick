@@ -96,6 +96,16 @@ const Navigation = () => {
                   <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
                 </button>
               </motion.div>
+
+              {/* Login Button */}
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  href="/auth"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2 rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-200"
+                >
+                  Login
+                </Link>
+              </motion.div>
             </div>
           </div>
 
@@ -158,6 +168,21 @@ const Navigation = () => {
                     NEW
                   </span>
                 </button>
+              </motion.div>
+
+              {/* Login Button for Mobile */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navigationItems.length + 1) * 0.1 }}
+              >
+                <Link
+                  href="/auth"
+                  className="block px-3 py-2 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-md transition-colors duration-200 text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Login
+                </Link>
               </motion.div>
             </div>
           </motion.div>
