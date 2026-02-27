@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "npx convex codegen",
+    "prebuild": "node -e \"if (!process.env.CI) { require('child_process').execSync('npx convex codegen', {stdio: 'inherit'}) } else { console.log('Skipping convex codegen in CI - using committed files') }\"",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
