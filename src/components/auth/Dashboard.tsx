@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
-import { ExternalLink, Lock, StickyNote, Save } from "lucide-react";
+import { ExternalLink, Lock, StickyNote, Save, Wrench } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface DashboardProps {
@@ -99,28 +99,64 @@ export default function Dashboard({ user }: DashboardProps) {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-              {links.map((link) => (
-                <a
-                  key={link._id}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-200"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition leading-tight">
-                      {link.title}
-                    </h3>
-                    <ExternalLink 
-                      className="text-gray-400 group-hover:text-blue-600 transition flex-shrink-0 ml-2" 
-                      size={20} 
-                    />
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {link.description}
-                  </p>
-                </a>
-              ))}
+              {links.map((link) => {
+                const isWickInsight = link.title.toLowerCase().includes('wick data insights') || 
+                                     link.title.toLowerCase().includes('wick insight');
+                
+                if (isWickInsight) {
+                  return (
+                    <div
+                      key={link._id}
+                      className="relative bg-gray-50 border border-gray-300 rounded-2xl p-6 cursor-not-allowed opacity-75"
+                    >
+                      <div className="absolute inset-0 bg-gray-900/5 rounded-2xl flex items-center justify-center backdrop-blur-[1px]">
+                        <div className="bg-white rounded-xl px-4 py-3 shadow-lg border border-gray-200">
+                          <div className="flex items-center gap-2 mb-1">
+                            <Wrench className="text-orange-500" size={18} />
+                            <p className="font-bold text-gray-900 text-sm">Under Development</p>
+                          </div>
+                          <p className="text-xs text-gray-600">Publishing soon...</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="text-lg font-bold text-gray-500 leading-tight">
+                          {link.title}
+                        </h3>
+                        <Lock 
+                          className="text-gray-400 flex-shrink-0 ml-2" 
+                          size={20} 
+                        />
+                      </div>
+                      <p className="text-gray-500 text-sm leading-relaxed">
+                        {link.description}
+                      </p>
+                    </div>
+                  );
+                }
+                
+                return (
+                  <a
+                    key={link._id}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-xl hover:border-blue-500 hover:-translate-y-1 transition-all duration-200"
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition leading-tight">
+                        {link.title}
+                      </h3>
+                      <ExternalLink 
+                        className="text-gray-400 group-hover:text-blue-600 transition flex-shrink-0 ml-2" 
+                        size={20} 
+                      />
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {link.description}
+                    </p>
+                  </a>
+                );
+              })}
             </div>
           )}
         </div>
