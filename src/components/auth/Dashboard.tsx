@@ -33,7 +33,7 @@ export default function Dashboard({ user }: DashboardProps) {
   const deleteNote = useMutation(api.notes.deleteNote);
   
   const [isCreatingNote, setIsCreatingNote] = useState(false);
-  const [editingNoteId, setEditingNoteId] = useState<string | null>(null);
+  const [editingNoteId, setEditingNoteId] = useState<Id<"userNotes"> | null>(null);
   const [noteTitle, setNoteTitle] = useState("");
   const [noteContent, setNoteContent] = useState("");
   const [isSaving, setIsSaving] = useState(false);
@@ -84,7 +84,7 @@ export default function Dashboard({ user }: DashboardProps) {
     }
   };
 
-  const handleDeleteNote = async (noteId: string) => {
+  const handleDeleteNote = async (noteId: Id<"userNotes">) => {
     if (!confirm("Are you sure you want to delete this note?")) return;
     
     try {
