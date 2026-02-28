@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ConvexProvider, ConvexReactClient } from "convex/react";
 import AuthModal from "@/components/auth/AuthModal";
 import Dashboard from "@/components/auth/Dashboard";
@@ -19,9 +19,34 @@ function AuthPageContent() {
   } | null>(null);
   const [showAdminPanel, setShowAdminPanel] = useState(false);
 
+  // Load user from localStorage on mount
+  useEffect(() => {
+    const savedUser = localStorage.getItem("wickAuthUser");
+    if (savedUser) {
+      try {
+        setCurrentUser(JSON.parse(savedUser));
+      } catch (error) {
+        console.error("Failed to parse saved user:", error);
+        localStorage.removeItem("wickAuthUser");
+      }
+    }
+  }, []);
+
+  const handleLogin = (user: {
+    userId: string;
+    email: string;
+    role: "admin" | "member";
+    approved: boolean;
+  }) => {
+    setCurrentUser(user);
+    localStorage.setItem("wickAuthUser", JSON.stringify(user));
+    setShowAuthModal(false);
+  };
+
   const handleLogout = () => {
     setCurrentUser(null);
     setShowAdminPanel(false);
+    localStorage.removeItem("wickAuthUser");
   };
 
   return (
@@ -86,10 +111,7 @@ function AuthPageContent() {
       <AuthModal
         isOpen={showAuthModal}
         onClose={() => setShowAuthModal(false)}
-        onSuccess={(user) => {
-          setCurrentUser(user);
-          setShowAuthModal(false);
-        }}
+        onSuccess={handleLogin}
       />
     </div>
   );
