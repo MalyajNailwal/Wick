@@ -96,8 +96,8 @@ export default function Dashboard({ user }: DashboardProps) {
 
   const startEditNote = (note: Note) => {
     setEditingNoteId(note._id);
-    setNoteTitle(note.title);
-    setNoteContent(note.content);
+    setNoteTitle(note.title || "");
+    setNoteContent(note.content || "");
     setIsCreatingNote(false);
   };
 
@@ -300,7 +300,7 @@ export default function Dashboard({ user }: DashboardProps) {
                   >
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="font-bold text-gray-900 text-sm flex-1">
-                        {note.title}
+                        {note.title || "Untitled Note"}
                       </h3>
                       <div className="flex gap-1 ml-2">
                         <button
