@@ -3,7 +3,8 @@
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { ExternalLink, Lock, StickyNote, Save, Wrench, Plus, Trash2, Edit2, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Id } from "../../../convex/_generated/dataModel";
 
 interface DashboardProps {
   user: {
@@ -12,6 +13,15 @@ interface DashboardProps {
     role: "admin" | "member";
     approved: boolean;
   };
+}
+
+interface Note {
+  _id: Id<"userNotes">;
+  userId: Id<"users">;
+  title: string;
+  content: string;
+  createdAt: number;
+  updatedAt: number;
 }
 
 export default function Dashboard({ user }: DashboardProps) {
@@ -84,7 +94,7 @@ export default function Dashboard({ user }: DashboardProps) {
     }
   };
 
-  const startEditNote = (note: any) => {
+  const startEditNote = (note: Note) => {
     setEditingNoteId(note._id);
     setNoteTitle(note.title);
     setNoteContent(note.content);
