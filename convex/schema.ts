@@ -28,4 +28,10 @@ export default defineSchema({
     createdAt: v.number(),
     isActive: v.boolean(),
   }).index("by_active", ["isActive", "createdAt"]),
+
+  userNotes: defineTable({
+    userId: v.id("users"),
+    content: v.string(),
+    updatedAt: v.number(),
+  }).index("by_user", ["userId"]),
 });
