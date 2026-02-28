@@ -18,9 +18,9 @@ interface DashboardProps {
 interface Note {
   _id: Id<"userNotes">;
   userId: Id<"users">;
-  title: string;
+  title?: string;
   content: string;
-  createdAt: number;
+  createdAt?: number;
   updatedAt: number;
 }
 

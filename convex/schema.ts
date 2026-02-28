@@ -31,9 +31,9 @@ export default defineSchema({
 
   userNotes: defineTable({
     userId: v.id("users"),
-    title: v.string(),
+    title: v.optional(v.string()),
     content: v.string(),
-    createdAt: v.number(),
+    createdAt: v.optional(v.number()),
     updatedAt: v.number(),
   }).index("by_user", ["userId"])
     .index("by_user_updated", ["userId", "updatedAt"]),
