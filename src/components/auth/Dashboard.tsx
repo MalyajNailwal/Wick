@@ -2,7 +2,7 @@
 
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
-import { ExternalLink, Lock, StickyNote, Save, Wrench } from "lucide-react";
+import { ExternalLink, Lock, StickyNote, Save, Wrench, Plus, Trash2, Edit2, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface DashboardProps {
@@ -17,32 +17,85 @@ interface DashboardProps {
 export default function Dashboard({ user }: DashboardProps) {
   const canAccess = user.role === "admin" || user.approved;
   const links = useQuery(api.links.getActiveLinks);
-  const userNote = useQuery(api.notes.getUserNote, { userId: user.userId as never });
-  const saveNote = useMutation(api.notes.saveNote);
+  const userNotes = useQuery(api.notes.getUserNotes, { userId: user.userId as never });
+  const createNote = useMutation(api.notes.createNote);
+  const updateNote = useMutation(api.notes.updateNote);
+  const deleteNote = useMutation(api.notes.deleteNote);
   
+  const [isCreatingNote, setIsCreatingNote] = useState(false);
+  const [editingNoteId, setEditingNoteId] = useState<string | null>(null);
+  const [noteTitle, setNoteTitle] = useState("");
   const [noteContent, setNoteContent] = useState("");
   const [isSaving, setIsSaving] = useState(false);
-  const [lastSaved, setLastSaved] = useState<Date | null>(null);
 
-  useEffect(() => {
-    if (userNote?.content) {
-      setNoteContent(userNote.content);
+  const handleCreateNote = async () => {
+    if (!noteTitle.trim() || !noteContent.trim()) {
+      alert("Please enter both title and content");
+      return;
     }
-  }, [userNote]);
-
-  const handleSaveNote = async () => {
+    
     setIsSaving(true);
     try {
-      await saveNote({
+      await createNote({
         userId: user.userId as never,
+        title: noteTitle,
         content: noteContent,
       });
-      setLastSaved(new Date());
+      setNoteTitle("");
+      setNoteContent("");
+      setIsCreatingNote(false);
     } catch (error) {
-      console.error("Failed to save note:", error);
+      console.error("Failed to create note:", error);
     } finally {
       setIsSaving(false);
     }
+  };
+
+  const handleUpdateNote = async () => {
+    if (!editingNoteId || !noteTitle.trim() || !noteContent.trim()) {
+      alert("Please enter both title and content");
+      return;
+    }
+    
+    setIsSaving(true);
+    try {
+      await updateNote({
+        noteId: editingNoteId as never,
+        title: noteTitle,
+        content: noteContent,
+      });
+      setNoteTitle("");
+      setNoteContent("");
+      setEditingNoteId(null);
+    } catch (error) {
+      console.error("Failed to update note:", error);
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleDeleteNote = async (noteId: string) => {
+    if (!confirm("Are you sure you want to delete this note?")) return;
+    
+    try {
+      await deleteNote({ noteId: noteId as never });
+    } catch (error) {
+      console.error("Failed to delete note:", error);
+    }
+  };
+
+  const startEditNote = (note: any) => {
+    setEditingNoteId(note._id);
+    setNoteTitle(note.title);
+    setNoteContent(note.content);
+    setIsCreatingNote(false);
+  };
+
+  const cancelEdit = () => {
+    setEditingNoteId(null);
+    setIsCreatingNote(false);
+    setNoteTitle("");
+    setNoteContent("");
   };
 
   if (!canAccess) {
@@ -163,33 +216,107 @@ export default function Dashboard({ user }: DashboardProps) {
 
         {/* Notes Section - Takes 1 column */}
         <div className="lg:col-span-1">
-          <div className="bg-white rounded-2xl shadow border border-gray-200 p-5 sticky top-4">
-            <div className="flex items-center gap-2 mb-4">
-              <StickyNote className="text-yellow-500" size={20} />
-              <h2 className="text-xl font-bold text-gray-900">Notes</h2>
+          <div className="bg-white rounded-2xl shadow border border-gray-200 p-5 sticky top-4 max-h-[calc(100vh-120px)] overflow-y-auto">
+            <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-2">
+                <StickyNote className="text-yellow-500" size={20} />
+                <h2 className="text-xl font-bold text-gray-900">Notes</h2>
+              </div>
+              {!isCreatingNote && !editingNoteId && (
+                <button
+                  onClick={() => setIsCreatingNote(true)}
+                  className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                  title="Create new note"
+                >
+                  <Plus size={18} />
+                </button>
+              )}
             </div>
             
-            <textarea
-              value={noteContent}
-              onChange={(e) => setNoteContent(e.target.value)}
-              placeholder="Your personal notes..."
-              className="w-full h-80 p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm text-gray-700 placeholder-gray-400"
-            />
-            
-            <div className="mt-3">
-              <button
-                onClick={handleSaveNote}
-                disabled={isSaving}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed font-semibold text-sm"
-              >
-                <Save size={16} />
-                {isSaving ? "Saving..." : "Save Note"}
-              </button>
-              
-              {lastSaved && (
-                <p className="text-xs text-gray-500 text-center mt-2">
-                  Saved at {lastSaved.toLocaleTimeString()}
+            {/* Create/Edit Note Form */}
+            {(isCreatingNote || editingNoteId) && (
+              <div className="mb-4 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-semibold text-gray-900 text-sm">
+                    {editingNoteId ? "Edit Note" : "New Note"}
+                  </h3>
+                  <button
+                    onClick={cancelEdit}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+                
+                <input
+                  type="text"
+                  value={noteTitle}
+                  onChange={(e) => setNoteTitle(e.target.value)}
+                  placeholder="Note title..."
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-gray-900 mb-2"
+                />
+                
+                <textarea
+                  value={noteContent}
+                  onChange={(e) => setNoteContent(e.target.value)}
+                  placeholder="Write your note..."
+                  className="w-full h-32 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm text-gray-700"
+                />
+                
+                <button
+                  onClick={editingNoteId ? handleUpdateNote : handleCreateNote}
+                  disabled={isSaving}
+                  className="w-full mt-2 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50 text-sm font-semibold"
+                >
+                  <Save size={16} />
+                  {isSaving ? "Saving..." : editingNoteId ? "Update" : "Save Note"}
+                </button>
+              </div>
+            )}
+
+            {/* Notes List */}
+            <div className="space-y-3">
+              {!userNotes ? (
+                <p className="text-sm text-gray-500 text-center py-4">Loading notes...</p>
+              ) : userNotes.length === 0 ? (
+                <p className="text-sm text-gray-500 text-center py-4">
+                  No notes yet. Click + to create one!
                 </p>
+              ) : (
+                userNotes.map((note) => (
+                  <div
+                    key={note._id}
+                    className="p-4 bg-yellow-50 border border-yellow-200 rounded-xl hover:shadow-md transition"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="font-bold text-gray-900 text-sm flex-1">
+                        {note.title}
+                      </h3>
+                      <div className="flex gap-1 ml-2">
+                        <button
+                          onClick={() => startEditNote(note)}
+                          className="p-1 text-blue-600 hover:bg-blue-100 rounded transition"
+                          title="Edit note"
+                        >
+                          <Edit2 size={14} />
+                        </button>
+                        <button
+                          onClick={() => handleDeleteNote(note._id)}
+                          className="p-1 text-red-600 hover:bg-red-100 rounded transition"
+                          title="Delete note"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-700 whitespace-pre-wrap break-words">
+                      {note.content}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-2">
+                      {new Date(note.updatedAt).toLocaleDateString()}
+                    </p>
+                  </div>
+                ))
               )}
             </div>
           </div>

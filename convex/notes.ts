@@ -1,41 +1,57 @@
 import { v } from "convex/values";
 import { mutation, query } from "./_generated/server";
 
-export const getUserNote = query({
+export const getUserNotes = query({
   args: { userId: v.id("users") },
   handler: async (ctx, args) => {
-    const note = await ctx.db
+    const notes = await ctx.db
       .query("userNotes")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
-      .first();
+      .withIndex("by_user_updated", (q) => q.eq("userId", args.userId))
+      .order("desc")
+      .collect();
     
-    return note;
+    return notes;
   },
 });
 
-export const saveNote = mutation({
+export const createNote = mutation({
   args: {
     userId: v.id("users"),
+    title: v.string(),
     content: v.string(),
   },
   handler: async (ctx, args) => {
-    const existingNote = await ctx.db
-      .query("userNotes")
-      .withIndex("by_user", (q) => q.eq("userId", args.userId))
-      .first();
+    const now = Date.now();
+    return await ctx.db.insert("userNotes", {
+      userId: args.userId,
+      title: args.title,
+      content: args.content,
+      createdAt: now,
+      updatedAt: now,
+    });
+  },
+});
 
-    if (existingNote) {
-      await ctx.db.patch(existingNote._id, {
-        content: args.content,
-        updatedAt: Date.now(),
-      });
-      return existingNote._id;
-    } else {
-      return await ctx.db.insert("userNotes", {
-        userId: args.userId,
-        content: args.content,
-        updatedAt: Date.now(),
-      });
-    }
+export const updateNote = mutation({
+  args: {
+    noteId: v.id("userNotes"),
+    title: v.string(),
+    content: v.string(),
+  },
+  handler: async (ctx, args) => {
+    await ctx.db.patch(args.noteId, {
+      title: args.title,
+      content: args.content,
+      updatedAt: Date.now(),
+    });
+  },
+});
+
+export const deleteNote = mutation({
+  args: {
+    noteId: v.id("userNotes"),
+  },
+  handler: async (ctx, args) => {
+    await ctx.db.delete(args.noteId);
   },
 });
