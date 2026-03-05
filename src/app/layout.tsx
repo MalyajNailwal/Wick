@@ -22,12 +22,17 @@ const leagueSpartan = League_Spartan({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wick.co.in'),
   title: {
-    default: 'Wick | Truck Inflation System India | Trailer Inflation System | Better Tyre Life',
+    default: 'Wick | Truck Maintenance System | Tyre Maintenance System & App India',
     template: '%s | Wick'
   },
-  description: "Wick - India's #1 truck inflation system & trailer inflation system provider. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings. Truck tyre inflation system India.",
+  description: "Wick - India's #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings. Truck inflation system & trailer inflation system India.",
   keywords: [
     'Wick',
+    'truck maintenance system',
+    'tyre maintenance system',
+    'tyre maintenance app',
+    'truck tyre',
+    'trailer tyre',
     'truck inflation system',
     'truck inflation system india',
     'trailer inflation system',
@@ -40,7 +45,10 @@ export const metadata: Metadata = {
     'automatic trailer tire inflation',
     'truck tyre inflation system',
     'trailer tyre inflation system',
-    'commercial vehicle inflation system',
+    'truck tyre maintenance',
+    'trailer tyre maintenance',
+    'fleet tyre maintenance',
+    'commercial vehicle maintenance system',
     'truck tire pressure system',
     'trailer tire pressure system',
     'increase truck tyre life',
@@ -62,6 +70,8 @@ export const metadata: Metadata = {
     'reduce tyre wear trucks',
     'truck tyre longevity',
     'trailer tyre durability',
+    'tyre maintenance software',
+    'fleet maintenance app',
   ],
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
@@ -76,8 +86,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://wick.co.in',
     siteName: 'Wick',
-    title: 'Wick | Truck Inflation System India | Trailer Inflation System | Better Tyre Life',
-    description: "India's #1 truck inflation system & trailer inflation system. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings.",
+    title: 'Wick | Truck Maintenance System | Tyre Maintenance System & App',
+    description: "India's #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings.",
     images: [
       {
         url: '/media/productimghd-removebg-preview.png',
@@ -89,8 +99,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wick | Truck & Trailer Inflation System India',
-    description: "India's #1 truck inflation system & trailer inflation system. Better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings.",
+    title: 'Wick | Truck Maintenance System | Tyre Maintenance App',
+    description: "India's #1 truck maintenance system & tyre maintenance app. Truck tyre & trailer tyre management. 20% longer tyre life, 2%+ fuel savings.",
     images: ['/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
     site: '@WickATES',

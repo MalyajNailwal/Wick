@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
 
 export const homeMetadata: Metadata = {
-  title: 'Wick | Truck Inflation System India | Trailer Inflation System | Better Tyre Life',
-  description: 'Wick - India\'s #1 truck inflation system & trailer inflation system provider. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings. Truck tyre inflation system India.',
-  keywords: 'Wick, truck inflation system, truck inflation system india, trailer inflation system, trailer inflation system india, better tyre life for truck trailers, Wick ATES, automatic truck tire inflation, automatic trailer tire inflation, truck tyre inflation system, commercial vehicle inflation system, increase truck tyre life, extend trailer tyre life, ATES India, TyreRakhshak, YORK ATES',
+  title: 'Wick | Truck Maintenance System | Tyre Maintenance System & App India',
+  description: 'Wick - India\'s #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings. Truck inflation system & trailer inflation system India.',
+  keywords: 'Wick, truck maintenance system, tyre maintenance system, tyre maintenance app, truck tyre, trailer tyre, truck inflation system, truck inflation system india, trailer inflation system, trailer inflation system india, better tyre life for truck trailers, Wick ATES, automatic truck tire inflation, truck tyre maintenance, trailer tyre maintenance, fleet tyre maintenance, commercial vehicle maintenance system, ATES India, TyreRakhshak, YORK ATES',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',
   openGraph: {
-    title: 'Wick | Truck Inflation System India | Trailer Inflation System | Better Tyre Life',
-    description: 'India\'s leading truck inflation system & trailer inflation system. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Wick | Truck Maintenance System | Tyre Maintenance System & App',
+    description: 'India\'s #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings.',
     url: 'https://wick.co.in',
     type: 'website',
     siteName: 'Wick',
@@ -24,8 +24,8 @@ export const homeMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wick | Truck & Trailer Inflation System India',
-    description: 'India\'s #1 truck inflation system & trailer inflation system. Better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Wick | Truck Maintenance System | Tyre Maintenance App',
+    description: 'India\'s #1 truck maintenance system & tyre maintenance app. Truck tyre & trailer tyre management. 20% longer tyre life, 2%+ fuel savings.',
     images: ['/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
   },
@@ -35,12 +35,12 @@ export const homeMetadata: Metadata = {
 };
 
 export const productsMetadata: Metadata = {
-  title: 'Truck Inflation System & Trailer Inflation System | Wick TyreRakhshak ATES Products',
-  description: 'Best truck inflation system & trailer inflation system in India. Wick TyreRakhshak ATES for better tyre life for truck trailers. Automatic truck tire inflation, 20% longer tyre life, 2%+ fuel efficiency. Truck tyre inflation system India.',
-  keywords: 'truck inflation system, trailer inflation system, truck inflation system india, trailer inflation system india, Wick TyreRakhshak, automatic truck tire inflation, automatic trailer tire inflation, truck tyre inflation system, better tyre life for truck trailers, commercial vehicle inflation system, ATES products, truck tire pressure system, trailer tire pressure system, CPMS',
+  title: 'Truck Maintenance System | Tyre Maintenance System | Wick TyreRakhshak Products',
+  description: 'Best truck maintenance system & tyre maintenance system in India. Wick TyreRakhshak for truck tyre & trailer tyre. Tyre maintenance app with automatic inflation. 20% longer tyre life, 2%+ fuel efficiency.',
+  keywords: 'truck maintenance system, tyre maintenance system, tyre maintenance app, truck tyre, trailer tyre, truck inflation system, trailer inflation system, truck inflation system india, trailer inflation system india, Wick TyreRakhshak, automatic truck tire inflation, truck tyre maintenance, trailer tyre maintenance, fleet tyre maintenance, commercial vehicle maintenance system, ATES products, CPMS',
   openGraph: {
-    title: 'Truck Inflation System & Trailer Inflation System | Wick TyreRakhshak',
-    description: 'India\'s best truck inflation system & trailer inflation system. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life.',
+    title: 'Truck Maintenance System | Tyre Maintenance System | Wick TyreRakhshak',
+    description: 'India\'s best truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life.',
     url: 'https://wick.co.in/products',
     type: 'website',
     images: [
@@ -58,12 +58,12 @@ export const productsMetadata: Metadata = {
 };
 
 export const technologyMetadata: Metadata = {
-  title: 'Truck & Trailer Inflation System Technology | How ATES Works | Wick',
-  description: 'Advanced truck inflation system & trailer inflation system technology. Learn how automatic truck tire inflation & trailer tire inflation works. Better tyre life for truck trailers with Wick ATES technology. Truck tyre inflation system explained.',
-  keywords: 'truck inflation system technology, trailer inflation system technology, automatic truck tire inflation, automatic trailer tire inflation, truck tyre inflation system, how ATES works, better tyre life for truck trailers, truck tire pressure system, trailer tire pressure system, ATES technology, automatic tyre equalisation, commercial vehicle inflation technology',
+  title: 'Truck Maintenance System Technology | Tyre Maintenance App | How ATES Works',
+  description: 'Advanced truck maintenance system & tyre maintenance system technology. Tyre maintenance app for truck tyre & trailer tyre monitoring. Learn how automatic tire inflation works. Better tyre life with Wick ATES technology.',
+  keywords: 'truck maintenance system, tyre maintenance system, tyre maintenance app, truck tyre, trailer tyre, truck inflation system technology, trailer inflation system technology, automatic truck tire inflation, truck tyre maintenance, trailer tyre maintenance, how ATES works, fleet maintenance technology, ATES technology, automatic tyre equalisation, commercial vehicle maintenance technology',
   openGraph: {
-    title: 'Truck & Trailer Inflation System Technology | Wick ATES',
-    description: 'Advanced truck inflation system & trailer inflation system technology. Automatic tire inflation for better tyre life for truck trailers.',
+    title: 'Truck Maintenance System Technology | Tyre Maintenance App | Wick ATES',
+    description: 'Advanced truck maintenance system & tyre maintenance system technology. Tyre maintenance app for truck tyre & trailer tyre monitoring.',
     url: 'https://wick.co.in/technology',
     type: 'website',
     images: [

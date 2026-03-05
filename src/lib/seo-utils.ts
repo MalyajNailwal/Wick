@@ -67,6 +67,21 @@ export const PRIMARY_KEYWORDS = [
   'reduce tyre wear trucks',
   'truck tyre longevity',
   'trailer tyre durability',
+  // Maintenance System Keywords (HIGH PRIORITY)
+  'truck maintenance system',
+  'truck maintenance system india',
+  'tyre maintenance system',
+  'tyre maintenance system india',
+  'tyre maintenance app',
+  'tyre maintenance app india',
+  'trailer tyre',
+  'trailer tyre india',
+  'truck tyre',
+  'truck tyre india',
+  'commercial vehicle maintenance system',
+  'fleet tyre maintenance',
+  'truck tyre management app',
+  'trailer tyre management',
 ];
 
 export const SECONDARY_KEYWORDS = [
@@ -136,6 +151,23 @@ export const SECONDARY_KEYWORDS = [
   'trailer tyre pressure maintenance',
   'reduce truck operating costs',
   'reduce trailer operating costs',
+  // Additional Maintenance Keywords
+  'truck tyre maintenance',
+  'trailer tyre maintenance',
+  'commercial truck tyre',
+  'commercial trailer tyre',
+  'truck tyre monitoring',
+  'trailer tyre monitoring',
+  'tyre maintenance software',
+  'fleet maintenance app',
+  'truck tyre health monitoring',
+  'trailer tyre health monitoring',
+  'predictive tyre maintenance',
+  'automated tyre maintenance',
+  'digital tyre maintenance',
+  'smart tyre maintenance system',
+  'truck tyre care system',
+  'trailer tyre care system',
 ];
 
 /**

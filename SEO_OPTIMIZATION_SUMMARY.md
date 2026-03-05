@@ -14,6 +14,11 @@
 - ✅ trailer tyre inflation system
 - ✅ increase truck tyre life
 - ✅ extend trailer tyre life
+- ✅ **truck maintenance system** (NEW)
+- ✅ **tyre maintenance system** (NEW)
+- ✅ **tyre maintenance app** (NEW)
+- ✅ **truck tyre** (NEW)
+- ✅ **trailer tyre** (NEW)
 
 ### 2. **Metadata Optimization**
 - ✅ Updated homepage title with target keywords
@@ -40,11 +45,12 @@
 - ✅ Security headers configured
 
 ### 5. **SEO Utilities Enhanced**
-- ✅ Added 60+ new keywords in PRIMARY_KEYWORDS
-- ✅ Added 40+ new keywords in SECONDARY_KEYWORDS
+- ✅ Added 70+ new keywords in PRIMARY_KEYWORDS
+- ✅ Added 60+ new keywords in SECONDARY_KEYWORDS
 - ✅ Location-based keywords (Faridabad, India)
 - ✅ Problem-solving keywords (prevent blowout, reduce costs)
 - ✅ Benefit-focused keywords (fuel efficiency, safety)
+- ✅ Maintenance-focused keywords (truck maintenance, tyre maintenance app)
 
 ## 🎯 Target Keywords Coverage
 
@@ -54,6 +60,11 @@
 3. **trailer inflation system** - ✅ In title, description, keywords
 4. **trailer inflation system india** - ✅ In title, description, keywords
 5. **better tyre life for truck trailers** - ✅ In title, description, keywords
+6. **truck maintenance system** - ✅ In title, description, keywords (NEW)
+7. **tyre maintenance system** - ✅ In title, description, keywords (NEW)
+8. **tyre maintenance app** - ✅ In title, description, keywords (NEW)
+9. **truck tyre** - ✅ In title, description, keywords (NEW)
+10. **trailer tyre** - ✅ In title, description, keywords (NEW)
 
 ### Supporting Keywords (Added)
 - automatic truck tire inflation
@@ -68,6 +79,14 @@
 - reduce tyre wear trucks
 - truck tyre longevity
 - trailer tyre durability
+- **truck tyre maintenance** (NEW)
+- **trailer tyre maintenance** (NEW)
+- **fleet tyre maintenance** (NEW)
+- **commercial vehicle maintenance system** (NEW)
+- **tyre maintenance software** (NEW)
+- **fleet maintenance app** (NEW)
+- **truck tyre monitoring** (NEW)
+- **trailer tyre monitoring** (NEW)
 
 ## 📊 SEO Best Practices Implemented
 
@@ -178,11 +197,14 @@
 
 **After:**
 - Specific "truck inflation system" & "trailer inflation system" focus
-- 100+ targeted keywords
+- Specific "truck maintenance system" & "tyre maintenance system" focus
+- Specific "tyre maintenance app", "truck tyre", "trailer tyre" targeting
+- 130+ targeted keywords
 - Comprehensive schema markup
 - Location-specific optimization
 - Benefit-focused messaging ("better tyre life")
 - Problem-solution content structure
+- Maintenance & monitoring focus
 
 ---
 
