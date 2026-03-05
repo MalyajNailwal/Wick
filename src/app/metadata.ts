@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
 
 export const homeMetadata: Metadata = {
-  title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
-  description: 'Wick is India\'s leading ATES provider. Discover how Wick\'s Automatic Tyre Equalisation System transforms commercial vehicle safety. 100% safety improvement, 20% longer tyre life, 2%+ fuel savings with Wick ATES.',
-  keywords: 'Wick, Wick ATES, Wick India, Wick TyreRakhshak, Wick commercial vehicle, ATES, TyreRakhshak, automatic tyre equalisation, commercial vehicle safety, tyre pressure monitoring, fleet management, YORK ATES, truck safety India',
+  title: 'Wick | Truck Inflation System India | Trailer Inflation System | Better Tyre Life',
+  description: 'Wick - India\'s #1 truck inflation system & trailer inflation system provider. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings. Truck tyre inflation system India.',
+  keywords: 'Wick, truck inflation system, truck inflation system india, trailer inflation system, trailer inflation system india, better tyre life for truck trailers, Wick ATES, automatic truck tire inflation, automatic trailer tire inflation, truck tyre inflation system, commercial vehicle inflation system, increase truck tyre life, extend trailer tyre life, ATES India, TyreRakhshak, YORK ATES',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',
   openGraph: {
-    title: 'Wick | India\'s #1 ATES Technology | Automatic Tyre Equalisation System',
-    description: 'Wick is India\'s leading ATES provider. Transform commercial vehicle safety with Wick\'s advanced ATES technology. 100% safety improvement, 20% longer tyre life.',
+    title: 'Wick | Truck Inflation System India | Trailer Inflation System | Better Tyre Life',
+    description: 'India\'s leading truck inflation system & trailer inflation system. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings.',
     url: 'https://wick.co.in',
     type: 'website',
     siteName: 'Wick',
@@ -24,8 +24,8 @@ export const homeMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wick | India\'s #1 ATES Technology',
-    description: 'Wick is India\'s leading ATES provider. 100% safety improvement, 20% longer tyre life.',
+    title: 'Wick | Truck & Trailer Inflation System India',
+    description: 'India\'s #1 truck inflation system & trailer inflation system. Better tyre life for truck trailers. 20% longer tyre life, 2%+ fuel savings.',
     images: ['/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
   },
@@ -35,12 +35,12 @@ export const homeMetadata: Metadata = {
 };
 
 export const productsMetadata: Metadata = {
-  title: 'Wick TyreRakhshak | ATES Products for Commercial Vehicles',
-  description: 'Explore Wick TyreRakhshak ATES products for commercial vehicles. Choose between Wick base ATES or premium Wick ATES + CPMS with real-time monitoring. 20% longer tyre life, 2%+ fuel efficiency with Wick.',
-  keywords: 'Wick, Wick TyreRakhshak, Wick ATES, Wick products, TyreRakhshak, ATES products, CPMS, tyre pressure monitoring, commercial vehicle products, fleet management system, YORK ATES, automatic tyre inflation',
+  title: 'Truck Inflation System & Trailer Inflation System | Wick TyreRakhshak ATES Products',
+  description: 'Best truck inflation system & trailer inflation system in India. Wick TyreRakhshak ATES for better tyre life for truck trailers. Automatic truck tire inflation, 20% longer tyre life, 2%+ fuel efficiency. Truck tyre inflation system India.',
+  keywords: 'truck inflation system, trailer inflation system, truck inflation system india, trailer inflation system india, Wick TyreRakhshak, automatic truck tire inflation, automatic trailer tire inflation, truck tyre inflation system, better tyre life for truck trailers, commercial vehicle inflation system, ATES products, truck tire pressure system, trailer tire pressure system, CPMS',
   openGraph: {
-    title: 'Wick TyreRakhshak | ATES Products for Commercial Vehicles',
-    description: 'Choose the right Wick ATES solution for your fleet. Wick base ATES or Premium Wick ATES + CPMS with real-time monitoring and predictive maintenance.',
+    title: 'Truck Inflation System & Trailer Inflation System | Wick TyreRakhshak',
+    description: 'India\'s best truck inflation system & trailer inflation system. Automatic tyre equalisation for better tyre life for truck trailers. 20% longer tyre life.',
     url: 'https://wick.co.in/products',
     type: 'website',
     images: [
@@ -58,12 +58,12 @@ export const productsMetadata: Metadata = {
 };
 
 export const technologyMetadata: Metadata = {
-  title: 'Wick ATES Technology | How Our System Works',
-  description: 'Discover the science behind Wick\'s ATES technology. Wick uses advanced sensors, IoT connectivity, and precision engineering for intelligent tyre management. Learn how Wick\'s automatic tyre equalisation improves safety.',
-  keywords: 'Wick, Wick ATES, Wick technology, ATES technology, automatic tyre equalisation, tyre pressure sensors, IoT fleet management, commercial vehicle technology, tyre monitoring system, YORK technology',
+  title: 'Truck & Trailer Inflation System Technology | How ATES Works | Wick',
+  description: 'Advanced truck inflation system & trailer inflation system technology. Learn how automatic truck tire inflation & trailer tire inflation works. Better tyre life for truck trailers with Wick ATES technology. Truck tyre inflation system explained.',
+  keywords: 'truck inflation system technology, trailer inflation system technology, automatic truck tire inflation, automatic trailer tire inflation, truck tyre inflation system, how ATES works, better tyre life for truck trailers, truck tire pressure system, trailer tire pressure system, ATES technology, automatic tyre equalisation, commercial vehicle inflation technology',
   openGraph: {
-    title: 'Wick ATES Technology | How Our System Works',
-    description: 'Explore the cutting-edge technology behind Wick\'s advanced ATES. Wick uses advanced sensors, IoT connectivity, and precision engineering.',
+    title: 'Truck & Trailer Inflation System Technology | Wick ATES',
+    description: 'Advanced truck inflation system & trailer inflation system technology. Automatic tire inflation for better tyre life for truck trailers.',
     url: 'https://wick.co.in/technology',
     type: 'website',
     images: [

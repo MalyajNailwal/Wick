@@ -46,6 +46,27 @@ export const PRIMARY_KEYWORDS = [
   'YORK ATES',
   'Truck tyre safety',
   'Commercial trailer safety',
+  // Truck & Trailer Inflation System Keywords (HIGH PRIORITY)
+  'truck inflation system',
+  'truck inflation system india',
+  'trailer inflation system',
+  'trailer inflation system india',
+  'automatic truck tire inflation',
+  'automatic trailer tire inflation',
+  'truck tyre inflation system',
+  'trailer tyre inflation system',
+  'commercial vehicle inflation system',
+  'truck tire pressure system',
+  'trailer tire pressure system',
+  // Tyre Life & Benefits Keywords
+  'better tyre life for truck trailers',
+  'increase truck tyre life',
+  'extend trailer tyre life',
+  'longer tyre life trucks',
+  'tyre life improvement',
+  'reduce tyre wear trucks',
+  'truck tyre longevity',
+  'trailer tyre durability',
 ];
 
 export const SECONDARY_KEYWORDS = [
@@ -79,6 +100,42 @@ export const SECONDARY_KEYWORDS = [
   'ATES India',
   'ATES technology India',
   'commercial vehicle technology India',
+  // Additional Truck & Trailer Keywords
+  'truck tire inflation',
+  'trailer tire inflation',
+  'automatic inflation system trucks',
+  'automatic inflation system trailers',
+  'truck tyre pressure control',
+  'trailer tyre pressure control',
+  'commercial truck inflation',
+  'commercial trailer inflation',
+  'HCV inflation system',
+  'heavy vehicle tire inflation',
+  // Tyre Life & Efficiency Keywords
+  'improve truck tyre life',
+  'improve trailer tyre life',
+  'reduce truck tyre cost',
+  'reduce trailer tyre cost',
+  'truck fuel efficiency system',
+  'trailer fuel efficiency system',
+  'truck downtime reduction',
+  'trailer maintenance reduction',
+  'truck safety improvement',
+  'trailer safety improvement',
+  // Location-based Keywords
+  'truck inflation system Faridabad',
+  'trailer inflation system Faridabad',
+  'ATES provider India',
+  'truck safety solutions India',
+  'trailer safety solutions India',
+  'commercial vehicle solutions India',
+  // Problem-solving Keywords
+  'prevent truck tyre blowout',
+  'prevent trailer tyre blowout',
+  'truck tyre pressure maintenance',
+  'trailer tyre pressure maintenance',
+  'reduce truck operating costs',
+  'reduce trailer operating costs',
 ];
 
 /**
