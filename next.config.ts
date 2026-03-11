@@ -44,30 +44,35 @@ const nextConfig: NextConfig = {
           },
         ],
       },
-      // Sitemap headers
+      // Sitemap headers - ensure proper content type
       {
         source: '/sitemap.xml',
         headers: [
           {
             key: 'Content-Type',
-            value: 'application/xml'
+            value: 'application/xml; charset=utf-8'
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, s-maxage=86400'
+            value: 'public, max-age=3600, s-maxage=3600'
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*'
           },
         ],
       },
+      // Robots.txt headers
       {
         source: '/robots.txt',
         headers: [
           {
             key: 'Content-Type',
-            value: 'text/plain'
+            value: 'text/plain; charset=utf-8'
           },
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, s-maxage=86400'
+            value: 'public, max-age=3600, s-maxage=3600'
           },
         ],
       },
