@@ -54,6 +54,20 @@ export async function GET() {
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <!-- Survey Page -->
+  <url>
+    <loc>${baseUrl}/mavas-survey</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Auth Page -->
+  <url>
+    <loc>${baseUrl}/auth</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>`;
 
   return new NextResponse(sitemap, {
