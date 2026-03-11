@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Homepage - Truck Maintenance System & Tyre Maintenance System -->
+  <url>
+    <loc>https://wick.co.in/</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  
+  <!-- Products - Truck Inflation System & Trailer Inflation System -->
+  <url>
+    <loc>https://wick.co.in/products</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- Technology - ATES Technology & Tyre Maintenance App -->
+  <url>
+    <loc>https://wick.co.in/technology</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  
+  <!-- Contact - Get Quote for Truck Tyre & Trailer Tyre -->
+  <url>
+    <loc>https://wick.co.in/contact</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- About - Wick Company Information -->
+  <url>
+    <loc>https://wick.co.in/about</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  
+  <!-- Blog - Fleet Management & Tyre Technology Insights -->
+  <url>
+    <loc>https://wick.co.in/blog</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  
+  <!-- Special Page -->
+  <url>
+    <loc>https://wick.co.in/wickkaampealt</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+</urlset>
