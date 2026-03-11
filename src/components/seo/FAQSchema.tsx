@@ -10,7 +10,7 @@ interface FAQSchemaProps {
 }
 
 export default function FAQSchema({ faqs }: FAQSchemaProps) {
-  const schema = {
+  const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
@@ -26,7 +26,7 @@ export default function FAQSchema({ faqs }: FAQSchemaProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
     />
   );
 }

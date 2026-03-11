@@ -33,12 +33,26 @@ export async function GET() {
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <!-- About - Wick Company Information -->
+  <!-- About - Wick ATES Company Information -->
   <url>
     <loc>${baseUrl}/about</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Why Choose Wick ATES - Competitive Advantage -->
+  <url>
+    <loc>${baseUrl}/why-wick-ates</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- Wick vs Competitors - Comparison Guide -->
+  <url>
+    <loc>${baseUrl}/wick-vs-competitors</loc>
+    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
   <!-- Blog - Fleet Management & Tyre Technology Insights -->
   <url>

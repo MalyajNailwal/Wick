@@ -1,83 +1,73 @@
-'use client';
-
+import React from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { ChevronRight, Home } from 'lucide-react';
 
 interface BreadcrumbItem {
-  label: string;
-  href: string;
+  name: string;
+  url: string;
 }
 
-export default function Breadcrumbs() {
-  const pathname = usePathname();
-  
-  // Don't show breadcrumbs on homepage
-  if (pathname === '/') return null;
+interface BreadcrumbsProps {
+  items: BreadcrumbItem[];
+  className?: string;
+}
 
-  const pathSegments = pathname.split('/').filter(segment => segment);
-  
-  const breadcrumbs: BreadcrumbItem[] = [
-    { label: 'Home', href: '/' },
-  ];
-
-  let currentPath = '';
-  pathSegments.forEach((segment) => {
-    currentPath += `/${segment}`;
-    const label = segment
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-    breadcrumbs.push({ label, href: currentPath });
-  });
-
-  // Generate JSON-LD structured data
-  const structuredData = {
+export default function Breadcrumbs({ items, className = '' }: BreadcrumbsProps) {
+  // Generate breadcrumb schema
+  const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbs.map((crumb, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: crumb.label,
-      item: `https://wick.co.in${crumb.href}`,
-    })),
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://wick.co.in',
+      },
+      ...items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: item.name,
+        item: `https://wick.co.in${item.url}`,
+      })),
+    ],
   };
 
   return (
     <>
+      {/* Schema markup */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <nav aria-label="Breadcrumb" className="bg-gray-50 py-3 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <ol className="flex items-center space-x-2 text-sm">
-            {breadcrumbs.map((crumb, index) => {
-              const isLast = index === breadcrumbs.length - 1;
-              
-              return (
-                <li key={crumb.href} className="flex items-center">
-                  {index > 0 && (
-                    <ChevronRight className="w-4 h-4 text-gray-400 mx-2" />
-                  )}
-                  {isLast ? (
-                    <span className="text-gray-900 font-medium" aria-current="page">
-                      {crumb.label}
-                    </span>
-                  ) : (
-                    <Link
-                      href={crumb.href}
-                      className="text-gray-600 hover:text-primary-600 transition-colors flex items-center"
-                    >
-                      {index === 0 && <Home className="w-4 h-4 mr-1" />}
-                      {crumb.label}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+      
+      {/* Visual breadcrumbs */}
+      <nav className={`flex items-center space-x-2 text-sm ${className}`} aria-label="Breadcrumb">
+        <Link 
+          href="/" 
+          className="flex items-center text-gray-500 hover:text-primary-600 transition-colors"
+        >
+          <Home className="w-4 h-4 mr-1" />
+          Home
+        </Link>
+        
+        {items.map((item, index) => (
+          <React.Fragment key={index}>
+            <ChevronRight className="w-4 h-4 text-gray-400" />
+            {index === items.length - 1 ? (
+              <span className="text-gray-900 font-medium" aria-current="page">
+                {item.name}
+              </span>
+            ) : (
+              <Link 
+                href={item.url}
+                className="text-gray-500 hover:text-primary-600 transition-colors"
+              >
+                {item.name}
+              </Link>
+            )}
+          </React.Fragment>
+        ))}
       </nav>
     </>
   );

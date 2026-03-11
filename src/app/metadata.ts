@@ -126,25 +126,48 @@ export const contactMetadata: Metadata = {
   },
 };
 
-export const blogMetadata: Metadata = {
-  title: 'Wick Blog | Fleet Management & ATES Technology Insights',
-  description: 'Stay updated with Wick\'s expert insights on fleet management, tyre technology, and commercial vehicle safety. Subscribe to Wick Blog for industry news and Wick ATES technology updates.',
-  keywords: 'Wick, Wick blog, Wick insights, Wick news, fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips',
+export const whyWickATESMetadata: Metadata = {
+  title: 'Why Choose Wick ATES | Best Truck Inflation System India | Competitive Advantages',
+  description: 'Discover why Wick ATES is India\'s #1 choice for truck inflation systems. 20% longer tyre life, 2%+ fuel savings, 144 hours downtime reduction. Compare Wick vs traditional systems.',
+  keywords: 'why choose Wick ATES, best truck inflation system India, Wick vs competitors, truck inflation system advantages, trailer inflation system benefits, ATES comparison India, Wick competitive advantages, truck maintenance system comparison',
   openGraph: {
-    title: 'Wick Blog | Fleet Management & ATES Technology Insights',
-    description: 'Wick\'s expert insights on fleet management, tyre technology, and commercial vehicle safety. Stay updated with Wick.',
-    url: 'https://wick.co.in/blog',
+    title: 'Why Choose Wick ATES | Best Truck Inflation System India',
+    description: 'Discover why Wick ATES is India\'s #1 choice for truck inflation systems. 20% longer tyre life, 2%+ fuel savings, proven ROI.',
+    url: 'https://wick.co.in/why-wick-ates',
     type: 'website',
     images: [
       {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Wick Insights Blog',
+        alt: 'Why Choose Wick ATES - Competitive Advantages',
       },
     ],
   },
   alternates: {
-    canonical: 'https://wick.co.in/blog',
+    canonical: 'https://wick.co.in/why-wick-ates',
+  },
+};
+
+export const wickVsCompetitorsMetadata: Metadata = {
+  title: 'Wick ATES vs Competitors | Complete Comparison Guide | Best ATES India',
+  description: 'Honest comparison of Wick ATES vs other tire monitoring systems. See why 50+ fleets choose Wick for 20% longer tyre life and 2%+ fuel efficiency. Complete feature comparison.',
+  keywords: 'Wick vs competitors, ATES comparison India, truck inflation system comparison, Wick ATES vs TPMS, best tire monitoring system India, commercial vehicle safety comparison, fleet management system comparison',
+  openGraph: {
+    title: 'Wick ATES vs Competitors | Complete Comparison Guide',
+    description: 'Honest comparison of Wick ATES vs other tire monitoring systems. See why 50+ fleets choose Wick for proven ROI and safety.',
+    url: 'https://wick.co.in/wick-vs-competitors',
+    type: 'website',
+    images: [
+      {
+        url: '/media/productimghd-removebg-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Wick ATES vs Competitors Comparison',
+      },
+    ],
+  },
+  alternates: {
+    canonical: 'https://wick.co.in/wick-vs-competitors',
   },
 };

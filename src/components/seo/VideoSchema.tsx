@@ -7,6 +7,7 @@ interface VideoSchemaProps {
   uploadDate: string;
   duration?: string;
   contentUrl?: string;
+  embedUrl?: string;
 }
 
 export default function VideoSchema({
@@ -16,8 +17,9 @@ export default function VideoSchema({
   uploadDate,
   duration,
   contentUrl,
+  embedUrl,
 }: VideoSchemaProps) {
-  const schema = {
+  const videoSchema = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name,
@@ -26,12 +28,21 @@ export default function VideoSchema({
     uploadDate,
     ...(duration && { duration }),
     ...(contentUrl && { contentUrl }),
+    ...(embedUrl && { embedUrl }),
+    publisher: {
+      '@type': 'Organization',
+      name: 'Wick',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://wick.co.in/logo.svg',
+      },
+    },
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
     />
   );
 }

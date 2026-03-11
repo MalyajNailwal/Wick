@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
+import WickFAQ from '@/components/seo/WickFAQ';
 
 // Typewriter Text Component
 const TypewriterText = ({ text }: { text: string }) => {
@@ -940,6 +941,7 @@ export default function Home() {
       <Navigation />
       <PrologueSection />
       <StoryJourney />
+      <WickFAQ />
       <CTASection />
     </main>
   );
