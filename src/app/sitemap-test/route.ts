@@ -54,6 +54,27 @@ export async function GET() {
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  <!-- Tire Inflation System Guide - Generic Industry Keywords -->
+  <url>
+    <loc>${baseUrl}/tire-inflation-system</loc>
+    <lastmod>2026-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Truck Tire Pressure Monitoring - TPMS Solutions -->
+  <url>
+    <loc>${baseUrl}/truck-tire-pressure-monitoring</loc>
+    <lastmod>2026-03-12T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- FAQ - Tire Inflation System Questions -->
+  <url>
+    <loc>${baseUrl}/faq</loc>
+    <lastmod>2026-03-12T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Blog - Fleet Management & Tyre Technology Insights -->
   <url>
     <loc>${baseUrl}/blog</loc>

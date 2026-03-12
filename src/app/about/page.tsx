@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
+import AboutFAQ from '@/components/seo/AboutFAQ';
 
 // Counter component with animation
 const AnimatedCounter = ({ end, suffix = '', inView }: { end: number; suffix?: string; inView: boolean }) => {
@@ -457,6 +458,13 @@ const AboutPage = () => {
               </motion.button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* About FAQ Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AboutFAQ />
         </div>
       </section>
     </main>

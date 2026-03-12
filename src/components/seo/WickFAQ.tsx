@@ -3,28 +3,36 @@ import FAQSchema from './FAQSchema';
 
 const wickFAQs = [
   {
-    question: 'What is Wick TyreRakhshak ATES?',
-    answer: 'Wick TyreRakhshak is India\'s advanced Automatic Tyre Equalisation System (ATES) that maintains optimal tyre pressure in trucks and trailers, extending tyre life by 20% and improving fuel efficiency by 2%+.',
+    question: 'What is an automatic tire inflation system?',
+    answer: 'An automatic tire inflation system (ATES) continuously monitors and maintains optimal tire pressure in commercial vehicles. It automatically inflates tires when pressure drops, preventing blowouts and extending tire life by up to 20%.',
   },
   {
-    question: 'How does truck inflation system work?',
-    answer: 'The truck inflation system automatically monitors and maintains optimal tyre pressure across all wheels. When pressure drops, the system automatically inflates tyres to the correct pressure, preventing uneven wear and blowouts.',
+    question: 'How does tire pressure monitoring work in trucks?',
+    answer: 'Tire pressure monitoring systems use sensors to track real-time tire pressure across all wheels. Advanced systems like ATES not only monitor but also automatically correct pressure deviations, ensuring optimal performance and safety.',
   },
   {
-    question: 'What are the benefits of trailer inflation system?',
-    answer: 'Trailer inflation system provides 20% longer tyre life, 2%+ fuel savings, reduced downtime, improved safety, and lower maintenance costs. It prevents tyre blowouts and ensures optimal performance.',
+    question: 'What are the benefits of tire inflation systems for fleets?',
+    answer: 'Tire inflation systems provide 20% longer tire life, 2%+ fuel savings, reduced vehicle downtime, improved safety, and lower maintenance costs. They prevent tire blowouts and ensure consistent optimal performance across the fleet.',
   },
   {
-    question: 'Is Wick ATES suitable for Indian road conditions?',
-    answer: 'Yes, Wick ATES is specifically designed for Indian commercial vehicles and road conditions. It handles dust, heat, and challenging terrains while maintaining consistent tyre pressure.',
+    question: 'How much can fleets save with automatic tire pressure systems?',
+    answer: 'Fleets typically save ₹2-3 lakhs annually per vehicle through extended tire life, ₹50,000+ in fuel savings, and reduced downtime. The system typically pays for itself within 6-8 months.',
   },
   {
-    question: 'How much does truck maintenance system cost?',
-    answer: 'Wick truck maintenance system pricing varies based on vehicle type and requirements. Contact Wick at +91 9721601500 for detailed pricing and ROI calculations specific to your fleet.',
+    question: 'What is the difference between TPMS and ATES?',
+    answer: 'TPMS (Tire Pressure Monitoring System) only monitors and alerts about pressure changes. ATES (Automatic Tire Equalization System) monitors AND automatically corrects tire pressure, providing complete tire management without manual intervention.',
   },
   {
-    question: 'Where is Wick located in India?',
-    answer: 'Wick is headquartered in Faridabad, Haryana, India. We serve commercial vehicle fleets across India with our ATES technology and support services.',
+    question: 'Are tire inflation systems suitable for Indian commercial vehicles?',
+    answer: 'Yes, modern tire inflation systems are specifically designed for Indian road conditions, handling dust, heat, and challenging terrains while maintaining consistent tire pressure for trucks and trailers.',
+  },
+  {
+    question: 'How to choose the best tire management system for trucks?',
+    answer: 'Consider factors like automatic pressure correction, real-time monitoring, India-specific design, proven ROI, local support, and compatibility with your fleet. Look for systems offering 20%+ tire life extension and measurable fuel savings.',
+  },
+  {
+    question: 'What maintenance is required for tire inflation systems?',
+    answer: 'Quality tire inflation systems require minimal maintenance - typically annual inspections and component checks. Advanced systems are designed for harsh Indian conditions with robust, low-maintenance components.',
   },
 ];
 

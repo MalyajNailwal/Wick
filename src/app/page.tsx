@@ -7,7 +7,6 @@ import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
-import WickFAQ from '@/components/seo/WickFAQ';
 
 // Typewriter Text Component
 const TypewriterText = ({ text }: { text: string }) => {
@@ -226,9 +225,9 @@ const PrologueSection = () => {
             transition={{ duration: 1, delay: 0.7 }}
             className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
-            A tale of innovation, safety, and the relentless pursuit to make 
-            India&apos;s roads safer for everyone. This is how we transformed an idea 
-            into a revolution.
+            From tire pressure monitoring to automatic tire inflation systems - 
+            discover how advanced tire management technology is revolutionizing 
+            commercial vehicle safety across India&apos;s highways.
           </motion.p>
           
           <motion.div
@@ -941,7 +940,6 @@ export default function Home() {
       <Navigation />
       <PrologueSection />
       <StoryJourney />
-      <WickFAQ />
       <CTASection />
     </main>
   );
