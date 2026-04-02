@@ -325,7 +325,7 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               Interested in TyreRakhshak for Your Fleet?
             </h2>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Get in touch with our team to learn how ATES can transform your fleet's tyre management.
+              Get in touch with our team to learn how ATES can transform your fleet&apos;s tyre management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

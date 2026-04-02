@@ -181,7 +181,7 @@ const BlogPage = () => {
                 </div>
                 <h3 className="text-lg font-bold text-gray-700 mb-2">More Articles Coming</h3>
                 <p className="text-sm text-gray-500 mb-4">
-                  We're working on more content about fleet management, ATES technology, and
+                  We&apos;re working on more content about fleet management, ATES technology, and
                   industry trends. Stay connected!
                 </p>
                 <span className="text-xs text-gray-400 font-medium">
@@ -262,7 +262,7 @@ const BlogPage = () => {
                   </div>
                   <div className="text-left">
                     <p className="font-bold">Successfully Subscribed!</p>
-                    <p className="text-sm">We'll notify you when new articles are published.</p>
+                    <p className="text-sm">We&apos;ll notify you when new articles are published.</p>
                   </div>
                 </div>
               </motion.div>
