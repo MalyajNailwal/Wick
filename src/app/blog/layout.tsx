@@ -3,11 +3,11 @@ import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
   title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
-  description: 'Stay updated with expert insights on fleet management, tyre technology, and commercial vehicle safety. Subscribe to Wick Insights for industry news and ATES technology updates.',
-  keywords: 'fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips',
+  description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety. Subscribe to Wick Insights for industry news and ATES technology updates.',
+  keywords: 'fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips, tyre inflation system blog',
   openGraph: {
     title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
-    description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety. Coming soon.',
+    description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety.',
     url: 'https://wick.co.in/blog',
     type: 'website',
     images: [

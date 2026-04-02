@@ -1,7 +1,16 @@
 import { NextResponse } from 'next/server';
+import { getAllPosts } from '@/lib/blog-data';
 
 export async function GET() {
   const baseUrl = 'https://wick.co.in';
+  const blogPosts = getAllPosts();
+
+  const blogUrls = blogPosts.map((post) => ({
+    loc: `${baseUrl}/blog/${post.slug}`,
+    lastmod: `${post.date}T00:00:00+00:00`,
+    changefreq: 'monthly',
+    priority: 0.75,
+  }));
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
@@ -78,10 +87,17 @@ export async function GET() {
   <!-- Blog - Fleet Management & Tyre Technology Insights -->
   <url>
     <loc>${baseUrl}/blog</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-04-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  ${blogUrls.map(post => `<!-- Blog Post -->
+  <url>
+    <loc>${post.loc}</loc>
+    <lastmod>${post.lastmod}</lastmod>
+    <changefreq>${post.changefreq}</changefreq>
+    <priority>${post.priority}</priority>
+  </url>`).join('\n  ')}
   <!-- Special Page -->
   <url>
     <loc>${baseUrl}/wickkaampealt</loc>
