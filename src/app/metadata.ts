@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
 
 export const homeMetadata: Metadata = {
-  title: 'Automatic Tire Inflation System | Truck Tire Pressure Monitoring | Commercial Vehicle Safety India',
-  description: 'Advanced automatic tire inflation system for trucks & trailers. Real-time tire pressure monitoring, 20% longer tire life, 2%+ fuel savings. Best commercial vehicle tire management solution in India.',
-  keywords: 'automatic tire inflation system, truck tire pressure monitoring, commercial vehicle tire management, tire inflation system India, truck tire safety system, trailer tire inflation, fleet tire management, tire pressure monitoring system, automatic tire equalization, commercial vehicle safety, truck tire maintenance, tire inflation technology, fleet management system, truck alignment system, tire pressure control system',
+  title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring | Commercial Vehicle Safety India',
+  description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings. Best commercial vehicle tyre management solution in India.',
+  keywords: 'automatic tyre inflation system, truck tyre pressure monitoring, commercial vehicle tyre management, tyre inflation system India, truck tyre safety system, trailer tyre inflation, fleet tyre management, tyre pressure monitoring system, automatic tyre equalization, commercial vehicle safety, truck tyre maintenance, tyre inflation technology, fleet management system, truck alignment system, tyre pressure control system',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',
   openGraph: {
-    title: 'Automatic Tire Inflation System | Truck Tire Pressure Monitoring India',
-    description: 'Advanced automatic tire inflation system for trucks & trailers. Real-time tire pressure monitoring, 20% longer tire life, 2%+ fuel savings.',
+    title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring India',
+    description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings.',
     url: 'https://wick.co.in',
     type: 'website',
     siteName: 'Wick',
@@ -18,14 +18,14 @@ export const homeMetadata: Metadata = {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Automatic Tire Inflation System - TyreRakhshak',
+        alt: 'Automatic Tyre Inflation System - TyreRakhshak',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automatic Tire Inflation System | Truck Tire Pressure Monitoring',
-    description: 'Advanced automatic tire inflation system for trucks & trailers. Real-time tire pressure monitoring, 20% longer tire life, 2%+ fuel savings.',
+    title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring',
+    description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings.',
     images: ['/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
   },
@@ -35,12 +35,12 @@ export const homeMetadata: Metadata = {
 };
 
 export const productsMetadata: Metadata = {
-  title: 'Tire Inflation System Products | Commercial Vehicle Tire Management Solutions India',
-  description: 'Best tire inflation system products for trucks & trailers. Automatic tire pressure monitoring, real-time alerts, 20% longer tire life. Commercial vehicle tire management solutions.',
-  keywords: 'tire inflation system products, commercial vehicle tire management, automatic tire pressure monitoring, truck tire inflation products, trailer tire systems, tire pressure control products, fleet tire management solutions, commercial tire monitoring systems, tire inflation technology, truck tire safety products, tire pressure sensors, automatic tire equalization products',
+  title: 'Tyre Inflation System Products | Commercial Vehicle Tyre Management Solutions India',
+  description: 'Best tyre inflation system products for trucks & trailers. Automatic tyre pressure monitoring, real-time alerts, 20% longer tyre life. Commercial vehicle tyre management solutions.',
+  keywords: 'tyre inflation system products, commercial vehicle tyre management, automatic tyre pressure monitoring, truck tyre inflation products, trailer tyre systems, tyre pressure control products, fleet tyre management solutions, commercial tyre monitoring systems, tyre inflation technology, truck tyre safety products, tyre pressure sensors, automatic tyre equalization products',
   openGraph: {
-    title: 'Tire Inflation System Products | Commercial Vehicle Tire Management',
-    description: 'Best tire inflation system products for trucks & trailers. Automatic tire pressure monitoring, 20% longer tire life.',
+    title: 'Tyre Inflation System Products | Commercial Vehicle Tyre Management',
+    description: 'Best tyre inflation system products for trucks & trailers. Automatic tyre pressure monitoring, 20% longer tyre life.',
     url: 'https://wick.co.in/products',
     type: 'website',
     images: [
@@ -48,7 +48,7 @@ export const productsMetadata: Metadata = {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Tire Inflation System Products - TyreRakhshak',
+        alt: 'Tyre Inflation System Products - TyreRakhshak',
       },
     ],
   },
@@ -58,12 +58,12 @@ export const productsMetadata: Metadata = {
 };
 
 export const technologyMetadata: Metadata = {
-  title: 'How Automatic Tire Inflation Works | Tire Pressure Monitoring Technology | ATES System',
-  description: 'Learn how automatic tire inflation technology works. Advanced tire pressure monitoring system for trucks & trailers. Real-time tire pressure control and automatic equalization technology.',
-  keywords: 'how automatic tire inflation works, tire pressure monitoring technology, automatic tire equalization system, tire inflation technology, commercial vehicle tire technology, tire pressure control system, automatic tire pressure adjustment, tire monitoring sensors, fleet tire management technology, truck tire safety technology, tire pressure automation, commercial tire systems',
+  title: 'How Automatic Tyre Inflation Works | Tyre Pressure Monitoring Technology | ATES System',
+  description: 'Learn how automatic tyre inflation technology works. Advanced tyre pressure monitoring system for trucks & trailers. Real-time tyre pressure control and automatic equalization technology.',
+  keywords: 'how automatic tyre inflation works, tyre pressure monitoring technology, automatic tyre equalization system, tyre inflation technology, commercial vehicle tyre technology, tyre pressure control system, automatic tyre pressure adjustment, tyre monitoring sensors, fleet tyre management technology, truck tyre safety technology, tyre pressure automation, commercial tyre systems',
   openGraph: {
-    title: 'How Automatic Tire Inflation Works | Tire Pressure Monitoring Technology',
-    description: 'Learn how automatic tire inflation technology works. Advanced tire pressure monitoring system for trucks & trailers.',
+    title: 'How Automatic Tyre Inflation Works | Tyre Pressure Monitoring Technology',
+    description: 'Learn how automatic tyre inflation technology works. Advanced tyre pressure monitoring system for trucks & trailers.',
     url: 'https://wick.co.in/technology',
     type: 'website',
     images: [
@@ -71,7 +71,7 @@ export const technologyMetadata: Metadata = {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Automatic Tire Inflation Technology',
+        alt: 'Automatic Tyre Inflation Technology',
       },
     ],
   },
@@ -127,12 +127,12 @@ export const contactMetadata: Metadata = {
 };
 
 export const whyWickATESMetadata: Metadata = {
-  title: 'Best Tire Inflation System India | Automatic Tire Pressure Monitoring Benefits | Commercial Vehicle Safety',
-  description: 'Discover India\'s best tire inflation system. 20% longer tire life, 2%+ fuel savings, 144 hours downtime reduction. Compare automatic tire pressure monitoring vs traditional systems.',
-  keywords: 'best tire inflation system India, automatic tire pressure monitoring benefits, tire inflation system advantages, commercial vehicle tire safety, truck tire management benefits, tire pressure monitoring comparison, automatic tire equalization benefits, fleet tire management advantages, tire inflation system ROI, commercial vehicle safety benefits',
+  title: 'Best Tyre Inflation System India | Automatic Tyre Pressure Monitoring Benefits | Commercial Vehicle Safety',
+  description: 'Discover India\'s best tyre inflation system. 20% longer tyre life, 2%+ fuel savings, 144 hours downtime reduction. Compare automatic tyre pressure monitoring vs traditional systems.',
+  keywords: 'best tyre inflation system India, automatic tyre pressure monitoring benefits, tyre inflation system advantages, commercial vehicle tyre safety, truck tyre management benefits, tyre pressure monitoring comparison, automatic tyre equalization benefits, fleet tyre management advantages, tyre inflation system ROI, commercial vehicle safety benefits',
   openGraph: {
-    title: 'Best Tire Inflation System India | Automatic Tire Pressure Monitoring Benefits',
-    description: 'Discover India\'s best tire inflation system. 20% longer tire life, 2%+ fuel savings, proven ROI for commercial vehicles.',
+    title: 'Best Tyre Inflation System India | Automatic Tyre Pressure Monitoring Benefits',
+    description: 'Discover India\'s best tyre inflation system. 20% longer tyre life, 2%+ fuel savings, proven ROI for commercial vehicles.',
     url: 'https://wick.co.in/why-wick-ates',
     type: 'website',
     images: [
@@ -140,7 +140,7 @@ export const whyWickATESMetadata: Metadata = {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Best Tire Inflation System Benefits',
+        alt: 'Best Tyre Inflation System Benefits',
       },
     ],
   },
@@ -150,12 +150,12 @@ export const whyWickATESMetadata: Metadata = {
 };
 
 export const wickVsCompetitorsMetadata: Metadata = {
-  title: 'Tire Inflation System Comparison | Best ATES vs TPMS | Commercial Vehicle Tire Management',
-  description: 'Complete comparison of tire inflation systems. ATES vs TPMS vs manual monitoring. See why 50+ fleets choose automatic tire pressure systems for 20% longer tire life.',
-  keywords: 'tire inflation system comparison, ATES vs TPMS comparison, automatic tire pressure monitoring comparison, best tire monitoring system India, commercial vehicle tire system comparison, fleet tire management comparison, tire pressure control system comparison, automatic vs manual tire monitoring',
+  title: 'Tyre Inflation System Comparison | Best ATES vs TPMS | Commercial Vehicle Tyre Management',
+  description: 'Complete comparison of tyre inflation systems. ATES vs TPMS vs manual monitoring. See why 50+ fleets choose automatic tyre pressure systems for 20% longer tyre life.',
+  keywords: 'tyre inflation system comparison, ATES vs TPMS comparison, automatic tyre pressure monitoring comparison, best tyre monitoring system India, commercial vehicle tyre system comparison, fleet tyre management comparison, tyre pressure control system comparison, automatic vs manual tyre monitoring',
   openGraph: {
-    title: 'Tire Inflation System Comparison | Best ATES vs TPMS',
-    description: 'Complete comparison of tire inflation systems. See why fleets choose automatic tire pressure systems for proven ROI and safety.',
+    title: 'Tyre Inflation System Comparison | Best ATES vs TPMS',
+    description: 'Complete comparison of tyre inflation systems. See why fleets choose automatic tyre pressure systems for proven ROI and safety.',
     url: 'https://wick.co.in/wick-vs-competitors',
     type: 'website',
     images: [
@@ -163,7 +163,7 @@ export const wickVsCompetitorsMetadata: Metadata = {
         url: '/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Tire Inflation System Comparison Guide',
+        alt: 'Tyre Inflation System Comparison Guide',
       },
     ],
   },

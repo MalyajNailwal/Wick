@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Truck Tire Pressure Monitoring System | Real-Time TPMS | Commercial Vehicle Safety',
-  description: 'Advanced truck tire pressure monitoring system with real-time alerts. TPMS for commercial vehicles, trailers & fleets. Prevent tire blowouts, improve safety & reduce costs.',
-  keywords: 'truck tire pressure monitoring, TPMS truck, commercial vehicle tire monitoring, truck tire pressure sensor, trailer tire monitoring system, fleet tire pressure monitoring, truck tire safety system, commercial TPMS, tire pressure monitoring system truck, real time tire monitoring',
+  title: 'Truck Tyre Pressure Monitoring | TPMS India',
+  description: 'Advanced truck tyre pressure monitoring with real-time alerts. TPMS for commercial vehicles, trailers & fleets. Prevent blowouts, improve safety & reduce costs.',
+  keywords: 'truck tyre pressure monitoring, TPMS truck, commercial vehicle tyre monitoring, truck tyre pressure sensor, trailer tyre monitoring system, fleet tyre pressure monitoring, truck tyre safety system, commercial TPMS, tyre pressure monitoring system truck, real time tyre monitoring, why is my truck tyre pressure low, how to monitor truck tyre pressure, best TPMS for trucks India, truck tyre pressure monitoring price, trailer tyre pressure sensor, fleet tyre monitoring system',
   openGraph: {
-    title: 'Truck Tire Pressure Monitoring System | Real-Time TPMS',
-    description: 'Advanced truck tire pressure monitoring with real-time alerts. Prevent tire blowouts, improve safety & reduce costs.',
+    title: 'Truck Tyre Pressure Monitoring System | Real-Time TPMS',
+    description: 'Advanced truck tyre pressure monitoring with real-time alerts. Prevent tyre blowouts, improve safety & reduce costs.',
     url: 'https://wick.co.in/truck-tire-pressure-monitoring',
     type: 'website',
     images: [
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
         url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Truck Tire Pressure Monitoring System',
+        alt: 'Truck Tyre Pressure Monitoring System',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Truck Tire Pressure Monitoring System | Real-Time TPMS',
-    description: 'Advanced truck tire pressure monitoring with real-time alerts. Prevent tire blowouts & improve safety.',
+    title: 'Truck Tyre Pressure Monitoring System | Real-Time TPMS',
+    description: 'Advanced truck tyre pressure monitoring with real-time alerts. Prevent tyre blowouts & improve safety.',
     images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
   },
   alternates: {
@@ -36,6 +36,19 @@ export default function TruckTirePressureMonitoringLayout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
+              { '@type': 'ListItem', position: 2, name: 'Truck Tyre Pressure Monitoring', item: 'https://wick.co.in/truck-tire-pressure-monitoring' }
+            ]
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

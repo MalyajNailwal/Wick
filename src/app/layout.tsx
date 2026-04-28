@@ -23,10 +23,10 @@ const leagueSpartan = League_Spartan({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wick.co.in'),
   title: {
-    default: 'Wick | Truck Maintenance System | Tyre Maintenance System & App India',
+    default: 'Wick | Truck & Tyre Maintenance System India',
     template: '%s | Wick'
   },
-  description: "Wick - India's #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings. Truck inflation system & trailer inflation system India.",
+  description: "Wick - India's #1 truck & tyre maintenance system. Tyre maintenance app for commercial vehicles. 20% longer tyre life, 2%+ fuel savings. ATES technology.",
   keywords: [
     'Wick',
     'truck maintenance system',
@@ -42,16 +42,16 @@ export const metadata: Metadata = {
     'Wick ATES',
     'Wick India',
     'Wick TyreRakhshak',
-    'automatic truck tire inflation',
-    'automatic trailer tire inflation',
+    'automatic truck tyre inflation',
+    'automatic trailer tyre inflation',
     'truck tyre inflation system',
     'trailer tyre inflation system',
     'truck tyre maintenance',
     'trailer tyre maintenance',
     'fleet tyre maintenance',
     'commercial vehicle maintenance system',
-    'truck tire pressure system',
-    'trailer tire pressure system',
+    'truck tyre pressure system',
+    'trailer tyre pressure system',
     'increase truck tyre life',
     'extend trailer tyre life',
     'ATES',
@@ -73,6 +73,14 @@ export const metadata: Metadata = {
     'trailer tyre durability',
     'tyre maintenance software',
     'fleet maintenance app',
+    'buy tyre inflation system India',
+    'tyre inflation system price',
+    'best tyre inflation system India',
+    'prevent truck tyre blowout',
+    'why do truck tyres burst',
+    'how to improve truck tyre life',
+    'tyre inflation system Faridabad',
+    'fleet tyre management Delhi NCR',
   ],
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
@@ -82,7 +90,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  openGraph: {
+    openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: 'https://wick.co.in',
@@ -91,7 +99,7 @@ export const metadata: Metadata = {
     description: "India's #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings.",
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'TyreRakhshak ATES - Automatic Tyre Equalisation System',
@@ -102,7 +110,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Wick | Truck Maintenance System | Tyre Maintenance App',
     description: "India's #1 truck maintenance system & tyre maintenance app. Truck tyre & trailer tyre management. 20% longer tyre life, 2%+ fuel savings.",
-    images: ['/media/productimghd-removebg-preview.png'],
+    images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
     site: '@WickATES',
   },
@@ -129,6 +137,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://wick.co.in',
+    languages: {
+      'en': 'https://wick.co.in',
+      'en-IN': 'https://wick.co.in',
+      'x-default': 'https://wick.co.in',
+    },
   },
   other: {
     'preconnect': 'https://res.cloudinary.com',
@@ -147,6 +160,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${leagueSpartan.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-red-600 focus:text-white focus:rounded-md focus:font-medium"
+        >
+          Skip to main content
+        </a>
         <GoogleAnalytics />
         <LocalBusinessSchema />
         {/* Organization Schema */}

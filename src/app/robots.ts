@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/_next/'],
       },
     ],
-    sitemap: 'https://wick.co.in/sitemap-test',
+    sitemap: 'https://wick.co.in/sitemap.xml',
     host: 'https://wick.co.in',
   };
 }

@@ -293,7 +293,7 @@ export default function WickKaampealtPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <main id="main-content" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Navigation />
       
       <div className="pt-20 pb-12 px-4 max-w-md mx-auto">

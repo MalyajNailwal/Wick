@@ -143,7 +143,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <FAQSchema faqs={faqData} />
       <Navigation />
 

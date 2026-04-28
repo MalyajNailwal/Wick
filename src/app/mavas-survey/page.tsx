@@ -210,7 +210,7 @@ export default function MavasSurveyPage() {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+    <main id="main-content" className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
       <Navigation />
       
       <div className="pt-20 pb-12 px-4 max-w-2xl mx-auto">

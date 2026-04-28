@@ -4,10 +4,10 @@ export default function LocalBusinessSchema() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': 'https://wick.co.in/#business',
     name: 'Wick',
     alternateName: ['Wick ATES', 'Wick India', 'Wick TyreRakhshak'],
     image: 'https://wick.co.in/logo.svg',
-    '@id': 'https://wick.co.in',
     url: 'https://wick.co.in',
     telephone: '+91-9721601500',
     email: 'office@wick.co.in',
@@ -40,7 +40,7 @@ export default function LocalBusinessSchema() {
       },
     ],
     priceRange: '$$',
-    description: 'India\'s leading truck inflation system and trailer inflation system provider. Automatic tyre equalisation for better tyre life for truck trailers.',
+    description: "India's leading truck inflation system and trailer inflation system provider. Automatic tyre equalisation for better tyre life for truck trailers.",
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: 'Wick ATES Products',
@@ -66,8 +66,21 @@ export default function LocalBusinessSchema() {
         latitude: 28.3764,
         longitude: 77.3144,
       },
-      geoRadius: '1000000', // 1000km radius
+      geoRadius: '1000000',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '50',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    sameAs: [
+      'https://www.linkedin.com/company/wick-ates',
+      'https://twitter.com/WickATES',
+      'https://www.facebook.com/wickates',
+      'https://www.instagram.com/wickates'
+    ],
   };
 
   return (

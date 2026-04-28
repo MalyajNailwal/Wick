@@ -51,7 +51,7 @@ const BlogPage = () => {
   };
 
   return (
-    <main className="relative bg-white">
+    <main id="main-content" className="relative bg-white">
       <Navigation />
 
       {/* Hero Section */}

@@ -92,6 +92,11 @@ const PrologueSection = () => {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Screen reader only H1 - primary page title for SEO */}
+      <h1 className="sr-only">
+        Wick - India's #1 Truck Maintenance System, Tyre Maintenance App & ATES Technology
+      </h1>
+      
       {/* Video Background - Main Background */}
       <div className="absolute inset-0 z-0 bg-slate-900">
         {isClient ? (
@@ -225,8 +230,8 @@ const PrologueSection = () => {
             transition={{ duration: 1, delay: 0.7 }}
             className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
-            From tire pressure monitoring to automatic tire inflation systems - 
-            discover how advanced tire management technology is revolutionizing 
+            From tyre pressure monitoring to automatic tyre inflation systems - 
+            discover how advanced tyre management technology is revolutionizing 
             commercial vehicle safety across India&apos;s highways.
           </motion.p>
           
@@ -336,7 +341,7 @@ const ProductImageWithRotation = () => {
             {/* Main Product Image with smart rotation effects */}
             <motion.img
               src="/media/productimghd-removebg-preview.png"
-              alt="Tyre Rakhshak - ATES Product"
+              alt="TyreRakhshak ATES - Automatic Tyre Equalisation System for Trucks"
               className="w-full h-full object-contain drop-shadow-2xl filter brightness-105 contrast-105"
               style={{
                 maxHeight: '450px',
@@ -354,6 +359,8 @@ const ProductImageWithRotation = () => {
                 ease: "linear",
                 repeatType: "loop"
               }}
+              loading="eager"
+              fetchPriority="high"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 console.log('Image failed to load:', target.src);
@@ -746,12 +753,12 @@ const StoryJourney = () => {
               </div>
             </motion.div>
             
-            <h3 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Powering India&apos;s{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
                 Leading Fleets
               </span>
-            </h3>
+            </h2>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               From highways to city streets, our technology protects vehicles across the nation
             </p>
@@ -936,7 +943,7 @@ const CTASection = () => {
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navigation />
       <PrologueSection />
       <StoryJourney />

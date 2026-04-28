@@ -65,7 +65,7 @@ export default function FAQPage() {
   ];
 
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navigation />
       
       {/* Hero Section */}

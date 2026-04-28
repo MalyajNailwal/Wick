@@ -14,8 +14,8 @@ export default function TruckTirePressureMonitoringPage() {
   const monitoringFeatures = [
     {
       icon: <Gauge className="w-12 h-12 text-blue-500" />,
-      title: "Real-Time Pressure Monitoring",
-      description: "Continuous monitoring of tire pressure across all wheels with instant alerts for pressure drops."
+      title: "Real-Time Tyre Pressure Monitoring",
+      description: "Continuous monitoring of tyre pressure across all wheels with instant alerts for pressure drops."
     },
     {
       icon: <AlertCircle className="w-12 h-12 text-red-500" />,
@@ -25,27 +25,27 @@ export default function TruckTirePressureMonitoringPage() {
     {
       icon: <TrendingUp className="w-12 h-12 text-green-500" />,
       title: "Predictive Maintenance",
-      description: "Advanced analytics to predict tire maintenance needs and prevent unexpected failures."
+      description: "Advanced analytics to predict tyre maintenance needs and prevent unexpected failures."
     },
     {
       icon: <Shield className="w-12 h-12 text-purple-500" />,
       title: "Enhanced Safety",
-      description: "Prevents tire blowouts and improves vehicle stability for safer operations."
+      description: "Prevents tyre blowouts and improves vehicle stability for safer operations."
     },
     {
       icon: <Clock className="w-12 h-12 text-orange-500" />,
       title: "Reduced Downtime",
-      description: "Minimize vehicle downtime with proactive tire maintenance and early problem detection."
+      description: "Minimize vehicle downtime with proactive tyre maintenance and early problem detection."
     },
     {
       icon: <DollarSign className="w-12 h-12 text-yellow-500" />,
       title: "Cost Savings",
-      description: "Extend tire life by 20% and improve fuel efficiency by 2%+ with optimal pressure maintenance."
+      description: "Extend tyre life by 20% and improve fuel efficiency by 2%+ with optimal pressure maintenance."
     }
   ];
 
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navigation />
       
       {/* Hero Section */}

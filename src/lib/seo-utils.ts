@@ -107,7 +107,7 @@ export const SECONDARY_KEYWORDS = [
   'tyre management',
   'SAF-HOLLAND',
   'automatic tyre inflation',
-  'tire pressure monitoring system',
+  'tyre pressure monitoring system',
   'fleet safety solutions',
   'Heavy commercial vehicle safety',
   'Fuel efficiency trucks',
@@ -116,8 +116,8 @@ export const SECONDARY_KEYWORDS = [
   'ATES technology India',
   'commercial vehicle technology India',
   // Additional Truck & Trailer Keywords
-  'truck tire inflation',
-  'trailer tire inflation',
+  'truck tyre inflation',
+  'trailer tyre inflation',
   'automatic inflation system trucks',
   'automatic inflation system trailers',
   'truck tyre pressure control',
@@ -125,7 +125,7 @@ export const SECONDARY_KEYWORDS = [
   'commercial truck inflation',
   'commercial trailer inflation',
   'HCV inflation system',
-  'heavy vehicle tire inflation',
+  'heavy vehicle tyre inflation',
   // Tyre Life & Efficiency Keywords
   'improve truck tyre life',
   'improve trailer tyre life',
@@ -170,6 +170,79 @@ export const SECONDARY_KEYWORDS = [
   'trailer tyre care system',
 ];
 
+// High-intent keywords: what real buyers/searchers type when ready to act
+export const HIGH_INTENT_KEYWORDS = [
+  'buy tyre inflation system India',
+  'tyre inflation system price',
+  'tyre pressure system cost',
+  'fleet tyre management price',
+  'truck tyre safety system price',
+  'ATES system quote',
+  'automatic tyre pressure system cost India',
+  'commercial vehicle tyre system price',
+  'best tyre inflation system India',
+  'top truck tyre management system',
+  'tyre pressure monitoring system buy',
+  'fleet tyre safety solution price',
+  'truck tyre maintenance system cost',
+  'tyre equalisation system price India',
+  'trailer tyre inflation system buy',
+];
+
+// Problem-aware keywords: people searching before they know the solution
+export const PROBLEM_KEYWORDS = [
+  'why do truck tyres burst',
+  'truck tyre blowout causes',
+  'truck tyre overheating',
+  'uneven truck tyre wear',
+  'trailer tyre failure',
+  'high tyre pressure in summer',
+  'low tyre pressure problems',
+  'truck tyre wear patterns',
+  'commercial vehicle tyre damage',
+  'fleet tyre blowout prevention',
+  'truck tyre puncture reasons',
+  'tyre sidewall damage trucks',
+  'truck tyre tread wear',
+  'trailer tyre blowout India',
+  'heavy vehicle tyre failure',
+];
+
+// Voice/search question keywords: natural language queries
+export const VOICE_SEARCH_KEYWORDS = [
+  'how to prevent truck tyre blowouts',
+  'what is automatic tyre equalisation system',
+  'how does ATES work',
+  'why is my truck tyre pressure low',
+  'how to improve truck tyre life',
+  'what causes trailer tyre blowouts',
+  'how to reduce fleet tyre costs',
+  'best way to monitor truck tyre pressure',
+  'how much fuel is wasted by underinflated tyres',
+  'what is the best tyre pressure for trucks',
+  'how often should truck tyres be checked',
+  'why do trailer tyres wear out fast',
+];
+
+// Long-tail location keywords: specific city + service combinations
+export const LOCATION_INTENT_KEYWORDS = [
+  'tyre inflation system Faridabad',
+  'tyre pressure system Delhi NCR',
+  'truck tyre safety Gurgaon',
+  'fleet tyre management Mumbai',
+  'commercial vehicle tyre system Bangalore',
+  'trailer tyre inflation Pune',
+  'truck tyre monitoring Chennai',
+  'tyre equalisation system Hyderabad',
+  'fleet safety system Ahmedabad',
+  'truck tyre maintenance Haryana',
+  'ATES system dealer Delhi',
+  'tyre pressure solution Noida',
+  'commercial tyre system Ghaziabad',
+  'truck tyre safety system Rajasthan',
+  'fleet tyre management Uttar Pradesh',
+];
+
 /**
  * Generate page title with proper formatting
  */
@@ -192,7 +265,7 @@ export function truncateDescription(description: string, maxLength = 160): strin
  * Generate keywords string from array
  */
 export function generateKeywords(customKeywords: string[] = []): string {
-  return [...PRIMARY_KEYWORDS, ...customKeywords, ...SECONDARY_KEYWORDS].join(', ');
+  return [...PRIMARY_KEYWORDS, ...customKeywords, ...SECONDARY_KEYWORDS, ...HIGH_INTENT_KEYWORDS, ...PROBLEM_KEYWORDS, ...VOICE_SEARCH_KEYWORDS, ...LOCATION_INTENT_KEYWORDS].join(', ');
 }
 
 /**

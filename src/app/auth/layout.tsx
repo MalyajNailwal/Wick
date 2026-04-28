@@ -1,15 +1,14 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'MAVAS Survey - Kirana Dukaandaar Field Research',
-  description: 'Survey for understanding daily challenges and problems of Kirana store owners',
+  title: 'Wick Portal',
   robots: {
     index: false,
     follow: false,
   },
 };
 
-export default function MavasSurveyLayout({
+export default function AuthLayout({
   children,
 }: {
   children: React.ReactNode;

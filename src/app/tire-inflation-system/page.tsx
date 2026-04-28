@@ -17,8 +17,8 @@ export default function TireInflationSystemPage() {
   const tireProblems = [
     {
       icon: <AlertTriangle className="w-8 h-8 text-red-500" />,
-      title: "Under-Inflated Tires",
-      description: "Causes increased fuel consumption, faster tire wear, and safety risks",
+      title: "Under-Inflated Tyres",
+      description: "Causes increased fuel consumption, faster tyre wear, and safety risks",
       impact: "Up to 3% fuel loss per 1 PSI under-inflation"
     },
     {
@@ -29,14 +29,14 @@ export default function TireInflationSystemPage() {
     },
     {
       icon: <DollarSign className="w-8 h-8 text-yellow-500" />,
-      title: "Premature Tire Replacement",
-      description: "Incorrect pressure leads to uneven wear and early tire failure",
-      impact: "30-50% shorter tire life"
+      title: "Premature Tyre Replacement",
+      description: "Incorrect pressure leads to uneven wear and early tyre failure",
+      impact: "30-50% shorter tyre life"
     },
     {
       icon: <Truck className="w-8 h-8 text-blue-500" />,
       title: "Vehicle Downtime",
-      description: "Tire-related breakdowns cause costly delays and repairs",
+      description: "Tyre-related breakdowns cause costly delays and repairs",
       impact: "Average 144 hours downtime annually"
     }
   ];
@@ -51,7 +51,7 @@ export default function TireInflationSystemPage() {
       effectiveness: "30%"
     },
     {
-      type: "TPMS (Tire Pressure Monitoring System)",
+      type: "TPMS (Tyre Pressure Monitoring System)",
       features: ["Pressure sensors", "Dashboard alerts", "Real-time monitoring"],
       pros: ["Real-time alerts", "Easy installation", "Driver awareness"],
       cons: ["No automatic correction", "Battery replacement needed", "Limited to monitoring only"],
@@ -96,7 +96,7 @@ export default function TireInflationSystemPage() {
   ];
 
   return (
-    <main className="relative">
+    <main id="main-content" className="relative">
       <Navigation />
       
       {/* Hero Section */}

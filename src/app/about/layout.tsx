@@ -3,8 +3,8 @@ import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
   title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
-  description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, we\'re revolutionizing commercial vehicle safety with innovative ATES technology.',
-  keywords: 'Wick, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND',
+  description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, revolutionizing commercial vehicle safety with ATES technology for trucks & trailers.',
+  keywords: 'Wick, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND, Wick ATES Faridabad, tyre safety company India, commercial vehicle safety company, fleet tyre safety provider, truck tyre safety India, trailer safety solutions company, best tyre safety company India',
   openGraph: {
     title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
     description: 'Founded in 2021, Wick is revolutionizing commercial vehicle safety with India\'s first advanced ATES technology.',
@@ -37,6 +37,19 @@ export default function AboutLayout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
+              { '@type': 'ListItem', position: 2, name: 'About', item: 'https://wick.co.in/about' }
+            ]
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

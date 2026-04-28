@@ -4,7 +4,7 @@ import WickAI from '@/components/ui/WickAI';
 export const metadata: Metadata = {
   title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
   description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety. Subscribe to Wick Insights for industry news and ATES technology updates.',
-  keywords: 'fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips, tyre inflation system blog',
+  keywords: 'fleet management blog, tyre technology, commercial vehicle insights, ATES updates, automotive safety news, truck fleet tips, tyre inflation system blog, how to improve truck tyre life, prevent tyre blowouts, fleet tyre management tips, commercial vehicle safety blog, truck tyre maintenance guide, trailer tyre care tips, tyre pressure best practices',
   openGraph: {
     title: 'Wick Insights | Fleet Management & Tyre Technology Blog',
     description: 'Expert insights on fleet management, tyre technology, and commercial vehicle safety.',
@@ -37,6 +37,19 @@ export default function BlogLayout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
+              { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://wick.co.in/blog' }
+            ]
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

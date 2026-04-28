@@ -1,0 +1,59 @@
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface FAQCategory {
+  category: string;
+  questions: FAQItem[];
+}
+
+export const faqs: FAQCategory[] = [
+  {
+    category: "Tyre Inflation Systems",
+    questions: [
+      {
+        question: 'What is an automatic tyre inflation system?',
+        answer: 'An automatic tyre inflation system (ATES) continuously monitors and maintains optimal tyre pressure in commercial vehicles. It automatically inflates tyres when pressure drops, preventing blowouts and extending tyre life by up to 20%.',
+      },
+      {
+        question: 'How does tyre pressure monitoring work in trucks?',
+        answer: 'Tyre pressure monitoring systems use sensors to track real-time tyre pressure across all wheels. Advanced systems like ATES not only monitor but also automatically correct pressure deviations, ensuring optimal performance and safety.',
+      },
+      {
+        question: 'What is the difference between TPMS and ATES?',
+        answer: 'TPMS (Tyre Pressure Monitoring System) only monitors and alerts about pressure changes. ATES (Automatic Tyre Equalisation System) monitors AND automatically corrects tyre pressure, providing complete tyre management without manual intervention.',
+      },
+    ]
+  },
+  {
+    category: "Benefits & Savings",
+    questions: [
+      {
+        question: 'What are the benefits of tyre inflation systems for fleets?',
+        answer: 'Tyre inflation systems provide 20% longer tyre life, 2%+ fuel savings, reduced vehicle downtime, improved safety, and lower maintenance costs. They prevent tyre blowouts and ensure consistent optimal performance across the fleet.',
+      },
+      {
+        question: 'How much can fleets save with automatic tyre pressure systems?',
+        answer: 'Fleets typically save ₹2-3 lakhs annually per vehicle through extended tyre life, ₹50,000+ in fuel savings, and reduced downtime. The system typically pays for itself within 6-8 months.',
+      },
+    ]
+  },
+  {
+    category: "Technical & Maintenance",
+    questions: [
+      {
+        question: 'Are tyre inflation systems suitable for Indian commercial vehicles?',
+        answer: 'Yes, modern tyre inflation systems are specifically designed for Indian road conditions, handling dust, heat, and challenging terrains while maintaining consistent tyre pressure for trucks and trailers.',
+      },
+      {
+        question: 'What maintenance is required for tyre inflation systems?',
+        answer: 'Quality tyre inflation systems require minimal maintenance - typically annual inspections and component checks. Advanced systems are designed for harsh Indian conditions with robust, low-maintenance components.',
+      },
+      {
+        question: 'How to choose the best tyre management system for trucks?',
+        answer: 'Consider factors like automatic pressure correction, real-time monitoring, India-specific design, proven ROI, local support, and compatibility with your fleet. Look for systems offering 20%+ tyre life extension and measurable fuel savings.',
+      },
+    ]
+  }
+];

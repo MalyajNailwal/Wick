@@ -52,7 +52,7 @@ const ProductsPage = () => {
   ];
 
   return (
-    <main className="relative bg-gray-50">
+    <main id="main-content" className="relative bg-gray-50">
       <Navigation />
       
       {/* Hero Section */}

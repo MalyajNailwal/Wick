@@ -87,7 +87,7 @@ function AuthPageContent() {
       </header>
 
       {/* Main Content */}
-      <main className="py-12">
+      <main id="main-content" className="py-12">
         {!currentUser ? (
           <div className="max-w-4xl mx-auto text-center px-4">
             <h2 className="text-5xl font-bold text-gray-900 mb-6">

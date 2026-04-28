@@ -3,8 +3,8 @@ import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
   title: 'Contact Wick | Get ATES Quote & Technical Support',
-  description: 'Contact Wick for ATES product inquiries, technical support, and fleet safety consultations. Located in Faridabad, India. Call +91 9721601500 or email office@wick.co.in',
-  keywords: 'contact Wick, ATES quote, technical support, fleet consultation, commercial vehicle safety, Faridabad India, ATES inquiry',
+  description: 'Contact Wick for ATES product inquiries, technical support, and fleet safety consultations. Faridabad, India. Call +91 9721601500.',
+  keywords: 'contact Wick, ATES quote, technical support, fleet consultation, commercial vehicle safety, Faridabad India, ATES inquiry, buy tyre inflation system, tyre pressure system price, get ATES quote, fleet tyre management quote, truck tyre safety consultation, trailer tyre system dealer, Wick ATES contact number, tyre safety system price India',
   openGraph: {
     title: 'Contact Wick | Get ATES Quote & Technical Support',
     description: 'Get in touch for ATES product inquiries, technical support, and fleet safety consultations. Call +91 9721601500',
@@ -42,6 +42,19 @@ export default function ContactLayout({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
+              { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://wick.co.in/contact' }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
             '@type': 'ContactPage',
             mainEntity: {
               '@type': 'Organization',
@@ -61,6 +74,19 @@ export default function ContactLayout({
                 '@type': 'GeoCoordinates',
                 latitude: '28.3764',
                 longitude: '77.3144'
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+91-9721601500',
+                contactType: 'customer service',
+                availableLanguage: ['English', 'Hindi'],
+                email: 'office@wick.co.in',
+                hoursAvailable: {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                  opens: '10:00',
+                  closes: '18:00'
+                }
               },
               openingHoursSpecification: [
                 {
