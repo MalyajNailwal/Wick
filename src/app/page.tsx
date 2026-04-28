@@ -94,7 +94,7 @@ const PrologueSection = () => {
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Screen reader only H1 - primary page title for SEO */}
       <h1 className="sr-only">
-        Wick - India's #1 Truck Maintenance System, Tyre Maintenance App & ATES Technology
+        Wick - India&apos;s #1 Truck Maintenance System, Tyre Maintenance App & ATES Technology
       </h1>
       
       {/* Video Background - Main Background */}

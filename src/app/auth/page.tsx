@@ -7,7 +7,8 @@ import Dashboard from "@/components/auth/Dashboard";
 import AdminPanel from "@/components/auth/AdminPanel";
 import { LogOut, Shield } from "lucide-react";
 
-const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL;
+const convex = convexUrl ? new ConvexReactClient(convexUrl) : null;
 
 function AuthPageContent() {
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -118,6 +119,16 @@ function AuthPageContent() {
 }
 
 export default function AuthPage() {
+  if (!convex) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <Shield className="w-12 h-12 text-gray-400 mx-auto mb-4" />
+          <p className="text-gray-600">Authentication system is not configured.</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <ConvexProvider client={convex}>
       <AuthPageContent />

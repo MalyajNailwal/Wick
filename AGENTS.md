@@ -4,7 +4,7 @@
 ### Architecture
 
 <!-- lore:019d4e73-d31b-761c-bacd-530218406f8b -->
-* **Blog SEO: server component with dynamic metadata**: Blog post pages (\`blog/\[slug]/page.tsx\`) are server components that call \`generateMetadata()\` to produce per-post title, description, OG tags, and canonical URL. Each post includes BlogPosting JSON-LD schema and BreadcrumbList schema injected via \`dangerouslySetInnerHTML\`. The blog layout (\`blog/layout.tsx\`) provides a shared Blog schema. This mirrors the pattern used across all pages — each section has a \`layout.tsx\` with page-specific structured data.
+* **Blog SEO: server component with dynamic metadata**: Blog posts are static data in \`src/lib/blog-data.ts\`. Adding a post requires editing this file only; \`getAllPosts()\` auto-feeds the listing page, sitemap, and dynamic metadata generation in \`blog/\[slug]/page.tsx\`. Each post auto-generates title, description, OG tags, canonical, BlogPosting schema, and BreadcrumbList schema.
 
 <!-- lore:019d51f2-8192-7300-8f7c-3a824300a433 -->
 * **Hreflang for language alternates**: Add hreflang in root layout metadata \`alternates: { languages: { 'en-IN': 'https://wick.co.in/', 'en': 'https://wick.co.in/' } }\` to help Google serve the correct language version. Important caveat: Next.js \`alternates.languages\` does not auto-include a self-referencing \`\<xhtml:link>\` for the current page, which Google requires for valid hreflang. Add the current locale explicitly in the languages map alongside other variants.
@@ -21,7 +21,7 @@
 * **Hero images need priority prop**: Hero images need priority loading. LCP images must use loading="eager" not loading='lazy'. For Framer Motion's motion.img, priority prop doesn't exist — use loading="eager" instead (src/app/page.tsx:362). This directly impacts Core Web Vitals ranking.
 
 <!-- lore:019dd28c-69ca-7968-8ce0-723c3b55202d -->
-* **Metadata uses inconsistent tire/tyre spelling**: \`src/app/metadata.ts\` uses US spelling 'tire' throughout while \`layout.tsx\`, blog content, and UI copy use Indian spelling 'tyre'. Since the site targets India (en-IN), inconsistent spelling splits keyword signals and doesn't match local search intent. Fix: standardize on 'tyre' in all metadata exports, JSON-LD schemas, and Open Graph tags.
+* **Metadata uses inconsistent tire/tyre spelling**: Standardize on Indian spelling 'tyre' throughout. Scope includes metadata, layout.tsx JSON-LD schemas, page content, and blog markdown. Paths \`/tire-inflation-system\` and \`/truck-tire-pressure-monitoring\` intentionally keep 'tire' for URL keyword diversity, but all visible copy must use 'tyre'.
 
 <!-- lore:019dd28c-69cb-7cad-98f1-fccd62739e8b -->
 * **OG images use relative paths in root layout**: The root \`layout.tsx\` exports Open Graph image metadata using a relative path \`/media/productimghd-removebg-preview.png\`. Social platforms may fail to resolve relative OG image URLs correctly. The blog layout already uses absolute URLs \`https://wick.co.in/media/...\`. Fix: make all OG image URLs absolute by prefixing the base domain in root metadata.
@@ -33,7 +33,7 @@
 * **Product is ATES, not ATDIS**: The official product acronym is \*\*ATES\*\* (Automatic Tyre Equalisation System). The acronym ATDIS (Automatic Tyre Inflation and Deflation System) does not exist anywhere in the codebase and should never be used. Brand name is TyreRakhshak. All blog content, metadata, and schemas must use ATES.
 
 <!-- lore:019dd28c-69c9-7a36-8c04-4e62f4cb90ee -->
-* **Sitemap at non-standard /sitemap-test URL**: The dynamic sitemap is served from \`/sitemap-test\` via \`sitemap-test/route.ts\`, and \`robots.ts\` references this URL. Search engines and SEO tools expect \`/sitemap.xml\` by default and may fail to auto-discover it. Fix: use Next.js convention \`app/sitemap.ts\`, which is automatically served at \`/sitemap.xml\`, and update \`robots.ts\` to reference the standard URL.
+* **Sitemap at non-standard /sitemap-test URL**: Sitemap uses Next.js native \`app/sitemap.ts\` exporting \`MetadataRoute.Sitemap\`, auto-served at \`/sitemap.xml\`. Private routes (\`/auth\`, \`/wickkaampealt\`, \`/mavas-survey\`) are excluded and \`lastModified\` uses \`new Date()\` dynamically. Do not create custom route handlers for sitemaps. Reference \`robots.ts\` which points to the standard URL.
 
 ### Pattern
 
