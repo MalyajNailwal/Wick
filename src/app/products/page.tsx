@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield, CheckCircle, Download, Zap, Crown } from 'lucide-react';
+import { ArrowRight, Shield, CheckCircle, Download, Zap, Crown, BookOpen } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
 
 const ProductsPage = () => {
@@ -302,6 +303,74 @@ const ProductsPage = () => {
                 <div className="flex justify-center mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Blog Posts */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-50 text-red-700 text-sm font-semibold mb-4">
+              <BookOpen className="w-4 h-4 mr-2" />
+              Learn More
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Resources for Fleet Owners
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore our guides to understand how automatic tyre inflation can transform your fleet operations
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Best Tyre Inflation System in India',
+                description: 'Compare features, prices and ROI. See why Indian fleets trust Wick TyreRakhshak.',
+                slug: 'best-tyre-inflation-system-india',
+                tag: 'Buying Guide'
+              },
+              {
+                title: 'How to Prevent Truck Tyre Blowouts',
+                description: 'Learn the main causes of blowouts and how automatic systems prevent them.',
+                slug: 'how-to-prevent-truck-tyre-blowouts',
+                tag: 'Safety'
+              },
+              {
+                title: 'How to Save Fuel in Trucks',
+                description: 'Discover how correct tyre pressure can save over 2% fuel consumption.',
+                slug: 'how-to-save-fuel-in-trucks',
+                tag: 'Fuel Efficiency'
+              }
+            ].map((post, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="block p-6 bg-gray-50 rounded-xl hover:bg-red-50 hover:shadow-lg transition-all duration-300 h-full"
+                >
+                  <span className="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full mb-3">
+                    {post.tag}
+                  </span>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-700">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {post.description}
+                  </p>
+                  <span className="inline-flex items-center text-red-600 font-semibold text-sm">
+                    Read More
+                    <ArrowRight className="ml-1 w-4 h-4" />
+                  </span>
+                </Link>
               </motion.div>
             ))}
           </div>

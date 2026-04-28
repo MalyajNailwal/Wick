@@ -13,10 +13,13 @@ import {
   Play,
   Pause,
   Volume2,
-  VolumeX
+  VolumeX,
+  BookOpen,
+  ArrowRight
 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
 import StoryChapter from '@/components/ui/StoryChapter';
 
@@ -580,6 +583,68 @@ const TechnologyPage = () => {
               </motion.button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Related Resources */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
+              <BookOpen className="w-4 h-4 mr-2" />
+              Learn More
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Deep Dive into Tyre Technology
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Understand the science behind automatic tyre inflation and how it protects your fleet
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: 'Automatic Tyre Inflation System vs TPMS',
+                description: 'Understand the key differences between monitoring-only and automatic correction systems.',
+                slug: 'automatic-tyre-inflation-system-vs-tpms',
+                tag: 'Comparison'
+              },
+              {
+                title: 'How to Prevent Truck Tyre Blowouts',
+                description: 'Learn why continuous pressure management is the most effective blowout prevention strategy.',
+                slug: 'how-to-prevent-truck-tyre-blowouts',
+                tag: 'Safety'
+              }
+            ].map((post, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="block p-8 bg-white rounded-2xl shadow-md hover:shadow-xl hover:bg-primary-50 transition-all duration-300 h-full border border-gray-100"
+                >
+                  <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full mb-4">
+                    {post.tag}
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {post.description}
+                  </p>
+                  <span className="inline-flex items-center text-primary-600 font-semibold text-sm">
+                    Read Article
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
