@@ -42,8 +42,7 @@ const BlogPage = () => {
       } else {
         setErrorMessage(data.error || 'Failed to subscribe. Please try again.');
       }
-    } catch (error) {
-      console.error('Subscription error:', error);
+    } catch {
       setErrorMessage('Network error. Please check your connection and try again.');
     } finally {
       setIsSubmitting(false);

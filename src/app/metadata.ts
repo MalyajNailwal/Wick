@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const homeMetadata: Metadata = {
   title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring | Commercial Vehicle Safety India',
   description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings. Best commercial vehicle tyre management solution in India.',
-  keywords: 'automatic tyre inflation system, truck tyre pressure monitoring, commercial vehicle tyre management, tyre inflation system India, truck tyre safety system, trailer tyre inflation, fleet tyre management, tyre pressure monitoring system, automatic tyre equalization, commercial vehicle safety, truck tyre maintenance, tyre inflation technology, fleet management system, truck alignment system, tyre pressure control system',
+  keywords: 'automatic tyre inflation system, truck tyre pressure monitoring, commercial vehicle tyre management, tyre inflation system India, truck tyre safety system, trailer tyre inflation, fleet tyre management, tyre pressure monitoring system, automatic tyre equalisation, commercial vehicle safety, truck tyre maintenance, tyre inflation technology, fleet management system, truck alignment system, tyre pressure control system',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',
@@ -37,7 +37,7 @@ export const homeMetadata: Metadata = {
 export const productsMetadata: Metadata = {
   title: 'Tyre Inflation System Products | Commercial Vehicle Tyre Management Solutions India',
   description: 'Best tyre inflation system products for trucks & trailers. Automatic tyre pressure monitoring, real-time alerts, 20% longer tyre life. Commercial vehicle tyre management solutions.',
-  keywords: 'tyre inflation system products, commercial vehicle tyre management, automatic tyre pressure monitoring, truck tyre inflation products, trailer tyre systems, tyre pressure control products, fleet tyre management solutions, commercial tyre monitoring systems, tyre inflation technology, truck tyre safety products, tyre pressure sensors, automatic tyre equalization products',
+  keywords: 'tyre inflation system products, commercial vehicle tyre management, automatic tyre pressure monitoring, truck tyre inflation products, trailer tyre systems, tyre pressure control products, fleet tyre management solutions, commercial tyre monitoring systems, tyre inflation technology, truck tyre safety products, tyre pressure sensors, automatic tyre equalisation products',
   openGraph: {
     title: 'Tyre Inflation System Products | Commercial Vehicle Tyre Management',
     description: 'Best tyre inflation system products for trucks & trailers. Automatic tyre pressure monitoring, 20% longer tyre life.',
@@ -59,8 +59,8 @@ export const productsMetadata: Metadata = {
 
 export const technologyMetadata: Metadata = {
   title: 'How Automatic Tyre Inflation Works | Tyre Pressure Monitoring Technology | ATES System',
-  description: 'Learn how automatic tyre inflation technology works. Advanced tyre pressure monitoring system for trucks & trailers. Real-time tyre pressure control and automatic equalization technology.',
-  keywords: 'how automatic tyre inflation works, tyre pressure monitoring technology, automatic tyre equalization system, tyre inflation technology, commercial vehicle tyre technology, tyre pressure control system, automatic tyre pressure adjustment, tyre monitoring sensors, fleet tyre management technology, truck tyre safety technology, tyre pressure automation, commercial tyre systems',
+  description: 'Learn how automatic tyre inflation technology works. Advanced tyre pressure monitoring system for trucks & trailers. Real-time tyre pressure control and automatic equalisation technology.',
+  keywords: 'how automatic tyre inflation works, tyre pressure monitoring technology, automatic tyre equalisation system, tyre inflation technology, commercial vehicle tyre technology, tyre pressure control system, automatic tyre pressure adjustment, tyre monitoring sensors, fleet tyre management technology, truck tyre safety technology, tyre pressure automation, commercial tyre systems',
   openGraph: {
     title: 'How Automatic Tyre Inflation Works | Tyre Pressure Monitoring Technology',
     description: 'Learn how automatic tyre inflation technology works. Advanced tyre pressure monitoring system for trucks & trailers.',
@@ -129,7 +129,7 @@ export const contactMetadata: Metadata = {
 export const whyWickATESMetadata: Metadata = {
   title: 'Best Tyre Inflation System India | Automatic Tyre Pressure Monitoring Benefits | Commercial Vehicle Safety',
   description: 'Discover India\'s best tyre inflation system. 20% longer tyre life, 2%+ fuel savings, 144 hours downtime reduction. Compare automatic tyre pressure monitoring vs traditional systems.',
-  keywords: 'best tyre inflation system India, automatic tyre pressure monitoring benefits, tyre inflation system advantages, commercial vehicle tyre safety, truck tyre management benefits, tyre pressure monitoring comparison, automatic tyre equalization benefits, fleet tyre management advantages, tyre inflation system ROI, commercial vehicle safety benefits',
+  keywords: 'best tyre inflation system India, automatic tyre pressure monitoring benefits, tyre inflation system advantages, commercial vehicle tyre safety, truck tyre management benefits, tyre pressure monitoring comparison, automatic tyre equalisation benefits, fleet tyre management advantages, tyre inflation system ROI, commercial vehicle safety benefits',
   openGraph: {
     title: 'Best Tyre Inflation System India | Automatic Tyre Pressure Monitoring Benefits',
     description: 'Discover India\'s best tyre inflation system. 20% longer tyre life, 2%+ fuel savings, proven ROI for commercial vehicles.',

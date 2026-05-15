@@ -39,9 +39,8 @@ const TechnologyPage = () => {
     if (videoInView && videoElementRef.current) {
       videoElementRef.current.play().then(() => {
         setIsPlaying(true);
-        console.log('Video autoplayed on scroll');
-      }).catch((error) => {
-        console.log('Autoplay failed:', error);
+      }).catch(() => {
+        // Autoplay failed
       });
     } else if (!videoInView && videoElementRef.current) {
       videoElementRef.current.pause();
@@ -55,14 +54,12 @@ const TechnologyPage = () => {
         if (isPlaying) {
           videoElementRef.current.pause();
           setIsPlaying(false);
-          console.log('Video paused');
         } else {
           await videoElementRef.current.play();
           setIsPlaying(true);
-          console.log('Video playing');
         }
-      } catch (error) {
-        console.error('Error toggling video play:', error);
+      } catch {
+        // Video toggle failed
       }
     }
   };
@@ -72,9 +69,8 @@ const TechnologyPage = () => {
       try {
         videoElementRef.current.muted = !videoElementRef.current.muted;
         setIsMuted(!isMuted);
-        console.log('Video mute toggled:', videoElementRef.current.muted);
-      } catch (error) {
-        console.error('Error toggling video mute:', error);
+      } catch {
+        // Mute toggle failed
       }
     }
   };
@@ -86,7 +82,6 @@ const TechnologyPage = () => {
       setIsPlaying(false);
       setShowCTAOverlay(true);
       setHasShownOverlay(true);
-      console.log('Ad-style pause triggered at 20 seconds');
     }
   };
 
@@ -96,9 +91,7 @@ const TechnologyPage = () => {
       
       videoElementRef.current.play().then(() => {
         setIsPlaying(true);
-        console.log('Video resumed successfully');
-      }).catch((error) => {
-        console.error('Error resuming video:', error);
+      }).catch(() => {
         setIsPlaying(false);
       });
     }
@@ -136,19 +129,19 @@ const TechnologyPage = () => {
     {
       icon: <Cpu className="w-16 h-16 text-purple-600" />,
       title: "Advanced Sensor Technology",
-      description: "High-precision pressure sensors and electronic monitoring systems continuously track tire conditions with exceptional accuracy.",
+      description: "High-precision pressure sensors and electronic monitoring systems continuously track tyre conditions with exceptional accuracy.",
       features: ["Continuous monitoring", "Precision sensors", "Real-time tracking", "Instant alerts"]
     },
     {
       icon: <Wifi className="w-16 h-16 text-blue-600" />,
       title: "IoT Connectivity",
-      description: "Seamless wireless communication between tire sensors and central monitoring systems for instant data transmission.",
+      description: "Seamless wireless communication between tyre sensors and central monitoring systems for instant data transmission.",
       features: ["Real-time monitoring", "Cloud synchronization", "Remote diagnostics", "Fleet management"]
     },
     {
       icon: <Activity className="w-16 h-16 text-green-600" />,
       title: "Pressure Sensors",
-      description: "High-precision sensors continuously monitor tire pressure, temperature, and wear patterns with 99.9% accuracy.",
+      description: "High-precision sensors continuously monitor tyre pressure, temperature, and wear patterns with 99.9% accuracy.",
       features: ["Continuous monitoring", "Temperature tracking", "Wear analysis", "Instant alerts"]
     },
     {
@@ -235,8 +228,8 @@ const TechnologyPage = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
-              Discover how cutting-edge sensors, IoT connectivity, and precision engineering work together 
-              to create India&apos;s most advanced tire management system.
+              Discover how cutting-edge sensors, IoT connectivity, and precision engineering work together
+              to create India&apos;s most advanced tyre management system.
             </motion.p>
           </motion.div>
         </div>
@@ -246,7 +239,7 @@ const TechnologyPage = () => {
       <StoryChapter
         chapterNumber=""
         title="Core Technologies"
-        subtitle="The building blocks of intelligent tire management"
+        subtitle="The building blocks of intelligent tyre management"
         layout="full"
         backgroundColor="bg-white"
         content={
@@ -287,7 +280,7 @@ const TechnologyPage = () => {
       <StoryChapter
         chapterNumber=""
         title="How ATES Works"
-        subtitle="Automatic Tyre Equalization System - Step-by-step process"
+        subtitle="Automatic Tyre Equalisation System - Step-by-step process"
         layout="center"
         backgroundColor="bg-gradient-to-br from-gray-50 to-gray-100"
         content={

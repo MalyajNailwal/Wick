@@ -211,54 +211,6 @@ export default function RootLayout({
             })
           }}
         />
-        {/* Brand Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Brand',
-              name: 'Wick',
-              alternateName: ['Wick ATES', 'Wick India', 'Wick TyreRakhshak'],
-              url: 'https://wick.co.in',
-              logo: 'https://wick.co.in/logo.svg',
-              description: "India's leading truck inflation system and trailer inflation system provider for better tyre life",
-              slogan: 'Revolutionizing Commercial Vehicle Safety',
-              foundingDate: '2021',
-              foundingLocation: {
-                '@type': 'Place',
-                address: {
-                  '@type': 'PostalAddress',
-                  addressLocality: 'Faridabad',
-                  addressRegion: 'Haryana',
-                  addressCountry: 'IN'
-                }
-              }
-            })
-          }}
-        />
-        {/* WebSite Schema with Search Action */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'Wick',
-              alternateName: 'Wick ATES',
-              url: 'https://wick.co.in',
-              description: "India's leading truck inflation system and trailer inflation system technology provider",
-              publisher: {
-                '@type': 'Organization',
-                name: 'Wick',
-                logo: {
-                  '@type': 'ImageObject',
-                  url: 'https://wick.co.in/logo.svg'
-                }
-              }
-            })
-          }}
-        />
         {children}
       </body>
     </html>

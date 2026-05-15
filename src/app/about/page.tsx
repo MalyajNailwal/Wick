@@ -61,7 +61,7 @@ const AboutPage = () => {
     {
       year: '2022',
       title: 'ATES Development',
-      description: 'Successfully developed and tested India\'s first Automatic Tyre Equalization System with our team of engineers.',
+      description: 'Successfully developed and tested India\'s first Automatic Tyre Equalisation System with our team of engineers.',
       roadPosition: { top: '380px', left: '66%' },
       cardPosition: 'right'
     },

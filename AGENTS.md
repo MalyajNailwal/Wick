@@ -11,6 +11,9 @@
 
 ### Gotcha
 
+<!-- lore:019dd337-c27e-7dce-aebb-6f56ec82e3c8 -->
+* **Convex client module-level initialization breaks static builds**: \`src/app/auth/page.tsx\` creates \`new ConvexReactClient()\` at module scope. During \`next build\`, prerendering executes module-level code and crashes if \`NEXT\_PUBLIC\_CONVEX\_URL\` is undefined. Fix: initialize conditionally (\`const convex = convexUrl ? new ConvexReactClient(convexUrl) : null\`) and render a fallback when null.
+
 <!-- lore:019dd28c-69cb-7cad-98f1-fcce36a65984 -->
 * **FAQ page missing structured data schema**: \`/faq/page.tsx\` is a client component containing structured Q\&A data but exports no \`FAQPage\` JSON-LD schema. This misses rich snippet opportunities in search results. Since the page is a client component, schema cannot be injected in the same file. Fix: create a \`layout.tsx\` for \`/faq\` that exports the \`FAQPage\` schema alongside metadata.
 
@@ -33,7 +36,10 @@
 * **Product is ATES, not ATDIS**: The official product acronym is \*\*ATES\*\* (Automatic Tyre Equalisation System). The acronym ATDIS (Automatic Tyre Inflation and Deflation System) does not exist anywhere in the codebase and should never be used. Brand name is TyreRakhshak. All blog content, metadata, and schemas must use ATES.
 
 <!-- lore:019dd28c-69c9-7a36-8c04-4e62f4cb90ee -->
-* **Sitemap at non-standard /sitemap-test URL**: Sitemap uses Next.js native \`app/sitemap.ts\` exporting \`MetadataRoute.Sitemap\`, auto-served at \`/sitemap.xml\`. Private routes (\`/auth\`, \`/wickkaampealt\`, \`/mavas-survey\`) are excluded and \`lastModified\` uses \`new Date()\` dynamically. Do not create custom route handlers for sitemaps. Reference \`robots.ts\` which points to the standard URL.
+* **Sitemap at non-standard /sitemap-test URL**: Sitemap uses Next.js native \`app/sitemap.ts\` exporting \`MetadataRoute.Sitemap\`, auto-served at \`/sitemap.xml\`. Private routes are excluded and \`lastModified\` uses \`new Date()\`. The old custom \`/sitemap-test\` route was deleted and replaced by the native file; \`/sitemap-simple\` is a separate legacy route that still exists. Do not create custom route handlers. Reference \`robots.ts\` for the standard URL.
+
+<!-- lore:019dd337-c27d-71f3-bb0e-bc91ff7e8ea3 -->
+* **Unescaped apostrophes in JSX text crash Next.js build**: Next.js build fails with \`' can be escaped with \&apos;\` when a raw apostrophe appears in JSX text content between tags. String attributes are unaffected. Always escape \`'\` as \`\&apos;\` in visible text nodes. The sr-only H1 in \`page.tsx\` had this issue, blocking production deployment.
 
 ### Pattern
 

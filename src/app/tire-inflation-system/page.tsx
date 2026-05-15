@@ -59,7 +59,7 @@ export default function TireInflationSystemPage() {
       effectiveness: "60%"
     },
     {
-      type: "ATES (Automatic Tire Equalization System)",
+      type: "ATES (Automatic Tyre Equalisation System)",
       features: ["Automatic pressure adjustment", "Real-time monitoring", "Predictive maintenance"],
       pros: ["Fully automatic", "Optimal pressure maintained", "Prevents problems", "Maximum ROI"],
       cons: ["Higher initial investment"],
@@ -71,26 +71,26 @@ export default function TireInflationSystemPage() {
   const benefits = [
     {
       icon: <TrendingUp className="w-12 h-12 text-green-500" />,
-      title: "20% Longer Tire Life",
-      description: "Optimal pressure maintenance extends tire lifespan significantly",
+      title: "20% Longer Tyre Life",
+      description: "Optimal pressure maintenance extends tyre lifespan significantly",
       savings: "₹2-3 Lakhs saved annually per vehicle"
     },
     {
       icon: <Zap className="w-12 h-12 text-blue-500" />,
       title: "2%+ Fuel Efficiency",
-      description: "Proper tire pressure reduces rolling resistance",
+      description: "Proper tyre pressure reduces rolling resistance",
       savings: "₹50,000+ fuel savings per vehicle/year"
     },
     {
       icon: <Shield className="w-12 h-12 text-purple-500" />,
       title: "Enhanced Safety",
-      description: "Prevents tire blowouts and improves vehicle stability",
+      description: "Prevents tyre blowouts and improves vehicle stability",
       savings: "Prevents accidents and insurance claims"
     },
     {
       icon: <Clock className="w-12 h-12 text-orange-500" />,
       title: "Reduced Downtime",
-      description: "Prevents tire-related breakdowns and delays",
+      description: "Prevents tyre-related breakdowns and delays",
       savings: "144 hours saved annually per vehicle"
     }
   ];
@@ -111,15 +111,15 @@ export default function TireInflationSystemPage() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Tire Inflation{' '}
+              Tyre Inflation{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
                 Systems
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
-              Complete guide to automatic tire inflation systems for trucks and trailers. 
-              Learn how to save fuel, extend tire life, and improve fleet safety.
+              Complete guide to automatic tyre inflation systems for trucks and trailers.
+              Learn how to save fuel, extend tyre life, and improve fleet safety.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -130,7 +130,7 @@ export default function TireInflationSystemPage() {
                 className="text-center"
               >
                 <div className="text-4xl font-bold text-blue-400 mb-2">20%</div>
-                <div className="text-gray-300">Longer Tire Life</div>
+                <div className="text-gray-300">Longer Tyre Life</div>
               </motion.div>
               
               <motion.div
@@ -167,10 +167,10 @@ export default function TireInflationSystemPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Common Tire Problems in Commercial Vehicles
+              Common Tyre Problems in Commercial Vehicles
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Understanding the challenges fleet operators face with tire management
+              Understanding the challenges fleet operators face with tyre management
             </p>
           </motion.div>
 
@@ -205,10 +205,10 @@ export default function TireInflationSystemPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Tire Management Solutions Comparison
+              Tyre Management Solutions Comparison
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Compare different approaches to tire pressure management
+              Compare different approaches to tyre pressure management
             </p>
           </motion.div>
 
@@ -220,7 +220,7 @@ export default function TireInflationSystemPage() {
                 animate={comparisonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className={`p-8 rounded-2xl shadow-lg ${
-                  system.type === 'ATES (Automatic Tire Equalization System)' 
+                  system.type === 'ATES (Automatic Tyre Equalisation System)' 
                     ? 'bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200' 
                     : 'bg-white border border-gray-200'
                 }`}
@@ -231,7 +231,7 @@ export default function TireInflationSystemPage() {
                     <span className="text-lg font-semibold text-gray-600">Cost: {system.cost}</span>
                     <span className="text-lg font-semibold text-green-600">Effectiveness: {system.effectiveness}</span>
                   </div>
-                  {system.type === 'ATES (Automatic Tire Equalization System)' && (
+                  {system.type === 'ATES (Automatic Tyre Equalisation System)' && (
                     <div className="mt-2">
                       <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                         Recommended
@@ -293,10 +293,10 @@ export default function TireInflationSystemPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Benefits of Automatic Tire Inflation Systems
+              Benefits of Automatic Tyre Inflation Systems
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Quantifiable benefits that make automatic tire inflation systems essential for modern fleets
+              Quantifiable benefits that make automatic tyre inflation systems essential for modern fleets
             </p>
           </motion.div>
 
@@ -327,10 +327,10 @@ export default function TireInflationSystemPage() {
       <section className="py-24 bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Upgrade Your Fleet&apos;s Tire Management?
+            Ready to Upgrade Your Fleet&apos;s Tyre Management?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-            Discover how automatic tire inflation systems can transform your fleet operations 
+            Discover how automatic tyre inflation systems can transform your fleet operations 
             with proven ROI and enhanced safety.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

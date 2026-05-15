@@ -74,17 +74,17 @@ const ProductsPage = () => {
               <span className="text-blue-900 font-bold">India&apos;s First Advanced ATES</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <div className="text-5xl md:text-6xl font-bold mb-4">
               TYRE RAKHSHAK<sup className="text-2xl">®</sup>
+            </div>
+            <h1 className="text-2xl md:text-3xl font-semibold text-red-400 mb-4">
+              Automatic Tyre Equalisation System
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-red-400 mb-4">
-              Automatic Tyre Equalization System
-            </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
               By Wick | In Partnership with YORK | SAF-HOLLAND Group
             </p>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              India&apos;s first advanced tyre pressure equalization system designed specifically for commercial trailers. 
+              India&apos;s first advanced tyre pressure equalisation system designed specifically for commercial trailers. 
               Automatically maintains optimum tyre pressure, ensuring enhanced safety, improved fuel efficiency, 
               and extended tyre life—without manual intervention.
             </p>
@@ -132,7 +132,7 @@ const ProductsPage = () => {
                   TYRE RAKHSHAK®
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Complete automatic tyre equalization system for commercial trailers
+                  Complete automatic tyre equalisation system for commercial trailers
                 </p>
                 <div className="flex items-baseline">
                   <span className="text-4xl font-bold text-gray-900">Custom</span>

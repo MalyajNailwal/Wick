@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
-  title: 'ATES Technology | How Automatic Tyre Equalisation Works',
+  title: 'ATES Technology | Automatic Tyre Equalisation',
   description: 'Discover Wick ATES technology. Advanced sensors, IoT connectivity, and precision engineering for intelligent tyre management. Learn how automatic tyre equalisation improves safety and efficiency for commercial vehicles.',
   keywords: 'ATES technology, automatic tyre equalisation, tyre pressure sensors, IoT fleet management, commercial vehicle technology, tyre monitoring system, YORK technology, how does ATES work, what is automatic tyre equalisation, truck tyre pressure monitoring technology, trailer tyre inflation technology, fleet tyre management technology, commercial vehicle tyre safety technology, tyre blowout prevention system, how to prevent truck tyre blowouts',
   openGraph: {
-    title: 'ATES Technology | How Automatic Tyre Equalisation Works',
+    title: 'ATES Technology | Automatic Tyre Equalisation',
     description: 'Explore the cutting-edge technology behind India\'s first advanced ATES. Advanced sensors, IoT connectivity, and precision engineering.',
     url: 'https://wick.co.in/technology',
     type: 'website',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ATES Technology | How Automatic Tyre Equalisation Works',
+    title: 'ATES Technology | Automatic Tyre Equalisation',
     description: 'Cutting-edge technology: Advanced sensors, IoT connectivity, precision engineering for intelligent tyre management.',
     images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
   },

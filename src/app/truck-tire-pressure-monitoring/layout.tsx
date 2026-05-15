@@ -55,8 +55,8 @@ export default function TruckTirePressureMonitoringLayout({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Product',
-            name: 'Truck Tire Pressure Monitoring System',
-            description: 'Advanced tire pressure monitoring system for commercial trucks and trailers with real-time alerts and predictive maintenance.',
+            name: 'Truck Tyre Pressure Monitoring System',
+            description: 'Advanced tyre pressure monitoring system for commercial trucks and trailers with real-time alerts and predictive maintenance.',
             category: 'Commercial Vehicle Safety Equipment',
             brand: {
               '@type': 'Brand',

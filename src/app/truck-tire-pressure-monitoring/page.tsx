@@ -60,14 +60,14 @@ export default function TruckTirePressureMonitoringPage() {
             className="text-center"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Truck Tire{' '}
+              Truck Tyre{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
                 Pressure Monitoring
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
-              Advanced tire pressure monitoring systems for commercial trucks and trailers. 
+              Advanced tyre pressure monitoring systems for commercial trucks and trailers.
               Real-time monitoring, instant alerts, and predictive maintenance for optimal fleet performance.
             </p>
 
@@ -103,7 +103,7 @@ export default function TruckTirePressureMonitoringPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Advanced Tire Pressure Monitoring Features
+              Advanced Tyre Pressure Monitoring Features
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Comprehensive monitoring solutions designed for commercial vehicle operations

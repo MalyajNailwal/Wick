@@ -91,8 +91,7 @@ const ContactPage = () => {
           message: data.error || 'Something went wrong. Please try again.'
         });
       }
-    } catch (error) {
-      console.error('Form submission error:', error);
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: 'Network error. Please check your connection and try again.'
@@ -134,7 +133,7 @@ const ContactPage = () => {
   const faqData = [
     {
       question: "How does the Automatic Tyre Equalisation System work?",
-      answer: "ATES continuously monitors tire pressure across all wheels and automatically adjusts pressure to maintain optimal levels, ensuring better safety, fuel efficiency, and tire longevity."
+      answer: "ATES continuously monitors tyre pressure across all wheels and automatically adjusts pressure to maintain optimal levels, ensuring better safety, fuel efficiency, and tyre longevity."
     },
     {
       question: "What types of vehicles are compatible with ATES?",
@@ -183,7 +182,7 @@ const ContactPage = () => {
                   Introducing Wick AI - Our New AI Assistant!
                 </h3>
                 <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                  Meet Wick AI, our revolutionary AI assistant designed specifically for fleet management and tire technology. Get instant answers to your questions about ATES, tire safety, and fleet optimization.
+                  Meet Wick AI, our revolutionary AI assistant designed specifically for fleet management and tyre technology. Get instant answers to your questions about ATES, tyre safety, and fleet optimization.
                 </p>
 
                 {/* Action Button */}
@@ -662,7 +661,7 @@ const ContactPage = () => {
             className="mt-12 pt-8 border-t border-gray-700 text-center"
           >
             <p className="text-gray-400 text-sm">
-              Making India&apos;s highways safer, one tire at a time.
+              Making India&apos;s highways safer, one tyre at a time.
             </p>
           </motion.div>
         </div>

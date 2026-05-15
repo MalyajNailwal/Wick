@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import WickAI from '@/components/ui/WickAI';
 
 export const metadata: Metadata = {
-  title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
+  title: 'About Wick | Commercial Vehicle Safety India',
   description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, revolutionizing commercial vehicle safety with ATES technology for trucks & trailers.',
   keywords: 'Wick, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND, Wick ATES Faridabad, tyre safety company India, commercial vehicle safety company, fleet tyre safety provider, truck tyre safety India, trailer safety solutions company, best tyre safety company India',
   openGraph: {
-    title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
+    title: 'About Wick | Commercial Vehicle Safety India',
     description: 'Founded in 2021, Wick is revolutionizing commercial vehicle safety with India\'s first advanced ATES technology.',
     url: 'https://wick.co.in/about',
     type: 'website',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Wick | Pioneering Commercial Vehicle Safety in India',
+    title: 'About Wick | Commercial Vehicle Safety India',
     description: 'Founded in 2021, revolutionizing commercial vehicle safety with India\'s first advanced ATES.',
     images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
   },

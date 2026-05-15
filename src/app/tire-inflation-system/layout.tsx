@@ -55,8 +55,8 @@ export default function TireInflationSystemLayout({
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Article',
-            headline: 'Complete Guide to Tire Inflation Systems for Commercial Vehicles',
-            description: 'Learn about automatic tire inflation systems, ATES vs TPMS comparison, and how to improve fleet tire management.',
+            headline: 'Complete Guide to Tyre Inflation Systems for Commercial Vehicles',
+            description: 'Learn about automatic tyre inflation systems, ATES vs TPMS comparison, and how to improve fleet tyre management.',
             author: {
               '@type': 'Organization',
               name: 'Wick',

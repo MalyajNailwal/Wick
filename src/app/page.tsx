@@ -75,10 +75,9 @@ const PrologueSection = () => {
       if (video) {
         try {
           await video.play();
-          console.log('Video started after user interaction');
           setNeedsUserInteraction(false);
-        } catch (error) {
-          console.error('Failed to play video after click:', error);
+        } catch {
+          // Video play failed
         }
       }
     };
@@ -117,16 +116,12 @@ const PrologueSection = () => {
                   objectPosition: 'center',
                 }}
                 onCanPlay={() => {
-                  console.log('Video can play successfully');
                   setVideoLoaded(true);
                 }}
                 onError={() => {
-                  console.log('Video failed to load, showing fallback');
                   setVideoError(true);
                 }}
-                onLoadedData={() => {
-                  console.log('Video data loaded - attempting autoplay');
-                }}
+                onLoadedData={() => {}}
                 suppressHydrationWarning
               >
                 <source src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/video/upload/firstpagelandingpage_ioedbr.mp4`} type="video/mp4" />
@@ -363,10 +358,8 @@ const ProductImageWithRotation = () => {
               fetchPriority="high"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                console.log('Image failed to load:', target.src);
                 target.style.display = 'none';
               }}
-              onLoad={() => console.log('Product image loaded successfully')}
             />
             
             {/* Enhanced Glowing Effect Behind Product - Intensifies on hover */}
@@ -421,7 +414,7 @@ const ProductImageWithRotation = () => {
         className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gray-200 z-10"
       >
         <p className="text-sm font-medium text-gray-700">
-          <span className="text-red-600 font-bold">Our Innovation:</span> This smart hub that monitors tire pressure in real-time
+          <span className="text-red-600 font-bold">Our Innovation:</span> This smart hub that monitors tyre pressure in real-time
         </p>
       </motion.div>
     </div>
@@ -448,7 +441,7 @@ const StoryJourney = () => {
             <p className="text-lg leading-relaxed text-center max-w-4xl mx-auto text-gray-600 mt-4">
               Heavy commercial vehicles bore a disproportionate share of this tragedy. 
               <strong className="text-red-600">12,752 crashes involved trucks and lorries</strong>, leading to more than 
-              <strong className="text-red-600">5,200 deaths</strong>. Poor tire maintenance, overloading, and mechanical defects 
+              <strong className="text-red-600">5,200 deaths</strong>. Poor tyre maintenance, overloading, and mechanical defects 
               ensured that accidents remained deadly.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
@@ -513,7 +506,7 @@ const StoryJourney = () => {
               >
                 <img
                   src="/slideshow/winter-tires-4664205.jpg"
-                  alt="Winter tires crisis"
+                  alt="Winter tyres crisis"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30"></div>
@@ -543,7 +536,7 @@ const StoryJourney = () => {
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5, delay: 1.2 }}
                     >
-                      <TypewriterText text="Every broken tire was a story of potential tragedy" />
+                      <TypewriterText text="Every broken tyre was a story of potential tragedy" />
                     </motion.p>
                   </motion.div>
                 </motion.div>
@@ -598,18 +591,18 @@ const StoryJourney = () => {
             <p className="text-lg leading-relaxed">
               In 2021, our founders looked at this crisis and saw an opportunity. 
               <strong className="text-primary-600">What if technology could predict and prevent</strong> 
-              tire failures before they happened?
+              tyre failures before they happened?
             </p>
             <p className="text-lg leading-relaxed">
               The idea was revolutionary: an Automatic Tyre Equalisation System that would 
-              monitor, analyze, and automatically adjust tire pressure in real-time. 
+              monitor, analyze, and automatically adjust tyre pressure in real-time. 
               No more guesswork, no more tragic accidents.
             </p>
             <div className="bg-white p-6 rounded-xl shadow-lg border-l-4 border-primary-500">
               <h4 className="text-xl font-bold text-primary-600 mb-3">Our Mission</h4>
               <p className="text-gray-700 italic">
                 &ldquo;To make every commercial vehicle journey safer through intelligent 
-                tire management technology.&rdquo;
+                tyre management technology.&rdquo;
               </p>
             </div>
           </div>
