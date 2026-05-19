@@ -169,6 +169,8 @@ For high-usage trailers, long-haul transport and heavy commercial vehicles, auto
 TPMS tells you there is a problem. Wick TyreRakhshak helps solve the problem automatically.
 
 For fleet owners looking to reduce tyre cost, fuel loss, downtime and safety risks, an automatic tyre inflation system is not just a product. It is a smarter way to run commercial vehicles.
+
+Learn more about [Wick ATES technology](/technology) and [how tyre inflation systems work](/tire-inflation-system).
     `,
   },
   {
@@ -235,6 +237,8 @@ This makes the product a strong ROI investment instead of a discretionary purcha
 TyreRakhshak helps fleet owners save money where it matters most: tyres, fuel and downtime.
 
 By replacing manual pressure checks with automatic tyre pressure management, Wick helps fleets reduce avoidable losses and improve profitability.
+
+See [Wick ATES products](/products) and [why fleet operators choose Wick](/why-wick-ates).
     `,
   },
   {
@@ -295,6 +299,8 @@ For fleet owners, this means safer drivers, protected cargo, lower insurance ris
 Preventing truck tyre blowouts requires more than good intentions. It requires a system that works 24/7 without depending on human memory.
 
 Wick TyreRakhshak provides that protection. By maintaining optimum tyre pressure automatically, it helps fleets avoid one of the most common and costly safety risks on Indian roads.
+
+Read more about [truck tyre pressure monitoring](/truck-tire-pressure-monitoring) and [automatic tyre inflation systems](/tire-inflation-system).
     `,
   },
   {
@@ -355,6 +361,8 @@ Wick provides complete installation support across India. The system installs wi
 Choosing the best tyre inflation system means looking beyond the brochure. It means choosing a system proven on Indian roads, backed by local support, and delivering measurable returns.
 
 Wick TyreRakhshak meets all these criteria. For fleet owners ready to reduce costs and improve safety, it is the best tyre inflation system available in India today.
+
+Compare [Wick ATES vs competitors](/wick-vs-competitors) or [contact us](/contact) for a fleet assessment.
     `,
   },
   {
@@ -414,7 +422,7 @@ For a 10-trailer fleet based in Faridabad, total annual savings can exceed Rs 30
 
 Fleet operators in Faridabad and Delhi NCR no longer need to depend on manual tyre maintenance or imported systems not designed for Indian conditions.
 
-Wick TyreRakhshak provides locally-supported, India-engineered automatic tyre inflation that delivers real savings. Contact Wick today for a fleet assessment and demonstration.
+Wick TyreRakhshak provides locally-supported, India-engineered automatic tyre inflation that delivers real savings. [Contact Wick](/contact) today for a fleet assessment and demonstration.
     `,
   },
   {
@@ -473,6 +481,282 @@ While fuel savings are significant, correct tyre pressure also extends tyre life
 Saving fuel in trucks requires looking at every factor that affects efficiency. Tyre pressure is one of the easiest to fix because technology can automate it completely.
 
 Wick TyreRakhshak helps fleets save fuel without depending on driver diligence. It works automatically, continuously, and delivers measurable results from day one.
+
+Learn more about [how ATES technology works](/technology) and [tyre inflation systems](/tire-inflation-system).
+    `,
+  },
+  {
+    slug: 'why-fleet-problems-start-with-tyre-pressure',
+    title: 'Why Most Fleet Problems Start With Something As Simple As Tyre Pressure',
+    excerpt:
+      'Tyre pressure is the most overlooked factor in fleet operations. Learn how small pressure deviations cause cascading problems across safety, fuel costs, tyre life, and vehicle uptime.',
+    date: '2026-05-19',
+    readTime: '8 min read',
+    category: 'Fleet Management',
+    tags: [
+      'tyre pressure',
+      'fleet problems',
+      'truck maintenance',
+      'tyre safety',
+      'commercial vehicle',
+      'fleet operations',
+      'tyre management',
+    ],
+    content: `
+## The Hidden Root Cause
+
+When fleet operators investigate rising costs, unexpected breakdowns, or safety incidents, they rarely point to the same root cause. But in our experience working with over 50 fleet operators across India, the answer is almost always the same: tyre pressure.
+
+It sounds too simple. But consider this: tyres are the only point of contact between a 40-tonne commercial vehicle and the road. Every force — acceleration, braking, cornering, load bearing — passes through four small patches of rubber. When tyre pressure is wrong, everything downstream breaks.
+
+## How Small Deviations Create Big Problems
+
+A tyre that is 10% underinflated might not seem like an emergency. But the consequences compound quickly:
+
+**Increased rolling resistance** — Underinflated tyres deform more, creating a larger contact patch with the road. This increases friction and forces the engine to work harder. The result: 2-4% higher fuel consumption per vehicle.
+
+**Uneven tread wear** — When pressure is uneven across axles, some tyres carry more load than others. This causes irregular wear patterns that reduce tyre life by 15-25%. A tyre that should last 100,000 km might need replacement at 75,000 km.
+
+**Heat buildup** — Underinflated tyres generate more heat due to increased flexing of the sidewall. In Indian summer conditions, where road temperatures exceed 60°C, this heat can push tyre temperatures beyond safe limits, leading to blowouts.
+
+**Handling degradation** — Uneven tyre pressure affects steering response, braking distance, and vehicle stability. Drivers may not notice the gradual change until an emergency situation exposes the danger.
+
+## The Cascading Effect on Fleet Operations
+
+The real cost of incorrect tyre pressure is not just the tyre itself. It is the cascade of problems that follow:
+
+A blowout on a highway means emergency towing, tyre replacement, driver downtime, missed delivery schedules, and potential cargo damage. A single blowout incident can cost ₹50,000-1,00,000 when you factor in all direct and indirect costs.
+
+Repeated tyre replacements increase procurement costs. Unplanned maintenance disrupts fleet scheduling. Driver confidence drops. Customer satisfaction suffers when deliveries are delayed.
+
+## Why Manual Monitoring Fails
+
+Most fleets rely on drivers to check tyre pressure during pre-trip inspections. This approach has fundamental limitations:
+
+- Drivers check pressure when tyres are cold, but pressure changes significantly during operation
+- Visual inspection cannot detect 10-15% underinflation — the tyre looks fine but is already inefficient
+- In busy operations, inspections get rushed or skipped entirely
+- Even when problems are detected, fixing them requires stopping the vehicle, finding a tyre shop, and losing hours of productive time
+
+## The Automatic Solution
+
+Modern tyre management technology eliminates these gaps. An automatic tyre inflation system continuously monitors and corrects tyre pressure while the vehicle is in motion. No driver intervention. No inspection gaps. No downtime for pressure adjustments.
+
+This is not just about convenience — it is about changing the fundamental economics of fleet operations. When tyre pressure is always correct, fuel consumption drops, tyre life extends, blowouts become rare, and vehicles spend more time on the road earning revenue.
+
+## Getting Started
+
+If you are a fleet operator dealing with rising maintenance costs, unexpected tyre failures, or fuel efficiency that does not match your expectations, start by examining your tyre pressure management. The solution might be simpler than you think.
+
+Learn more about [how automatic tyre inflation systems work](/tire-inflation-system) and how [Wick ATES technology](/technology) can transform your fleet operations.
+    `,
+  },
+  {
+    slug: 'why-breakdowns-are-rarely-sudden-in-fleet-operations',
+    title: 'Why Breakdowns Are Rarely Sudden in Fleet Operations',
+    excerpt:
+      'Truck breakdowns feel sudden but they are almost always the result of gradual degradation. Learn the warning signs and how proactive fleet maintenance prevents costly roadside failures.',
+    date: '2026-05-19',
+    readTime: '7 min read',
+    category: 'Fleet Management',
+    tags: [
+      'truck breakdown',
+      'fleet maintenance',
+      'preventive maintenance',
+      'tyre blowout',
+      'commercial vehicle',
+      'roadside breakdown',
+      'truck safety',
+    ],
+    content: `
+## The Illusion of Sudden Failure
+
+When a truck breaks down on the highway, the driver calls it sudden. The fleet manager calls it unexpected. But in almost every case, the failure was developing for weeks or months before it became visible.
+
+Mechanical failures in commercial vehicles follow a predictable pattern. Components degrade gradually — bearings wear, seals weaken, pressure drops, heat accumulates. The final failure is just the moment when the accumulated damage exceeds the component's tolerance. By then, the warning signs have been present for a long time.
+
+## Tyre Breakdowns: The Most Preventable Failure
+
+Among all types of commercial vehicle breakdowns, tyre failures are the most preventable. Here is why:
+
+**Tyre blowouts rarely happen without warning.** Before a tyre fails, it typically experiences weeks of underinflation, uneven wear, or heat stress. These conditions produce measurable changes in pressure, temperature, and tread pattern — all detectable with proper monitoring.
+
+**The failure chain is well understood:** underinflation leads to increased heat, heat leads to rubber degradation, degradation leads to structural weakness, and structural weakness leads to blowout. Each step in this chain takes time, and each step is an opportunity to intervene.
+
+**Indian conditions accelerate the chain.** High ambient temperatures, rough road surfaces, heavy loads, and long driving hours mean that the degradation cycle is faster in India than in temperate climates. A tyre that might take months to fail in Europe can fail in weeks in India.
+
+## The Cost of Reactive Maintenance
+
+Many fleet operators still follow a reactive maintenance approach: fix it when it breaks. This strategy has hidden costs that far exceed the savings from skipped maintenance:
+
+**Emergency repair costs** are 3-5x higher than planned maintenance. A tyre replaced on the roadside costs more than one replaced in a workshop — and that is before you add towing, driver overtime, and schedule disruption.
+
+**Vehicle downtime** is the biggest hidden cost. A truck sitting on the roadside is not earning revenue. If the truck covers ₹15,000-20,000 per day in revenue, even a few hours of downtime adds up quickly.
+
+**Cargo damage and delays** affect customer relationships. Late deliveries erode trust and can result in penalty clauses, especially in time-sensitive industries like FMCG and e-commerce logistics.
+
+**Driver safety** is the most serious concern. Tyre blowouts at highway speeds are a leading cause of commercial vehicle accidents in India. The human cost of reactive maintenance is immeasurable.
+
+## Building a Proactive Fleet Maintenance Strategy
+
+Proactive maintenance means monitoring components continuously and addressing issues before they become failures. For tyres, this involves three layers:
+
+**Real-time pressure monitoring** — Know the exact pressure of every tyre at all times, not just during pre-trip inspections. Modern TPMS (Tyre Pressure Monitoring Systems) provide continuous readings via sensors on each wheel.
+
+**Automatic pressure correction** — Monitoring alone is not enough. The driver needs to act on the data, which means stopping the vehicle. An automatic tyre inflation system eliminates this bottleneck by correcting pressure in real time, without driver intervention.
+
+**Data-driven maintenance scheduling** — Track pressure trends over time. If a tyre consistently loses pressure faster than others, it may have a slow leak or valve issue that needs workshop attention. Catching these patterns early prevents roadside failures.
+
+## The Technology Is Available Today
+
+Proactive fleet maintenance is not a future concept. The technology exists today, is proven across thousands of commercial vehicles, and delivers measurable ROI within months.
+
+The question for fleet operators is not whether to adopt proactive maintenance, but how quickly they can transition from the costly cycle of reactive repairs.
+
+Explore how [automatic tyre inflation systems](/tire-inflation-system) support proactive fleet maintenance and keep your trucks on the road. See [why fleet operators choose Wick ATES](/why-wick-ates) for their tyre management needs.
+    `,
+  },
+  {
+    slug: 'good-enough-maintenance-costing-fleet-operators',
+    title: 'Why Good Enough Maintenance Is Quietly Costing Fleet Operators More Than They Realize',
+    excerpt:
+      'Fleet operators who think their maintenance is good enough are losing lakhs annually. Learn how small gaps in tyre management create outsized costs over time.',
+    date: '2026-05-19',
+    readTime: '8 min read',
+    category: 'Cost Savings',
+    tags: [
+      'fleet maintenance cost',
+      'tyre management',
+      'fleet savings',
+      'truck maintenance',
+      'operational efficiency',
+      'commercial vehicle',
+      'tyre life',
+    ],
+    content: `
+## The Good Enough Trap
+
+Most fleet operators believe their maintenance is adequate. Trucks get serviced on schedule. Tyres get replaced when worn. Breakdowns get fixed promptly. Everything seems fine.
+
+But fine is expensive. The gap between good enough maintenance and optimized maintenance is where lakhs of rupees disappear every year — silently, gradually, and invisibly.
+
+## Where the Money Hides
+
+The costs of good enough maintenance do not show up as obvious line items. They hide in patterns that are difficult to see without data:
+
+**Tyre life that falls short of potential.** A well-maintained tyre should deliver 90,000-100,000 km of service. Most fleet tyres are replaced at 60,000-70,000 km — not because they failed, but because uneven wear made them unsafe before their time. For a fleet of 50 trucks running 8 tyres each, that gap represents lakhs in premature tyre replacements every year.
+
+**Fuel that should not have been burned.** Underinflated tyres increase rolling resistance by 10-15% for every 10% drop in pressure. For a truck consuming ₹8-10 lakhs in fuel annually, even a 2% efficiency loss means ₹16,000-20,000 wasted per vehicle per year. Across a 50-truck fleet, that is ₹8-10 lakhs in preventable fuel costs.
+
+**Downtime that should not have happened.** Unplanned downtime costs 3-5x more than planned maintenance. A fleet that experiences one unplanned tyre failure per truck per month is spending significantly more on emergency repairs, towing, and schedule disruption than a fleet that prevents those failures proactively.
+
+## The Measurement Problem
+
+The reason good enough maintenance persists is measurement. Fleet operators track obvious costs — fuel bills, tyre purchases, repair invoices — but they rarely track the gap between current performance and optimal performance.
+
+Consider these questions:
+
+- What is the average tyre life across your fleet, and how does it compare to the manufacturer's rated life?
+- What percentage of your tyre replacements are due to uneven wear versus normal end-of-life?
+- How many hours of unplanned downtime did your fleet experience last month due to tyre-related issues?
+- What is your actual fuel efficiency versus the theoretical optimal for your vehicles and routes?
+
+If you do not have precise answers to these questions, your maintenance has gaps that are costing you money.
+
+## Bridging the Gap
+
+Closing the gap between good enough and optimal does not require a complete overhaul. It requires targeted improvements in the areas with the highest return on investment:
+
+**Automate tyre pressure management.** This single change addresses the root cause of premature tyre wear, excess fuel consumption, and blowout risk. An automatic tyre inflation system maintains optimal pressure continuously, eliminating the variability of manual checks.
+
+**Track tyre lifecycle data.** Record the installation date, mileage, and removal reason for every tyre. Over time, patterns emerge that reveal which routes, vehicles, or driving habits are reducing tyre life.
+
+**Set benchmarks and measure against them.** If your target tyre life is 90,000 km and your average is 65,000 km, you have a 25,000 km gap to close. That gap translates directly into rupees saved when closed.
+
+## The Compounding Effect
+
+The most powerful aspect of optimized maintenance is compounding. When tyre pressure is correct, tyres last longer. When tyres last longer, replacements cost less. When replacements happen less often, vehicles spend more time on the road. When vehicles are on the road more, revenue increases.
+
+Each improvement amplifies the others. A fleet that moves from good enough to optimized maintenance does not just save money — it earns more.
+
+## Taking the First Step
+
+The transition from good enough to optimized starts with one question: where is the biggest gap in your current maintenance strategy? For most Indian fleet operators, the answer is tyre pressure management.
+
+Learn how [automatic tyre inflation systems](/tire-inflation-system) can bridge the gap and deliver measurable savings within the first quarter of adoption. See [Wick ATES products](/products) for your fleet.
+    `,
+  },
+  {
+    slug: 'fleet-efficiency-system-behind-the-vehicle',
+    title: 'Why Fleet Efficiency Is No Longer Just About the Vehicle',
+    excerpt:
+      'Modern fleet efficiency depends on the systems behind the vehicle, not just the vehicle itself. Learn how tyre management technology is reshaping fleet operations in India.',
+    date: '2026-05-19',
+    readTime: '7 min read',
+    category: 'Technology',
+    tags: [
+      'fleet efficiency',
+      'fleet technology',
+      'tyre management system',
+      'commercial vehicle',
+      'fleet operations',
+      'automatic tyre inflation',
+      'Indian logistics',
+    ],
+    content: `
+## Beyond the Engine
+
+For decades, fleet efficiency was measured by the vehicle — engine power, fuel tank capacity, payload rating, and maintenance schedules. Operators who bought better trucks and serviced them on time were considered efficient.
+
+That equation has changed. The vehicle itself is now a commodity. The difference between a profitable fleet and a struggling one lies in the systems that operate behind the vehicle: the monitoring, the data, the automation, and the decision-making infrastructure.
+
+## The System Layer
+
+Modern fleet operations generate enormous amounts of data. GPS tracking, fuel monitoring, driver behaviour analysis, route optimization, and tyre management systems all produce continuous streams of information.
+
+The fleets that thrive are not the ones with the most data — they are the ones that turn data into action automatically. Manual data analysis is too slow for the pace of modern logistics. By the time a human reviews a report and makes a decision, the opportunity to prevent a problem has often passed.
+
+This is why the most impactful fleet technologies are not monitoring systems — they are closed-loop systems that detect and correct problems without human intervention.
+
+## Tyre Management: The Highest-ROI System Layer
+
+Among all the system layers available to fleet operators, tyre management delivers the highest return on investment for one simple reason: tyres affect everything else.
+
+**Fuel efficiency** depends on tyre pressure. Underinflated tyres increase rolling resistance, directly increasing fuel consumption. For Indian fleets where fuel represents 40-50% of operating costs, even small efficiency gains have outsized financial impact.
+
+**Vehicle uptime** depends on tyre reliability. Tyre-related breakdowns are the leading cause of unplanned downtime in commercial vehicle fleets. Every hour of downtime is lost revenue.
+
+**Safety** depends on tyre condition. Blowouts, handling degradation, and braking performance are all directly affected by tyre pressure and tread condition. In India's challenging road conditions, tyre safety is fleet safety.
+
+**Tyre lifecycle cost** depends on maintenance consistency. Tyres that are properly maintained deliver 20-30% more life than those subject to inconsistent pressure management. For a fleet spending lakhs on tyre procurement, this gap is significant.
+
+## The Automation Advantage
+
+Manual tyre management — checking pressure with gauges, inflating at tyre shops, tracking wear patterns visually — cannot match the consistency of automated systems. The variables are too many: temperature changes throughout the day, load variations between trips, pressure differences across axles, and the sheer number of tyres in a large fleet.
+
+Automatic tyre inflation systems close this loop. They monitor pressure continuously and correct deviations in real time. The driver does not need to stop. The fleet manager does not need to generate reports. The system handles it.
+
+This is not about replacing human judgment. It is about removing the burden of routine monitoring so that human attention can focus on higher-value decisions: route optimization, customer service, business development, and strategic planning.
+
+## The Indian Context
+
+India's fleet industry faces unique challenges that make system-level efficiency even more critical:
+
+**Extreme climate variation.** From Rajasthan's 50°C summers to Himalayan winter routes, Indian trucks operate across a temperature range that puts enormous stress on tyres. Automated systems adapt to these conditions continuously.
+
+**Diverse road conditions.** National highways, state roads, and rural routes present vastly different challenges. Tyre pressure that is optimal for highway cruising may be too low for rough terrain. Smart systems adjust accordingly.
+
+**Driver skill variation.** India's driver workforce has varying levels of training and experience. Automated systems reduce dependence on individual driver diligence for routine maintenance tasks.
+
+**Cost sensitivity.** Indian fleet operators are highly cost-conscious. The ROI of tyre management technology is measurable and typically achieved within 6-8 months, making it one of the fastest-payback investments available.
+
+## Building Your System Layer
+
+If you are evaluating technology investments for your fleet, start with the system that affects the most cost categories. Tyre management technology improves fuel efficiency, extends tyre life, reduces downtime, enhances safety, and lowers maintenance costs — all from a single investment.
+
+The vehicle gets you on the road. The system behind it determines how profitably you stay there.
+
+Discover how [automatic tyre inflation technology](/technology) works and why Indian fleet operators are adopting it at an accelerating pace. Compare [Wick ATES vs competitors](/wick-vs-competitors) to make an informed decision.
     `,
   },
 ];

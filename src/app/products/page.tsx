@@ -386,7 +386,7 @@ const ProductsPage = () => {
           <p className="text-xl text-white/90 mb-8">
             Contact our team for a custom quote tailored to your needs
           </p>
-          
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -396,6 +396,21 @@ const ProductsPage = () => {
             Contact Sales Team
             <ArrowRight className="ml-2 w-5 h-5" />
           </motion.button>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link href="/technology" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+              How ATES Technology Works
+            </Link>
+            <Link href="/tire-inflation-system" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+              Tyre Inflation Systems
+            </Link>
+            <Link href="/truck-tire-pressure-monitoring" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+              Tyre Pressure Monitoring
+            </Link>
+            <Link href="/faq" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+              FAQs
+            </Link>
+          </div>
         </div>
       </section>
     </main>

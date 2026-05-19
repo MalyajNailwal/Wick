@@ -216,10 +216,11 @@ const TechnologyPage = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-6xl font-display font-bold text-white mb-6"
             >
-              The Science Behind{' '}
+              How Automatic Tyre Inflation{' '}
               <span className="text-primary-600 font-bold">
-                Safety
-              </span>
+                Technology
+              </span>{' '}
+              Works
             </motion.h1>
             
             <motion.p
@@ -574,6 +575,20 @@ const TechnologyPage = () => {
               >
                 Technical Docs
               </motion.button>
+            </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link href="/products" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+                TyreRakhshak Products
+              </Link>
+              <Link href="/tire-inflation-system" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+                Tyre Inflation Systems
+              </Link>
+              <Link href="/truck-tire-pressure-monitoring" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+                Tyre Pressure Monitoring
+              </Link>
+              <Link href="/faq" className="text-white/80 hover:text-white underline underline-offset-4 text-sm">
+                FAQs
+              </Link>
             </div>
           </motion.div>
         </div>

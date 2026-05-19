@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { CheckCircle, AlertTriangle, TrendingUp, Shield, Zap, Clock, DollarSign, Truck } from 'lucide-react';
+import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
 import { useRouter } from 'next/navigation';
 
@@ -350,6 +351,27 @@ export default function TireInflationSystemPage() {
             >
               View Solutions
             </motion.button>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Pages */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Explore More</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/technology" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              How ATES Technology Works
+            </Link>
+            <Link href="/truck-tire-pressure-monitoring" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              Truck Tyre Pressure Monitoring
+            </Link>
+            <Link href="/faq" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              FAQs
+            </Link>
+            <Link href="/blog" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              Fleet Management Blog
+            </Link>
           </div>
         </div>
       </section>

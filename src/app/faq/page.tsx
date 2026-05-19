@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
 import { useState } from 'react';
 
@@ -151,6 +152,30 @@ export default function FAQPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Related Pages */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-8">Learn More About Wick ATES</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/products" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              TyreRakhshak Products
+            </Link>
+            <Link href="/technology" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              ATES Technology
+            </Link>
+            <Link href="/tire-inflation-system" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              Tyre Inflation Systems
+            </Link>
+            <Link href="/truck-tire-pressure-monitoring" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              Truck Tyre Pressure Monitoring
+            </Link>
+            <Link href="/contact" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
     </main>
