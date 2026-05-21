@@ -18,7 +18,7 @@
 * **FAQ page missing structured data schema**: \`/faq/page.tsx\` is a client component containing structured Q\&A data but exports no \`FAQPage\` JSON-LD schema. This misses rich snippet opportunities in search results. Since the page is a client component, schema cannot be injected in the same file. Fix: create a \`layout.tsx\` for \`/faq\` that exports the \`FAQPage\` schema alongside metadata.
 
 <!-- lore:019dd28c-69cb-7cad-98f1-fccf3cd53806 -->
-* **Hardcoded stale lastmod dates in sitemap**: The sitemap route hardcodes \`lastModified\` dates like \`2026-03-11\` for most pages and \`2026-04-02\` for the blog listing. Stale or inaccurate lastmod dates reduce Google's trust in the sitemap and may cause it to ignore freshness signals. Fix: use \`new Date()\` for current dates, or omit \`lastModified\` entirely if it cannot be accurately maintained.
+* **Hardcoded stale lastmod dates in sitemap**: FIXED. Sitemap now uses \`new Date()\` for all pages. Do not hardcode dates.
 
 <!-- lore:019d51eb-20a6-73c5-9f3a-6ef77c4f6c49 -->
 * **Hero images need priority prop**: Hero images need priority loading. LCP images must use loading="eager" not loading='lazy'. For Framer Motion's motion.img, priority prop doesn't exist — use loading="eager" instead (src/app/page.tsx:362). This directly impacts Core Web Vitals ranking.
@@ -44,10 +44,16 @@
 ### Pattern
 
 <!-- lore:019d4e73-d317-74a0-aed5-eb39c6bb6aef -->
-* **Blog posts as static data with dynamic routes**: Blog posts are defined in \`src/lib/blog-data.ts\` as a typed array (BlogPost interface with slug, title, excerpt, date, readTime, category, tags, content string). The listing page (\`blog/page.tsx\`) imports \`getAllPosts()\`. Individual posts render via \`blog/\[slug]/page.tsx\` which calls \`getPostBySlug()\`. The sitemap at \`sitemap-test/route.ts\` imports the same data to programmatically generate blog URLs. Content uses a simple markdown subset rendered by a custom \`BlogPostClient\` component — no external markdown library.
+* **Blog posts as static data with dynamic routes**: Blog posts are defined in \`src/lib/blog-data.ts\` as a typed array (BlogPost interface with slug, title, excerpt, date, readTime, category, tags, content, relatedSlugs). The listing page (\`blog/page.tsx\`) imports \`getAllPosts()\`. Individual posts render via \`blog/\[slug]/page.tsx\` which calls \`getPostBySlug()\` and \`getRelatedPosts()\`. Sitemap at \`sitemap.ts\` imports the same data. Content uses a simple markdown subset rendered by \`BlogPostClient\` — supports bold, italic, links (internal via \`<Link>\`, external via \`<a target="_blank">\`), tables, and lists. Cross-link mapping lives in \`src/lib/blog-link-map.ts\`.
 
 <!-- lore:019d51f2-8191-7d62-8a74-4c37908694c5 -->
 * **H1 hierarchy for SEO accessibility**: Use single H1 for SEO: add sr-only H1 at top of page for screen readers + search engines, use visible H2/H3 for section hierarchy. Page.tsx uses this pattern with hidden H1 + visible H2.
+
+* **RelatedLinks component for cross-linking**: \`src/components/seo/RelatedLinks.tsx\` provides reusable internal link sections. Supports \`compact\` (text links in flex-wrap row) and \`cards\` (card grid with descriptions) variants. Props: \`title\`, \`subtitle\`, \`links\`, \`variant\`, \`theme\` (light/dark), \`className\`, \`linkColor\`. Deployed on 6 pages: HomeClient, technology, products, contact, faq, about.
+
+* **Location pages pattern**: City landing pages live under \`src/app/locations/[city]/page.tsx\` with a \`layout.tsx\` for metadata and schema. Each has unique city-specific content, LocalBusiness schema, breadcrumbs (city-only, no intermediate /locations link since that page doesn't exist), and CTAs. Cities: mumbai, delhi-ncr, bangalore, chennai.
+
+* **whileInView must not be used on critical text content**: Googlebot doesn't scroll. Using Framer Motion's \`whileInView\` on text sections hides content from crawlers. Use \`animate\` (fires on mount) instead for any element containing indexable text. \`whileInView\` is acceptable only for purely decorative elements (e.g., StoryTimeline dots).
 
 <!-- lore:019d51eb-2090-7df3-bd2d-3ddfe3fbb1c7 -->
 * **Next.js App Router SEO Pattern**: App Router SEO uses metadata API. Root layout exports static Metadata; dynamic pages use generateMetadata() (see blog/\[slug]/page.tsx). The project centralizes page metadata in src/app/metadata.ts as named exports (e.g., whyWickATESMetadata) that pages import and re-export. SEO utilities and 130+ keywords live in src/lib/seo-utils.ts. Reusable schema components (OrganizationSchema, ProductSchema, LocalBusinessSchema, FAQSchema, Breadcrumbs) are in src/components/seo/. JSON-LD is injected via components in layout.tsx files. Reference SEO\_OPTIMIZATION\_SUMMARY.md for keyword strategy.
