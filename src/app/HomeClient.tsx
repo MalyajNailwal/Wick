@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import RelatedLinks from '@/components/seo/RelatedLinks';
 import StoryChapter from '@/components/ui/StoryChapter';
 
 // Typewriter Text Component
@@ -738,16 +739,14 @@ const StoryJourney = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="text-center mb-20"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
               className="inline-block"
             >
               <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-red-100 rounded-full mb-6">
@@ -867,9 +866,8 @@ const StoryJourney = () => {
           {/* Trust Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
             className="mt-16 text-center"
           >
             <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full border border-green-200/50 shadow-md">
@@ -966,26 +964,21 @@ const SEOContentSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-center mb-16"
+          className="mb-16"
         >
-          <p className="text-gray-400 mb-4">Learn more about our technology</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/products" className="text-primary-400 hover:text-primary-300 underline underline-offset-4 transition-colors">
-              TyreRakhshak Products
-            </Link>
-            <Link href="/technology" className="text-primary-400 hover:text-primary-300 underline underline-offset-4 transition-colors">
-              ATES Technology
-            </Link>
-            <Link href="/tire-inflation-system" className="text-primary-400 hover:text-primary-300 underline underline-offset-4 transition-colors">
-              Tyre Inflation Systems
-            </Link>
-            <Link href="/truck-tire-pressure-monitoring" className="text-primary-400 hover:text-primary-300 underline underline-offset-4 transition-colors">
-              Truck Tyre Pressure Monitoring
-            </Link>
-            <Link href="/blog" className="text-primary-400 hover:text-primary-300 underline underline-offset-4 transition-colors">
-              Fleet Management Blog
-            </Link>
-          </div>
+          <RelatedLinks
+            title="Learn more about our technology"
+            theme="dark"
+            variant="compact"
+            links={[
+              { title: 'TyreRakhshak Products', href: '/products' },
+              { title: 'ATES Technology', href: '/technology' },
+              { title: 'Tyre Inflation Systems', href: '/tire-inflation-system' },
+              { title: 'Truck Tyre Pressure Monitoring', href: '/truck-tire-pressure-monitoring' },
+              { title: 'Fleet Management Blog', href: '/blog' },
+              { title: 'FAQs', href: '/faq' },
+            ]}
+          />
         </motion.div>
 
       </div>

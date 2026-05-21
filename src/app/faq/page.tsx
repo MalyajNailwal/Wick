@@ -5,7 +5,10 @@ import { useInView } from 'react-intersection-observer';
 import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import RelatedLinks from '@/components/seo/RelatedLinks';
 import { useState } from 'react';
+import { faqs } from '@/lib/faq-data';
 
 export default function FAQPage() {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -15,60 +18,19 @@ export default function FAQPage() {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
-  const faqs = [
-    {
-      category: "Tyre Inflation Systems",
-      questions: [
-        {
-          question: 'What is an automatic tyre inflation system?',
-          answer: 'An automatic tyre inflation system (ATES) continuously monitors and maintains optimal tyre pressure in commercial vehicles. It automatically inflates tyres when pressure drops, preventing blowouts and extending tyre life by up to 20%.',
-        },
-        {
-          question: 'How does tyre pressure monitoring work in trucks?',
-          answer: 'Tyre pressure monitoring systems use sensors to track real-time tyre pressure across all wheels. Advanced systems like ATES not only monitor but also automatically correct pressure deviations, ensuring optimal performance and safety.',
-        },
-        {
-          question: 'What is the difference between TPMS and ATES?',
-          answer: 'TPMS (Tyre Pressure Monitoring System) only monitors and alerts about pressure changes. ATES (Automatic Tyre Equalisation System) monitors AND automatically corrects tyre pressure, providing complete tyre management without manual intervention.',
-        },
-      ]
-    },
-    {
-      category: "Benefits & Savings",
-      questions: [
-        {
-          question: 'What are the benefits of tyre inflation systems for fleets?',
-          answer: 'Tyre inflation systems provide 20% longer tyre life, 2%+ fuel savings, reduced vehicle downtime, improved safety, and lower maintenance costs. They prevent tyre blowouts and ensure consistent optimal performance across the fleet.',
-        },
-        {
-          question: 'How much can fleets save with automatic tyre pressure systems?',
-          answer: 'Fleets typically save ₹2-3 lakhs annually per vehicle through extended tyre life, ₹50,000+ in fuel savings, and reduced downtime. The system typically pays for itself within 6-8 months.',
-        },
-      ]
-    },
-    {
-      category: "Technical & Maintenance",
-      questions: [
-        {
-          question: 'Are tyre inflation systems suitable for Indian commercial vehicles?',
-          answer: 'Yes, modern tyre inflation systems are specifically designed for Indian road conditions, handling dust, heat, and challenging terrains while maintaining consistent tyre pressure for trucks and trailers.',
-        },
-        {
-          question: 'What maintenance is required for tyre inflation systems?',
-          answer: 'Quality tyre inflation systems require minimal maintenance - typically annual inspections and component checks. Advanced systems are designed for harsh Indian conditions with robust, low-maintenance components.',
-        },
-        {
-          question: 'How to choose the best tyre management system for trucks?',
-          answer: 'Consider factors like automatic pressure correction, real-time monitoring, India-specific design, proven ROI, local support, and compatibility with your fleet. Look for systems offering 20%+ tyre life extension and measurable fuel savings.',
-        },
-      ]
-    }
-  ];
-
   return (
     <main id="main-content" className="relative">
       <Navigation />
-      
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'FAQ', url: '/faq' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
@@ -112,9 +74,8 @@ export default function FAQPage() {
                     <motion.div
                       key={globalIndex}
                       initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
                       className="bg-white rounded-xl shadow-lg overflow-hidden"
                     >
                       <button
@@ -156,28 +117,17 @@ export default function FAQPage() {
       </section>
 
       {/* Related Pages */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Learn More About Wick ATES</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/products" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
-              TyreRakhshak Products
-            </Link>
-            <Link href="/technology" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
-              ATES Technology
-            </Link>
-            <Link href="/tire-inflation-system" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
-              Tyre Inflation Systems
-            </Link>
-            <Link href="/truck-tire-pressure-monitoring" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
-              Truck Tyre Pressure Monitoring
-            </Link>
-            <Link href="/contact" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
-              Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedLinks
+        title="Learn More About Wick ATES"
+        variant="compact"
+        links={[
+          { title: 'TyreRakhshak Products', href: '/products' },
+          { title: 'ATES Technology', href: '/technology' },
+          { title: 'Tyre Inflation Systems', href: '/tire-inflation-system' },
+          { title: 'Truck Tyre Pressure Monitoring', href: '/truck-tire-pressure-monitoring' },
+          { title: 'Contact Us', href: '/contact' },
+        ]}
+      />
     </main>
   );
 }

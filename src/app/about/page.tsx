@@ -7,6 +7,8 @@ import { useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import RelatedLinks from '@/components/seo/RelatedLinks';
 import AboutFAQ from '@/components/seo/AboutFAQ';
 
 // Counter component with animation
@@ -108,7 +110,16 @@ const AboutPage = () => {
   return (
     <main id="main-content" className="relative">
       <Navigation />
-      
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'About', url: '/about' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -318,9 +329,8 @@ const AboutPage = () => {
               <motion.div
                 key={milestone.year}
                 initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
                 className="relative pl-12"
               >
                 <div className="absolute left-0 top-0 w-8 h-8 bg-red-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
@@ -346,9 +356,8 @@ const AboutPage = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl shadow-lg"
             >
               <div className="flex items-center mb-6">
@@ -364,9 +373,8 @@ const AboutPage = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
               className="bg-white p-8 rounded-2xl shadow-lg"
             >
               <div className="flex items-center mb-6">
@@ -429,9 +437,8 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
               Join Our Mission
@@ -470,25 +477,18 @@ const AboutPage = () => {
       </section>
 
       {/* Related Pages */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Discover Our Solutions</h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Link href="/products" className="text-gray-900 hover:text-primary-600 underline underline-offset-4 font-medium transition-colors">
-              TyreRakhshak Products
-            </Link>
-            <Link href="/technology" className="text-gray-900 hover:text-primary-600 underline underline-offset-4 font-medium transition-colors">
-              ATES Technology
-            </Link>
-            <Link href="/why-wick-ates" className="text-gray-900 hover:text-primary-600 underline underline-offset-4 font-medium transition-colors">
-              Why Choose Wick
-            </Link>
-            <Link href="/blog" className="text-gray-900 hover:text-primary-600 underline underline-offset-4 font-medium transition-colors">
-              Fleet Management Blog
-            </Link>
-          </div>
-        </div>
-      </section>
+      <RelatedLinks
+        title="Discover Our Solutions"
+        variant="compact"
+        links={[
+          { title: 'TyreRakhshak Products', href: '/products' },
+          { title: 'ATES Technology', href: '/technology' },
+          { title: 'Why Choose Wick', href: '/why-wick-ates' },
+          { title: 'Fleet Management Blog', href: '/blog' },
+          { title: 'FAQs', href: '/faq' },
+        ]}
+        className="bg-white"
+      />
     </main>
   );
 };

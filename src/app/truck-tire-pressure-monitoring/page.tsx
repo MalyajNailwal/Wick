@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { Gauge, AlertCircle, TrendingUp, Shield, Clock, DollarSign } from 'lucide-react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { useRouter } from 'next/navigation';
 
 export default function TruckTirePressureMonitoringPage() {
@@ -48,7 +49,16 @@ export default function TruckTirePressureMonitoringPage() {
   return (
     <main id="main-content" className="relative">
       <Navigation />
-      
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'Truck Tyre Pressure Monitoring', url: '/truck-tire-pressure-monitoring' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/40"></div>

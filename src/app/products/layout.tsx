@@ -73,11 +73,6 @@ export default function ProductsLayout({
               availability: 'https://schema.org/InStock',
               url: 'https://wick.co.in/products'
             },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              reviewCount: '50'
-            }
           })
         }}
       />

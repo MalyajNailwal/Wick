@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import { useState } from 'react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { getAllPosts } from '@/lib/blog-data';
 
 const BlogPage = () => {
@@ -52,6 +53,15 @@ const BlogPage = () => {
   return (
     <main id="main-content" className="relative bg-white">
       <Navigation />
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'Blog', url: '/blog' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
@@ -103,9 +113,8 @@ const BlogPage = () => {
               <motion.article
                 key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <Link href={`/blog/${post.slug}`} className="group block h-full">
                   <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col group-hover:-translate-y-1">
@@ -169,9 +178,8 @@ const BlogPage = () => {
             {/* More coming soon card */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: posts.length * 0.1 }}
-              viewport={{ once: true }}
               className="h-full"
             >
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-dashed border-gray-300 p-8 h-full flex flex-col items-center justify-center text-center min-h-[320px]">
@@ -197,9 +205,8 @@ const BlogPage = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
               Never Miss an Update
@@ -275,9 +282,8 @@ const BlogPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-6">
               Have Questions?

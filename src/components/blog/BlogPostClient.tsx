@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Tag, ArrowLeft, Share2 } from 'lucide-react';
+import { Calendar, Clock, Tag, ArrowLeft, Share2, BookOpen } from 'lucide-react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import type { BlogPost } from '@/lib/blog-data';
 
 function renderContent(content: string) {
@@ -202,11 +203,20 @@ function renderInline(text: string): React.ReactNode {
     } else if (firstMatch.type === 'italic') {
       parts.push(<em key={key++} className="italic">{firstMatch.content}</em>);
     } else if (firstMatch.type === 'link') {
-      parts.push(
-        <a key={key++} href={firstMatch.url} className="text-red-600 hover:text-red-700 underline" target="_blank" rel="noopener noreferrer">
-          {firstMatch.content}
-        </a>
-      );
+      const isInternal = firstMatch.url?.startsWith('/') || firstMatch.url?.startsWith('#');
+      if (isInternal) {
+        parts.push(
+          <Link key={key++} href={firstMatch.url!} className="text-red-600 hover:text-red-700 underline">
+            {firstMatch.content}
+          </Link>
+        );
+      } else {
+        parts.push(
+          <a key={key++} href={firstMatch.url} className="text-red-600 hover:text-red-700 underline" target="_blank" rel="noopener noreferrer">
+            {firstMatch.content}
+          </a>
+        );
+      }
     }
 
     remaining = remaining.slice(firstMatch.index + firstMatch.length);
@@ -215,7 +225,7 @@ function renderInline(text: string): React.ReactNode {
   return parts;
 }
 
-export default function BlogPostClient({ post }: { post: BlogPost }) {
+export default function BlogPostClient({ post, relatedPosts = [] }: { post: BlogPost; relatedPosts?: BlogPost[] }) {
   const handleShare = async () => {
     if (navigator.share) {
       await navigator.share({
@@ -231,6 +241,18 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
   return (
     <main className="relative bg-white">
       <Navigation />
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[
+              { name: 'Blog', url: '/blog' },
+              { name: post.title, url: `/blog/${post.slug}` }
+            ]}
+            className="mb-8"
+          />
+        </div>
+      </div>
 
       {/* Hero */}
       <section className="pt-28 pb-12 bg-gradient-to-br from-gray-50 to-white">
@@ -312,14 +334,57 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
         </div>
       </section>
 
+      {/* Related Posts */}
+      {relatedPosts.length > 0 && (
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-50 text-red-700 text-sm font-semibold mb-4">
+                <BookOpen className="w-4 h-4 mr-2" /> Keep Reading
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Related Articles</h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-red-200"
+                >
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded-full">
+                        {related.category}
+                      </span>
+                      <span className="text-xs text-gray-500">{related.readTime}</span>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-red-600 transition-colors mb-2 line-clamp-2">
+                      {related.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-3 mb-4">{related.excerpt}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500">
+                        {new Date(related.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                      </span>
+                      <span className="text-red-600 text-sm font-semibold group-hover:translate-x-1 transition-transform">
+                        Read More →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
           >
             <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
               Interested in TyreRakhshak for Your Fleet?
@@ -328,18 +393,18 @@ export default function BlogPostClient({ post }: { post: BlogPost }) {
               Get in touch with our team to learn how ATES can transform your fleet&apos;s tyre management.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/products"
                 className="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-50"
               >
                 Explore Products
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-black text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-900"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>

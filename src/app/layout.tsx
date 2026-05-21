@@ -205,8 +205,8 @@ export default function RootLayout({
                 'https://www.instagram.com/wickates'
               ],
               founder: {
-                '@type': 'Organization',
-                name: 'Wick'
+                '@type': 'Person',
+                name: 'Vinamra Bajaj'
               }
             })
           }}

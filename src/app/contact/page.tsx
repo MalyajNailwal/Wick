@@ -4,7 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Bot, X } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import RelatedLinks from '@/components/seo/RelatedLinks';
 import FAQSchema from '@/components/seo/FAQSchema';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
@@ -147,6 +150,15 @@ const ContactPage = () => {
     <main id="main-content" className="relative">
       <FAQSchema faqs={faqData} />
       <Navigation />
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'Contact', url: '/contact' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
 
       {/* Wick AI Notification */}
       <AnimatePresence>
@@ -540,9 +552,8 @@ const ContactPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-gray-900 mb-6">
@@ -558,9 +569,8 @@ const ContactPage = () => {
               <motion.div
                 key={faq.question}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="bg-white p-6 rounded-2xl shadow-lg"
               >
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
@@ -575,14 +585,28 @@ const ContactPage = () => {
         </div>
       </section>
 
+      {/* Related Pages */}
+      <RelatedLinks
+        title="Explore Wick ATES"
+        variant="compact"
+        links={[
+          { title: 'TyreRakhshak Products', href: '/products' },
+          { title: 'ATES Technology', href: '/technology' },
+          { title: 'Why Choose Wick', href: '/why-wick-ates' },
+          { title: 'FAQs', href: '/faq' },
+          { title: 'Fleet Management Blog', href: '/blog' },
+        ]}
+        className="bg-white"
+        linkColor="text-black hover:text-primary-600"
+      />
+
       {/* Contact Information Footer */}
       <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
@@ -618,10 +642,9 @@ const ContactPage = () => {
                   key={contact.title}
                   href={contact.link}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 border border-white/10 cursor-pointer block"
                 >
                   {CardContent}
@@ -630,9 +653,8 @@ const ContactPage = () => {
                 <motion.div
                   key={contact.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/15 transition-all duration-300 border border-white/10"
                 >
                   {CardContent}
@@ -644,11 +666,18 @@ const ContactPage = () => {
           {/* Footer Bottom */}
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
             className="mt-12 pt-8 border-t border-gray-700 text-center"
           >
+            <div className="flex flex-wrap justify-center gap-6 mb-4">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Terms of Service
+              </Link>
+            </div>
             <p className="text-gray-400 text-sm">
               Making India&apos;s highways safer, one tyre at a time.
             </p>

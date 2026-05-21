@@ -21,6 +21,8 @@ import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import RelatedLinks from '@/components/seo/RelatedLinks';
 import StoryChapter from '@/components/ui/StoryChapter';
 
 const TechnologyPage = () => {
@@ -188,7 +190,16 @@ const TechnologyPage = () => {
   return (
     <main id="main-content" className="relative">
       <Navigation />
-      
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'Technology', url: '/technology' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-900 via-blue-900 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-white bg-[size:50px_50px] opacity-10"></div>
@@ -249,9 +260,8 @@ const TechnologyPage = () => {
               <motion.div
                 key={tech.title}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition-all duration-300 group"
               >
                 <div className="mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
@@ -291,9 +301,8 @@ const TechnologyPage = () => {
                 <motion.div
                   key={process.step}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
                   className="text-center relative"
                 >
                   {/* Connection Line */}
@@ -325,9 +334,8 @@ const TechnologyPage = () => {
             {/* Video Explanation Frame */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
-              viewport={{ once: true }}
               className="relative mt-20 mb-16"
             >
               <div className="max-w-6xl mx-auto">
@@ -335,9 +343,8 @@ const TechnologyPage = () => {
                 <div className="text-center mb-12">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
                     className="inline-flex items-center px-6 py-3 rounded-full bg-black text-white text-sm font-medium backdrop-blur-sm mb-6"
                   >
                     <Zap className="w-5 h-5 mr-3 animate-pulse" />
@@ -354,9 +361,8 @@ const TechnologyPage = () => {
                 {/* Creative Video Frame */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
-                  whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                   transition={{ duration: 1.2, delay: 0.4 }}
-                  viewport={{ once: true }}
                   className="relative group"
                 >
                   {/* Decorative Background Elements */}
@@ -522,9 +528,8 @@ const TechnologyPage = () => {
                           <motion.span
                             key={tag.label}
                             initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            viewport={{ once: true }}
                             className={`px-4 py-2 rounded-full text-sm font-medium ${tag.color} hover:scale-105 transition-transform duration-200`}
                           >
                             {tag.label}
@@ -547,9 +552,8 @@ const TechnologyPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
               Experience the Technology
@@ -595,66 +599,25 @@ const TechnologyPage = () => {
       </section>
 
       {/* Related Resources */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary-100 text-primary-700 text-sm font-semibold mb-4">
-              <BookOpen className="w-4 h-4 mr-2" />
-              Learn More
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Deep Dive into Tyre Technology
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Understand the science behind automatic tyre inflation and how it protects your fleet
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'Automatic Tyre Inflation System vs TPMS',
-                description: 'Understand the key differences between monitoring-only and automatic correction systems.',
-                slug: 'automatic-tyre-inflation-system-vs-tpms',
-                tag: 'Comparison'
-              },
-              {
-                title: 'How to Prevent Truck Tyre Blowouts',
-                description: 'Learn why continuous pressure management is the most effective blowout prevention strategy.',
-                slug: 'how-to-prevent-truck-tyre-blowouts',
-                tag: 'Safety'
-              }
-            ].map((post, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="block p-8 bg-white rounded-2xl shadow-md hover:shadow-xl hover:bg-primary-50 transition-all duration-300 h-full border border-gray-100"
-                >
-                  <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full mb-4">
-                    {post.tag}
-                  </span>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    {post.description}
-                  </p>
-                  <span className="inline-flex items-center text-primary-600 font-semibold text-sm">
-                    Read Article
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RelatedLinks
+        title="Deep Dive into Tyre Technology"
+        subtitle="Understand the science behind automatic tyre inflation and how it protects your fleet"
+        variant="cards"
+        links={[
+          {
+            title: 'Automatic Tyre Inflation System vs TPMS',
+            description: 'Understand the key differences between monitoring-only and automatic correction systems.',
+            href: '/blog/automatic-tyre-inflation-system-vs-tpms',
+            tag: 'Comparison'
+          },
+          {
+            title: 'How to Prevent Truck Tyre Blowouts',
+            description: 'Learn why continuous pressure management is the most effective blowout prevention strategy.',
+            href: '/blog/how-to-prevent-truck-tyre-blowouts',
+            tag: 'Safety'
+          },
+        ]}
+      />
 
       {/* Technical Docs Popup */}
       {showTechDocsPopup && (

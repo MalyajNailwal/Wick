@@ -6,6 +6,8 @@ import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import RelatedLinks from '@/components/seo/RelatedLinks';
 
 const ProductsPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -55,7 +57,16 @@ const ProductsPage = () => {
   return (
     <main id="main-content" className="relative bg-gray-50">
       <Navigation />
-      
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'Products', url: '/products' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-slate-900 via-red-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,8 +109,7 @@ const ProductsPage = () => {
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -115,8 +125,7 @@ const ProductsPage = () => {
             {/* Base Package - TYRE RAKHSHAK */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden hover:shadow-2xl transition-shadow duration-300"
             >
@@ -169,8 +178,7 @@ const ProductsPage = () => {
             {/* Premium Package - TYRE RAKHSHAK + CPMS */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl shadow-2xl border-2 border-blue-500 overflow-hidden relative hover:shadow-3xl transition-shadow duration-300"
             >
@@ -243,8 +251,7 @@ const ProductsPage = () => {
           {/* Download Brochure */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="text-center mt-12"
           >
             <motion.button
@@ -265,8 +272,7 @@ const ProductsPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -295,8 +301,7 @@ const ProductsPage = () => {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="text-center p-8 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow"
               >
@@ -310,72 +315,32 @@ const ProductsPage = () => {
       </section>
 
       {/* Related Blog Posts */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-50 text-red-700 text-sm font-semibold mb-4">
-              <BookOpen className="w-4 h-4 mr-2" />
-              Learn More
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Resources for Fleet Owners
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore our guides to understand how automatic tyre inflation can transform your fleet operations
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Best Tyre Inflation System in India',
-                description: 'Compare features, prices and ROI. See why Indian fleets trust Wick TyreRakhshak.',
-                slug: 'best-tyre-inflation-system-india',
-                tag: 'Buying Guide'
-              },
-              {
-                title: 'How to Prevent Truck Tyre Blowouts',
-                description: 'Learn the main causes of blowouts and how automatic systems prevent them.',
-                slug: 'how-to-prevent-truck-tyre-blowouts',
-                tag: 'Safety'
-              },
-              {
-                title: 'How to Save Fuel in Trucks',
-                description: 'Discover how correct tyre pressure can save over 2% fuel consumption.',
-                slug: 'how-to-save-fuel-in-trucks',
-                tag: 'Fuel Efficiency'
-              }
-            ].map((post, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="block p-6 bg-gray-50 rounded-xl hover:bg-red-50 hover:shadow-lg transition-all duration-300 h-full"
-                >
-                  <span className="inline-block px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full mb-3">
-                    {post.tag}
-                  </span>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-red-700">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">
-                    {post.description}
-                  </p>
-                  <span className="inline-flex items-center text-red-600 font-semibold text-sm">
-                    Read More
-                    <ArrowRight className="ml-1 w-4 h-4" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RelatedLinks
+        title="Resources for Fleet Owners"
+        subtitle="Explore our guides to understand how automatic tyre inflation can transform your fleet operations"
+        variant="cards"
+        links={[
+          {
+            title: 'Best Tyre Inflation System in India',
+            description: 'Compare features, prices and ROI. See why Indian fleets trust Wick TyreRakhshak.',
+            href: '/blog/best-tyre-inflation-system-india',
+            tag: 'Buying Guide'
+          },
+          {
+            title: 'How to Prevent Truck Tyre Blowouts',
+            description: 'Learn the main causes of blowouts and how automatic systems prevent them.',
+            href: '/blog/how-to-prevent-truck-tyre-blowouts',
+            tag: 'Safety'
+          },
+          {
+            title: 'How to Save Fuel in Trucks',
+            description: 'Discover how correct tyre pressure can save over 2% fuel consumption.',
+            href: '/blog/how-to-save-fuel-in-trucks',
+            tag: 'Fuel Efficiency'
+          },
+        ]}
+        className="bg-white"
+      />
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-red-600 to-red-800">

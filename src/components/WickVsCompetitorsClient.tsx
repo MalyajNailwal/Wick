@@ -337,9 +337,8 @@ export default function WickVsCompetitorsClient() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
               >
                 <advantage.icon className="w-12 h-12 text-red-400 mx-auto mb-4" />

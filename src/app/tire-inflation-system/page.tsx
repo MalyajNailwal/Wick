@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { CheckCircle, AlertTriangle, TrendingUp, Shield, Zap, Clock, DollarSign, Truck } from 'lucide-react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { useRouter } from 'next/navigation';
 
 export default function TireInflationSystemPage() {
@@ -99,7 +100,16 @@ export default function TireInflationSystemPage() {
   return (
     <main id="main-content" className="relative">
       <Navigation />
-      
+
+      <div className="pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Breadcrumbs
+            items={[{ name: 'Tyre Inflation System', url: '/tire-inflation-system' }]}
+            className="mb-8"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getPostBySlug } from '@/lib/blog-data';
+import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/blog-data';
 import BlogPostClient from '@/components/blog/BlogPostClient';
 
 interface Props {
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <BlogPostClient post={post} />
+      <BlogPostClient post={post} relatedPosts={getRelatedPosts(slug)} />
     </>
   );
 }
