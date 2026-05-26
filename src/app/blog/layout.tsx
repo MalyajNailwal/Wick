@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://wick.co.in/blog',
+    types: {
+      'application/rss+xml': 'https://wick.co.in/feed.xml',
+    },
   },
 };
 

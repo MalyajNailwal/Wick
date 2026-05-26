@@ -8,8 +8,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/admin/', '/_next/'],
       },
+      {
+        userAgent: ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'PerplexityBot'],
+        allow: '/',
+      },
+      {
+        userAgent: ['Bytespider', 'CCBot'],
+        disallow: '/',
+      },
     ],
     sitemap: 'https://wick.co.in/sitemap.xml',
-    host: 'https://wick.co.in',
   };
 }

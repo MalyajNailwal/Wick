@@ -3,6 +3,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   date: string;
+  dateModified?: string;
   readTime: string;
   category: string;
   tags: string[];

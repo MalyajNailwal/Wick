@@ -137,10 +137,8 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://wick.co.in',
-    languages: {
-      'en': 'https://wick.co.in',
-      'en-IN': 'https://wick.co.in',
-      'x-default': 'https://wick.co.in',
+    types: {
+      'application/rss+xml': 'https://wick.co.in/feed.xml',
     },
   },
   other: {
@@ -208,6 +206,35 @@ export default function RootLayout({
                 '@type': 'Person',
                 name: 'Vinamra Bajaj'
               }
+            })
+          }}
+        />
+        {/* WebSite Schema with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Wick',
+              url: 'https://wick.co.in',
+              description: "India's leading truck & tyre maintenance system. ATES technology for commercial vehicle fleets.",
+              publisher: {
+                '@type': 'Organization',
+                name: 'Wick',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://wick.co.in/logo.svg',
+                },
+              },
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://wick.co.in/blog?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
+              },
             })
           }}
         />

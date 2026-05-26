@@ -79,10 +79,12 @@ export function generateOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_CONFIG.fullName,
-    alternateName: SITE_CONFIG.name,
+    alternateName: ['Wick ATES', 'Wick India', 'Wick TyreRakhshak'],
     url: SITE_CONFIG.url,
     logo: `${SITE_CONFIG.url}/logo.svg`,
     description: SITE_CONFIG.description,
+    slogan: 'Revolutionizing Commercial Vehicle Safety',
+    foundingDate: '2021',
     address: {
       '@type': 'PostalAddress',
       streetAddress: SITE_CONFIG.address.street,
@@ -99,6 +101,12 @@ export function generateOrganizationSchema() {
       areaServed: 'IN',
       availableLanguage: ['en', 'hi'],
     },
+    sameAs: [
+      'https://www.linkedin.com/company/wick-ates',
+      'https://twitter.com/WickATES',
+      'https://www.facebook.com/wickates',
+      'https://www.instagram.com/wickates',
+    ],
   };
 }
 
