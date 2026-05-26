@@ -76,6 +76,65 @@ export default function TechnologyLayout({
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'VideoObject',
+            name: 'ATES Technology - Automatic Tyre Equalisation System in Action',
+            description: 'Watch how the Automatic Tyre Equalisation System (ATES) works on commercial vehicles. See real-time tyre pressure management in action.',
+            thumbnailUrl: 'https://wick.co.in/media/productimghd-removebg-preview.png',
+            uploadDate: '2024-06-01',
+            duration: 'PT2M',
+            contentUrl: 'https://res.cloudinary.com/dctzpvbvq/video/upload/tecpagevdo_bf4nji.mp4',
+            embedUrl: 'https://wick.co.in/technology',
+            publisher: {
+              '@type': 'Organization',
+              name: 'Wick',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://wick.co.in/logo.svg',
+              },
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How does ATES automatic tyre inflation work?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'ATES connects to the vehicle air compressor and uses manifolds, control valves, and rotary joints to automatically inflate or deflate tyres while driving. It maintains optimal pressure based on real-time load and road conditions. The only moving component is the rotary union.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What components are in the ATES system?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'ATES consists of manifolds, control valves, rotary unions, pressure regulator, and a front-mounted driver indicator. The rotary union is the only moving component, which minimizes wear and maintenance requirements.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Does ATES work on all types of trucks and trailers?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'ATES is compatible with YORK RB15 Axles and Pneumatic Samrat Series Suspension systems. It runs on 24V DC power standard in commercial vehicles. Contact Wick to verify compatibility with your specific vehicle configuration.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
       {children}
       <WickAI />
     </>
