@@ -728,8 +728,8 @@ const StoryJourney = () => {
         }
       />
 
-      {/* Trusted Customers Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 overflow-hidden relative">
+      {/* Trusted Customers + Testimonials — one flowing section */}
+      <section className="pt-32 pb-28 bg-gradient-to-b from-slate-50 via-gray-50 to-orange-50 overflow-hidden relative">
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-72 h-72 bg-red-500 rounded-full blur-3xl"></div>
@@ -754,7 +754,7 @@ const StoryJourney = () => {
                 <span className="text-red-600 font-semibold text-sm">Industry Leaders Trust Us</span>
               </div>
             </motion.div>
-            
+
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Powering India&apos;s{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
@@ -868,7 +868,7 @@ const StoryJourney = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 text-center"
+            className="mt-16 mb-24 text-center"
           >
             <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-full border border-green-200/50 shadow-md">
               <div className="flex -space-x-2">
@@ -884,6 +884,96 @@ const StoryJourney = () => {
               </div>
               <span className="text-gray-700 font-medium text-lg">
                 Trusted by <span className="font-bold text-red-600">50+ fleet operators</span> nationwide
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Seamless transition — soft divider */}
+          <div className="flex items-center justify-center gap-4 mb-16">
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-r from-transparent to-gray-300"></div>
+            <div className="w-2 h-2 rounded-full bg-red-400"></div>
+            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-gray-300"></div>
+          </div>
+
+          {/* Testimonials Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-center mb-14"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-100 rounded-full mb-6">
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              <span className="text-red-600 font-semibold text-sm">Voices from the Road</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+              Real Drivers.{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800">
+                Real Stories.
+              </span>
+            </h2>
+
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              The people who drive our nation&apos;s highways every day share how ATES keeps them safe on the road.
+            </p>
+          </motion.div>
+
+          {/* Video Grid — real video + coming soon slots */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="flex flex-wrap justify-center gap-8"
+          >
+            {/* Real Video */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl shadow-red-200/40 border border-gray-200/60">
+              <iframe
+                src="https://www.instagram.com/reel/DYzXQTENuFm/embed/"
+                className="w-[300px] h-[530px] sm:w-[340px] sm:h-[600px] border-0"
+                allowFullScreen
+                loading="lazy"
+                title="Driver testimonial - ATES in action"
+              />
+            </div>
+
+            {/* Coming Soon Slot 1 */}
+            <div className="w-[300px] h-[530px] sm:w-[340px] sm:h-[600px] rounded-2xl border-2 border-dashed border-gray-300 bg-white/60 flex flex-col items-center justify-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center">
+                <svg className="w-7 h-7 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
+                </svg>
+              </div>
+              <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
+            </div>
+
+            {/* Coming Soon Slot 2 */}
+            <div className="w-[300px] h-[530px] sm:w-[340px] sm:h-[600px] rounded-2xl border-2 border-dashed border-gray-300 bg-white/60 flex flex-col items-center justify-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center">
+                <svg className="w-7 h-7 text-red-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polygon points="5 3 19 12 5 21 5 3" fill="currentColor" />
+                </svg>
+              </div>
+              <span className="text-gray-400 font-medium text-sm">Coming Soon</span>
+            </div>
+          </motion.div>
+
+          {/* Bottom note */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-center mt-12"
+          >
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-gray-200 shadow-sm">
+              <div className="flex -space-x-1">
+                <div className="w-2 h-2 rounded-full bg-red-400 animate-pulse"></div>
+                <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+                <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+              </div>
+              <span className="text-gray-500 text-sm font-medium">
+                More stories coming soon —{' '}
+                <span className="text-red-600 font-semibold">stay tuned</span>
               </span>
             </div>
           </motion.div>
