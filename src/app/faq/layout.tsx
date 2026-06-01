@@ -124,6 +124,19 @@ export default function FAQLayout({
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', 'h2', '.speakable']
+            }
+          })
+        }}
+      />
       {children}
     </>
   );

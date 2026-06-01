@@ -205,6 +205,23 @@ export default function RootLayout({
               founder: {
                 '@type': 'Person',
                 name: 'Vinamra Bajaj'
+              },
+              knowsAbout: [
+                'Automatic Tyre Equalisation System',
+                'Tyre Pressure Monitoring System',
+                'Commercial Vehicle Safety',
+                'Fleet Tyre Management',
+                'Truck Tyre Inflation',
+                'Trailer Tyre Maintenance',
+                'Fuel Efficiency for Trucks',
+                'Tyre Blowout Prevention',
+                'Commercial Vehicle Maintenance',
+                'Pneumatic Systems for Trucks'
+              ],
+              parentOrganization: {
+                '@type': 'Organization',
+                name: 'SAF-HOLLAND Group',
+                url: 'https://www.safholland.com'
               }
             })
           }}

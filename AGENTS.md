@@ -46,6 +46,8 @@
 <!-- lore:019d4e73-d317-74a0-aed5-eb39c6bb6aef -->
 * **Blog posts as static data with dynamic routes**: Blog posts are defined in \`src/lib/blog-data.ts\` as a typed array (BlogPost interface with slug, title, excerpt, date, readTime, category, tags, content, relatedSlugs). The listing page (\`blog/page.tsx\`) imports \`getAllPosts()\`. Individual posts render via \`blog/\[slug]/page.tsx\` which calls \`getPostBySlug()\` and \`getRelatedPosts()\`. Sitemap at \`sitemap.ts\` imports the same data. Content uses a simple markdown subset rendered by \`BlogPostClient\` — supports bold, italic, links (internal via \`<Link>\`, external via \`<a target="_blank">\`), tables, and lists. Cross-link mapping lives in \`src/lib/blog-link-map.ts\`.
 
+* **Blog FAQ schemas for AEO**: Each blog post has FAQ data in \`src/lib/blog-faqs.ts\` as a \`Record<string, BlogFAQ[]>\` mapping slug to Q&A pairs. The \`blog/\[slug]/page.tsx\` imports this and renders FAQPage schema alongside BlogPosting schema when FAQs exist. When adding a new blog post, add 3-5 FAQ entries in \`blog-faqs.ts\` targeting common search queries related to the post topic. FAQs should be phrased as natural language questions with concise, data-rich answers.
+
 <!-- lore:019d51f2-8191-7d62-8a74-4c37908694c5 -->
 * **H1 hierarchy for SEO accessibility**: Use single H1 for SEO: add sr-only H1 at top of page for screen readers + search engines, use visible H2/H3 for section hierarchy. Page.tsx uses this pattern with hidden H1 + visible H2.
 
@@ -57,6 +59,8 @@
 
 <!-- lore:019d51eb-2090-7df3-bd2d-3ddfe3fbb1c7 -->
 * **Next.js App Router SEO Pattern**: App Router SEO uses metadata API. Root layout exports static Metadata; dynamic pages use generateMetadata() (see blog/\[slug]/page.tsx). The project centralizes page metadata in src/app/metadata.ts as named exports (e.g., whyWickATESMetadata) that pages import and re-export. SEO utilities and 130+ keywords live in src/lib/seo-utils.ts. Reusable schema components (OrganizationSchema, ProductSchema, LocalBusinessSchema, FAQSchema, Breadcrumbs) are in src/components/seo/. JSON-LD is injected via components in layout.tsx files. Reference SEO\_OPTIMIZATION\_SUMMARY.md for keyword strategy.
+
+* **llms.txt and llms-full.txt for AI discoverability**: Two files serve AI/LLM crawlers. \`public/llms.txt\` is a static summary file with company info, products, FAQs, and key pages. \`src/app/llms-full.txt/route.ts\` is a dynamic route that includes all blog posts with titles, URLs, excerpts, categories, and tags, plus extended FAQ answers and industry terms. Both follow the emerging llms.txt convention for helping AI systems understand the site content.
 
 <!-- lore:019d51f2-8191-7d62-8a74-4c387c52696b -->
 * **Skip navigation link pattern**: Add skip link in root layout body: \<a href="#main-content" className="sr-only focus:not-sr-only">Skip to content\</a>. Add id="main-content" to main content wrapper. Improves accessibility and SEO.

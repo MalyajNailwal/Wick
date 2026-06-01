@@ -218,6 +218,68 @@ export const blogCrossLinks: Record<string, BlogLinkEntry> = {
       { targetSlug: 'good-enough-maintenance-costing-fleet-operators', anchorText: 'cost of reactive maintenance' },
     ],
   },
+
+  // Phase 2: Generic industry keyword blogs
+  'tpms-price-guide-india-2026': {
+    relatedSlugs: [
+      'best-tyre-inflation-system-india',
+      'wick-tyrerakhshak-saves-tyres-fuel-downtime',
+      'automatic-tyre-inflation-system-vs-tpms',
+    ],
+    contextualLinks: [
+      { targetSlug: 'best-tyre-inflation-system-india', anchorText: 'comprehensive buying guide' },
+      { targetSlug: 'wick-tyrerakhshak-saves-tyres-fuel-downtime', anchorText: 'detailed savings breakdown' },
+    ],
+  },
+
+  'tyre-inflation-system-for-buses': {
+    relatedSlugs: [
+      'automatic-tyre-inflation-deflation-system',
+      'best-tyre-inflation-system-india',
+      'how-to-prevent-truck-tyre-blowouts',
+    ],
+    contextualLinks: [
+      { targetSlug: 'automatic-tyre-inflation-deflation-system', anchorText: 'how ATES works' },
+      { targetSlug: 'how-to-prevent-truck-tyre-blowouts', anchorText: 'blowout prevention guide' },
+    ],
+  },
+
+  'ctis-vs-ates-tyre-inflation-comparison': {
+    relatedSlugs: [
+      'automatic-tyre-inflation-system-vs-tpms',
+      'automatic-tyre-inflation-deflation-system',
+      'best-tyre-inflation-system-india',
+    ],
+    contextualLinks: [
+      { targetSlug: 'automatic-tyre-inflation-system-vs-tpms', anchorText: 'ATES vs TPMS comparison' },
+      { targetSlug: 'automatic-tyre-inflation-deflation-system', anchorText: 'how ATES technology works' },
+    ],
+  },
+
+  'tyre-burst-accident-statistics-india': {
+    relatedSlugs: [
+      'how-to-prevent-truck-tyre-blowouts',
+      'why-fleet-problems-start-with-tyre-pressure',
+      'monsoon-tyre-safety-india',
+    ],
+    contextualLinks: [
+      { targetSlug: 'how-to-prevent-truck-tyre-blowouts', anchorText: 'blowout prevention strategies' },
+      { targetSlug: 'why-fleet-problems-start-with-tyre-pressure', anchorText: 'tyre pressure as root cause' },
+    ],
+  },
+
+  'total-cost-of-ownership-tyre-management': {
+    relatedSlugs: [
+      'wick-tyrerakhshak-saves-tyres-fuel-downtime',
+      'good-enough-maintenance-costing-fleet-operators',
+      'tpms-price-guide-india-2026',
+    ],
+    contextualLinks: [
+      { targetSlug: 'wick-tyrerakhshak-saves-tyres-fuel-downtime', anchorText: 'fleet savings data' },
+      { targetSlug: 'good-enough-maintenance-costing-fleet-operators', anchorText: 'hidden costs of reactive maintenance' },
+      { targetSlug: 'tpms-price-guide-india-2026', anchorText: 'system pricing guide' },
+    ],
+  },
 };
 
 /**

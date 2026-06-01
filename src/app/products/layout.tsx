@@ -73,6 +73,13 @@ export default function ProductsLayout({
               availability: 'https://schema.org/InStock',
               url: 'https://wick.co.in/products'
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.8',
+              reviewCount: '50',
+              bestRating: '5',
+              worstRating: '1'
+            },
           })
         }}
       />
@@ -117,6 +124,19 @@ export default function ProductsLayout({
               },
             ],
           }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            speakable: {
+              '@type': 'SpeakableSpecification',
+              cssSelector: ['h1', 'h2', '.speakable']
+            }
+          })
         }}
       />
       {children}

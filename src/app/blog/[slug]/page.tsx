@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/blog-data';
+import { blogFAQs } from '@/lib/blog-faqs';
 import BlogPostClient from '@/components/blog/BlogPostClient';
 
 interface Props {
@@ -112,6 +113,20 @@ export default async function BlogPostPage({ params }: Props) {
     ],
   };
 
+  const postFAQs = blogFAQs[post.slug];
+  const faqSchema = postFAQs && postFAQs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: postFAQs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null;
+
   return (
     <>
       <script
@@ -122,6 +137,12 @@ export default async function BlogPostPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <BlogPostClient post={post} relatedPosts={getRelatedPosts(slug)} />
     </>
   );

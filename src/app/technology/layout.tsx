@@ -135,6 +135,73 @@ export default function TechnologyLayout({
           }),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            name: 'How ATES Automatic Tyre Equalisation System Works',
+            description: 'Step-by-step guide to how the ATES system maintains optimal tyre pressure on commercial vehicles',
+            totalTime: 'PT30M',
+            estimatedCost: {
+              '@type': 'MonetaryAmount',
+              currency: 'INR',
+              value: 'Contact for quote'
+            },
+            supply: [
+              {
+                '@type': 'HowToSupply',
+                name: 'ATES System Components'
+              },
+              {
+                '@type': 'HowToSupply',
+                name: 'Vehicle Air Compressor'
+              }
+            ],
+            tool: [
+              {
+                '@type': 'HowToTool',
+                name: 'Manifolds'
+              },
+              {
+                '@type': 'HowToTool',
+                name: 'Control Valves'
+              },
+              {
+                '@type': 'HowToTool',
+                name: 'Rotary Unions'
+              }
+            ],
+            step: [
+              {
+                '@type': 'HowToStep',
+                name: 'Air Compression',
+                text: 'The vehicle air compressor produces compressed air which is stored in the ATES tank reserve. This reserve allows the system to adjust tyre pressure swiftly in real time.',
+                position: 1
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Pressure Regulation',
+                text: 'The Pressure Protection Valve (PPV) opens when the air pressure threshold is reached, regulating compressed air delivery to the tyres. The Filter Regulator Lubricator (FRL) unit cleans, regulates, and lubricates the air supply.',
+                position: 2
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Air Distribution',
+                text: 'The manifold distributes air evenly to all tyres across every axle. There are 5-port and 7-port manifold configurations to match different vehicle setups.',
+                position: 3
+              },
+              {
+                '@type': 'HowToStep',
+                name: 'Tyre Pressure Correction',
+                text: 'The rotary union transfers air from the stationary axle to the rotating wheels, allowing continuous pressure adjustment while the vehicle is running. The system automatically inflates low-pressure tyres and deflates high-pressure tyres.',
+                position: 4
+              }
+            ]
+          }),
+        }}
+      />
       {children}
       <WickAI />
     </>

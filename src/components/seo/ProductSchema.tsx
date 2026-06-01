@@ -34,6 +34,13 @@ export default function ProductSchema({
       "priceCurrency": "INR",
       "url": "https://wick.co.in/products"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "50",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
   };
 
   return (
