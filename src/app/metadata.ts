@@ -15,7 +15,7 @@ export const homeMetadata: Metadata = {
     siteName: 'Wick',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'Automatic Tyre Inflation System - TyreRakhshak',
@@ -45,7 +45,7 @@ export const productsMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'Tyre Inflation System Products - TyreRakhshak',
@@ -68,7 +68,7 @@ export const technologyMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'Automatic Tyre Inflation Technology',
@@ -81,20 +81,20 @@ export const technologyMetadata: Metadata = {
 };
 
 export const aboutMetadata: Metadata = {
-  title: 'Wick | Pioneering ATES Technology in India Since 2021',
-  description: 'Learn about Wick, pioneers of India\'s first Automatic Tyre Equalisation System. Founded in 2021, Wick is revolutionizing commercial vehicle safety with innovative Wick ATES technology. Discover the Wick story.',
-  keywords: 'Wick, Wick India, Wick ATES, Wick company, Wick story, ATES company, commercial vehicle safety India, automotive innovation, fleet safety solutions, YORK partnership, SAF-HOLLAND',
+  title: 'About India\'s Leading Automatic Tyre Equalisation System Manufacturer | ATES Pioneer Since 2021',
+  description: 'India\'s first Automatic Tyre Equalisation System (ATES) manufacturer, based in Faridabad, Haryana. Pioneering commercial vehicle tyre safety technology since 2021. Trusted by 50+ fleet operators across India.',
+  keywords: 'automatic tyre equalisation system manufacturer India, ATES technology pioneer, commercial vehicle tyre safety company, tyre inflation system manufacturer Faridabad, fleet safety solutions India, truck tyre management company Haryana, tyre pressure system manufacturer, commercial vehicle safety innovation India, YORK SAF-HOLLAND partner India',
   openGraph: {
-    title: 'Wick | Pioneering ATES Technology in India Since 2021',
-    description: 'Founded in 2021, Wick is revolutionizing commercial vehicle safety with India\'s first advanced Wick ATES technology. Discover the Wick story.',
+    title: 'India\'s Leading Automatic Tyre Equalisation System Manufacturer',
+    description: 'India\'s first ATES manufacturer, based in Faridabad, Haryana. Pioneering commercial vehicle tyre safety since 2021. Trusted by 50+ fleet operators.',
     url: 'https://wick.co.in/about',
     type: 'website',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'About Wick',
+        alt: 'Automatic Tyre Equalisation System Manufacturer India',
       },
     ],
   },
@@ -104,20 +104,20 @@ export const aboutMetadata: Metadata = {
 };
 
 export const contactMetadata: Metadata = {
-  title: 'Wick Contact | Get ATES Quote & Support',
-  description: 'Contact Wick for ATES product inquiries, technical support, and fleet safety consultations. Wick is located in Faridabad, India. Call Wick at +91 9721601500 or email office@wick.co.in',
-  keywords: 'Wick, Wick contact, contact Wick, Wick India, Wick Faridabad, ATES quote, technical support, fleet consultation, commercial vehicle safety, Faridabad India, ATES inquiry',
+  title: 'Contact Tyre Inflation System Manufacturer | Get ATES Quote & Fleet Safety Consultation',
+  description: 'Contact India\'s leading tyre inflation system manufacturer for ATES product inquiries, technical support, and fleet safety consultations. Located in Faridabad, Haryana. Call +91 9721601500 or email office@wick.co.in',
+  keywords: 'contact tyre inflation system manufacturer, ATES quote India, fleet safety consultation, tyre pressure system inquiry, commercial vehicle tyre safety support, tyre management system dealer Faridabad, truck tyre inflation system price quote, fleet tyre solution Delhi NCR, automatic tyre equalisation enquiry',
   openGraph: {
-    title: 'Wick Contact | Get ATES Quote & Support',
-    description: 'Get in touch with Wick for ATES product inquiries, technical support, and fleet safety consultations. Call Wick at +91 9721601500',
+    title: 'Contact Tyre Inflation System Manufacturer | Get ATES Quote',
+    description: 'Get in touch for ATES product inquiries, technical support, and fleet safety consultations. Located in Faridabad, Haryana. Call +91 9721601500',
     url: 'https://wick.co.in/contact',
     type: 'website',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Contact Wick',
+        alt: 'Contact Tyre Inflation System Manufacturer India',
       },
     ],
   },
@@ -137,7 +137,7 @@ export const whyWickATESMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'Best Tyre Inflation System Benefits',
@@ -160,7 +160,7 @@ export const wickVsCompetitorsMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/media/productimghd-removebg-preview.png',
+        url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
         alt: 'Tyre Inflation System Comparison Guide',

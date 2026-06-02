@@ -107,10 +107,20 @@ Maintain correct tyre pressure at all times (the #1 factor), avoid overloading, 
 - Delhi NCR: https://wick.co.in/locations/delhi-ncr
 - Bangalore: https://wick.co.in/locations/bangalore
 - Chennai: https://wick.co.in/locations/chennai
+- Pune: https://wick.co.in/locations/pune
+- Hyderabad: https://wick.co.in/locations/hyderabad
+- Ahmedabad: https://wick.co.in/locations/ahmedabad
+- Kolkata: https://wick.co.in/locations/kolkata
+- Jaipur: https://wick.co.in/locations/jaipur
+- Haryana: https://wick.co.in/locations/haryana
+- Maharashtra: https://wick.co.in/locations/maharashtra
+- Tamil Nadu: https://wick.co.in/locations/tamil-nadu
+- Karnataka: https://wick.co.in/locations/karnataka
+- Punjab: https://wick.co.in/locations/punjab
 
 ## Blog Topics
 
-The Wick blog covers: tyre inflation technology explained, fleet safety best practices, tyre blowout prevention, TPMS vs ATES comparison, fuel efficiency for commercial vehicles, tyre maintenance guides, Indian commercial vehicle safety regulations, fleet management tips, seasonal tyre care (monsoon, summer, winter), trailer-specific tyre management, and cost savings analysis.
+The Wick blog covers: tyre inflation technology explained, fleet safety best practices, tyre blowout prevention, TPMS vs ATES comparison, fuel efficiency for commercial vehicles, tyre maintenance guides, Indian commercial vehicle safety regulations, fleet management tips, seasonal tyre care (monsoon, summer, winter), trailer-specific tyre management, cost savings analysis, industry-specific tyre solutions (cement transport, e-commerce logistics, cold chain, mining, construction), hubcap and axle accessories, and location-specific fleet guidance across Indian cities and states.
 
 ## Company Information
 

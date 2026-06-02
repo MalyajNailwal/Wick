@@ -325,5 +325,119 @@ export const blogFAQs: Record<string, BlogFAQ[]> = {
       question: 'What hidden costs does manual tyre management have?',
       answer: 'Hidden costs include: 15-25% faster tyre wear from suboptimal pressure, 1-2% fuel waste, 75-100 hours of driver time annually for manual checks, 2-4 breakdowns per vehicle annually costing Rs 15,000-65,000 each, secondary vehicle damage from blowouts, and 5-15% higher insurance premiums.'
     }
+  ],
+
+  'tyre-inflation-system-for-cement-transport': [
+    {
+      question: 'Why do cement transport fleets need automatic tyre inflation?',
+      answer: 'Cement transport vehicles carry 25-30 tonnes of cargo, operate near maximum tyre load ratings, and face abrasive cement dust that causes slow leaks. Automatic tyre inflation maintains optimal pressure continuously, compensating for dust-induced leaks and preventing blowouts under heavy loads.'
+    },
+    {
+      question: 'How much can cement fleets save with tyre inflation systems?',
+      answer: 'Cement transport fleets save Rs 70,000-1,50,000 per vehicle annually through 20% longer tyre life, 2%+ fuel savings, and reduced breakdown costs. A 20-vehicle fleet saves Rs 14-30 lakhs annually.'
+    },
+    {
+      question: 'Does cement dust damage tyre inflation systems?',
+      answer: 'Quality automatic tyre inflation systems like ATES are designed for harsh environments. The system uses sealed components and filters that resist cement dust penetration. Annual maintenance includes filter checks to ensure continued performance in dusty conditions.'
+    },
+    {
+      question: 'What is the best tyre pressure for cement tankers?',
+      answer: 'Optimal tyre pressure for cement tankers depends on load, tyre size, and manufacturer specifications. ATES automatically maintains the correct pressure based on the vehicle configuration, adjusting for load changes as cement is loaded and unloaded.'
+    }
+  ],
+
+  'ecommerce-fleet-tyre-management': [
+    {
+      question: 'How does tyre management affect e-commerce delivery schedules?',
+      answer: 'A tyre breakdown on a delivery vehicle can disrupt 50-100 customer deliveries, trigger penalty clauses, and damage the logistics company reputation. Automatic tyre inflation prevents 80-90% of pressure-related breakdowns, keeping delivery schedules intact.'
+    },
+    {
+      question: 'Can automatic tyre inflation work on delivery vans and light commercial vehicles?',
+      answer: 'Yes, automatic tyre inflation systems can be configured for various vehicle types including delivery vans, light commercial vehicles, and trucks. The system adapts to the vehicle air system and tyre configuration.'
+    },
+    {
+      question: 'How much do e-commerce fleets save with tyre inflation systems?',
+      answer: 'E-commerce fleets save Rs 75,000-2,10,000 per vehicle annually through tyre life extension, fuel savings, and avoided downtime. A 50-vehicle fleet saves Rs 37-105 lakhs annually. The system pays for itself within 4-8 months.'
+    },
+    {
+      question: 'Does stop-start city driving affect tyre pressure more than highway driving?',
+      answer: 'Yes, frequent stops and starts create different tyre wear patterns and temperature profiles compared to highway driving. Automatic tyre inflation compensates for these variations by maintaining optimal pressure regardless of driving pattern.'
+    }
+  ],
+
+  'cold-chain-logistics-tyre-safety': [
+    {
+      question: 'Why are tyre breakdowns especially costly for cold chain fleets?',
+      answer: 'Cold chain tyre breakdowns cause cargo temperature excursions that can spoil pharmaceuticals, food, and dairy products worth lakhs. Additionally, penalty clauses for late delivery and regulatory compliance issues for temperature-logged shipments multiply the cost beyond tyre replacement.'
+    },
+    {
+      question: 'How does automatic tyre inflation protect cold chain integrity?',
+      answer: 'Automatic tyre inflation maintains correct tyre pressure without requiring the vehicle to stop. This eliminates pressure-related stops that would interrupt the cold chain, and prevents breakdowns that could expose temperature-sensitive cargo to ambient heat.'
+    },
+    {
+      question: 'Can tyre inflation systems work in extreme temperature differentials?',
+      answer: 'Yes, ATES automatically compensates for temperature-driven pressure changes. A refrigerated truck operating in 45C ambient heat while maintaining -20C cargo temperature experiences significant thermal stress. The system adjusts tyre pressure continuously to account for these changes.'
+    },
+    {
+      question: 'What is the ROI for cold chain fleets investing in tyre inflation?',
+      answer: 'Cold chain fleets see Rs 1.2-3.5 lakhs per vehicle annually in combined tyre, fuel, downtime, and penalty avoidance savings. The cargo protection value alone (preventing one spoilage incident) can justify the entire investment.'
+    }
+  ],
+
+  'mining-truck-tyre-pressure-system': [
+    {
+      question: 'Can automatic tyre inflation systems survive mining environments?',
+      answer: 'Yes, ATES is designed for harsh environments including mining operations. The system uses sealed, dust-resistant components and operates reliably in extreme heat, dust, and rough terrain conditions common in Indian mines.'
+    },
+    {
+      question: 'Should mining trucks use CTIS or ATES?',
+      answer: 'It depends on the operation. Mining trucks that alternate between road and off-road surfaces benefit from CTIS (driver-adjustable pressure). Trucks operating primarily on established haul roads benefit from ATES (fully automatic). Many mining operations use ATES for continuous protection.'
+    },
+    {
+      question: 'How much do mining tyre replacements cost?',
+      answer: 'Mining haul truck tyres cost Rs 3-15 lakhs each depending on vehicle size. A single premature tyre failure on a mining truck costs Rs 5-20 lakhs including replacement, downtime, and lost production. Automatic tyre inflation extends tyre life by 20%, saving significant costs.'
+    },
+    {
+      question: 'How does mining dust affect tyre pressure?',
+      answer: 'Mining dust penetrates valve stems and wheel seals, creating slow leaks that lose 1-2 PSI per day. Over a week of continuous operation, cumulative pressure loss can push tyres into the danger zone. Automatic tyre inflation compensates for these leaks continuously.'
+    }
+  ],
+
+  'construction-vehicle-tyre-management': [
+    {
+      question: 'Why do construction vehicles have more tyre problems than highway trucks?',
+      answer: 'Construction vehicles operate on unpaved roads with sharp debris, nails, ruts, and constantly changing surfaces. They carry heavy loads, make frequent loading/unloading trips, and face higher puncture risk from construction site debris.'
+    },
+    {
+      question: 'How does automatic tyre inflation prevent flat tyres on construction sites?',
+      answer: 'When a tyre picks up a nail or screw, the system compensates for the slow leak automatically. Instead of the tyre gradually deflating over hours until it goes flat, the system maintains pressure until the vehicle reaches a repair point, preventing roadside flats.'
+    },
+    {
+      question: 'Can tyre inflation systems handle the heavy loads of construction vehicles?',
+      answer: 'Yes, ATES is designed for heavy commercial vehicles including construction tippers, trucks, and trailers. The system maintains optimal pressure for the current load, adjusting automatically as vehicles are loaded and unloaded throughout the day.'
+    },
+    {
+      question: 'What savings can construction fleets expect from tyre inflation systems?',
+      answer: 'Construction fleets save Rs 30,000-80,000 per vehicle annually through 20% longer tyre life, reduced flat tyre incidents, and avoided downtime. A 10-vehicle fleet saves Rs 3-8 lakhs annually, plus significant project schedule protection.'
+    }
+  ],
+
+  'hubcap-axle-accessories-commercial-vehicles': [
+    {
+      question: 'How do hubcaps affect tyre life on commercial vehicles?',
+      answer: 'Hubcaps protect wheel hubs and axle ends from dust, water, and debris contamination. Without proper hubcaps, contaminated bearings generate excess heat that transfers to tyres, accelerating wear and increasing blowout risk. Proper hubcaps can extend tyre life by protecting the bearing and seal environment.'
+    },
+    {
+      question: 'Are hubcaps compatible with automatic tyre inflation systems?',
+      answer: 'Yes, most hubcaps are compatible with ATES and other automatic tyre inflation systems. However, some hubcap designs may need modification to accommodate rotary union installation and air line routing. Consult with your tyre inflation system installer before selecting hubcaps.'
+    },
+    {
+      question: 'What are the best hubcaps for Indian highway conditions?',
+      answer: 'Indian highway conditions demand hubcaps made from durable, impact-resistant materials with effective dust and water sealing. Look for hubcaps with reinforced construction, proper sealing gaskets, and easy removal for maintenance access.'
+    },
+    {
+      question: 'Where can I buy commercial vehicle hubcaps and axle accessories in India?',
+      answer: 'Major sourcing hubs for commercial vehicle hubcaps and axle accessories include Faridabad (Haryana), Ludhiana (Punjab), Rajkot (Gujarat), and Chennai (Tamil Nadu). These regions have established manufacturing and supply networks for commercial vehicle components.'
+    }
   ]
 };

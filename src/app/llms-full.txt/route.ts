@@ -57,6 +57,16 @@ export async function GET() {
 - Delhi NCR: ${baseUrl}/locations/delhi-ncr
 - Bangalore: ${baseUrl}/locations/bangalore
 - Chennai: ${baseUrl}/locations/chennai
+- Pune: ${baseUrl}/locations/pune
+- Hyderabad: ${baseUrl}/locations/hyderabad
+- Ahmedabad: ${baseUrl}/locations/ahmedabad
+- Kolkata: ${baseUrl}/locations/kolkata
+- Jaipur: ${baseUrl}/locations/jaipur
+- Haryana: ${baseUrl}/locations/haryana
+- Maharashtra: ${baseUrl}/locations/maharashtra
+- Tamil Nadu: ${baseUrl}/locations/tamil-nadu
+- Karnataka: ${baseUrl}/locations/karnataka
+- Punjab: ${baseUrl}/locations/punjab
 
 ## Blog Posts (Complete Index)
 
