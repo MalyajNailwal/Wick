@@ -67,6 +67,16 @@ export async function GET() {
 - Tamil Nadu: ${baseUrl}/locations/tamil-nadu
 - Karnataka: ${baseUrl}/locations/karnataka
 - Punjab: ${baseUrl}/locations/punjab
+- Pune: ${baseUrl}/locations/pune
+- Hyderabad: ${baseUrl}/locations/hyderabad
+- Ahmedabad: ${baseUrl}/locations/ahmedabad
+- Kolkata: ${baseUrl}/locations/kolkata
+- Jaipur: ${baseUrl}/locations/jaipur
+- Haryana: ${baseUrl}/locations/haryana
+- Maharashtra: ${baseUrl}/locations/maharashtra
+- Tamil Nadu: ${baseUrl}/locations/tamil-nadu
+- Karnataka: ${baseUrl}/locations/karnataka
+- Punjab: ${baseUrl}/locations/punjab
 
 ## Blog Posts (Complete Index)
 

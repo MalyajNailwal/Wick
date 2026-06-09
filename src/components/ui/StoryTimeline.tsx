@@ -113,9 +113,8 @@ const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }
                 <div className="ml-8 flex-1 pb-8">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
-                    viewport={{ once: true }}
                     className={`p-8 rounded-2xl shadow-lg border ${
                       event.highlight 
                         ? 'bg-gradient-to-r from-primary-50 to-primary-100 border-primary-200' 
@@ -143,9 +142,8 @@ const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }
           {/* Future Indicator */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
             className="relative flex items-center mt-16"
           >
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-700 rounded-full flex items-center justify-center shadow-lg relative z-10">

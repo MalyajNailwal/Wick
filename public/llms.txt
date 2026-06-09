@@ -117,6 +117,16 @@ Maintain correct tyre pressure at all times (the #1 factor), avoid overloading, 
 - Tamil Nadu: https://wick.co.in/locations/tamil-nadu
 - Karnataka: https://wick.co.in/locations/karnataka
 - Punjab: https://wick.co.in/locations/punjab
+- Pune: https://wick.co.in/locations/pune
+- Hyderabad: https://wick.co.in/locations/hyderabad
+- Ahmedabad: https://wick.co.in/locations/ahmedabad
+- Kolkata: https://wick.co.in/locations/kolkata
+- Jaipur: https://wick.co.in/locations/jaipur
+- Haryana: https://wick.co.in/locations/haryana
+- Maharashtra: https://wick.co.in/locations/maharashtra
+- Tamil Nadu: https://wick.co.in/locations/tamil-nadu
+- Karnataka: https://wick.co.in/locations/karnataka
+- Punjab: https://wick.co.in/locations/punjab
 
 ## Blog Topics
 

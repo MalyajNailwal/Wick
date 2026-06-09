@@ -14,6 +14,9 @@
 <!-- lore:019dd337-c27e-7dce-aebb-6f56ec82e3c8 -->
 * **Convex client module-level initialization breaks static builds**: \`src/app/auth/page.tsx\` creates \`new ConvexReactClient()\` at module scope. During \`next build\`, prerendering executes module-level code and crashes if \`NEXT\_PUBLIC\_CONVEX\_URL\` is undefined. Fix: initialize conditionally (\`const convex = convexUrl ? new ConvexReactClient(convexUrl) : null\`) and render a fallback when null.
 
+<!-- lore:019e5f24-9742-7bb3-b69e-8306c2c53f53 -->
+* **Convex prebuild script requires deployment configuration**: The \`prebuild\` npm script auto-runs \`npx convex codegen\` unless \`CI=true\`. Without \`CONVEX\_DEPLOYMENT\` configured, this fails and blocks \`npm run build\`. For local builds without Convex, run \`CI=true npm run build\` or invoke \`next build\` directly to skip the prebuild step.
+
 <!-- lore:019dd28c-69cb-7cad-98f1-fcce36a65984 -->
 * **FAQ page missing structured data schema**: \`/faq/page.tsx\` is a client component containing structured Q\&A data but exports no \`FAQPage\` JSON-LD schema. This misses rich snippet opportunities in search results. Since the page is a client component, schema cannot be injected in the same file. Fix: create a \`layout.tsx\` for \`/faq\` that exports the \`FAQPage\` schema alongside metadata.
 
@@ -43,27 +46,32 @@
 
 ### Pattern
 
-<!-- lore:019d4e73-d317-74a0-aed5-eb39c6bb6aef -->
-* **Blog posts as static data with dynamic routes**: Blog posts are defined in \`src/lib/blog-data.ts\` as a typed array (BlogPost interface with slug, title, excerpt, date, readTime, category, tags, content, relatedSlugs). The listing page (\`blog/page.tsx\`) imports \`getAllPosts()\`. Individual posts render via \`blog/\[slug]/page.tsx\` which calls \`getPostBySlug()\` and \`getRelatedPosts()\`. Sitemap at \`sitemap.ts\` imports the same data. Content uses a simple markdown subset rendered by \`BlogPostClient\` — supports bold, italic, links (internal via \`<Link>\`, external via \`<a target="_blank">\`), tables, and lists. Cross-link mapping lives in \`src/lib/blog-link-map.ts\`.
+<!-- lore:019ea595-7446-7ca3-bcf4-88bbf1c9a180 -->
+* **Blog FAQ schemas for AEO**: Each blog post has FAQ data in \`src/lib/blog-faqs.ts\` as a \`Record\<string, BlogFAQ\[]>\` mapping slug to Q\&A pairs. The \`blog/\[slug]/page.tsx\` imports this and renders FAQPage schema alongside BlogPosting schema when FAQs exist. When adding a new blog post, add 3-5 FAQ entries in \`blog-faqs.ts\` targeting common search queries related to the post topic. FAQs should be phrased as natural language questions with concise, data-rich answers.
 
-* **Blog FAQ schemas for AEO**: Each blog post has FAQ data in \`src/lib/blog-faqs.ts\` as a \`Record<string, BlogFAQ[]>\` mapping slug to Q&A pairs. The \`blog/\[slug]/page.tsx\` imports this and renders FAQPage schema alongside BlogPosting schema when FAQs exist. When adding a new blog post, add 3-5 FAQ entries in \`blog-faqs.ts\` targeting common search queries related to the post topic. FAQs should be phrased as natural language questions with concise, data-rich answers.
+<!-- lore:019d4e73-d317-74a0-aed5-eb39c6bb6aef -->
+* **Blog posts as static data with dynamic routes**: Blog posts are defined in \`src/lib/blog-data.ts\` as a typed array (BlogPost interface with slug, title, excerpt, date, readTime, category, tags, content, relatedSlugs). The listing page (\`blog/page.tsx\`) imports \`getAllPosts()\`. Individual posts render via \`blog/\[slug]/page.tsx\` which calls \`getPostBySlug()\` and \`getRelatedPosts()\`. Sitemap at \`sitemap.ts\` imports the same data. Content uses a simple markdown subset rendered by \`BlogPostClient\` — supports bold, italic, links (internal via \`\`, external via \`\`), tables, and lists. Cross-link mapping lives in \`src/lib/blog-link-map.ts\`.
 
 <!-- lore:019d51f2-8191-7d62-8a74-4c37908694c5 -->
 * **H1 hierarchy for SEO accessibility**: Use single H1 for SEO: add sr-only H1 at top of page for screen readers + search engines, use visible H2/H3 for section hierarchy. Page.tsx uses this pattern with hidden H1 + visible H2.
 
-* **RelatedLinks component for cross-linking**: \`src/components/seo/RelatedLinks.tsx\` provides reusable internal link sections. Supports \`compact\` (text links in flex-wrap row) and \`cards\` (card grid with descriptions) variants. Props: \`title\`, \`subtitle\`, \`links\`, \`variant\`, \`theme\` (light/dark), \`className\`, \`linkColor\`. Deployed on 6 pages: HomeClient, technology, products, contact, faq, about.
+<!-- lore:019ea595-744c-74a1-b412-c2c19e332448 -->
+* **llms.txt and llms-full.txt for AI discoverability**: Two files serve AI/LLM crawlers. \`public/llms.txt\` is a static summary file with company info, products, FAQs, and key pages. \`src/app/llms-full.txt/route.ts\` is a dynamic route that includes all blog posts with titles, URLs, excerpts, categories, and tags, plus extended FAQ answers and industry terms. Both follow the emerging llms.txt convention for helping AI systems understand the site content.
 
-* **Location pages pattern**: City landing pages live under \`src/app/locations/[city]/page.tsx\` with a \`layout.tsx\` for metadata and schema. Each has unique city-specific content, LocalBusiness schema, breadcrumbs (city-only, no intermediate /locations link since that page doesn't exist), and CTAs. Cities: mumbai, delhi-ncr, bangalore, chennai.
-
-* **whileInView must not be used on critical text content**: Googlebot doesn't scroll. Using Framer Motion's \`whileInView\` on text sections hides content from crawlers. Use \`animate\` (fires on mount) instead for any element containing indexable text. \`whileInView\` is acceptable only for purely decorative elements (e.g., StoryTimeline dots).
+<!-- lore:019e5360-8523-7aef-9450-591117ebdb7d -->
+* **Location pages pattern**: City landing pages live under \`src/app/locations/\[city]/page.tsx\` with a \`layout.tsx\` for metadata and schema. Each has unique city-specific content, LocalBusiness schema, breadcrumbs (city-only, no intermediate /locations link since that page doesn't exist), and CTAs. Cities: mumbai, delhi-ncr, bangalore, chennai.
 
 <!-- lore:019d51eb-2090-7df3-bd2d-3ddfe3fbb1c7 -->
 * **Next.js App Router SEO Pattern**: App Router SEO uses metadata API. Root layout exports static Metadata; dynamic pages use generateMetadata() (see blog/\[slug]/page.tsx). The project centralizes page metadata in src/app/metadata.ts as named exports (e.g., whyWickATESMetadata) that pages import and re-export. SEO utilities and 130+ keywords live in src/lib/seo-utils.ts. Reusable schema components (OrganizationSchema, ProductSchema, LocalBusinessSchema, FAQSchema, Breadcrumbs) are in src/components/seo/. JSON-LD is injected via components in layout.tsx files. Reference SEO\_OPTIMIZATION\_SUMMARY.md for keyword strategy.
 
-* **llms.txt and llms-full.txt for AI discoverability**: Two files serve AI/LLM crawlers. \`public/llms.txt\` is a static summary file with company info, products, FAQs, and key pages. \`src/app/llms-full.txt/route.ts\` is a dynamic route that includes all blog posts with titles, URLs, excerpts, categories, and tags, plus extended FAQ answers and industry terms. Both follow the emerging llms.txt convention for helping AI systems understand the site content.
+<!-- lore:019e5360-8504-7a96-a881-ff7540751718 -->
+* **RelatedLinks component for cross-linking**: \`src/components/seo/RelatedLinks.tsx\` provides reusable internal link sections. Supports \`compact\` (text links in flex-wrap row) and \`cards\` (card grid with descriptions) variants. Props: \`title\`, \`subtitle\`, \`links\`, \`variant\`, \`theme\` (light/dark), \`className\`, \`linkColor\`. Deployed on 6 pages: HomeClient, technology, products, contact, faq, about.
 
 <!-- lore:019d51f2-8191-7d62-8a74-4c387c52696b -->
 * **Skip navigation link pattern**: Add skip link in root layout body: \<a href="#main-content" className="sr-only focus:not-sr-only">Skip to content\</a>. Add id="main-content" to main content wrapper. Improves accessibility and SEO.
+
+<!-- lore:019e5360-8529-7717-ab93-a3d08d9e45dd -->
+* **whileInView must not be used on critical text content**: Googlebot doesn't scroll. Using Framer Motion's \`whileInView\` on text sections hides content from crawlers. Use \`animate\` (fires on mount) instead for any element containing indexable text. \`whileInView\` is acceptable only for purely decorative elements (e.g., StoryTimeline dots).
 
 ### Preference
 

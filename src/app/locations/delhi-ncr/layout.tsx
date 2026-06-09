@@ -40,8 +40,7 @@ export default function DelhiNCROLayout({ children }: { children: React.ReactNod
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://wick.co.in/locations' },
-              { '@type': 'ListItem', position: 3, name: 'Delhi NCR', item: 'https://wick.co.in/locations/delhi-ncr' }
+              { '@type': 'ListItem', position: 2, name: '', item: '' }
             ]
           })
         }}

@@ -40,8 +40,7 @@ export default function PuneLayout({ children }: { children: React.ReactNode }) 
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://wick.co.in/locations' },
-              { '@type': 'ListItem', position: 3, name: 'Pune', item: 'https://wick.co.in/locations/pune' }
+              { '@type': 'ListItem', position: 2, name: '', item: '' }
             ]
           })
         }}

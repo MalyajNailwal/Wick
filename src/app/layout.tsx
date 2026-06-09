@@ -137,6 +137,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://wick.co.in',
+    languages: {
+      'en-IN': 'https://wick.co.in/',
+      'en': 'https://wick.co.in/',
+    },
     types: {
       'application/rss+xml': 'https://wick.co.in/feed.xml',
     },

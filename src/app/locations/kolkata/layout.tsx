@@ -40,8 +40,7 @@ export default function KolkataLayout({ children }: { children: React.ReactNode 
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: 'Locations', item: 'https://wick.co.in/locations' },
-              { '@type': 'ListItem', position: 3, name: 'Kolkata', item: 'https://wick.co.in/locations/kolkata' }
+              { '@type': 'ListItem', position: 2, name: '', item: '' }
             ]
           })
         }}
