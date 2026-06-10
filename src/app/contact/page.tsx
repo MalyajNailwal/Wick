@@ -600,8 +600,8 @@ const ContactPage = () => {
         linkColor="text-black hover:text-primary-600"
       />
 
-      {/* Contact Information Footer */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16">
+      {/* Contact Information Section */}
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -662,28 +662,8 @@ const ContactPage = () => {
               );
             })}
           </div>
-
-          {/* Footer Bottom */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 pt-8 border-t border-gray-700 text-center"
-          >
-            <div className="flex flex-wrap justify-center gap-6 mb-4">
-              <Link href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
-              </Link>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Making India&apos;s highways safer, one tyre at a time.
-            </p>
-          </motion.div>
         </div>
-      </footer>
+      </section>
       
       {/* WhatsApp Floating Button */}
       <WhatsAppButton />

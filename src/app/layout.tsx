@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, League_Spartan } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -260,6 +261,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <Footer />
       </body>
     </html>
   );

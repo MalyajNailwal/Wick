@@ -9,6 +9,9 @@
 <!-- lore:019d51f2-8192-7300-8f7c-3a824300a433 -->
 * **Hreflang for language alternates**: Add hreflang in root layout metadata \`alternates: { languages: { 'en-IN': 'https://wick.co.in/', 'en': 'https://wick.co.in/' } }\` to help Google serve the correct language version. Important caveat: Next.js \`alternates.languages\` does not auto-include a self-referencing \`\<xhtml:link>\` for the current page, which Google requires for valid hreflang. Add the current locale explicitly in the languages map alongside other variants.
 
+<!-- lore:019eb019-babf-78d6-9734-871a3b6c38dd -->
+* **No shared global footer component exists**: Shared global Footer component exists at \`src/components/layout/Footer.tsx\`. Integrated into root layout (\`src/app/layout.tsx\`) after \`{children}\`. Contains Wick branding, navigation links (Products, Company sections), Privacy Policy, Terms of Service, and dynamic copyright year. The contact page's inline footer was removed — its contact cards section remains as a \`\<section>\` but the footer bottom links were deleted since the global footer handles them now.
+
 ### Gotcha
 
 <!-- lore:019dd337-c27e-7dce-aebb-6f56ec82e3c8 -->
