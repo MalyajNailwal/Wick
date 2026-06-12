@@ -206,14 +206,14 @@ const TechnologyPage = () => {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={heroInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center px-6 py-3 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium backdrop-blur-sm mb-8"
             >
@@ -222,8 +222,8 @@ const TechnologyPage = () => {
             </motion.div>
             
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-6xl font-display font-bold text-white mb-6"
             >
@@ -235,8 +235,8 @@ const TechnologyPage = () => {
             </motion.h1>
             
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
             >
@@ -259,7 +259,7 @@ const TechnologyPage = () => {
             {technologies.map((tech, index) => (
               <motion.div
                 key={tech.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition-all duration-300 group"
@@ -300,7 +300,7 @@ const TechnologyPage = () => {
               {workingProcess.map((process, index) => (
                 <motion.div
                   key={process.step}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="text-center relative"
@@ -333,7 +333,7 @@ const TechnologyPage = () => {
             
             {/* Video Explanation Frame */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
               className="relative mt-20 mb-16"
@@ -342,7 +342,7 @@ const TechnologyPage = () => {
                 {/* Section Header */}
                 <div className="text-center mb-12">
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 1, scale: 1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6 }}
                     className="inline-flex items-center px-6 py-3 rounded-full bg-black text-white text-sm font-medium backdrop-blur-sm mb-6"
@@ -360,8 +360,8 @@ const TechnologyPage = () => {
 
                 {/* Creative Video Frame */}
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
-                  animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                initial={{ opacity: 1, scale: 1, rotateY: 0 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                   transition={{ duration: 1.2, delay: 0.4 }}
                   className="relative group"
                 >
@@ -441,7 +441,7 @@ const TechnologyPage = () => {
                       {/* Creative CTA Overlay - Shows at 20 seconds */}
                       {showCTAOverlay && (
                         <motion.div
-                          initial={{ opacity: 0, scale: 0.8 }}
+                          initial={{ opacity: 1, scale: 1 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.8 }}
                           className="absolute inset-0 z-40 bg-gradient-to-br from-black/80 via-black/70 to-black/80 backdrop-blur-md flex items-center justify-center"
@@ -450,7 +450,7 @@ const TechnologyPage = () => {
                             {/* Compact border */}
                             <div className="border-2 border-primary-500 rounded-lg p-6 bg-gradient-to-br from-primary-900/20 to-purple-900/20">
                               <motion.div
-                                initial={{ y: 10, opacity: 0 }}
+                                initial={{ y: 0, opacity: 1 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ delay: 0.2 }}
                               >
@@ -527,7 +527,7 @@ const TechnologyPage = () => {
                         ].map((tag, index) => (
                           <motion.span
                             key={tag.label}
-                            initial={{ opacity: 0, scale: 0.8 }}
+                            initial={{ opacity: 1, scale: 1 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             className={`px-4 py-2 rounded-full text-sm font-medium ${tag.color} hover:scale-105 transition-transform duration-200`}
@@ -551,7 +551,7 @@ const TechnologyPage = () => {
       <section className="py-24 bg-gradient-to-r from-primary-600 to-primary-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
@@ -622,14 +622,14 @@ const TechnologyPage = () => {
       {/* Technical Docs Popup */}
       {showTechDocsPopup && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 1, scale: 1 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
           onClick={() => setShowTechDocsPopup(false)}
         >
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
+            initial={{ y: 0, opacity: 1 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
             className="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl border border-gray-200"

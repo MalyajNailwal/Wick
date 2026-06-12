@@ -71,14 +71,14 @@ const ProductsPage = () => {
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-slate-900 via-red-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center text-white"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={heroInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-orange-500 via-white to-green-600 text-sm font-semibold mb-6 shadow-lg"
             >
@@ -108,7 +108,7 @@ const ProductsPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
@@ -124,7 +124,7 @@ const ProductsPage = () => {
             
             {/* Base Package - TYRE RAKHSHAK */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl shadow-xl border-2 border-gray-200 overflow-hidden hover:shadow-2xl transition-shadow duration-300"
@@ -177,7 +177,7 @@ const ProductsPage = () => {
 
             {/* Premium Package - TYRE RAKHSHAK + CPMS */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl shadow-2xl border-2 border-blue-500 overflow-hidden relative hover:shadow-3xl transition-shadow duration-300"
@@ -250,7 +250,7 @@ const ProductsPage = () => {
 
           {/* Download Brochure */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mt-12"
           >
@@ -271,7 +271,7 @@ const ProductsPage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
@@ -300,7 +300,7 @@ const ProductsPage = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="text-center p-8 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow"

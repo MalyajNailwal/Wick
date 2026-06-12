@@ -67,14 +67,14 @@ const BlogPage = () => {
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={heroInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center px-6 py-3 rounded-full bg-red-50 border border-red-200 text-red-700 text-sm font-semibold mb-6"
             >
@@ -83,8 +83,8 @@ const BlogPage = () => {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6"
             >
@@ -93,8 +93,8 @@ const BlogPage = () => {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
@@ -112,7 +112,7 @@ const BlogPage = () => {
             {posts.map((post, index) => (
               <motion.article
                 key={post.slug}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
@@ -177,7 +177,7 @@ const BlogPage = () => {
 
             {/* More coming soon card */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: posts.length * 0.1 }}
               className="h-full"
@@ -204,7 +204,7 @@ const BlogPage = () => {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -245,7 +245,7 @@ const BlogPage = () => {
 
             {errorMessage && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mt-4 bg-red-100 border-2 border-red-500 text-red-800 px-6 py-3 rounded-2xl inline-flex items-center"
               >
@@ -255,7 +255,7 @@ const BlogPage = () => {
 
             {showSuccessMessage && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 className="mt-6 bg-green-100 border-2 border-green-500 text-green-800 px-6 py-4 rounded-2xl inline-flex items-center shadow-lg"
@@ -281,7 +281,7 @@ const BlogPage = () => {
       <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >

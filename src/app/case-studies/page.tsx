@@ -79,8 +79,8 @@ export default function CaseStudiesPage() {
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-900 via-red-900 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-center"
           >
@@ -121,7 +121,7 @@ export default function CaseStudiesPage() {
             ].map((stat, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg p-6"
@@ -138,7 +138,7 @@ export default function CaseStudiesPage() {
       <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
@@ -188,8 +188,8 @@ function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden"
     >

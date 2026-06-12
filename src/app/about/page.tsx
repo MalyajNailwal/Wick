@@ -124,14 +124,14 @@ const AboutPage = () => {
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6"
             >
@@ -139,8 +139,8 @@ const AboutPage = () => {
             </motion.h1>
             
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
@@ -158,8 +158,8 @@ const AboutPage = () => {
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                 className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
@@ -177,8 +177,8 @@ const AboutPage = () => {
       <section ref={storyRef} className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={storyInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
@@ -300,8 +300,8 @@ const AboutPage = () => {
 
                   {/* Milestone Card */}
                   <motion.div
-                    initial={{ opacity: 0, x: milestone.cardPosition === 'left' ? 50 : -50 }}
-                    animate={storyInView ? { opacity: 1, x: 0 } : { opacity: 0, x: milestone.cardPosition === 'left' ? 50 : -50 }}
+                    initial={{ opacity: 1, x: 0 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 1.2 + index * 0.3 }}
                     className="absolute top-0"
                     style={{
@@ -395,8 +395,8 @@ const AboutPage = () => {
       <section ref={valuesRef} className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -412,8 +412,8 @@ const AboutPage = () => {
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={valuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors duration-300"
               >

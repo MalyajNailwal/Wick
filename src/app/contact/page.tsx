@@ -164,7 +164,7 @@ const ContactPage = () => {
       <AnimatePresence>
         {showNotification && (
           <motion.div
-            initial={{ x: '100%', opacity: 0 }}
+            initial={{ x: '100%', opacity: 1 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: '100%', opacity: 0 }}
             transition={{
@@ -231,14 +231,14 @@ const ContactPage = () => {
       <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-6xl font-display font-bold text-gray-900 mb-6"
             >
@@ -246,8 +246,8 @@ const ContactPage = () => {
             </motion.h1>
             
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
@@ -265,8 +265,8 @@ const ContactPage = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={formInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
               <div className="bg-gray-50 p-8 rounded-2xl">
@@ -277,8 +277,8 @@ const ContactPage = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      initial={{ opacity: 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 }}
                     >
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -296,8 +296,8 @@ const ContactPage = () => {
                     </motion.div>
                     
                     <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      initial={{ opacity: 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -316,8 +316,8 @@ const ContactPage = () => {
                   </div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                   >
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -335,8 +335,8 @@ const ContactPage = () => {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                   >
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -353,8 +353,8 @@ const ContactPage = () => {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -371,8 +371,8 @@ const ContactPage = () => {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
                   >
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -394,8 +394,8 @@ const ContactPage = () => {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                   >
                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -413,8 +413,8 @@ const ContactPage = () => {
                   </motion.div>
 
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={formInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.8 }}
                   >
                     <motion.button
@@ -436,8 +436,8 @@ const ContactPage = () => {
                 {/* Success/Error Message */}
                 {submitStatus.type && (
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     className={`mt-6 p-4 rounded-lg border ${
                       submitStatus.type === 'success'
@@ -482,8 +482,8 @@ const ContactPage = () => {
 
             {/* Map & Office Info */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={formInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              initial={{ opacity: 1, x: 0 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-8"
             >
@@ -551,8 +551,8 @@ const ContactPage = () => {
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -568,7 +568,7 @@ const ContactPage = () => {
             {faqData.map((faq, index) => (
               <motion.div
                 key={faq.question}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white p-6 rounded-2xl shadow-lg"
@@ -604,8 +604,8 @@ const ContactPage = () => {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
@@ -641,7 +641,7 @@ const ContactPage = () => {
                 <motion.a
                   key={contact.title}
                   href={contact.link}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -652,7 +652,7 @@ const ContactPage = () => {
               ) : (
                 <motion.div
                   key={contact.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/15 transition-all duration-300 border border-white/10"

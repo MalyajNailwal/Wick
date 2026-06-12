@@ -37,8 +37,8 @@ export default function FAQPage() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-center"
           >
@@ -73,7 +73,7 @@ export default function FAQPage() {
                   return (
                     <motion.div
                       key={globalIndex}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 1, y: 0 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="bg-white rounded-xl shadow-lg overflow-hidden"

@@ -26,7 +26,7 @@ export const homeMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring',
     description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings.',
-    images: ['/media/productimghd-removebg-preview.png'],
+    images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
   },
   alternates: {

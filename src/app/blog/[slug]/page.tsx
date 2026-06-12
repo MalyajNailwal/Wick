@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: post.date,
       modifiedTime: post.dateModified || post.date,
-      authors: ['Wick'],
+      authors: ['Vinamra Bajaj, Wick'],
       tags: post.tags,
       images: [
         {
@@ -69,6 +69,16 @@ export default async function BlogPostPage({ params }: Props) {
       '@type': 'Organization',
       name: 'Wick',
       url: 'https://wick.co.in',
+      member: {
+        '@type': 'OrganizationRole',
+        member: {
+          '@type': 'Person',
+          name: 'Vinamra Bajaj',
+          jobTitle: 'Founder & CEO',
+          url: 'https://wick.co.in/about'
+        },
+        roleName: 'content creator'
+      }
     },
     publisher: {
       '@type': 'Organization',

@@ -195,14 +195,14 @@ const PrologueSection = () => {
       <div ref={ref} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
         <motion.div
           style={{ y: textY }}
-          initial={{ opacity: 0, y: 50 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           className="space-y-8"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="inline-flex items-center px-6 py-3 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium backdrop-blur-sm"
           >
@@ -210,8 +210,8 @@ const PrologueSection = () => {
           </motion.div>
           
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             className="text-5xl md:text-7xl font-display font-bold text-white leading-tight"
           >
@@ -222,8 +222,8 @@ const PrologueSection = () => {
           </motion.h1>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl font-medium text-primary-300 tracking-wide"
           >
@@ -231,8 +231,8 @@ const PrologueSection = () => {
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.7 }}
             className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
           >
@@ -242,9 +242,9 @@ const PrologueSection = () => {
           </motion.p>
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 1, delay: 0.9 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.9 }}
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -336,8 +336,8 @@ const ProductImageWithRotation = () => {
         <div className="relative h-full flex items-center justify-center p-8">
           <motion.div
             ref={ref}
-            initial={{ opacity: 0, scale: 0.8, y: 30 }}
-            animate={inView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 30 }}
+            initial={{ opacity: 1, scale: 1, y: 0 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="relative max-w-full max-h-full cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
@@ -389,7 +389,7 @@ const ProductImageWithRotation = () => {
             
             {/* Hover instruction tooltip */}
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={{ opacity: 1 }}
               animate={{ opacity: inView && !isHovered && !isScrolling ? 1 : 0 }}
               transition={{ duration: 0.5, delay: 2 }}
               className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-3 py-1 rounded-md text-xs font-medium whitespace-nowrap pointer-events-none"
@@ -409,8 +409,8 @@ const ProductImageWithRotation = () => {
       
       {/* Clean Product Badge */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        initial={{ opacity: 1, x: 0 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 1 }}
         className="absolute -top-6 -right-6 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full shadow-xl font-semibold text-sm z-10 border-2 border-white"
       >
@@ -419,8 +419,8 @@ const ProductImageWithRotation = () => {
       
       {/* Innovation Callout - Clean Design */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.3 }}
         className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gray-200 z-10"
       >
@@ -571,7 +571,7 @@ const StoryJourney = () => {
               {/* Text Overlay */}
               <div className="absolute inset-0 flex items-center justify-center z-10 p-8">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 1, y: 0 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
                   className="text-center text-white"
@@ -581,14 +581,14 @@ const StoryJourney = () => {
                     The Crisis Was Real
                   </h3>
                   <motion.div
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 1 }}
                     className="text-center"
                   >
                     <motion.p
                       className="text-lg text-gray-100 max-w-sm mx-auto leading-relaxed font-medium"
-                      initial={{ opacity: 0 }}
+                      initial={{ opacity: 1 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5, delay: 1.2 }}
                     >
@@ -783,13 +783,13 @@ const StoryJourney = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-block"
@@ -910,7 +910,7 @@ const StoryJourney = () => {
 
           {/* Trust Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 mb-24 text-center"
@@ -942,7 +942,7 @@ const StoryJourney = () => {
 
           {/* Testimonials Header */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center mb-14"
@@ -966,7 +966,7 @@ const StoryJourney = () => {
 
            {/* Video Grid — real video + coming soon slots */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
           >
@@ -1023,7 +1023,7 @@ const StoryJourney = () => {
 
           {/* Bottom note */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-center mt-12"
@@ -1077,8 +1077,8 @@ const SEOContentSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Why Choose Wick ATES */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mb-12"
         >
@@ -1094,8 +1094,8 @@ const SEOContentSection = () => {
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-primary-500/30 transition-colors"
             >
@@ -1114,8 +1114,8 @@ const SEOContentSection = () => {
 
         {/* Internal Links */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
           className="mb-16"
         >
@@ -1153,8 +1153,8 @@ const CTASection = () => {
     <section ref={ref} className="py-24 bg-gradient-to-r from-gray-900 via-black to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
