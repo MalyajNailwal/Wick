@@ -117,16 +117,18 @@ Maintain correct tyre pressure at all times (the #1 factor), avoid overloading, 
 - Tamil Nadu: https://wick.co.in/locations/tamil-nadu
 - Karnataka: https://wick.co.in/locations/karnataka
 - Punjab: https://wick.co.in/locations/punjab
-- Pune: https://wick.co.in/locations/pune
-- Hyderabad: https://wick.co.in/locations/hyderabad
-- Ahmedabad: https://wick.co.in/locations/ahmedabad
-- Kolkata: https://wick.co.in/locations/kolkata
-- Jaipur: https://wick.co.in/locations/jaipur
-- Haryana: https://wick.co.in/locations/haryana
-- Maharashtra: https://wick.co.in/locations/maharashtra
-- Tamil Nadu: https://wick.co.in/locations/tamil-nadu
-- Karnataka: https://wick.co.in/locations/karnataka
-- Punjab: https://wick.co.in/locations/punjab
+
+## Industry Solutions
+
+- Mining: https://wick.co.in/industries/mining
+- Logistics: https://wick.co.in/industries/logistics
+- Construction: https://wick.co.in/industries/construction
+
+## National Landing Pages
+
+- Tyre Inflation System India: https://wick.co.in/tyre-inflation-system-india
+- Tyre Inflation System: https://wick.co.in/tire-inflation-system
+- Truck Tyre Pressure Monitoring: https://wick.co.in/truck-tire-pressure-monitoring
 
 ## Blog Topics
 

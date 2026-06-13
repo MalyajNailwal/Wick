@@ -67,16 +67,18 @@ export async function GET() {
 - Tamil Nadu: ${baseUrl}/locations/tamil-nadu
 - Karnataka: ${baseUrl}/locations/karnataka
 - Punjab: ${baseUrl}/locations/punjab
-- Pune: ${baseUrl}/locations/pune
-- Hyderabad: ${baseUrl}/locations/hyderabad
-- Ahmedabad: ${baseUrl}/locations/ahmedabad
-- Kolkata: ${baseUrl}/locations/kolkata
-- Jaipur: ${baseUrl}/locations/jaipur
-- Haryana: ${baseUrl}/locations/haryana
-- Maharashtra: ${baseUrl}/locations/maharashtra
-- Tamil Nadu: ${baseUrl}/locations/tamil-nadu
-- Karnataka: ${baseUrl}/locations/karnataka
-- Punjab: ${baseUrl}/locations/punjab
+
+## Industry Solutions
+
+- Mining: ${baseUrl}/industries/mining
+- Logistics: ${baseUrl}/industries/logistics
+- Construction: ${baseUrl}/industries/construction
+
+## National Landing Pages
+
+- Tyre Inflation System India: ${baseUrl}/tyre-inflation-system-india
+- Tyre Inflation System: ${baseUrl}/tire-inflation-system
+- Truck Tyre Pressure Monitoring: ${baseUrl}/truck-tire-pressure-monitoring
 
 ## Blog Posts (Complete Index)
 
