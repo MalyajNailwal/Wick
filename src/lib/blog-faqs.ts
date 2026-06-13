@@ -439,5 +439,100 @@ export const blogFAQs: Record<string, BlogFAQ[]> = {
       question: 'Where can I buy commercial vehicle hubcaps and axle accessories in India?',
       answer: 'Major sourcing hubs for commercial vehicle hubcaps and axle accessories include Faridabad (Haryana), Ludhiana (Punjab), Rajkot (Gujarat), and Chennai (Tamil Nadu). These regions have established manufacturing and supply networks for commercial vehicle components.'
     }
+  ],
+
+  'best-tyre-inflation-system-india-2026': [
+    {
+      question: 'What is the best tyre inflation system in India in 2026?',
+      answer: 'The best tyre inflation system for Indian fleets should offer automatic pressure correction (not just monitoring), India-specific design for extreme heat and dust, proven ROI data, local support, and compatibility with common Indian truck and trailer configurations. ATES by Wick meets all these criteria.'
+    },
+    {
+      question: 'How much does a tyre inflation system cost in India?',
+      answer: 'TPMS systems cost Rs 15,000-60,000 per vehicle. Automatic tyre inflation systems (ATES) cost Rs 50,000-1,50,000 per vehicle. The higher upfront cost of ATES is justified by significantly greater savings through automatic pressure correction, with payback typically within 6-8 months.'
+    },
+    {
+      question: 'What is the ROI of automatic tyre inflation for Indian fleets?',
+      answer: 'Indian fleets save Rs 2-3 lakhs per vehicle annually with ATES through 20% longer tyre life, 2%+ fuel savings, and 144 hours of reduced downtime. A fleet of 20 trucks can save Rs 20+ lakhs annually, with the system paying for itself within 6-8 months.'
+    },
+    {
+      question: 'Should I buy TPMS or automatic tyre inflation?',
+      answer: 'For maximum ROI, automatic tyre inflation (ATES) is better because it actively maintains optimal pressure rather than just alerting. TPMS alone does not prevent blowouts or save fuel because it only monitors without correcting. ATES eliminates the human dependency that makes TPMS unreliable for Indian fleet operations.'
+    }
+  ],
+
+  'tyre-inflation-system-for-trucks-india': [
+    {
+      question: 'How does a tyre inflation system work on Indian trucks?',
+      answer: 'An automatic tyre inflation system connects to the truck air compressor and uses manifolds, control valves, rotary unions, and pressure regulators to monitor and adjust pressure on every tyre continuously. The system inflates under-inflated tyres and deflates over-inflated tyres while the vehicle is running, without driver intervention.'
+    },
+    {
+      question: 'What savings can Indian truck operators expect from automatic tyre inflation?',
+      answer: 'Indian truck operators save Rs 96,000+ per vehicle annually with ATES through 20% longer tyre life (Rs 36,000 saved), 2%+ fuel savings (Rs 7,200 saved), and reduced downtime costs. A fleet of 10 trucks saves Rs 9.6+ lakhs annually.'
+    },
+    {
+      question: 'Is automatic tyre inflation compatible with Tata and Ashok Leyland trucks?',
+      answer: 'Yes, ATES is compatible with all major Indian truck brands including Tata (Signa, Prima, Ultra), Ashok Leyland (Viking, Captain, AVTR), BharatBenz, Eicher, and Mahindra. The system uses the existing air compressor, requiring no major vehicle modifications.'
+    },
+    {
+      question: 'How long does it take to install automatic tyre inflation on a truck?',
+      answer: 'Installation takes 3-4 hours per truck. The process involves mounting the control box, installing manifolds on each axle, fitting rotary unions, connecting air lines, and calibrating the system. Drivers can resume operations the same day.'
+    }
+  ],
+
+  'how-to-prevent-tyre-blowouts-indian-highways': [
+    {
+      question: 'What percentage of tyre blowouts are caused by under-inflation?',
+      answer: 'Research consistently shows that 95% of tyre blowouts are linked to under-inflation. Maintaining correct tyre pressure is the single most effective blowout prevention measure, addressing the primary cause of tyre failures on Indian highways.'
+    },
+    {
+      question: 'How many accidents in India are caused by tyre blowouts?',
+      answer: 'Tyre-related incidents contribute to over 366,000 accidents annually in India, resulting in more than 131,000 deaths. The majority of these incidents are preventable through proper tyre pressure management and condition monitoring.'
+    },
+    {
+      question: 'How does automatic tyre inflation prevent blowouts?',
+      answer: 'Automatic tyre inflation systems prevent blowouts by maintaining optimal tyre pressure continuously. Since 95% of blowouts are caused by under-inflation, eliminating pressure deviations through automatic correction eliminates the primary blowout risk factor.'
+    },
+    {
+      question: 'What Indian highway conditions increase blowout risk?',
+      answer: 'Indian highways present unique blowout risks: extreme summer heat (road surfaces exceeding 60 degrees Celsius), monsoon conditions with sudden temperature changes, potholes and sharp debris, overloading, and long uninterrupted runs of 500+ kilometres that allow heat to accumulate in tyres.'
+    }
+  ],
+
+  'fleet-tyre-management-tips-india': [
+    {
+      question: 'How much can Indian fleets save with proper tyre management?',
+      answer: 'Indian fleets save Rs 2-3 lakhs per vehicle annually with optimized tyre management. This includes savings from 20% longer tyre life, 2%+ fuel savings, reduced breakdown costs, and eliminated downtime. A 20-vehicle fleet can save Rs 40-60 lakhs annually.'
+    },
+    {
+      question: 'What is the most important tyre management practice for Indian fleets?',
+      answer: 'Maintaining correct tyre pressure continuously is the most impactful practice. Correct pressure extends tyre life by 20%, saves 2%+ fuel, and prevents blowouts. Automatic tyre inflation systems make this possible without manual intervention.'
+    },
+    {
+      question: 'How does automatic tyre inflation simplify fleet tyre management?',
+      answer: 'Automatic tyre inflation eliminates manual pressure checks, reduces driver time spent on tyre maintenance, prevents breakdowns, and provides consistent protection across the entire fleet regardless of individual driver diligence or route conditions.'
+    },
+    {
+      question: 'Should fleets use TPMS or automatic tyre inflation?',
+      answer: 'For maximum ROI, automatic tyre inflation (ATES) delivers greater value because it actively corrects pressure rather than just monitoring. TPMS alone does not prevent blowouts or save fuel. ATES eliminates the human dependency that makes TPMS unreliable for Indian fleet operations.'
+    }
+  ],
+
+  'commercial-vehicle-safety-regulations-india': [
+    {
+      question: 'What are the main commercial vehicle safety regulations in India?',
+      answer: 'Key regulations include CMVR (Central Motor Vehicle Rules) covering tyre condition and load limits, AIS (Automotive Industry Standards) covering tyre specifications and safety features, and BIS standards for tyre quality. The regulatory framework is progressively strengthening toward mandatory tyre monitoring.'
+    },
+    {
+      question: 'Is automatic tyre inflation required by Indian regulations?',
+      answer: 'While automatic tyre inflation is not yet mandated for in-service vehicles, AIS 052 and related standards are moving toward mandatory tyre pressure monitoring for new commercial vehicles. Fleets that adopt automatic inflation now will be ahead of regulatory requirements.'
+    },
+    {
+      question: 'How does ATES help with regulatory compliance?',
+      answer: 'ATES supports compliance by maintaining tyre pressure within manufacturer-specified ranges at all times, providing documented evidence of pressure management practices, reducing blowout risk, and positioning fleets ahead of upcoming mandatory tyre monitoring requirements.'
+    },
+    {
+      question: 'What are the penalties for non-compliance with tyre safety regulations?',
+      answer: 'Vehicles with damaged or excessively worn tyres face fines during roadside inspections under CMVR. Overloading is a punishable offence. Beyond penalties, non-compliance increases liability exposure in case of accidents and may affect insurance premiums and coverage.'
+    }
   ]
 };

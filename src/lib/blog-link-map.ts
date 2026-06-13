@@ -280,6 +280,66 @@ export const blogCrossLinks: Record<string, BlogLinkEntry> = {
       { targetSlug: 'tpms-price-guide-india-2026', anchorText: 'system pricing guide' },
     ],
   },
+
+  'best-tyre-inflation-system-india-2026': {
+    relatedSlugs: [
+      'tyre-inflation-system-for-trucks-india',
+      'automatic-tyre-inflation-system-vs-tpms',
+      'tpms-price-guide-india-2026',
+    ],
+    contextualLinks: [
+      { targetSlug: 'tyre-inflation-system-for-trucks-india', anchorText: 'tyre inflation systems for trucks' },
+      { targetSlug: 'automatic-tyre-inflation-system-vs-tpms', anchorText: 'comparing ATES vs TPMS' },
+    ],
+  },
+
+  'tyre-inflation-system-for-trucks-india': {
+    relatedSlugs: [
+      'best-tyre-inflation-system-india-2026',
+      'how-to-prevent-truck-tyre-blowouts',
+      'automatic-tyre-inflation-deflation-system',
+    ],
+    contextualLinks: [
+      { targetSlug: 'best-tyre-inflation-system-india-2026', anchorText: 'choosing the best system' },
+      { targetSlug: 'how-to-prevent-truck-tyre-blowouts', anchorText: 'preventing tyre blowouts' },
+    ],
+  },
+
+  'how-to-prevent-tyre-blowouts-indian-highways': {
+    relatedSlugs: [
+      'tyre-burst-accident-statistics-india',
+      'tyre-inflation-system-for-trucks-india',
+      'best-tyre-inflation-system-india-2026',
+    ],
+    contextualLinks: [
+      { targetSlug: 'tyre-burst-accident-statistics-india', anchorText: 'tyre accident statistics' },
+      { targetSlug: 'tyre-inflation-system-for-trucks-india', anchorText: 'tyre inflation systems' },
+    ],
+  },
+
+  'fleet-tyre-management-tips-india': {
+    relatedSlugs: [
+      'total-cost-of-ownership-tyre-management',
+      'tyre-inflation-system-for-trucks-india',
+      'best-tyre-inflation-system-india-2026',
+    ],
+    contextualLinks: [
+      { targetSlug: 'total-cost-of-ownership-tyre-management', anchorText: 'total cost of tyre management' },
+      { targetSlug: 'tyre-inflation-system-for-trucks-india', anchorText: 'automatic tyre inflation' },
+    ],
+  },
+
+  'commercial-vehicle-safety-regulations-india': {
+    relatedSlugs: [
+      'how-to-prevent-tyre-blowouts-indian-highways',
+      'tyre-inflation-system-for-trucks-india',
+      'best-tyre-inflation-system-india-2026',
+    ],
+    contextualLinks: [
+      { targetSlug: 'how-to-prevent-tyre-blowouts-indian-highways', anchorText: 'preventing tyre blowouts' },
+      { targetSlug: 'tyre-inflation-system-for-trucks-india', anchorText: 'tyre inflation systems' },
+    ],
+  },
 };
 
 /**

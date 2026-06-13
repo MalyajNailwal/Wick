@@ -35,6 +35,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/locations/tamil-nadu`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/locations/karnataka`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/locations/punjab`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${baseUrl}/industries/mining`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/industries/logistics`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${baseUrl}/industries/construction`, lastModified: now, changeFrequency: 'monthly', priority: 0.85 },
     { url: `${baseUrl}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     ...blogPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
