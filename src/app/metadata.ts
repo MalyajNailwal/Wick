@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 
 export const homeMetadata: Metadata = {
-  title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring | Commercial Vehicle Safety India',
-  description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings. Best commercial vehicle tyre management solution in India.',
-  keywords: 'automatic tyre inflation system, truck tyre pressure monitoring, commercial vehicle tyre management, tyre inflation system India, truck tyre safety system, trailer tyre inflation, fleet tyre management, tyre pressure monitoring system, automatic tyre equalisation, commercial vehicle safety, truck tyre maintenance, tyre inflation technology, fleet management system, truck alignment system, tyre pressure control system',
+  title: 'Tyre Inflation System India | Automatic Tyre Pressure Monitoring | Commercial Vehicle Safety',
+  description: 'India\'s leading tyre inflation system for trucks & trailers. Automatic tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings. Trusted by 50+ fleet operators across India.',
+  keywords: 'tyre inflation system India, automatic tyre inflation India, truck tyre pressure monitoring, commercial vehicle tyre management, tyre inflation system India, truck tyre safety system, trailer tyre inflation, fleet tyre management, tyre pressure monitoring system, automatic tyre equalisation, commercial vehicle safety, truck tyre maintenance, tyre inflation technology, fleet management system, truck alignment system, tyre pressure control system, best tyre inflation system India, tyre blowout prevention India',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',
