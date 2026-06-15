@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { TrendingUp, Fuel, Clock, Shield, ArrowRight, Truck } from 'lucide-react';
 import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
@@ -60,7 +59,6 @@ const caseStudies = [
 ];
 
 export default function CaseStudiesPage() {
-  const [heroRef, heroInView] = useInView({ threshold: 0.3 });
 
   return (
     <main id="main-content" className="relative bg-white">
@@ -76,7 +74,7 @@ export default function CaseStudiesPage() {
       </div>
 
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-24 pb-16 bg-gradient-to-br from-gray-900 via-red-900 to-gray-900">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-gray-900 via-red-900 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 1, y: 0 }}
@@ -183,11 +181,9 @@ export default function CaseStudiesPage() {
 }
 
 function CaseStudyCard({ study, index }: { study: typeof caseStudies[0]; index: number }) {
-  const [ref, inView] = useInView({ threshold: 0.2 });
 
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 1, y: 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}

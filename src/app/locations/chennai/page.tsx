@@ -179,7 +179,7 @@ export default function ChennaiPage() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={challengesInView ? 'visible' : 'hidden'}
+            animate="visible"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -225,7 +225,7 @@ export default function ChennaiPage() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={benefitsInView ? 'visible' : 'hidden'}
+            animate="visible"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -271,7 +271,7 @@ export default function ChennaiPage() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={supportInView ? 'visible' : 'hidden'}
+            animate="visible"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -334,7 +334,7 @@ export default function ChennaiPage() {
           <motion.div
             variants={staggerContainer}
             initial="hidden"
-            animate={savingsInView ? 'visible' : 'hidden'}
+            animate="visible"
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Tyre Inflation System India | Best Automatic Tyre Pressure Monitoring | Wick ATES',
-  description: 'India\'s leading tyre inflation system manufacturer. Automatic tyre pressure monitoring for trucks & trailers. 20% longer tyre life, 2%+ fuel savings. Trusted by 50+ fleet operators across India.',
-  keywords: 'tyre inflation system India, tire inflation system India, automatic tyre inflation India, truck tyre pressure monitoring India, commercial vehicle tyre safety India, best tyre inflation system India, tyre pressure monitoring system India, fleet tyre management India, truck tyre blowout prevention, automatic tyre equalisation India, commercial vehicle maintenance India, tyre inflation technology India',
+  title: 'Tyre Inflation System India | Automatic Tyre Equalisation System | Wick ATES',
+  description: 'Wick TyreRakhshak ATES is India\'s first advanced automatic tyre equalisation system for trucks and trailers. Maintain tyre pressure automatically, reduce blowout risk, extend tyre life, and save fuel across India.',
+  keywords: 'tyre inflation system India, India’s first tyre inflation system company, automatic tyre inflation system India, automatic tyre equalisation system India, best tyre inflation system India, TyreRakhshak ATES, truck tyre pressure monitoring India, trailer tyre pressure monitoring, commercial vehicle tyre safety India, fleet tyre management India, tyre blowout prevention India, automatic tyre pressure control India',
   openGraph: {
-    title: 'Tyre Inflation System India | Best Automatic Tyre Pressure Monitoring',
-    description: 'India\'s leading tyre inflation system. Automatic tyre pressure monitoring for trucks & trailers. 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Tyre Inflation System India | Automatic Tyre Equalisation System | Wick ATES',
+    description: 'Wick TyreRakhshak ATES is India\'s first advanced automatic tyre equalisation system for commercial trucks and trailers.',
     url: 'https://wick.co.in/tyre-inflation-system-india',
     type: 'website',
     images: [
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
         url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Tyre Inflation System India - Wick ATES',
+        alt: 'Wick TyreRakhshak ATES - Automatic Tyre Equalisation System India',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tyre Inflation System India | Best Automatic Tyre Pressure Monitoring',
-    description: 'India\'s leading tyre inflation system. 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Tyre Inflation System India | Automatic Tyre Equalisation System | Wick ATES',
+    description: 'Wick TyreRakhshak ATES helps Indian fleets maintain tyre pressure automatically for safer, more efficient operations.',
     images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
   },
   alternates: {
@@ -91,34 +91,34 @@ export default function TyreInflationSystemIndiaLayout({
             mainEntity: [
               {
                 '@type': 'Question',
-                name: 'What is the best tyre inflation system in India?',
+                name: 'What is a tyre inflation system in India?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Wick TyreRakhshak ATES is India\'s leading automatic tyre inflation system. It automatically maintains optimal tyre pressure for trucks and trailers, delivering 20% longer tyre life and 2%+ fuel savings. Trusted by 50+ fleet operators across India.'
+                  text: 'A tyre inflation system automatically maintains optimal tyre pressure in commercial vehicles. Wick TyreRakhshak ATES is designed for Indian trucks and trailers to improve safety, tyre life, fuel efficiency, and uptime.'
                 }
               },
               {
                 '@type': 'Question',
-                name: 'How much does a tyre inflation system cost in India?',
+                name: 'Is Wick ATES suitable for Indian roads?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Tyre inflation system pricing in India varies based on fleet size and requirements. Wick ATES typically pays for itself within 6-8 months through tyre and fuel savings of Rs 2-3 lakhs per vehicle annually. Contact +91-9721601500 for a custom quote.'
+                  text: 'Yes. Wick TyreRakhshak ATES is designed for Indian highway conditions, heavy loads, high temperatures, poor road surfaces, and long-distance commercial vehicle operations.'
                 }
               },
               {
                 '@type': 'Question',
-                name: 'Which trucks are compatible with tyre inflation systems in India?',
+                name: 'Which vehicles can use TyreRakhshak ATES?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Wick ATES is compatible with YORK RB15 Axles and Pneumatic Samrat Series Suspension systems, which are widely used in Indian commercial vehicles. The system runs on 24V DC power standard in trucks and trailers.'
+                  text: 'Wick ATES is compatible with commercial trucks and trailers using YORK RB15 axles and Pneumatic Samrat Series suspension systems. It is commonly used by fleet operators across India.'
                 }
               },
               {
                 '@type': 'Question',
-                name: 'How does automatic tyre inflation improve safety on Indian highways?',
+                name: 'How does ATES help fleet operators save money?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Automatic tyre inflation maintains optimal pressure at all times, preventing 95% of tyre blowouts caused by underinflation. This is critical on Indian highways where poor road conditions and extreme weather increase tyre failure risks.'
+                  text: 'Automatic tyre pressure maintenance can help extend tyre life, reduce fuel consumption, prevent avoidable downtime, and lower maintenance labour costs across the fleet.'
                 }
               },
             ]

@@ -12,8 +12,9 @@ const Navigation = () => {
   const navigationItems = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products', highlight: true },
-    { name: 'About Us', href: '/about' },
+    { name: 'Tyre Inflation India', href: '/tyre-inflation-system-india' },
     { name: 'Technology', href: '/technology' },
+    { name: 'Why Wick', href: '/why-wick-ates' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -114,6 +115,7 @@ const Navigation = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={toggleMenu}
+              aria-label="Open menu"
               className={`${scrolled ? 'text-gray-800' : 'text-white'} hover:text-primary-600 focus:outline-none`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}

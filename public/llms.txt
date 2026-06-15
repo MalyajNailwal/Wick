@@ -90,45 +90,45 @@ Maintain correct tyre pressure at all times (the #1 factor), avoid overloading, 
 
 ## Key Pages
 
-- Homepage: https://wick.co.in/
-- Products & Pricing: https://wick.co.in/products
-- Technology (How ATES Works): https://wick.co.in/technology
-- About Wick: https://wick.co.in/about
-- Contact & Get Quote: https://wick.co.in/contact
-- FAQ: https://wick.co.in/faq
-- Blog (Fleet Management Insights): https://wick.co.in/blog
-- Case Studies: https://wick.co.in/case-studies
-- Why Choose Wick ATES: https://wick.co.in/why-wick-ates
-- Wick vs Competitors: https://wick.co.in/wick-vs-competitors
+- [Homepage](https://wick.co.in/)
+- [Products & Pricing](https://wick.co.in/products)
+- [Technology (How ATES Works)](https://wick.co.in/technology)
+- [About Wick](https://wick.co.in/about)
+- [Contact & Get Quote](https://wick.co.in/contact)
+- [FAQ](https://wick.co.in/faq)
+- [Blog (Fleet Management Insights)](https://wick.co.in/blog)
+- [Case Studies](https://wick.co.in/case-studies)
+- [Why Choose Wick ATES](https://wick.co.in/why-wick-ates)
+- [Wick vs Competitors](https://wick.co.in/wick-vs-competitors)
 
 ## Service Locations
 
-- Mumbai: https://wick.co.in/locations/mumbai
-- Delhi NCR: https://wick.co.in/locations/delhi-ncr
-- Bangalore: https://wick.co.in/locations/bangalore
-- Chennai: https://wick.co.in/locations/chennai
-- Pune: https://wick.co.in/locations/pune
-- Hyderabad: https://wick.co.in/locations/hyderabad
-- Ahmedabad: https://wick.co.in/locations/ahmedabad
-- Kolkata: https://wick.co.in/locations/kolkata
-- Jaipur: https://wick.co.in/locations/jaipur
-- Haryana: https://wick.co.in/locations/haryana
-- Maharashtra: https://wick.co.in/locations/maharashtra
-- Tamil Nadu: https://wick.co.in/locations/tamil-nadu
-- Karnataka: https://wick.co.in/locations/karnataka
-- Punjab: https://wick.co.in/locations/punjab
+- [Mumbai](https://wick.co.in/locations/mumbai)
+- [Delhi NCR](https://wick.co.in/locations/delhi-ncr)
+- [Bangalore](https://wick.co.in/locations/bangalore)
+- [Chennai](https://wick.co.in/locations/chennai)
+- [Pune](https://wick.co.in/locations/pune)
+- [Hyderabad](https://wick.co.in/locations/hyderabad)
+- [Ahmedabad](https://wick.co.in/locations/ahmedabad)
+- [Kolkata](https://wick.co.in/locations/kolkata)
+- [Jaipur](https://wick.co.in/locations/jaipur)
+- [Haryana](https://wick.co.in/locations/haryana)
+- [Maharashtra](https://wick.co.in/locations/maharashtra)
+- [Tamil Nadu](https://wick.co.in/locations/tamil-nadu)
+- [Karnataka](https://wick.co.in/locations/karnataka)
+- [Punjab](https://wick.co.in/locations/punjab)
 
 ## Industry Solutions
 
-- Mining: https://wick.co.in/industries/mining
-- Logistics: https://wick.co.in/industries/logistics
-- Construction: https://wick.co.in/industries/construction
+- [Mining](https://wick.co.in/industries/mining)
+- [Logistics](https://wick.co.in/industries/logistics)
+- [Construction](https://wick.co.in/industries/construction)
 
 ## National Landing Pages
 
-- Tyre Inflation System India: https://wick.co.in/tyre-inflation-system-india
-- Tyre Inflation System: https://wick.co.in/tire-inflation-system
-- Truck Tyre Pressure Monitoring: https://wick.co.in/truck-tire-pressure-monitoring
+- [Tyre Inflation System India](https://wick.co.in/tyre-inflation-system-india)
+- [Tyre Inflation System](https://wick.co.in/tire-inflation-system)
+- [Truck Tyre Pressure Monitoring](https://wick.co.in/truck-tire-pressure-monitoring)
 
 ## Blog Topics
 
@@ -147,10 +147,10 @@ The Wick blog covers: tyre inflation technology explained, fleet safety best pra
 
 ## Social Links
 
-- LinkedIn: https://www.linkedin.com/company/wick-ates
-- Twitter/X: https://twitter.com/WickATES
-- Facebook: https://www.facebook.com/wickates
-- Instagram: https://www.instagram.com/wickates
+- [LinkedIn](https://www.linkedin.com/company/wick-ates)
+- [Twitter/X](https://twitter.com/WickATES)
+- [Facebook](https://www.facebook.com/wickates)
+- [Instagram](https://www.instagram.com/wickates)
 
 ## Technical Specifications
 
@@ -158,7 +158,3 @@ The Wick blog covers: tyre inflation technology explained, fleet safety best pra
 - Compatible axles: YORK RB15
 - Compatible suspension: Pneumatic Samrat Series
 - Installation time: Quick installation by trained technicians
-- Maintenance: Annual inspection recommended
-- Operating conditions: Designed for Indian roads — extreme heat, dust, heavy loads
-- Key components: Manifolds, control valves, rotary unions, pressure regulator
-- Only moving part: Rotary union (reduces wear and maintenance)

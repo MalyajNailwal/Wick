@@ -24,10 +24,10 @@ const leagueSpartan = League_Spartan({
 export const metadata: Metadata = {
   metadataBase: new URL('https://wick.co.in'),
   title: {
-    default: 'Wick | Truck & Tyre Maintenance System India',
+    default: 'Tyre Inflation System India | Wick TyreRakhshak ATES',
     template: '%s | Wick'
   },
-  description: "Wick - India's #1 truck & tyre maintenance system. Tyre maintenance app for commercial vehicles. 20% longer tyre life, 2%+ fuel savings. ATES technology.",
+  description: "Wick TyreRakhshak ATES - India’s first advanced Automatic Tyre Equalisation System for commercial trucks and trailers. Maintains tyre pressure automatically, extends tyre life, saves fuel, and reduces blowout risk across Indian highways.",
   keywords: [
     'Wick',
     'truck maintenance system',
@@ -122,8 +122,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://wick.co.in',
     siteName: 'Wick',
-    title: 'Wick | Truck Maintenance System | Tyre Maintenance System & App',
-    description: "India's #1 truck maintenance system & tyre maintenance system. Tyre maintenance app for truck tyre & trailer tyre. 20% longer tyre life, 2%+ fuel savings.",
+    title: 'Tyre Inflation System India | Wick TyreRakhshak ATES',
+    description: "Wick TyreRakhshak ATES - India’s first advanced Automatic Tyre Equalisation System for commercial trucks and trailers. Maintains tyre pressure automatically, extends tyre life, saves fuel, and reduces blowout risk across Indian highways.",
     images: [
       {
         url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
@@ -135,8 +135,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wick | Truck Maintenance System | Tyre Maintenance App',
-    description: "India's #1 truck maintenance system & tyre maintenance app. Truck tyre & trailer tyre management. 20% longer tyre life, 2%+ fuel savings.",
+    title: 'Tyre Inflation System India | Wick TyreRakhshak ATES',
+    description: "TyreRakhshak ATES by Wick automatically maintains tyre pressure for commercial trucks and trailers across Indian highways.",
     images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
     site: '@WickATES',
@@ -208,7 +208,7 @@ export default function RootLayout({
               alternateName: ['Wick ATES', 'Wick India', 'Wick TyreRakhshak'],
               url: 'https://wick.co.in',
               logo: 'https://wick.co.in/logo.svg',
-              description: "India's leading truck inflation system and trailer inflation system provider. Automatic tyre equalisation for better tyre life for truck trailers.",
+              description: "India’s first advanced Automatic Tyre Equalisation System (ATES) company for commercial trucks and trailers. Wick TyreRakhshak automatically maintains tyre pressure, extends tyre life, saves fuel, and reduces blowout risk across Indian highways.",
               slogan: 'Revolutionizing Commercial Vehicle Safety',
               foundingDate: '2021',
               address: {
@@ -238,11 +238,15 @@ export default function RootLayout({
                 name: 'Vinamra Bajaj'
               },
               knowsAbout: [
+                'India’s First Tyre Inflation System Company',
                 'Automatic Tyre Equalisation System',
+                'TyreRakhshak ATES',
+                'Truck Tyre Inflation System',
+                'Trailer Tyre Inflation System',
                 'Tyre Pressure Monitoring System',
                 'Commercial Vehicle Safety',
                 'Fleet Tyre Management',
-                'Truck Tyre Inflation',
+                'Truck Tyre Maintenance',
                 'Trailer Tyre Maintenance',
                 'Fuel Efficiency for Trucks',
                 'Tyre Blowout Prevention',
@@ -266,13 +270,13 @@ export default function RootLayout({
               '@type': 'WebSite',
               name: 'Wick',
               url: 'https://wick.co.in',
-              description: "India's leading truck & tyre maintenance system. ATES technology for commercial vehicle fleets.",
+              description: "India’s first advanced Automatic Tyre Equalisation System (ATES) company for commercial trucks and trailers. TyreRakhshak by Wick maintains tyre pressure automatically across Indian highways.",
               publisher: {
                 '@type': 'Organization',
                 name: 'Wick',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://wick.co.in/logo.svg',
+                  url: 'https://wick.co.in/favicon.svg',
                 },
               },
             })

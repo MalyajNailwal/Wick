@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Check, X, Star, Award, Shield, Zap, TrendingUp, Users } from 'lucide-react';
 
 interface CompetitorFeatures {
@@ -27,8 +26,6 @@ interface Competitor {
 }
 
 export default function WickVsCompetitorsClient() {
-  const [heroRef, heroInView] = useInView({ threshold: 0.3 });
-  const [comparisonRef, comparisonInView] = useInView({ threshold: 0.3 });
 
   const competitors: Competitor[] = [
     {
@@ -130,13 +127,13 @@ export default function WickVsCompetitorsClient() {
   return (
     <>
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-red-900 via-orange-900 to-yellow-900 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-red-900 via-orange-900 to-yellow-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/40"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-center"
           >
@@ -167,11 +164,11 @@ export default function WickVsCompetitorsClient() {
       </section>
 
       {/* Comparison Table */}
-      <section ref={comparisonRef} className="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={comparisonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -186,8 +183,8 @@ export default function WickVsCompetitorsClient() {
 
           {/* Desktop Comparison Table */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={comparisonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:block bg-white rounded-2xl shadow-2xl overflow-hidden"
           >
@@ -253,8 +250,8 @@ export default function WickVsCompetitorsClient() {
             {competitors.map((competitor, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={comparisonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className={`p-6 rounded-xl shadow-lg ${competitor.isWick ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200' : 'bg-white border border-gray-200'}`}
               >

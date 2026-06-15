@@ -1,15 +1,15 @@
 import { Metadata } from 'next';
 
 export const homeMetadata: Metadata = {
-  title: 'Tyre Inflation System India | Automatic Tyre Pressure Monitoring | Commercial Vehicle Safety',
-  description: 'India\'s leading tyre inflation system for trucks & trailers. Automatic tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings. Trusted by 50+ fleet operators across India.',
-  keywords: 'tyre inflation system India, automatic tyre inflation India, truck tyre pressure monitoring, commercial vehicle tyre management, tyre inflation system India, truck tyre safety system, trailer tyre inflation, fleet tyre management, tyre pressure monitoring system, automatic tyre equalisation, commercial vehicle safety, truck tyre maintenance, tyre inflation technology, fleet management system, truck alignment system, tyre pressure control system, best tyre inflation system India, tyre blowout prevention India',
+  title: 'Tyre Inflation System India | India’s First ATES for Trucks & Trailers | Wick',
+  description: 'India’s first Automatic Tyre Equalisation System (ATES) company for commercial trucks and trailers. TyreRakhshak by Wick maintains tyre pressure automatically, extends tyre life, saves fuel, and reduces blowout risk across Indian highways.',
+  keywords: 'tyre inflation system India, India’s first tyre inflation system company, automatic tyre inflation system India, automatic tyre equalisation system India, ATES for trucks India, ATES for trailers India, TyreRakhshak ATES, truck tyre pressure monitoring India, trailer tyre pressure monitoring, fleet tyre management India, commercial vehicle tyre safety India, automatic tyre pressure control, best tyre inflation system India, tyre blowout prevention India, truck tyre maintenance system',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',
   openGraph: {
-    title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring India',
-    description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Tyre Inflation System India | India’s First ATES for Trucks & Trailers | Wick',
+    description: 'TyreRakhshak ATES by Wick is India’s first advanced Automatic Tyre Equalisation System for commercial trucks and trailers. It automatically maintains tyre pressure while vehicles move.',
     url: 'https://wick.co.in',
     type: 'website',
     siteName: 'Wick',
@@ -18,14 +18,14 @@ export const homeMetadata: Metadata = {
         url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'Automatic Tyre Inflation System - TyreRakhshak',
+        alt: 'TyreRakhshak ATES - Automatic Tyre Equalisation System for Trucks and Trailers',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Automatic Tyre Inflation System | Truck Tyre Pressure Monitoring',
-    description: 'Advanced automatic tyre inflation system for trucks & trailers. Real-time tyre pressure monitoring, 20% longer tyre life, 2%+ fuel savings.',
+    title: 'Tyre Inflation System India | India’s First ATES for Trucks & Trailers | Wick',
+    description: 'TyreRakhshak ATES by Wick automatically maintains tyre pressure for commercial trucks and trailers across Indian highways.',
     images: ['https://wick.co.in/media/productimghd-removebg-preview.png'],
     creator: '@WickATES',
   },

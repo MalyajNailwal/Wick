@@ -23,16 +23,36 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Products</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/products" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  ATES - TyreRakhshak
-                </Link>
-              </li>
-              <li>
-                <Link href="/technology" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  Technology
-                </Link>
-              </li>
+          <li>
+            <Link href="/products" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              ATES - TyreRakhshak
+            </Link>
+          </li>
+          <li>
+            <Link href="/tyre-inflation-system-india" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Tyre Inflation System India
+            </Link>
+          </li>
+          <li>
+            <Link href="/tire-inflation-system" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Tyre Inflation System Guide
+            </Link>
+          </li>
+          <li>
+            <Link href="/truck-tire-pressure-monitoring" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Truck Tyre Pressure Monitoring
+            </Link>
+          </li>
+          <li>
+            <Link href="/technology" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Technology
+            </Link>
+          </li>
+          <li>
+            <Link href="/case-studies" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Case Studies
+            </Link>
+          </li>
             </ul>
           </div>
 
@@ -40,26 +60,46 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/faq" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-                  FAQ
-                </Link>
-              </li>
+          <li>
+            <Link href="/about" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/why-wick-ates" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Why Choose Wick
+            </Link>
+          </li>
+          <li>
+            <Link href="/wick-vs-competitors" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Wick vs Competitors
+            </Link>
+          </li>
+          <li>
+            <Link href="/locations/delhi-ncr" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Delhi NCR
+            </Link>
+          </li>
+          <li>
+            <Link href="/locations/mumbai" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Mumbai
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link href="/faq" className="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              FAQ
+            </Link>
+          </li>
             </ul>
           </div>
 

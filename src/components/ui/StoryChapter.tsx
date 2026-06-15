@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { useInView } from 'react-intersection-observer';
 
 interface StoryChapterProps {
   chapterNumber: string;
@@ -28,7 +27,6 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
   parallax = false
 }) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [inViewRef, inView] = useInView({ threshold: 0.3 });
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -70,20 +68,20 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div ref={inViewRef} className={`grid items-center gap-12 ${getLayoutClasses()}`}>
+        <div className={`grid items-center gap-12 ${getLayoutClasses()}`}>
           {/* Content */}
           <motion.div
             style={parallax ? { y, opacity } : undefined}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className={`space-y-8 ${contentOrder} ${layout === 'center' ? 'text-center' : ''}`}
           >
             {/* Chapter Number */}
             {chapterNumber && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 1, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative"
               >
@@ -100,8 +98,8 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
 
             {/* Title */}
             <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className={`text-4xl md:text-6xl font-display font-bold leading-tight ${textColor}`}
             >
@@ -111,8 +109,8 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
             {/* Subtitle */}
             {subtitle && (
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-xl md:text-2xl text-gray-700 font-medium"
                 dangerouslySetInnerHTML={{ __html: subtitle }}
@@ -121,8 +119,8 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
 
             {/* Content */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className="prose prose-lg max-w-none"
             >
@@ -133,8 +131,8 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
           {/* Visual */}
           {visual && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 1, scale: 1 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className={`${visualOrder} ${layout === 'center' ? 'mt-12' : ''}`}
             >
@@ -146,8 +144,8 @@ const StoryChapter: React.FC<StoryChapterProps> = ({
 
       {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div

@@ -1,13 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { Check, X, Shield, Zap, TrendingUp, Award, Users, MapPin } from 'lucide-react';
 
 export default function WhyWickATESClient() {
-  const [heroRef, heroInView] = useInView({ threshold: 0.3 });
-  const [comparisonRef, comparisonInView] = useInView({ threshold: 0.3 });
-  const [benefitsRef, benefitsInView] = useInView({ threshold: 0.3 });
 
   const comparisonData = [
     {
@@ -63,13 +59,13 @@ export default function WhyWickATESClient() {
   return (
     <>
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-center"
           >
@@ -94,11 +90,11 @@ export default function WhyWickATESClient() {
       </section>
 
       {/* Detailed Comparison Table */}
-      <section ref={comparisonRef} className="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={comparisonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -112,8 +108,8 @@ export default function WhyWickATESClient() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={comparisonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-white rounded-2xl shadow-2xl overflow-hidden"
           >
@@ -129,8 +125,8 @@ export default function WhyWickATESClient() {
               {comparisonData.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={comparisonInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                  initial={{ opacity: 1, x: 0 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="grid grid-cols-3 gap-4 p-6 hover:bg-gray-50 transition-colors"
                 >
@@ -174,11 +170,11 @@ export default function WhyWickATESClient() {
       </section>
 
       {/* Key Benefits Section */}
-      <section ref={benefitsRef} className="py-24 bg-gradient-to-br from-slate-900 to-gray-900">
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={benefitsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -238,8 +234,8 @@ export default function WhyWickATESClient() {
             ].map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={benefitsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-300"
               >

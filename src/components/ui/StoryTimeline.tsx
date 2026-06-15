@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { useInView } from 'react-intersection-observer';
 
 interface TimelineEvent {
   year: string;
@@ -20,7 +19,6 @@ interface StoryTimelineProps {
 
 const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [inViewRef, inView] = useInView({ threshold: 0.2 });
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -38,9 +36,8 @@ const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
-          ref={inViewRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
@@ -69,8 +66,8 @@ const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }
             {events.map((event, index) => (
               <motion.div
                 key={event.year}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 1, x: 0 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true, margin: "-100px" }}
                 className="relative flex items-start"
@@ -78,8 +75,8 @@ const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }
                 {/* Timeline Dot */}
                 <div className="relative z-10 flex-shrink-0">
                   <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
+                    initial={{ scale: 1 }}
+                    animate={{ scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
                     viewport={{ once: true }}
                     className={`w-16 h-16 rounded-full flex items-center justify-center shadow-lg ${
@@ -100,8 +97,8 @@ const StoryTimeline: React.FC<StoryTimelineProps> = ({ events, title, subtitle }
                   {/* Glow Effect */}
                   {event.highlight && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 1, scale: 1 }}
+                      animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 1, delay: index * 0.2 + 0.5 }}
                       viewport={{ once: true }}
                       className="absolute inset-0 bg-primary-500 rounded-full animate-ping opacity-20"

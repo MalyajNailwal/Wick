@@ -41,7 +41,7 @@ const TypewriterText = ({ text }: { text: string }) => {
 };
 
 const PrologueSection = () => {
-  const [ref, inView] = useInView({ threshold: 0.3 });
+  const ref = useRef<HTMLDivElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const [needsUserInteraction, setNeedsUserInteraction] = useState(false);
@@ -95,7 +95,7 @@ const PrologueSection = () => {
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Screen reader only H1 - primary page title for SEO */}
       <h1 className="sr-only">
-        Wick - India&apos;s #1 Truck Maintenance System, Tyre Maintenance App & ATES Technology
+        India&apos;s First Automatic Tyre Inflation System Company for Trucks &amp; Trailers
       </h1>
       
       {/* Video Background - Main Background */}
@@ -206,7 +206,7 @@ const PrologueSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="inline-flex items-center px-6 py-3 rounded-full bg-primary-500/20 border border-primary-500/30 text-primary-300 text-sm font-medium backdrop-blur-sm"
           >
-            Once upon a time in India&apos;s highways...
+            India&apos;s First Advanced ATES for Trucks &amp; Trailers
           </motion.div>
           
           <motion.h1
@@ -215,9 +215,9 @@ const PrologueSection = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-5xl md:text-7xl font-display font-bold text-white leading-tight"
           >
-            The Story of{' '}
+            India&apos;s First Automatic Tyre Inflation System for{' '}
             <span style={{ color: '#b61212' }} className="font-bold">
-              Wick
+              Trucks &amp; Trailers
             </span>
           </motion.h1>
 
@@ -227,19 +227,27 @@ const PrologueSection = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl font-medium text-primary-300 tracking-wide"
           >
-            India&apos;s Leading Automatic Tyre Inflation System for Trucks &amp; Trailers
+            TyreRakhshak ATES by Wick maintains tyre pressure automatically on Indian highways
           </motion.h2>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
+            transition={{ duration: 1, delay: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto"
           >
-            From tyre pressure monitoring to automatic tyre inflation systems - 
-            discover how advanced tyre management technology is revolutionizing 
-            commercial vehicle safety across India&apos;s highways.
-          </motion.p>
+            {[
+              ['50+', 'Fleet operators'],
+              ['20%+', 'Longer tyre life'],
+              ['2%+', 'Fuel savings'],
+              ['144 hrs', 'Downtime saved/vehicle/year'],
+            ].map(([value, label]) => (
+              <div key={label} className="rounded-2xl border border-white/15 bg-white/10 px-3 py-3 text-center backdrop-blur-sm">
+                <div className="text-2xl md:text-3xl font-bold text-white">{value}</div>
+                <div className="text-xs md:text-sm text-gray-300">{label}</div>
+              </div>
+            ))}
+          </motion.div>
           
           <motion.div
           initial={{ opacity: 1, y: 0 }}
@@ -1047,7 +1055,7 @@ const StoryJourney = () => {
 };
 
 const SEOContentSection = () => {
-  const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
+  const ref = useRef<HTMLDivElement>(null);
 
   const benefits = [
     {
@@ -1142,7 +1150,7 @@ const SEOContentSection = () => {
 
 
 const CTASection = () => {
-  const [ref, inView] = useInView({ threshold: 0.3 });
+  const ref = useRef<HTMLElement>(null);
   const router = useRouter();
 
   const navigateToContact = () => {
