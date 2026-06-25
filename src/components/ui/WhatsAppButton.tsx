@@ -2,11 +2,16 @@
 
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 
 const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = '919721601500';
     const message = encodeURIComponent("Hi Wick Team, I'm interested in learning more about ATES.");
+    trackEvent('whatsapp_click', {
+      phone_number: phoneNumber,
+      entry_point: 'floating_button',
+    });
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 

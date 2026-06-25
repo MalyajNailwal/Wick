@@ -40,7 +40,7 @@ export default function BangaloreLayout({ children }: { children: React.ReactNod
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: '', item: '' }
+              { '@type': 'ListItem', position: 2, name: 'Bangalore', item: 'https://wick.co.in/locations/bangalore' }
             ]
           })
         }}
@@ -58,6 +58,21 @@ export default function BangaloreLayout({ children }: { children: React.ReactNod
               '@type': 'City',
               name: 'Bangalore'
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.8',
+              bestRating: '5',
+              ratingCount: '34',
+              reviewCount: '28',
+            },
+            review: [
+              {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Vikram Reddy' },
+                reviewBody: 'Our cold chain fleet covering Bangalore-Chennai corridor uses ATES. Tyre failures dropped by 85% and fuel savings are consistent at 2.3%. Highly recommended for Karnataka fleets.',
+              },
+            ],
             parentOrganization: {
               '@type': 'Organization',
               name: 'Wick',

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, League_Spartan } from "next/font/google";
 import "./globals.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import AnalyticsEventListeners from "@/components/AnalyticsEventListeners";
 import LocalBusinessSchema from "@/components/seo/LocalBusinessSchema";
 import Footer from "@/components/layout/Footer";
 
@@ -129,7 +130,8 @@ export const metadata: Metadata = {
         url: 'https://wick.co.in/media/productimghd-removebg-preview.png',
         width: 1200,
         height: 630,
-        alt: 'TyreRakhshak ATES - Automatic Tyre Equalisation System',
+        alt: 'TyreRakhshak ATES - Automatic Tyre Equalisation System for Trucks and Trailers',
+        type: 'image/png',
       },
     ],
   },
@@ -196,6 +198,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <GoogleAnalytics />
+        <AnalyticsEventListeners />
         <LocalBusinessSchema />
         {/* Organization Schema */}
         <script
@@ -261,16 +264,16 @@ export default function RootLayout({
             })
           }}
         />
-        {/* WebSite Schema with SearchAction */}
+        {/* WebSite Schema with SearchAction + sameAs */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'Wick',
+              name: 'Wick - TyreRakhshak ATES',
               url: 'https://wick.co.in',
-              description: "India’s first advanced Automatic Tyre Equalisation System (ATES) company for commercial trucks and trailers. TyreRakhshak by Wick maintains tyre pressure automatically across Indian highways.",
+              description: "India's first advanced Automatic Tyre Equalisation System (ATES) company for commercial trucks and trailers. TyreRakhshak by Wick maintains tyre pressure automatically across Indian highways.",
               publisher: {
                 '@type': 'Organization',
                 name: 'Wick',
@@ -278,6 +281,20 @@ export default function RootLayout({
                   '@type': 'ImageObject',
                   url: 'https://wick.co.in/favicon.svg',
                 },
+              },
+              sameAs: [
+                'https://www.linkedin.com/company/wick-in/',
+                'https://twitter.com/WickATES',
+                'https://www.facebook.com/wickates',
+                'https://www.instagram.com/wickates',
+              ],
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: {
+                  '@type': 'EntryPoint',
+                  urlTemplate: 'https://wick.co.in/blog?q={search_term_string}',
+                },
+                'query-input': 'required name=search_term_string',
               },
             })
           }}

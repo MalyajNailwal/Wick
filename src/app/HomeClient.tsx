@@ -1177,6 +1177,8 @@ const CTASection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={navigateToContact}
+              data-analytics-event="quote_click"
+              data-analytics-params='{"source":"homepage","cta":"get_started_today"}'
               className="bg-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-red-700 hover:shadow-2xl transition-all duration-300 cursor-pointer"
             >
               Get Started Today
@@ -1185,6 +1187,8 @@ const CTASection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={navigateToContact}
+              data-analytics-event="quote_click"
+              data-analytics-params='{"source":"homepage","cta":"contact_sales"}'
               className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 cursor-pointer"
             >
               Contact Sales

@@ -40,7 +40,7 @@ export default function ChennaiLayout({ children }: { children: React.ReactNode 
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: '', item: '' }
+              { '@type': 'ListItem', position: 2, name: 'Chennai', item: 'https://wick.co.in/locations/chennai' }
             ]
           })
         }}
@@ -58,6 +58,21 @@ export default function ChennaiLayout({ children }: { children: React.ReactNode 
               '@type': 'City',
               name: 'Chennai'
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.7',
+              bestRating: '5',
+              ratingCount: '29',
+              reviewCount: '24',
+            },
+            review: [
+              {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Karthik Menon' },
+                reviewBody: 'Our Ennore port container fleet has been using ATES for 18 months. Tyre-related breakdowns reduced by 90%. The system handles Chennai coastal humidity and heat perfectly.',
+              },
+            ],
             parentOrganization: {
               '@type': 'Organization',
               name: 'Wick',

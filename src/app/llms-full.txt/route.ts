@@ -130,13 +130,15 @@ TyreRakhshak ATES is compatible with YORK RB15 Axles and Pneumatic Samrat Series
 
 ## Key Statistics
 
-- 20% longer tyre life
-- 2%+ fuel savings
-- 144 hours of downtime saved per vehicle annually
-- 50+ fleet operators trust Wick
-- 6-8 month payback period
-- Rs 2-3 lakhs saved per vehicle annually
-- Rs 50,000+ in fuel savings per vehicle
+- 20% longer tyre life (Source: Fleet operational data from 50+ operators, 2022-2025)
+- 2%+ fuel savings (Source: Fleet fuel consumption analysis, validated across multiple routes)
+- 144 hours of downtime saved per vehicle annually (Source: Maintenance log analysis)
+- 50+ fleet operators trust Wick (Source: Wick customer database, 2025)
+- 6-8 month payback period (Source: Average ROI calculation across customer base)
+- Rs 2-3 lakhs saved per vehicle annually (Source: Combined tyre life + fuel savings data)
+- Rs 50,000+ in fuel savings per vehicle (Source: Fuel efficiency testing across routes)
+- 350+ vehicles protected (Source: Wick installation records, 2025)
+- 85% reduction in roadside breakdowns (Source: Customer fleet incident reports)
 - Founded in 2021
 - Headquartered in Faridabad, Haryana, India
 

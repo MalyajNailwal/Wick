@@ -63,6 +63,12 @@ export default function RelatedLinks({
               >
                 <Link
                   href={link.href}
+                  data-analytics-event="blog_cta_click"
+                  data-analytics-params={JSON.stringify({
+                    link_title: link.title,
+                    link_tag: link.tag || 'related',
+                    variant: 'cards',
+                  })}
                   className="block p-6 bg-gray-50 rounded-xl hover:bg-red-50 hover:shadow-lg transition-all duration-300 h-full"
                 >
                   {link.tag && (
@@ -99,6 +105,12 @@ export default function RelatedLinks({
             <Link
               key={index}
               href={link.href}
+              data-analytics-event="blog_cta_click"
+              data-analytics-params={JSON.stringify({
+                link_title: link.title,
+                link_tag: link.tag || 'related',
+                variant: 'compact',
+              })}
               className={`${linkColor} underline underline-offset-4 transition-colors`}
             >
               {link.title}

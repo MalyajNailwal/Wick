@@ -68,8 +68,32 @@ export default function AboutLayout({
                 addressRegion: 'Haryana',
                 postalCode: '121001',
                 addressCountry: 'IN'
-              }
+              },
+              sameAs: [
+                'https://www.linkedin.com/company/wick-in/',
+              ],
             }
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Vinamra Bajaj',
+            jobTitle: 'Founder & CEO',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Wick',
+              url: 'https://wick.co.in',
+            },
+            url: 'https://wick.co.in/about',
+            sameAs: [
+              'https://www.linkedin.com/in/vinamra-bajaj/',
+            ],
+            description: 'Founder of Wick, pioneering India\'s first Automatic Tyre Equalisation System for commercial vehicle safety.',
           })
         }}
       />

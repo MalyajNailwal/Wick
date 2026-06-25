@@ -149,12 +149,16 @@ export default function CaseStudiesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
+                data-analytics-event="quote_click"
+                data-analytics-params='{"source":"case_studies","cta":"roi_analysis"}'
                 className="inline-flex items-center justify-center bg-white text-red-600 px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-50"
               >
                 Get Free ROI Analysis <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
                 href="/products"
+                data-analytics-event="quote_click"
+                data-analytics-params='{"source":"case_studies","cta":"view_products"}'
                 className="inline-flex items-center justify-center bg-black text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-gray-900"
               >
                 View Products

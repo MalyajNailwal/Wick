@@ -162,6 +162,8 @@ export default function TyreInflationSystemIndiaPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/contact"
+                  data-analytics-event="quote_click"
+                  data-analytics-params='{"source":"tyre_inflation_system_india","cta":"hero_consultation"}'
                   className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-full font-semibold text-lg transition-colors"
                 >
                   Get Free Consultation
@@ -171,6 +173,8 @@ export default function TyreInflationSystemIndiaPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/products"
+                  data-analytics-event="quote_click"
+                  data-analytics-params='{"source":"tyre_inflation_system_india","cta":"hero_products"}'
                   className="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold text-lg border border-white/30 transition-colors"
                 >
                   View Products
@@ -519,6 +523,8 @@ export default function TyreInflationSystemIndiaPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
                   href="/contact"
+                  data-analytics-event="quote_click"
+                  data-analytics-params='{"source":"tyre_inflation_system_india","cta":"footer_demo"}'
                   className="inline-flex items-center px-8 py-4 bg-red-600 hover:bg-red-700 text-white rounded-full font-semibold text-lg transition-colors"
                 >
                   Schedule Free Demo
@@ -528,6 +534,8 @@ export default function TyreInflationSystemIndiaPage() {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <a
                   href="tel:+919721601500"
+                  data-analytics-event="call_click"
+                  data-analytics-params='{"phone_number":"+919721601500","source":"tyre_inflation_system_india"}'
                   className="inline-flex items-center px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold text-lg border border-white/30 transition-colors"
                 >
                   <Phone className="w-5 h-5 mr-2" />

@@ -362,6 +362,8 @@ export default function WickVsCompetitorsClient() {
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              data-analytics-event="quote_click"
+              data-analytics-params='{"source":"wick_vs_competitors","cta":"request_demo"}'
               className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all duration-300 inline-block"
             >
               Request Demo
@@ -370,6 +372,8 @@ export default function WickVsCompetitorsClient() {
               href="/products"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              data-analytics-event="quote_click"
+              data-analytics-params='{"source":"wick_vs_competitors","cta":"view_products"}'
               className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 inline-block"
             >
               View Products

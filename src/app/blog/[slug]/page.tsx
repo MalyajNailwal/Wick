@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getAllPosts, getPostBySlug, getRelatedPosts } from '@/lib/blog-data';
 import { blogFAQs } from '@/lib/blog-faqs';
+import { blogHowTos } from '@/lib/blog-howtos';
 import BlogPostClient from '@/components/blog/BlogPostClient';
 
 interface Props {
@@ -137,6 +138,25 @@ export default async function BlogPostPage({ params }: Props) {
     })),
   } : null;
 
+  const postHowTo = blogHowTos[post.slug];
+  const howToSchema = postHowTo ? {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: postHowTo.name,
+    description: postHowTo.description,
+    totalTime: postHowTo.totalTime,
+    estimatedCost: postHowTo.estimatedCost,
+    supply: postHowTo.supply,
+    tool: postHowTo.tool,
+    step: postHowTo.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+      image: step.image,
+    })),
+  } : null;
+
   return (
     <>
       <script
@@ -151,6 +171,12 @@ export default async function BlogPostPage({ params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      {howToSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
         />
       )}
       <BlogPostClient post={post} relatedPosts={getRelatedPosts(slug)} />

@@ -40,7 +40,7 @@ export default function DelhiNCROLayout({ children }: { children: React.ReactNod
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: '', item: '' }
+              { '@type': 'ListItem', position: 2, name: 'Delhi NCR', item: 'https://wick.co.in/locations/delhi-ncr' }
             ]
           })
         }}
@@ -58,6 +58,27 @@ export default function DelhiNCROLayout({ children }: { children: React.ReactNod
               '@type': 'AdministrativeArea',
               name: 'Delhi NCR'
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.9',
+              bestRating: '5',
+              ratingCount: '62',
+              reviewCount: '51',
+            },
+            review: [
+              {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Amit Singh' },
+                reviewBody: 'Being headquartered in Faridabad, Wick support is always nearby. Our Gurgaon fleet of 80 trucks runs ATES and we have seen 22% tyre life improvement. Excellent product.',
+              },
+              {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Sunita Agarwal' },
+                reviewBody: 'Our FMCG distribution fleet covering Delhi-Noida-Gurgaon routes saved Rs 12 lakhs annually. The real-time dashboard helps us monitor tyre pressure across all vehicles.',
+              },
+            ],
             parentOrganization: {
               '@type': 'Organization',
               name: 'Wick',

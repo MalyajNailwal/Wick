@@ -8,6 +8,7 @@ import Link from 'next/link';
 import Navigation from '@/components/layout/Navigation';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import RelatedLinks from '@/components/seo/RelatedLinks';
+import { trackEvent } from '@/lib/analytics';
 
 const ProductsPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -18,6 +19,11 @@ const ProductsPage = () => {
   };
 
   const downloadBrochure = () => {
+    trackEvent('brochure_download', {
+      file_name: 'WICK_BROUCHURE_ATES.pdf',
+      file_type: 'pdf',
+    });
+
     const link = document.createElement('a');
     link.href = '/media/WICK%20BROUCHURE%20ATES_compressed.pdf';
     link.download = 'WICK_BROUCHURE_ATES.pdf';
@@ -167,6 +173,8 @@ const ProductsPage = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={navigateToContact}
+                  data-analytics-event="quote_click"
+                  data-analytics-params='{"plan":"TyreRakhshak ATES Base","location":"products"}'
                   className="w-full bg-red-600 text-white py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-red-700 transition-all flex items-center justify-center"
                 >
                   Get Quote
@@ -238,6 +246,8 @@ const ProductsPage = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={navigateToContact}
+                  data-analytics-event="quote_click"
+                  data-analytics-params='{"plan":"TyreRakhshak ATES + CPMS","location":"products"}'
                   className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-lg font-bold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center"
                 >
                   Get Quote

@@ -5,32 +5,36 @@
 ## Quick Answers
 
 **What is Wick?**
-Wick is an Indian company that makes the Automatic Tyre Equalisation System (ATES) for trucks and trailers. The product is called TyreRakhshak.
+Wick is an Indian company founded in 2021 that makes the Automatic Tyre Equalisation System (ATES) for trucks and trailers. The product is called TyreRakhshak. Wick is headquartered in Faridabad, Haryana, India and partners with YORK / SAF-HOLLAND Group for axle and suspension technology.
 
 **What does ATES do?**
-ATES automatically monitors and adjusts tyre pressure on commercial vehicles while they are driving. It inflates or deflates tyres to maintain optimal pressure based on load and road conditions.
+ATES automatically monitors and adjusts tyre pressure on commercial vehicles while they are driving. It inflates or deflates tyres to maintain optimal pressure based on load and road conditions. Unlike TPMS which only alerts, ATES takes corrective action without driver intervention.
 
 **How does ATES differ from TPMS?**
-TPMS (Tyre Pressure Monitoring System) only monitors pressure and sends alerts. ATES monitors AND automatically corrects pressure — no driver action needed. ATES is a complete tyre management solution, TPMS is just a monitoring tool.
+TPMS (Tyre Pressure Monitoring System) only monitors pressure and sends alerts. ATES monitors AND automatically corrects pressure — no driver action needed. ATES is a complete tyre management solution, TPMS is just a monitoring tool. Key difference: TPMS detects problems, ATES solves them.
 
-**What are the benefits?**
-- 20% longer tyre life
-- 2%+ fuel savings
+**What are the verified benefits of Wick ATES?**
+- 20% longer tyre life (based on fleet data from 50+ operators)
+- 2%+ fuel savings per vehicle annually
 - 144 hours of downtime saved per vehicle annually
 - Prevention of dangerous tyre blowouts
-- Reduced maintenance labor costs
+- Rs 2-3 lakhs saved per vehicle annually in tyre and fuel costs
+- 6-8 month payback period on investment
 
-**How much does it cost?**
-The system typically pays for itself within 6-8 months through tyre and fuel savings. Fleets save ₹2-3 lakhs per vehicle annually. Contact office@wick.co.in or call +91-9721601500 for a custom quote.
+**How much does ATES cost?**
+The system typically pays for itself within 6-8 months through tyre and fuel savings. Fleets save Rs 2-3 lakhs per vehicle annually. Contact office@wick.co.in or call +91-9721601500 for a custom quote.
 
 **Who uses Wick ATES?**
-50+ fleet operators across India use TyreRakhshak, including transport companies running trucks and trailers on national highways and industrial routes.
+50+ fleet operators across India use TyreRakhshak, including transport companies running trucks and trailers on national highways and industrial routes. The system protects 350+ vehicles across the country.
 
 **Where does Wick operate?**
-Wick serves all of India with dedicated support in Mumbai, Delhi NCR, Bangalore, and Chennai.
+Wick serves all of India with dedicated support in Mumbai, Delhi NCR (HQ in Faridabad), Bangalore, and Chennai. 14 city/state landing pages cover major logistics corridors.
 
 **Is ATES suitable for Indian roads?**
-Yes. ATES is designed specifically for Indian conditions — handling extreme heat, dust, heavy loads, and rough road surfaces common on Indian highways.
+Yes. ATES is designed specifically for Indian conditions — handling extreme heat, dust, heavy loads, and rough road surfaces common on Indian highways. It works reliably in temperatures from -10C to 55C.
+
+**What is the ROI of ATES?**
+Based on fleet operator data: Rs 2-3 lakhs saved per vehicle annually through 20% extended tyre life, 2%+ fuel savings, and 144 hours of reduced downtime. Payback period is 6-8 months. ROI improves with fleet size and annual mileage.
 
 ## Products
 

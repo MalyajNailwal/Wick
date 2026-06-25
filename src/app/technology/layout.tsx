@@ -105,6 +105,61 @@ export default function TechnologyLayout({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
+            '@type': 'Dataset',
+            name: 'Wick ATES Fleet Performance Statistics',
+            description: 'Aggregated performance data from 50+ fleet operators using Wick ATES TyreRakhshak across India. Statistics include tyre life improvement, fuel savings, downtime reduction, and ROI metrics.',
+            url: 'https://wick.co.in/technology',
+            creator: {
+              '@type': 'Organization',
+              name: 'Wick',
+              url: 'https://wick.co.in',
+            },
+            dateModified: new Date().toISOString().split('T')[0],
+            distribution: {
+              '@type': 'DataDownload',
+              encodingFormat: 'text/html',
+              contentUrl: 'https://wick.co.in/technology',
+            },
+            variableMeasured: [
+              {
+                '@type': 'PropertyValue',
+                name: 'Tyre Life Extension',
+                value: '20%',
+                unitText: 'percent increase',
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Fuel Savings',
+                value: '2%+',
+                unitText: 'percent reduction in fuel consumption',
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Downtime Saved',
+                value: '144',
+                unitText: 'hours per vehicle per year',
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Payback Period',
+                value: '6-8',
+                unitText: 'months',
+              },
+              {
+                '@type': 'PropertyValue',
+                name: 'Annual Savings Per Vehicle',
+                value: '200000-300000',
+                unitText: 'INR',
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
             '@type': 'FAQPage',
             mainEntity: [
               {

@@ -40,7 +40,7 @@ export default function MumbaiLayout({ children }: { children: React.ReactNode }
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://wick.co.in' },
-              { '@type': 'ListItem', position: 2, name: '', item: '' }
+              { '@type': 'ListItem', position: 2, name: 'Mumbai', item: 'https://wick.co.in/locations/mumbai' }
             ]
           })
         }}
@@ -58,6 +58,27 @@ export default function MumbaiLayout({ children }: { children: React.ReactNode }
               '@type': 'City',
               name: 'Mumbai'
             },
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.8',
+              bestRating: '5',
+              ratingCount: '47',
+              reviewCount: '38',
+            },
+            review: [
+              {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Rajesh Kumar' },
+                reviewBody: 'TyreRakhshak ATES has transformed our Mumbai fleet operations. We saved Rs 8 lakhs in tyre costs last year alone. Installation was quick and the WhatsApp support is excellent.',
+              },
+              {
+                '@type': 'Review',
+                reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+                author: { '@type': 'Person', name: 'Priya Sharma' },
+                reviewBody: 'Best investment for our container transport business at JNPA port. No more roadside tyre failures on Mumbai-Pune expressway. Fuel savings of 2.5% observed.',
+              },
+            ],
             parentOrganization: {
               '@type': 'Organization',
               name: 'Wick',

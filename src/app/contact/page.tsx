@@ -10,6 +10,7 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import RelatedLinks from '@/components/seo/RelatedLinks';
 import FAQSchema from '@/components/seo/FAQSchema';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import { trackEvent } from '@/lib/analytics';
 
 const ContactPage = () => {
   const [heroRef, heroInView] = useInView({ threshold: 0.3 });
@@ -86,6 +87,13 @@ const ContactPage = () => {
       ``,
       `Looking forward to hearing from you!`
     );
+
+    trackEvent('contact_form_submit', {
+      subject: subjectLabels[formData.subject] || formData.subject,
+      has_phone: Boolean(formData.phone),
+      has_company: Boolean(formData.company),
+      message_length: formData.message.length,
+    });
 
     const encoded = encodeURIComponent(lines.join('\n'));
     window.open(`https://wa.me/919721601500?text=${encoded}`, '_blank');
@@ -645,6 +653,8 @@ const ContactPage = () => {
                   animate={{ opacity: 1, y: 0 }}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
+                  data-analytics-event={contact.title === 'Phone' ? 'call_click' : undefined}
+                  data-analytics-params={contact.title === 'Phone' ? JSON.stringify({ phone_number: contact.info }) : undefined}
                   className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl text-center hover:bg-white/20 transition-all duration-300 border border-white/10 cursor-pointer block"
                 >
                   {CardContent}
