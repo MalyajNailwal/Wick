@@ -175,6 +175,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
+    'theme-color': '#1e293b',
     'preconnect': 'https://res.cloudinary.com',
     'dns-prefetch': 'https://res.cloudinary.com',
   },
