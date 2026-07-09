@@ -370,6 +370,9 @@ export default function TireInflationSystemPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-8">Explore More</h2>
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/inflation-trailer" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
+              Trailer Inflation System
+            </Link>
             <Link href="/technology" className="text-primary-600 hover:text-primary-700 underline underline-offset-4 font-medium">
               How ATES Technology Works
             </Link>

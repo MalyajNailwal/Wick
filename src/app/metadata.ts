@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const homeMetadata: Metadata = {
   title: 'Tyre Inflation System India | India’s First ATES for Trucks & Trailers | Wick',
   description: 'India’s first Automatic Tyre Equalisation System (ATES) company for commercial trucks and trailers. TyreRakhshak by Wick maintains tyre pressure automatically, extends tyre life, saves fuel, and reduces blowout risk across Indian highways.',
-  keywords: 'tyre inflation system India, India’s first tyre inflation system company, automatic tyre inflation system India, automatic tyre equalisation system India, ATES for trucks India, ATES for trailers India, TyreRakhshak ATES, truck tyre pressure monitoring India, trailer tyre pressure monitoring, fleet tyre management India, commercial vehicle tyre safety India, automatic tyre pressure control, best tyre inflation system India, tyre blowout prevention India, truck tyre maintenance system',
+  keywords: 'tyre inflation system India, India’s first tyre inflation system company, automatic tyre inflation system India, automatic tyre equalisation system India, ATES for trucks India, ATES for trailers India, TyreRakhshak ATES, truck tyre pressure monitoring India, trailer tyre pressure monitoring, fleet tyre management India, commercial vehicle tyre safety India, automatic tyre pressure control, best tyre inflation system India, tyre blowout prevention India, truck tyre maintenance system, inflation trailer, trailer inflation system, automatic trailer tyre inflation, trailer tyre pressure system, multi-axle trailer tyre management, trailer blowout prevention India',
   authors: [{ name: 'Wick' }],
   creator: 'Wick',
   publisher: 'Wick',

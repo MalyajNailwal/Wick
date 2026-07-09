@@ -93,11 +93,6 @@ const PrologueSection = () => {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Screen reader only H1 - primary page title for SEO */}
-      <h1 className="sr-only">
-        India&apos;s First Automatic Tyre Inflation System Company for Trucks &amp; Trailers
-      </h1>
-      
       {/* Video Background - Main Background */}
       <div className="absolute inset-0 z-0 bg-slate-900">
         {isClient ? (
@@ -1135,6 +1130,7 @@ const SEOContentSection = () => {
               { title: 'TyreRakhshak Products', href: '/products' },
               { title: 'ATES Technology', href: '/technology' },
               { title: 'Tyre Inflation Systems', href: '/tire-inflation-system' },
+              { title: 'Trailer Inflation System', href: '/inflation-trailer' },
               { title: 'Truck Tyre Pressure Monitoring', href: '/truck-tire-pressure-monitoring' },
               { title: 'Fleet Management Blog', href: '/blog' },
               { title: 'FAQs', href: '/faq' },

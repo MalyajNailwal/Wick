@@ -484,6 +484,12 @@ export default function TyreInflationSystemIndiaPage() {
         variant="cards"
         links={[
           {
+            title: 'Trailer Inflation System India',
+            description: 'Automatic tyre inflation designed for multi-axle commercial trailers.',
+            href: '/inflation-trailer',
+            tag: 'Trailers'
+          },
+          {
             title: 'Best Tyre Inflation System in India',
             description: 'Compare features, prices, and ROI for automatic tyre inflation systems.',
             href: '/blog/best-tyre-inflation-system-india',
