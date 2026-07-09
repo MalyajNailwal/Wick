@@ -46,7 +46,7 @@ export default function AnalyticsEventListeners() {
       if (!eventName || !CONVERSION_EVENT_SET.has(eventName)) return;
 
       trackEvent(eventName, {
-        ...parseParams(explicitTarget?.dataset.analyticsParams),
+        ...parseParams(explicitTarget?.dataset.analyticsParams ?? null),
         element_text: target.innerText.trim().slice(0, 120),
         element_href: target.getAttribute('href') || target.getAttribute('data-href') || undefined,
       });
