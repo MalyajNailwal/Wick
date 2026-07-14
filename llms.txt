@@ -1,0 +1,164 @@
+# Wick - India's Leading Automatic Tyre Equalisation System (ATES)
+
+> Wick manufactures and installs the Automatic Tyre Equalisation System (ATES), branded as TyreRakhshak, for commercial vehicles across India. ATES automatically maintains optimal tyre pressure on trucks and trailers in real time, preventing blowouts, extending tyre life by 20%, and reducing fuel costs by 2%+. Founded in 2021 and headquartered in Faridabad, Haryana, Wick serves fleet operators nationwide in partnership with YORK / SAF-HOLLAND Group.
+
+## Quick Answers
+
+**What is Wick?**
+Wick is an Indian company founded in 2021 that makes the Automatic Tyre Equalisation System (ATES) for trucks and trailers. The product is called TyreRakhshak. Wick is headquartered in Faridabad, Haryana, India and partners with YORK / SAF-HOLLAND Group for axle and suspension technology.
+
+**What does ATES do?**
+ATES automatically monitors and adjusts tyre pressure on commercial vehicles while they are driving. It inflates or deflates tyres to maintain optimal pressure based on load and road conditions. Unlike TPMS which only alerts, ATES takes corrective action without driver intervention.
+
+**How does ATES differ from TPMS?**
+TPMS (Tyre Pressure Monitoring System) only monitors pressure and sends alerts. ATES monitors AND automatically corrects pressure — no driver action needed. ATES is a complete tyre management solution, TPMS is just a monitoring tool. Key difference: TPMS detects problems, ATES solves them.
+
+**What are the verified benefits of Wick ATES?**
+- 20% longer tyre life (based on fleet data from 50+ operators)
+- 2%+ fuel savings per vehicle annually
+- 144 hours of downtime saved per vehicle annually
+- Prevention of dangerous tyre blowouts
+- Rs 2-3 lakhs saved per vehicle annually in tyre and fuel costs
+- 6-8 month payback period on investment
+
+**How much does ATES cost?**
+The system typically pays for itself within 6-8 months through tyre and fuel savings. Fleets save Rs 2-3 lakhs per vehicle annually. Contact office@wick.co.in or call +91-9721601500 for a custom quote.
+
+**Who uses Wick ATES?**
+50+ fleet operators across India use TyreRakhshak, including transport companies running trucks and trailers on national highways and industrial routes. The system protects 350+ vehicles across the country.
+
+**Where does Wick operate?**
+Wick serves all of India with dedicated support in Mumbai, Delhi NCR (HQ in Faridabad), Bangalore, and Chennai. 14 city/state landing pages cover major logistics corridors.
+
+**Is ATES suitable for Indian roads?**
+Yes. ATES is designed specifically for Indian conditions — handling extreme heat, dust, heavy loads, and rough road surfaces common on Indian highways. It works reliably in temperatures from -10C to 55C.
+
+**What is the ROI of ATES?**
+Based on fleet operator data: Rs 2-3 lakhs saved per vehicle annually through 20% extended tyre life, 2%+ fuel savings, and 144 hours of reduced downtime. Payback period is 6-8 months. ROI improves with fleet size and annual mileage.
+
+## Products
+
+### TyreRakhshak ATES (Automatic Tyre Equalisation System)
+- Connects to the vehicle's existing air compressor
+- Uses manifolds, control valves, and rotary joints to manage tyre pressure
+- Automatically inflates or deflates tyres while the vehicle is running
+- Maintains optimal pressure based on real-time load and road conditions
+- 24V DC power requirement
+- Compatible with YORK RB15 Axles and Pneumatic Samrat Series Suspension
+- Only moving component: rotary union
+- Front-mounted driver indicator for system status
+- Easy and quick installation
+- Minimal maintenance (annual inspection recommended)
+
+### Wick CPMS (Central Tyre Pressure Monitoring System)
+- Real-time tyre pressure tracking across all wheels
+- GPS integration for trailers
+- System ON/OFF status indication
+- Trailer tyre odometer (upcoming feature)
+- Predictive maintenance alerts
+- Data-driven fleet management dashboard
+- Remote monitoring capability
+- Historical data analytics
+
+## Frequently Asked Questions
+
+**What is an automatic tyre inflation system?**
+An automatic tyre inflation system (ATES) continuously monitors and maintains optimal tyre pressure in commercial vehicles. It automatically inflates tyres when pressure drops, preventing blowouts and extending tyre life by up to 20%.
+
+**How does tyre pressure monitoring work in trucks?**
+Tyre pressure monitoring systems use sensors to track real-time tyre pressure across all wheels. Advanced systems like ATES not only monitor but also automatically correct pressure deviations, ensuring optimal performance and safety.
+
+**What is the difference between TPMS and ATES?**
+TPMS only monitors and alerts about pressure changes. ATES monitors AND automatically corrects tyre pressure, providing complete tyre management without manual intervention.
+
+**What are the benefits of tyre inflation systems for fleets?**
+20% longer tyre life, 2%+ fuel savings, reduced vehicle downtime, improved safety, and lower maintenance costs. They prevent tyre blowouts and ensure consistent optimal performance across the fleet.
+
+**How much can fleets save with automatic tyre pressure systems?**
+Fleets typically save ₹2-3 lakhs annually per vehicle through extended tyre life, ₹50,000+ in fuel savings, and reduced downtime. The system pays for itself within 6-8 months.
+
+**Are tyre inflation systems suitable for Indian commercial vehicles?**
+Yes, modern tyre inflation systems are specifically designed for Indian road conditions, handling dust, heat, and challenging terrains while maintaining consistent tyre pressure for trucks and trailers.
+
+**What maintenance is required for tyre inflation systems?**
+Minimal maintenance — typically annual inspections and component checks. ATES is designed for harsh Indian conditions with robust, low-maintenance components.
+
+**How to choose the best tyre management system for trucks?**
+Consider automatic pressure correction capability, real-time monitoring, India-specific design, proven ROI, local support, and compatibility with your fleet. Look for systems offering 20%+ tyre life extension and measurable fuel savings.
+
+**Why do truck tyres burst?**
+Truck tyres burst primarily due to under-inflation (which causes excessive flexing and heat buildup), overloading, high speeds on hot roads, and worn-out tyres. ATES prevents this by maintaining optimal pressure at all times.
+
+**How to improve truck tyre life?**
+Maintain correct tyre pressure at all times (the #1 factor), avoid overloading, rotate tyres regularly, inspect for damage, and use an automatic tyre inflation system like ATES that ensures pressure never drops below optimal levels.
+
+## Key Pages
+
+- [Homepage](https://wick.co.in/) (2K tokens)
+- [Products & Pricing](https://wick.co.in/products) (5K tokens)
+- [Technology (How ATES Works)](https://wick.co.in/technology) (4K tokens)
+- [About Wick](https://wick.co.in/about) (3K tokens)
+- [Contact & Get Quote](https://wick.co.in/contact) (2K tokens)
+- [FAQ](https://wick.co.in/faq) (6K tokens)
+- [Blog (Fleet Management Insights)](https://wick.co.in/blog) (3K tokens)
+- [Case Studies](https://wick.co.in/case-studies) (4K tokens)
+- [Why Choose Wick ATES](https://wick.co.in/why-wick-ates) (5K tokens)
+- [Wick vs Competitors](https://wick.co.in/wick-vs-competitors) (4K tokens)
+
+## Service Locations
+
+- [Mumbai](https://wick.co.in/locations/mumbai)
+- [Delhi NCR](https://wick.co.in/locations/delhi-ncr)
+- [Bangalore](https://wick.co.in/locations/bangalore)
+- [Chennai](https://wick.co.in/locations/chennai)
+- [Pune](https://wick.co.in/locations/pune)
+- [Hyderabad](https://wick.co.in/locations/hyderabad)
+- [Ahmedabad](https://wick.co.in/locations/ahmedabad)
+- [Kolkata](https://wick.co.in/locations/kolkata)
+- [Jaipur](https://wick.co.in/locations/jaipur)
+- [Haryana](https://wick.co.in/locations/haryana)
+- [Maharashtra](https://wick.co.in/locations/maharashtra)
+- [Tamil Nadu](https://wick.co.in/locations/tamil-nadu)
+- [Karnataka](https://wick.co.in/locations/karnataka)
+- [Punjab](https://wick.co.in/locations/punjab)
+
+## Industry Solutions
+
+- [Mining](https://wick.co.in/industries/mining)
+- [Logistics](https://wick.co.in/industries/logistics)
+- [Construction](https://wick.co.in/industries/construction)
+
+## National Landing Pages
+
+- [Tyre Inflation System India](https://wick.co.in/tyre-inflation-system-india)
+- [Tyre Inflation System](https://wick.co.in/tire-inflation-system)
+- [Truck Tyre Pressure Monitoring](https://wick.co.in/truck-tire-pressure-monitoring)
+
+## Blog Topics
+
+The Wick blog covers: tyre inflation technology explained, fleet safety best practices, tyre blowout prevention, TPMS vs ATES comparison, fuel efficiency for commercial vehicles, tyre maintenance guides, Indian commercial vehicle safety regulations, fleet management tips, seasonal tyre care (monsoon, summer, winter), trailer-specific tyre management, cost savings analysis, industry-specific tyre solutions (cement transport, e-commerce logistics, cold chain, mining, construction), hubcap and axle accessories, and location-specific fleet guidance across Indian cities and states.
+
+## Company Information
+
+- Founded: 2021
+- Founder: Vinamra Bajaj
+- Headquarters: House Of Wick, 33B, NIT, Faridabad, Haryana 121001, India
+- Email: office@wick.co.in
+- Phone: +91-9721601500
+- Partner: YORK / SAF-HOLLAND Group (global axle and suspension manufacturer)
+- Coverage: All of India
+- Serves: Fleet owners, transport companies, commercial vehicle operators, logistics companies
+
+## Social Links
+
+- [LinkedIn](https://www.linkedin.com/company/wick-ates)
+- [Twitter/X](https://twitter.com/WickATES)
+- [Facebook](https://www.facebook.com/wickates)
+- [Instagram](https://www.instagram.com/wickates)
+
+## Technical Specifications
+
+- Power: 24V DC (from vehicle electrical system)
+- Compatible axles: YORK RB15
+- Compatible suspension: Pneumatic Samrat Series
+- Installation time: Quick installation by trained technicians

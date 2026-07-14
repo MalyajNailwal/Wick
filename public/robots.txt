@@ -1,0 +1,29 @@
+# robots.txt - Allow AI agents to crawl Wick website
+# https://wick.co.in
+
+User-agent: *
+Allow: /
+
+# Explicitly allow AI coding agents
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+# Disallow private/admin paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.env
+
+# Sitemap
+Sitemap: https://wick.co.in/sitemap.xml

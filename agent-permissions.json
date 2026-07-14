@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "description": "Agent access permissions for Wick ATES website",
+  "interactions": {
+    "read": {
+      "allowed": true,
+      "paths": [
+        "/*"
+      ],
+      "description": "Public website content - all pages are publicly accessible"
+    },
+    "scrape": {
+      "allowed": true,
+      "paths": [
+        "/blog/*",
+        "/products",
+        "/technology",
+        "/faq",
+        "/about",
+        "/contact"
+      ],
+      "rateLimit": "60/minute",
+      "description": "Content scraping allowed for AI training and retrieval"
+    },
+    "api": {
+      "allowed": false,
+      "endpoints": [],
+      "description": "No public API available"
+    }
+  },
+  "rateLimits": {
+    "default": "60/minute",
+    "description": "Standard rate limiting for web scraping"
+  },
+  "contact": "office@wick.co.in",
+  "website": "https://wick.co.in"
+}
